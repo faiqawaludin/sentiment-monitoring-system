@@ -2,7 +2,7 @@ REMOSY (Reputation Monitoring System)
 
 **REMOSY** adalah sistem cerdas pemantauan reputasi institusi berbasis kecerdasan buatan (AI) yang dikembangkan khusus untuk memonitor opini publik, berita media massa, dan cuitan media sosial terkait Institusi. Proyek ini mengimplementasikan *end-to-end automated data pipeline*, mulai dari ekstraksi data mentah hingga visualisasi analitik interaktif, untuk membantu pemangku kepentingan dalam pengambilan keputusan strategis (*data-driven decision making*).
 
-## ✨ Fitur Utama
+Fitur Utama
 
 - **Automated Data Scraping:** Pipeline otomatis untuk mengekstraksi data dari portal berita (Google News) dan media sosial (X/Twitter).
 - **Smart Sentiment Analysis (Reputation-Aware):** Menggunakan model AI **IndoBERT** yang dikombinasikan dengan *Hybrid Logic* dan "Filter Satpam Kampus" untuk mendeteksi sentimen positif/negatif yang spesifik terhadap konteks reputasi institusi.
