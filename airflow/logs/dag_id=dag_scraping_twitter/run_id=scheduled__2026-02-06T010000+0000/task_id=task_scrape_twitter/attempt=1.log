@@ -1,0 +1,62 @@
+[2026-02-06T22:42:39.433+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-06T22:42:39.454+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [queued]>
+[2026-02-06T22:42:39.467+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [queued]>
+[2026-02-06T22:42:39.468+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-02-06T22:42:39.487+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-02-06 01:00:00+00:00
+[2026-02-06T22:42:39.495+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=164) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T22:42:39.497+0700] {standard_task_runner.py:72} INFO - Started process 175 to run task
+[2026-02-06T22:42:39.495+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'scheduled__2026-02-06T01:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp2k3guh6n']
+[2026-02-06T22:42:39.498+0700] {standard_task_runner.py:105} INFO - Job 13: Subtask task_scrape_twitter
+[2026-02-06T22:42:39.514+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:39.571+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [running]> on host 136a0e9a7f59
+[2026-02-06T22:42:39.574+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:39.668+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-02-06T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-06T01:00:00+00:00'
+[2026-02-06T22:42:39.669+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-06T22:42:40.625+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-02-06T22:42:40.665+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 72 tweet.
+[2026-02-06T22:42:40.666+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-02-06T22:42:53.807+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-06T22:42:53.840+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [queued]>
+[2026-02-06T22:42:53.857+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [queued]>
+[2026-02-06T22:42:53.858+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-02-06T22:42:53.877+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-02-06 01:00:00+00:00
+[2026-02-06T22:42:53.892+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=174) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T22:42:53.894+0700] {standard_task_runner.py:72} INFO - Started process 183 to run task
+[2026-02-06T22:42:53.891+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'scheduled__2026-02-06T01:00:00+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp10_f4akq']
+[2026-02-06T22:42:53.900+0700] {standard_task_runner.py:105} INFO - Job 78: Subtask task_scrape_twitter
+[2026-02-06T22:42:53.925+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:54.036+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-02-06T01:00:00+00:00 [running]> on host 3bdd3e38038c
+[2026-02-06T22:42:54.039+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:54.221+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-02-06T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-06T01:00:00+00:00'
+[2026-02-06T22:42:54.228+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-06T22:42:57.868+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-02-06T22:43:01.878+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-02-06T22:43:06.418+0700] {logging_mixin.py:190} INFO -    Menyimpan 3 tweet BARU.
+[2026-02-06T22:43:06.419+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-02-06T22:43:17.100+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-02-06T22:44:27.659+0700] {logging_mixin.py:190} INFO -    Gagal simpan: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-02-06T22:44:27.662+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-02-06T22:45:53.162+0700] {logging_mixin.py:190} INFO -    info: Tidak ada tweet baru (semua duplikat).
+[2026-02-06T22:45:53.163+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 3 tweet baru tersimpan.
+[2026-02-06T22:45:53.165+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-06T22:45:53.215+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-06T22:45:53.218+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=scheduled__2026-02-06T01:00:00+00:00, execution_date=20260206T010000, start_date=20260206T154239, end_date=20260206T154553
+[2026-02-06T22:45:53.310+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-06T22:45:53.376+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T22:45:53.380+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2026-02-06T22:46:56.208+0700] {logging_mixin.py:190} INFO -    Gagal simpan: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-02-06T22:46:56.209+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-02-06T22:49:27.626+0700] {logging_mixin.py:190} INFO -    Gagal simpan: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: No address associated with hostname
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-02-06T22:49:27.627+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 0 tweet baru tersimpan.
+[2026-02-06T22:49:27.629+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-06T22:49:27.689+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-06T22:49:27.691+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=scheduled__2026-02-06T01:00:00+00:00, execution_date=20260206T010000, start_date=20260206T154253, end_date=20260206T154927
+[2026-02-06T22:49:27.756+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-06T22:49:27.814+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T22:49:27.817+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

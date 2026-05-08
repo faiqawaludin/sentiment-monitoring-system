@@ -1,0 +1,112 @@
+[2026-02-01T18:50:00.553+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-01T18:50:00.571+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-01T11:49:59.194907+00:00 [queued]>
+[2026-02-01T18:50:00.584+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-01T11:49:59.194907+00:00 [queued]>
+[2026-02-01T18:50:00.585+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-02-01T18:50:00.602+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-02-01 11:49:59.194907+00:00
+[2026-02-01T18:50:00.615+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=188) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-01T18:50:00.618+0700] {standard_task_runner.py:72} INFO - Started process 190 to run task
+[2026-02-01T18:50:00.617+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'manual__2026-02-01T11:49:59.194907+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmpqezkr1xn']
+[2026-02-01T18:50:00.622+0700] {standard_task_runner.py:105} INFO - Job 21: Subtask task_scrape_twitter
+[2026-02-01T18:50:00.644+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-01T18:50:00.747+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-01T11:49:59.194907+00:00 [running]> on host ae27ca7c64a8
+[2026-02-01T18:50:00.896+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-02-01T11:49:59.194907+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-01T11:49:59.194907+00:00'
+[2026-02-01T18:50:00.899+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-01T18:50:00.944+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Twitter (Via Tweet-Harvest)...
+[2026-02-01T18:50:00.986+0700] {logging_mixin.py:190} INFO - 🎯 Target: ['Universitas Singaperbangsa Karawang', 'UNSIKA', 'Rektor UNSIKA']
+[2026-02-01T18:50:00.988+0700] {logging_mixin.py:190} INFO - ⏳ Istirahat 7.60 detik...
+[2026-02-01T18:50:08.618+0700] {logging_mixin.py:190} INFO - 🐦 Memulai Tweet-Harvest untuk: Universitas Singaperbangsa Karawang...
+[2026-02-01T18:51:18.396+0700] {logging_mixin.py:190} INFO - ❌ Error Tweet-Harvest: npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-Aeehb9 --remote-debugging-pipe --no-startup-window
+<launched> pid=309
+[pid=309][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+Call log:
+  - <launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-Aeehb9 --remote-debugging-pipe --no-startup-window
+  - <launched> pid=309
+  - [pid=309][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+  - [pid=309] <gracefully close start>
+  - [pid=309] <kill>
+  - [pid=309] <will force kill>
+  - [pid=309] exception while trying to kill process: Error: kill ESRCH
+  - [pid=309] <process did exit: exitCode=127, signal=null>
+  - [pid=309] starting temporary directories cleanup
+  - [pid=309] finished temporary directories cleanup
+  - [pid=309] <gracefully close end>
+
+    at Proxy.launch (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/playwright-extra/dist/index.cjs.js:686:54)
+    at async crawl (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/tweet-harvest/dist/bin.js:254:19)
+
+Node.js v18.20.4
+[2026-02-01T18:51:18.414+0700] {logging_mixin.py:190} INFO - ⏳ Istirahat 8.68 detik...
+[2026-02-01T18:51:27.102+0700] {logging_mixin.py:190} INFO - 🐦 Memulai Tweet-Harvest untuk: UNSIKA...
+[2026-02-01T18:51:29.032+0700] {logging_mixin.py:190} INFO - ❌ Error Tweet-Harvest: node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-laRL5V --remote-debugging-pipe --no-startup-window
+<launched> pid=334
+[pid=334][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+Call log:
+  - <launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-laRL5V --remote-debugging-pipe --no-startup-window
+  - <launched> pid=334
+  - [pid=334][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+  - [pid=334] <gracefully close start>
+  - [pid=334] <kill>
+  - [pid=334] <will force kill>
+  - [pid=334] exception while trying to kill process: Error: kill ESRCH
+  - [pid=334] <process did exit: exitCode=127, signal=null>
+  - [pid=334] starting temporary directories cleanup
+  - [pid=334] finished temporary directories cleanup
+  - [pid=334] <gracefully close end>
+
+    at Proxy.launch (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/playwright-extra/dist/index.cjs.js:686:54)
+    at async crawl (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/tweet-harvest/dist/bin.js:254:19)
+
+Node.js v18.20.4
+[2026-02-01T18:51:29.035+0700] {logging_mixin.py:190} INFO - ⏳ Istirahat 6.16 detik...
+[2026-02-01T18:51:35.203+0700] {logging_mixin.py:190} INFO - 🐦 Memulai Tweet-Harvest untuk: Rektor UNSIKA...
+[2026-02-01T18:51:36.962+0700] {logging_mixin.py:190} INFO - ❌ Error Tweet-Harvest: node:internal/process/promises:288
+            triggerUncaughtException(err, true /* fromPromise */);
+            ^
+
+browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-1wdQFs --remote-debugging-pipe --no-startup-window
+<launched> pid=359
+[pid=359][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+Call log:
+  - <launching> /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-update --no-default-browser-check --disable-dev-shm-usage --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-1wdQFs --remote-debugging-pipe --no-startup-window
+  - <launched> pid=359
+  - [pid=359][err] /home/***/.cache/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-linux64/chrome-headless-shell: error while loading shared libraries: libnspr4.so: cannot open shared object file: No such file or directory
+  - [pid=359] <gracefully close start>
+  - [pid=359] <kill>
+  - [pid=359] <will force kill>
+  - [pid=359] exception while trying to kill process: Error: kill ESRCH
+  - [pid=359] <process did exit: exitCode=127, signal=null>
+  - [pid=359] starting temporary directories cleanup
+  - [pid=359] finished temporary directories cleanup
+  - [pid=359] <gracefully close end>
+
+    at Proxy.launch (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/playwright-extra/dist/index.cjs.js:686:54)
+    at async crawl (/home/***/.npm/_npx/d28e8c2154917da4/node_modules/tweet-harvest/dist/bin.js:254:19)
+
+Node.js v18.20.4
+[2026-02-01T18:51:36.963+0700] {logging_mixin.py:190} INFO - ⚠️ Tidak ada tweet baru didapatkan.
+[2026-02-01T18:51:36.968+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-01T18:51:36.987+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-01T18:51:36.988+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=manual__2026-02-01T11:49:59.194907+00:00, execution_date=20260201T114959, start_date=20260201T115000, end_date=20260201T115136
+[2026-02-01T18:51:37.037+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-01T18:51:37.060+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-01T18:51:37.069+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

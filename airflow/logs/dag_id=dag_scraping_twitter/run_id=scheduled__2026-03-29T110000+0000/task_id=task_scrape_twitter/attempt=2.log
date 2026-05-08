@@ -1,0 +1,80 @@
+[2026-04-23T14:26:16.096+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-23T14:26:16.139+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-03-29T11:00:00+00:00 [queued]>
+[2026-04-23T14:26:16.153+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-03-29T11:00:00+00:00 [queued]>
+[2026-04-23T14:26:16.154+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 1
+[2026-04-23T14:26:16.206+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-03-29 11:00:00+00:00
+[2026-04-23T14:26:16.218+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=175) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-23T14:26:16.220+0700] {standard_task_runner.py:72} INFO - Started process 185 to run task
+[2026-04-23T14:26:16.218+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'scheduled__2026-03-29T11:00:00+00:00', '--job-id', '263', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp1e0fhx0t']
+[2026-04-23T14:26:16.223+0700] {standard_task_runner.py:105} INFO - Job 263: Subtask task_scrape_twitter
+[2026-04-23T14:26:16.253+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-04-23T14:26:16.370+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-03-29T11:00:00+00:00 [running]> on host 97661983fdcf
+[2026-04-23T14:26:16.377+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-04-23T14:26:17.041+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-03-29T11:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-29T11:00:00+00:00'
+[2026-04-23T14:26:17.043+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-23T14:26:19.701+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-04-23T14:26:19.795+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 137 tweet.
+[2026-04-23T14:26:19.797+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-04-23T14:39:09.554+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-23T14:39:10.005+0700] {process_utils.py:132} INFO - Sending 15 to group 185. PIDs of all processes in the group: [207, 210, 326, 327, 364, 365, 394, 185]
+[2026-04-23T14:39:10.037+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 185
+[2026-04-23T14:39:10.160+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=394, status='terminated', started='14:27:15') (394) terminated with exit code None
+[2026-04-23T14:39:10.304+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=365, status='terminated', started='14:27:14') (365) terminated with exit code None
+[2026-04-23T14:39:10.253+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-04-23T14:39:10.452+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=326, status='terminated', started='14:27:12') (326) terminated with exit code None
+[2026-04-23T14:39:10.514+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=207, status='terminated', started='14:26:19') (207) terminated with exit code None
+[2026-04-23T14:39:10.689+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=327, status='terminated', started='14:27:12') (327) terminated with exit code None
+[2026-04-23T14:39:11.432+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=364, status='terminated', started='14:27:14') (364) terminated with exit code None
+[2026-04-23T14:39:11.440+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=210, status='terminated', started='14:26:19') (210) terminated with exit code None
+[2026-04-23T14:39:11.364+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_scraping_twitter.py", line 12, in scrape_twitter_wrapper
+    run_twitter_scraping_job()
+  File "/opt/airflow/src/scrapers/twitter_scraper.py", line 85, in run_twitter_scraping_job
+    df = scraper.scrape(keyword, max_items=50)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/scrapers/twitter_scraper.py", line 39, in scrape
+    process = subprocess.run(command, shell=True, capture_output=True, text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 2115, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3085, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-04-23T14:39:11.530+0700] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=scheduled__2026-03-29T11:00:00+00:00, execution_date=20260329T110000, start_date=20260423T072616, end_date=20260423T073911
+[2026-04-23T14:39:11.715+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-04-23T14:39:11.793+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=185, status='terminated', exitcode=2, started='14:26:15') (185) terminated with exit code 2
+[2026-04-23T14:39:11.799+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 143
+[2026-04-23T14:39:12.033+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-23T14:39:12.156+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

@@ -1,0 +1,695 @@
+[2026-02-22T15:23:37.745+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-22T15:23:37.764+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-02-21T17:00:00+00:00 [queued]>
+[2026-02-22T15:23:37.772+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-02-21T17:00:00+00:00 [queued]>
+[2026-02-22T15:23:37.773+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-02-22T15:23:37.827+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-02-21 17:00:00+00:00
+[2026-02-22T15:23:37.841+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=227) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-22T15:23:37.845+0700] {standard_task_runner.py:72} INFO - Started process 236 to run task
+[2026-02-22T15:23:37.842+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-02-21T17:00:00+00:00', '--job-id', '182', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmp5i6x15wp']
+[2026-02-22T15:23:37.846+0700] {standard_task_runner.py:105} INFO - Job 182: Subtask task_process_sentiment
+[2026-02-22T15:23:37.876+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-22T15:23:38.061+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-02-21T17:00:00+00:00 [running]> on host 7392b0285d7c
+[2026-02-22T15:23:38.066+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-22T15:23:38.510+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-02-21T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-21T17:00:00+00:00'
+[2026-02-22T15:23:38.514+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-22T15:24:11.810+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment)...
+[2026-02-22T15:24:11.872+0700] {logging_mixin.py:190} INFO -    📦 Memproses 14 berita baru...
+[2026-02-22T15:24:11.873+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-02-22T15:24:12.445+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:24:12.448+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-02-22T15:24:12.448+0700] {_http.py:779} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-02-22T15:24:12.510+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-02-22T15:24:12.992+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-02-22T15:24:13.375+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/xet-read-token/ac452dcb0f4966130bba44f4ee0013bb5d52c282 "HTTP/1.1 200 OK"
+[2026-02-22T15:25:41.710+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-02-22T15:25:41.712+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 1/201 [00:00<00:00, 4793.49it/s, Materializing param=classifier.dense.bias]
+[2026-02-22T15:25:41.715+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 1/201 [00:00<00:00, 303.10it/s, Materializing param=classifier.dense.bias] 
+[2026-02-22T15:25:41.719+0700] {logging_mixin.py:190} WARNING - Loading weights:   1%|          | 2/201 [00:00<00:00, 278.67it/s, Materializing param=classifier.dense.weight]
+[2026-02-22T15:25:41.722+0700] {logging_mixin.py:190} WARNING - Loading weights:   1%|          | 2/201 [00:00<00:01, 183.31it/s, Materializing param=classifier.dense.weight]
+[2026-02-22T15:25:41.726+0700] {logging_mixin.py:190} WARNING - Loading weights:   1%|1         | 3/201 [00:00<00:00, 211.52it/s, Materializing param=classifier.out_proj.bias]
+[2026-02-22T15:25:41.729+0700] {logging_mixin.py:190} WARNING - Loading weights:   1%|1         | 3/201 [00:00<00:01, 168.88it/s, Materializing param=classifier.out_proj.bias]
+[2026-02-22T15:25:41.732+0700] {logging_mixin.py:190} WARNING - Loading weights:   2%|1         | 4/201 [00:00<00:01, 192.23it/s, Materializing param=classifier.out_proj.weight]
+[2026-02-22T15:25:41.734+0700] {logging_mixin.py:190} WARNING - Loading weights:   2%|1         | 4/201 [00:00<00:01, 174.64it/s, Materializing param=classifier.out_proj.weight]
+[2026-02-22T15:25:41.740+0700] {logging_mixin.py:190} WARNING - Loading weights:   2%|2         | 5/201 [00:00<00:01, 183.23it/s, Materializing param=roberta.embeddings.LayerNorm.bias]
+[2026-02-22T15:25:41.743+0700] {logging_mixin.py:190} WARNING - Loading weights:   2%|2         | 5/201 [00:00<00:01, 158.49it/s, Materializing param=roberta.embeddings.LayerNorm.bias]
+[2026-02-22T15:25:41.748+0700] {logging_mixin.py:190} WARNING - Loading weights:   3%|2         | 6/201 [00:00<00:01, 166.23it/s, Materializing param=roberta.embeddings.LayerNorm.weight]
+[2026-02-22T15:25:41.749+0700] {logging_mixin.py:190} WARNING - Loading weights:   3%|2         | 6/201 [00:00<00:01, 158.14it/s, Materializing param=roberta.embeddings.LayerNorm.weight]
+[2026-02-22T15:25:41.753+0700] {logging_mixin.py:190} WARNING - Loading weights:   3%|3         | 7/201 [00:00<00:01, 168.90it/s, Materializing param=roberta.embeddings.position_embeddings.weight]
+[2026-02-22T15:25:41.756+0700] {logging_mixin.py:190} WARNING - Loading weights:   3%|3         | 7/201 [00:00<00:01, 158.54it/s, Materializing param=roberta.embeddings.position_embeddings.weight]
+[2026-02-22T15:25:41.762+0700] {logging_mixin.py:190} WARNING - Loading weights:   4%|3         | 8/201 [00:00<00:01, 157.81it/s, Materializing param=roberta.embeddings.token_type_embeddings.weight]
+[2026-02-22T15:25:41.764+0700] {logging_mixin.py:190} WARNING - Loading weights:   4%|3         | 8/201 [00:00<00:01, 153.43it/s, Materializing param=roberta.embeddings.token_type_embeddings.weight]
+[2026-02-22T15:25:41.768+0700] {logging_mixin.py:190} WARNING - Loading weights:   4%|4         | 9/201 [00:00<00:01, 159.32it/s, Materializing param=roberta.embeddings.word_embeddings.weight]      
+[2026-02-22T15:25:41.771+0700] {logging_mixin.py:190} WARNING - Loading weights:   4%|4         | 9/201 [00:00<00:01, 149.96it/s, Materializing param=roberta.embeddings.word_embeddings.weight]
+[2026-02-22T15:25:41.775+0700] {logging_mixin.py:190} WARNING - Loading weights:   5%|4         | 10/201 [00:00<00:01, 158.03it/s, Materializing param=roberta.encoder.layer.0.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:41.777+0700] {logging_mixin.py:190} WARNING - Loading weights:   5%|4         | 10/201 [00:00<00:01, 152.52it/s, Materializing param=roberta.encoder.layer.0.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:41.782+0700] {logging_mixin.py:190} WARNING - Loading weights:   5%|5         | 11/201 [00:00<00:01, 156.10it/s, Materializing param=roberta.encoder.layer.0.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:41.784+0700] {logging_mixin.py:190} WARNING - Loading weights:   5%|5         | 11/201 [00:00<00:01, 152.11it/s, Materializing param=roberta.encoder.layer.0.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:41.788+0700] {logging_mixin.py:190} WARNING - Loading weights:   6%|5         | 12/201 [00:00<00:01, 156.63it/s, Materializing param=roberta.encoder.layer.0.attention.output.dense.bias]      
+[2026-02-22T15:25:41.790+0700] {logging_mixin.py:190} WARNING - Loading weights:   6%|5         | 12/201 [00:00<00:01, 152.77it/s, Materializing param=roberta.encoder.layer.0.attention.output.dense.bias]
+[2026-02-22T15:25:41.799+0700] {logging_mixin.py:190} WARNING - Loading weights:   6%|6         | 13/201 [00:00<00:01, 148.97it/s, Materializing param=roberta.encoder.layer.0.attention.output.dense.weight]
+[2026-02-22T15:25:41.801+0700] {logging_mixin.py:190} WARNING - Loading weights:   6%|6         | 13/201 [00:00<00:01, 145.70it/s, Materializing param=roberta.encoder.layer.0.attention.output.dense.weight]
+[2026-02-22T15:25:41.803+0700] {logging_mixin.py:190} WARNING - Loading weights:   7%|6         | 14/201 [00:00<00:01, 152.26it/s, Materializing param=roberta.encoder.layer.0.attention.self.key.bias]      
+[2026-02-22T15:25:41.806+0700] {logging_mixin.py:190} WARNING - Loading weights:   7%|6         | 14/201 [00:00<00:01, 148.55it/s, Materializing param=roberta.encoder.layer.0.attention.self.key.bias]
+[2026-02-22T15:25:41.810+0700] {logging_mixin.py:190} WARNING - Loading weights:   7%|7         | 15/201 [00:00<00:01, 151.83it/s, Materializing param=roberta.encoder.layer.0.attention.self.key.weight]
+[2026-02-22T15:25:41.815+0700] {logging_mixin.py:190} WARNING - Loading weights:   7%|7         | 15/201 [00:00<00:01, 145.60it/s, Materializing param=roberta.encoder.layer.0.attention.self.key.weight]
+[2026-02-22T15:25:41.817+0700] {logging_mixin.py:190} WARNING - Loading weights:   8%|7         | 16/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.key.weight]
+[2026-02-22T15:25:41.819+0700] {logging_mixin.py:190} WARNING - Loading weights:   8%|7         | 16/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.query.bias]
+[2026-02-22T15:25:41.821+0700] {logging_mixin.py:190} WARNING - Loading weights:   8%|7         | 16/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.query.bias]
+[2026-02-22T15:25:41.824+0700] {logging_mixin.py:190} WARNING - Loading weights:   8%|8         | 17/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.query.weight]
+[2026-02-22T15:25:41.827+0700] {logging_mixin.py:190} WARNING - Loading weights:   8%|8         | 17/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.query.weight]
+[2026-02-22T15:25:41.830+0700] {logging_mixin.py:190} WARNING - Loading weights:   9%|8         | 18/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.value.bias]  
+[2026-02-22T15:25:41.832+0700] {logging_mixin.py:190} WARNING - Loading weights:   9%|8         | 18/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.value.bias]
+[2026-02-22T15:25:41.834+0700] {logging_mixin.py:190} WARNING - Loading weights:   9%|9         | 19/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.value.weight]
+[2026-02-22T15:25:41.836+0700] {logging_mixin.py:190} WARNING - Loading weights:   9%|9         | 19/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.attention.self.value.weight]
+[2026-02-22T15:25:41.840+0700] {logging_mixin.py:190} WARNING - Loading weights:  10%|9         | 20/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.intermediate.dense.bias]    
+[2026-02-22T15:25:41.845+0700] {logging_mixin.py:190} WARNING - Loading weights:  10%|9         | 20/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.intermediate.dense.bias]
+[2026-02-22T15:25:41.847+0700] {logging_mixin.py:190} WARNING - Loading weights:  10%|#         | 21/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.intermediate.dense.weight]
+[2026-02-22T15:25:41.849+0700] {logging_mixin.py:190} WARNING - Loading weights:  10%|#         | 21/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.intermediate.dense.weight]
+[2026-02-22T15:25:41.852+0700] {logging_mixin.py:190} WARNING - Loading weights:  11%|#         | 22/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.LayerNorm.bias]    
+[2026-02-22T15:25:41.854+0700] {logging_mixin.py:190} WARNING - Loading weights:  11%|#         | 22/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.LayerNorm.bias]
+[2026-02-22T15:25:41.858+0700] {logging_mixin.py:190} WARNING - Loading weights:  11%|#1        | 23/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.LayerNorm.weight]
+[2026-02-22T15:25:41.862+0700] {logging_mixin.py:190} WARNING - Loading weights:  11%|#1        | 23/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.LayerNorm.weight]
+[2026-02-22T15:25:41.867+0700] {logging_mixin.py:190} WARNING - Loading weights:  12%|#1        | 24/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.dense.bias]      
+[2026-02-22T15:25:41.869+0700] {logging_mixin.py:190} WARNING - Loading weights:  12%|#1        | 24/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.dense.bias]
+[2026-02-22T15:25:41.871+0700] {logging_mixin.py:190} WARNING - Loading weights:  12%|#2        | 25/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.dense.weight]
+[2026-02-22T15:25:41.878+0700] {logging_mixin.py:190} WARNING - Loading weights:  12%|#2        | 25/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.0.output.dense.weight]
+[2026-02-22T15:25:41.881+0700] {logging_mixin.py:190} WARNING - Loading weights:  13%|#2        | 26/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:41.884+0700] {logging_mixin.py:190} WARNING - Loading weights:  13%|#2        | 26/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:41.890+0700] {logging_mixin.py:190} WARNING - Loading weights:  13%|#3        | 27/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:41.900+0700] {logging_mixin.py:190} WARNING - Loading weights:  13%|#3        | 27/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:41.903+0700] {logging_mixin.py:190} WARNING - Loading weights:  14%|#3        | 28/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.dense.bias]      
+[2026-02-22T15:25:41.905+0700] {logging_mixin.py:190} WARNING - Loading weights:  14%|#3        | 28/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.dense.bias]
+[2026-02-22T15:25:41.908+0700] {logging_mixin.py:190} WARNING - Loading weights:  14%|#4        | 29/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.dense.weight]
+[2026-02-22T15:25:41.909+0700] {logging_mixin.py:190} WARNING - Loading weights:  14%|#4        | 29/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.output.dense.weight]
+[2026-02-22T15:25:41.914+0700] {logging_mixin.py:190} WARNING - Loading weights:  15%|#4        | 30/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.self.key.bias]      
+[2026-02-22T15:25:41.916+0700] {logging_mixin.py:190} WARNING - Loading weights:  15%|#4        | 30/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.self.key.bias]
+[2026-02-22T15:25:41.917+0700] {logging_mixin.py:190} WARNING - Loading weights:  15%|#5        | 31/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.self.key.weight]
+[2026-02-22T15:25:41.939+0700] {logging_mixin.py:190} WARNING - Loading weights:  15%|#5        | 31/201 [00:00<00:01, 151.09it/s, Materializing param=roberta.encoder.layer.1.attention.self.key.weight]
+[2026-02-22T15:25:41.957+0700] {logging_mixin.py:190} WARNING - Loading weights:  16%|#5        | 32/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.key.weight]
+[2026-02-22T15:25:41.960+0700] {logging_mixin.py:190} WARNING - Loading weights:  16%|#5        | 32/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.query.bias]
+[2026-02-22T15:25:41.965+0700] {logging_mixin.py:190} WARNING - Loading weights:  16%|#5        | 32/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.query.bias]
+[2026-02-22T15:25:41.967+0700] {logging_mixin.py:190} WARNING - Loading weights:  16%|#6        | 33/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.query.weight]
+[2026-02-22T15:25:41.968+0700] {logging_mixin.py:190} WARNING - Loading weights:  16%|#6        | 33/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.query.weight]
+[2026-02-22T15:25:41.969+0700] {logging_mixin.py:190} WARNING - Loading weights:  17%|#6        | 34/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.value.bias]  
+[2026-02-22T15:25:41.970+0700] {logging_mixin.py:190} WARNING - Loading weights:  17%|#6        | 34/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.value.bias]
+[2026-02-22T15:25:41.971+0700] {logging_mixin.py:190} WARNING - Loading weights:  17%|#7        | 35/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.value.weight]
+[2026-02-22T15:25:41.972+0700] {logging_mixin.py:190} WARNING - Loading weights:  17%|#7        | 35/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.attention.self.value.weight]
+[2026-02-22T15:25:41.973+0700] {logging_mixin.py:190} WARNING - Loading weights:  18%|#7        | 36/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.intermediate.dense.bias]    
+[2026-02-22T15:25:41.974+0700] {logging_mixin.py:190} WARNING - Loading weights:  18%|#7        | 36/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.intermediate.dense.bias]
+[2026-02-22T15:25:41.984+0700] {logging_mixin.py:190} WARNING - Loading weights:  18%|#8        | 37/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.intermediate.dense.weight]
+[2026-02-22T15:25:41.985+0700] {logging_mixin.py:190} WARNING - Loading weights:  18%|#8        | 37/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.intermediate.dense.weight]
+[2026-02-22T15:25:41.986+0700] {logging_mixin.py:190} WARNING - Loading weights:  19%|#8        | 38/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.LayerNorm.bias]    
+[2026-02-22T15:25:41.987+0700] {logging_mixin.py:190} WARNING - Loading weights:  19%|#8        | 38/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.LayerNorm.bias]
+[2026-02-22T15:25:41.989+0700] {logging_mixin.py:190} WARNING - Loading weights:  19%|#9        | 39/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.LayerNorm.weight]
+[2026-02-22T15:25:41.990+0700] {logging_mixin.py:190} WARNING - Loading weights:  19%|#9        | 39/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.LayerNorm.weight]
+[2026-02-22T15:25:41.991+0700] {logging_mixin.py:190} WARNING - Loading weights:  20%|#9        | 40/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.dense.bias]      
+[2026-02-22T15:25:41.994+0700] {logging_mixin.py:190} WARNING - Loading weights:  20%|#9        | 40/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.dense.bias]
+[2026-02-22T15:25:42.002+0700] {logging_mixin.py:190} WARNING - Loading weights:  20%|##        | 41/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.dense.weight]
+[2026-02-22T15:25:42.003+0700] {logging_mixin.py:190} WARNING - Loading weights:  20%|##        | 41/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.1.output.dense.weight]
+[2026-02-22T15:25:42.004+0700] {logging_mixin.py:190} WARNING - Loading weights:  21%|##        | 42/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.005+0700] {logging_mixin.py:190} WARNING - Loading weights:  21%|##        | 42/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.006+0700] {logging_mixin.py:190} WARNING - Loading weights:  21%|##1       | 43/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.007+0700] {logging_mixin.py:190} WARNING - Loading weights:  21%|##1       | 43/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.008+0700] {logging_mixin.py:190} WARNING - Loading weights:  22%|##1       | 44/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.dense.bias]      
+[2026-02-22T15:25:42.009+0700] {logging_mixin.py:190} WARNING - Loading weights:  22%|##1       | 44/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.dense.bias]
+[2026-02-22T15:25:42.010+0700] {logging_mixin.py:190} WARNING - Loading weights:  22%|##2       | 45/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.dense.weight]
+[2026-02-22T15:25:42.011+0700] {logging_mixin.py:190} WARNING - Loading weights:  22%|##2       | 45/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.output.dense.weight]
+[2026-02-22T15:25:42.012+0700] {logging_mixin.py:190} WARNING - Loading weights:  23%|##2       | 46/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.key.bias]      
+[2026-02-22T15:25:42.013+0700] {logging_mixin.py:190} WARNING - Loading weights:  23%|##2       | 46/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.key.bias]
+[2026-02-22T15:25:42.015+0700] {logging_mixin.py:190} WARNING - Loading weights:  23%|##3       | 47/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.key.weight]
+[2026-02-22T15:25:42.016+0700] {logging_mixin.py:190} WARNING - Loading weights:  23%|##3       | 47/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.key.weight]
+[2026-02-22T15:25:42.024+0700] {logging_mixin.py:190} WARNING - Loading weights:  24%|##3       | 48/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.query.bias]
+[2026-02-22T15:25:42.025+0700] {logging_mixin.py:190} WARNING - Loading weights:  24%|##3       | 48/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.query.bias]
+[2026-02-22T15:25:42.027+0700] {logging_mixin.py:190} WARNING - Loading weights:  24%|##4       | 49/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.query.weight]
+[2026-02-22T15:25:42.029+0700] {logging_mixin.py:190} WARNING - Loading weights:  24%|##4       | 49/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.query.weight]
+[2026-02-22T15:25:42.031+0700] {logging_mixin.py:190} WARNING - Loading weights:  25%|##4       | 50/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.value.bias]  
+[2026-02-22T15:25:42.032+0700] {logging_mixin.py:190} WARNING - Loading weights:  25%|##4       | 50/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.value.bias]
+[2026-02-22T15:25:42.033+0700] {logging_mixin.py:190} WARNING - Loading weights:  25%|##5       | 51/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.value.weight]
+[2026-02-22T15:25:42.034+0700] {logging_mixin.py:190} WARNING - Loading weights:  25%|##5       | 51/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.attention.self.value.weight]
+[2026-02-22T15:25:42.035+0700] {logging_mixin.py:190} WARNING - Loading weights:  26%|##5       | 52/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.intermediate.dense.bias]    
+[2026-02-22T15:25:42.037+0700] {logging_mixin.py:190} WARNING - Loading weights:  26%|##5       | 52/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.intermediate.dense.bias]
+[2026-02-22T15:25:42.038+0700] {logging_mixin.py:190} WARNING - Loading weights:  26%|##6       | 53/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.intermediate.dense.weight]
+[2026-02-22T15:25:42.039+0700] {logging_mixin.py:190} WARNING - Loading weights:  26%|##6       | 53/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.intermediate.dense.weight]
+[2026-02-22T15:25:42.040+0700] {logging_mixin.py:190} WARNING - Loading weights:  27%|##6       | 54/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.041+0700] {logging_mixin.py:190} WARNING - Loading weights:  27%|##6       | 54/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.LayerNorm.bias]
+[2026-02-22T15:25:42.042+0700] {logging_mixin.py:190} WARNING - Loading weights:  27%|##7       | 55/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.LayerNorm.weight]
+[2026-02-22T15:25:42.043+0700] {logging_mixin.py:190} WARNING - Loading weights:  27%|##7       | 55/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.LayerNorm.weight]
+[2026-02-22T15:25:42.044+0700] {logging_mixin.py:190} WARNING - Loading weights:  28%|##7       | 56/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.dense.bias]      
+[2026-02-22T15:25:42.045+0700] {logging_mixin.py:190} WARNING - Loading weights:  28%|##7       | 56/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.dense.bias]
+[2026-02-22T15:25:42.046+0700] {logging_mixin.py:190} WARNING - Loading weights:  28%|##8       | 57/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.dense.weight]
+[2026-02-22T15:25:42.047+0700] {logging_mixin.py:190} WARNING - Loading weights:  28%|##8       | 57/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.2.output.dense.weight]
+[2026-02-22T15:25:42.048+0700] {logging_mixin.py:190} WARNING - Loading weights:  29%|##8       | 58/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.049+0700] {logging_mixin.py:190} WARNING - Loading weights:  29%|##8       | 58/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.050+0700] {logging_mixin.py:190} WARNING - Loading weights:  29%|##9       | 59/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.052+0700] {logging_mixin.py:190} WARNING - Loading weights:  29%|##9       | 59/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.054+0700] {logging_mixin.py:190} WARNING - Loading weights:  30%|##9       | 60/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.dense.bias]      
+[2026-02-22T15:25:42.055+0700] {logging_mixin.py:190} WARNING - Loading weights:  30%|##9       | 60/201 [00:00<00:01, 127.52it/s, Materializing param=roberta.encoder.layer.3.attention.output.dense.bias]
+[2026-02-22T15:25:42.058+0700] {logging_mixin.py:190} WARNING - Loading weights:  30%|###       | 61/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.output.dense.bias]
+[2026-02-22T15:25:42.060+0700] {logging_mixin.py:190} WARNING - Loading weights:  30%|###       | 61/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.output.dense.weight]
+[2026-02-22T15:25:42.061+0700] {logging_mixin.py:190} WARNING - Loading weights:  30%|###       | 61/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.output.dense.weight]
+[2026-02-22T15:25:42.062+0700] {logging_mixin.py:190} WARNING - Loading weights:  31%|###       | 62/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.key.bias]      
+[2026-02-22T15:25:42.063+0700] {logging_mixin.py:190} WARNING - Loading weights:  31%|###       | 62/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.key.bias]
+[2026-02-22T15:25:42.064+0700] {logging_mixin.py:190} WARNING - Loading weights:  31%|###1      | 63/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.key.weight]
+[2026-02-22T15:25:42.065+0700] {logging_mixin.py:190} WARNING - Loading weights:  31%|###1      | 63/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.key.weight]
+[2026-02-22T15:25:42.066+0700] {logging_mixin.py:190} WARNING - Loading weights:  32%|###1      | 64/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.query.bias]
+[2026-02-22T15:25:42.067+0700] {logging_mixin.py:190} WARNING - Loading weights:  32%|###1      | 64/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.query.bias]
+[2026-02-22T15:25:42.073+0700] {logging_mixin.py:190} WARNING - Loading weights:  32%|###2      | 65/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.query.weight]
+[2026-02-22T15:25:42.075+0700] {logging_mixin.py:190} WARNING - Loading weights:  32%|###2      | 65/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.query.weight]
+[2026-02-22T15:25:42.077+0700] {logging_mixin.py:190} WARNING - Loading weights:  33%|###2      | 66/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.value.bias]  
+[2026-02-22T15:25:42.078+0700] {logging_mixin.py:190} WARNING - Loading weights:  33%|###2      | 66/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.value.bias]
+[2026-02-22T15:25:42.079+0700] {logging_mixin.py:190} WARNING - Loading weights:  33%|###3      | 67/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.value.weight]
+[2026-02-22T15:25:42.080+0700] {logging_mixin.py:190} WARNING - Loading weights:  33%|###3      | 67/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.attention.self.value.weight]
+[2026-02-22T15:25:42.081+0700] {logging_mixin.py:190} WARNING - Loading weights:  34%|###3      | 68/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.intermediate.dense.bias]    
+[2026-02-22T15:25:42.082+0700] {logging_mixin.py:190} WARNING - Loading weights:  34%|###3      | 68/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.intermediate.dense.bias]
+[2026-02-22T15:25:42.084+0700] {logging_mixin.py:190} WARNING - Loading weights:  34%|###4      | 69/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.intermediate.dense.weight]
+[2026-02-22T15:25:42.085+0700] {logging_mixin.py:190} WARNING - Loading weights:  34%|###4      | 69/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.intermediate.dense.weight]
+[2026-02-22T15:25:42.086+0700] {logging_mixin.py:190} WARNING - Loading weights:  35%|###4      | 70/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.087+0700] {logging_mixin.py:190} WARNING - Loading weights:  35%|###4      | 70/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.LayerNorm.bias]
+[2026-02-22T15:25:42.088+0700] {logging_mixin.py:190} WARNING - Loading weights:  35%|###5      | 71/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.LayerNorm.weight]
+[2026-02-22T15:25:42.089+0700] {logging_mixin.py:190} WARNING - Loading weights:  35%|###5      | 71/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.LayerNorm.weight]
+[2026-02-22T15:25:42.091+0700] {logging_mixin.py:190} WARNING - Loading weights:  36%|###5      | 72/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.dense.bias]      
+[2026-02-22T15:25:42.092+0700] {logging_mixin.py:190} WARNING - Loading weights:  36%|###5      | 72/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.dense.bias]
+[2026-02-22T15:25:42.093+0700] {logging_mixin.py:190} WARNING - Loading weights:  36%|###6      | 73/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.dense.weight]
+[2026-02-22T15:25:42.098+0700] {logging_mixin.py:190} WARNING - Loading weights:  36%|###6      | 73/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.3.output.dense.weight]
+[2026-02-22T15:25:42.099+0700] {logging_mixin.py:190} WARNING - Loading weights:  37%|###6      | 74/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.100+0700] {logging_mixin.py:190} WARNING - Loading weights:  37%|###6      | 74/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.102+0700] {logging_mixin.py:190} WARNING - Loading weights:  37%|###7      | 75/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.103+0700] {logging_mixin.py:190} WARNING - Loading weights:  37%|###7      | 75/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.104+0700] {logging_mixin.py:190} WARNING - Loading weights:  38%|###7      | 76/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.dense.bias]      
+[2026-02-22T15:25:42.105+0700] {logging_mixin.py:190} WARNING - Loading weights:  38%|###7      | 76/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.dense.bias]
+[2026-02-22T15:25:42.107+0700] {logging_mixin.py:190} WARNING - Loading weights:  38%|###8      | 77/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.dense.weight]
+[2026-02-22T15:25:42.108+0700] {logging_mixin.py:190} WARNING - Loading weights:  38%|###8      | 77/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.output.dense.weight]
+[2026-02-22T15:25:42.109+0700] {logging_mixin.py:190} WARNING - Loading weights:  39%|###8      | 78/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.key.bias]      
+[2026-02-22T15:25:42.110+0700] {logging_mixin.py:190} WARNING - Loading weights:  39%|###8      | 78/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.key.bias]
+[2026-02-22T15:25:42.111+0700] {logging_mixin.py:190} WARNING - Loading weights:  39%|###9      | 79/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.key.weight]
+[2026-02-22T15:25:42.112+0700] {logging_mixin.py:190} WARNING - Loading weights:  39%|###9      | 79/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.key.weight]
+[2026-02-22T15:25:42.113+0700] {logging_mixin.py:190} WARNING - Loading weights:  40%|###9      | 80/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.query.bias]
+[2026-02-22T15:25:42.114+0700] {logging_mixin.py:190} WARNING - Loading weights:  40%|###9      | 80/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.query.bias]
+[2026-02-22T15:25:42.115+0700] {logging_mixin.py:190} WARNING - Loading weights:  40%|####      | 81/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.query.weight]
+[2026-02-22T15:25:42.116+0700] {logging_mixin.py:190} WARNING - Loading weights:  40%|####      | 81/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.query.weight]
+[2026-02-22T15:25:42.117+0700] {logging_mixin.py:190} WARNING - Loading weights:  41%|####      | 82/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.value.bias]  
+[2026-02-22T15:25:42.118+0700] {logging_mixin.py:190} WARNING - Loading weights:  41%|####      | 82/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.value.bias]
+[2026-02-22T15:25:42.127+0700] {logging_mixin.py:190} WARNING - Loading weights:  41%|####1     | 83/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.value.weight]
+[2026-02-22T15:25:42.129+0700] {logging_mixin.py:190} WARNING - Loading weights:  41%|####1     | 83/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.attention.self.value.weight]
+[2026-02-22T15:25:42.133+0700] {logging_mixin.py:190} WARNING - Loading weights:  42%|####1     | 84/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.intermediate.dense.bias]    
+[2026-02-22T15:25:42.134+0700] {logging_mixin.py:190} WARNING - Loading weights:  42%|####1     | 84/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.intermediate.dense.bias]
+[2026-02-22T15:25:42.138+0700] {logging_mixin.py:190} WARNING - Loading weights:  42%|####2     | 85/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.intermediate.dense.weight]
+[2026-02-22T15:25:42.139+0700] {logging_mixin.py:190} WARNING - Loading weights:  42%|####2     | 85/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.intermediate.dense.weight]
+[2026-02-22T15:25:42.141+0700] {logging_mixin.py:190} WARNING - Loading weights:  43%|####2     | 86/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.142+0700] {logging_mixin.py:190} WARNING - Loading weights:  43%|####2     | 86/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.LayerNorm.bias]
+[2026-02-22T15:25:42.143+0700] {logging_mixin.py:190} WARNING - Loading weights:  43%|####3     | 87/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.LayerNorm.weight]
+[2026-02-22T15:25:42.144+0700] {logging_mixin.py:190} WARNING - Loading weights:  43%|####3     | 87/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.LayerNorm.weight]
+[2026-02-22T15:25:42.145+0700] {logging_mixin.py:190} WARNING - Loading weights:  44%|####3     | 88/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.dense.bias]      
+[2026-02-22T15:25:42.146+0700] {logging_mixin.py:190} WARNING - Loading weights:  44%|####3     | 88/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.dense.bias]
+[2026-02-22T15:25:42.147+0700] {logging_mixin.py:190} WARNING - Loading weights:  44%|####4     | 89/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.dense.weight]
+[2026-02-22T15:25:42.148+0700] {logging_mixin.py:190} WARNING - Loading weights:  44%|####4     | 89/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.4.output.dense.weight]
+[2026-02-22T15:25:42.149+0700] {logging_mixin.py:190} WARNING - Loading weights:  45%|####4     | 90/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.150+0700] {logging_mixin.py:190} WARNING - Loading weights:  45%|####4     | 90/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.151+0700] {logging_mixin.py:190} WARNING - Loading weights:  45%|####5     | 91/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.152+0700] {logging_mixin.py:190} WARNING - Loading weights:  45%|####5     | 91/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.154+0700] {logging_mixin.py:190} WARNING - Loading weights:  46%|####5     | 92/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.dense.bias]      
+[2026-02-22T15:25:42.156+0700] {logging_mixin.py:190} WARNING - Loading weights:  46%|####5     | 92/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.dense.bias]
+[2026-02-22T15:25:42.158+0700] {logging_mixin.py:190} WARNING - Loading weights:  46%|####6     | 93/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.dense.weight]
+[2026-02-22T15:25:42.162+0700] {logging_mixin.py:190} WARNING - Loading weights:  46%|####6     | 93/201 [00:00<00:00, 191.84it/s, Materializing param=roberta.encoder.layer.5.attention.output.dense.weight]
+[2026-02-22T15:25:42.165+0700] {logging_mixin.py:190} WARNING - Loading weights:  47%|####6     | 94/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.output.dense.weight]
+[2026-02-22T15:25:42.167+0700] {logging_mixin.py:190} WARNING - Loading weights:  47%|####6     | 94/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.key.bias]      
+[2026-02-22T15:25:42.167+0700] {logging_mixin.py:190} WARNING - Loading weights:  47%|####6     | 94/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.key.bias]
+[2026-02-22T15:25:42.169+0700] {logging_mixin.py:190} WARNING - Loading weights:  47%|####7     | 95/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.key.weight]
+[2026-02-22T15:25:42.170+0700] {logging_mixin.py:190} WARNING - Loading weights:  47%|####7     | 95/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.key.weight]
+[2026-02-22T15:25:42.171+0700] {logging_mixin.py:190} WARNING - Loading weights:  48%|####7     | 96/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.query.bias]
+[2026-02-22T15:25:42.172+0700] {logging_mixin.py:190} WARNING - Loading weights:  48%|####7     | 96/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.query.bias]
+[2026-02-22T15:25:42.173+0700] {logging_mixin.py:190} WARNING - Loading weights:  48%|####8     | 97/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.query.weight]
+[2026-02-22T15:25:42.173+0700] {logging_mixin.py:190} WARNING - Loading weights:  48%|####8     | 97/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.query.weight]
+[2026-02-22T15:25:42.174+0700] {logging_mixin.py:190} WARNING - Loading weights:  49%|####8     | 98/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.value.bias]  
+[2026-02-22T15:25:42.175+0700] {logging_mixin.py:190} WARNING - Loading weights:  49%|####8     | 98/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.value.bias]
+[2026-02-22T15:25:42.176+0700] {logging_mixin.py:190} WARNING - Loading weights:  49%|####9     | 99/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.value.weight]
+[2026-02-22T15:25:42.177+0700] {logging_mixin.py:190} WARNING - Loading weights:  49%|####9     | 99/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.attention.self.value.weight]
+[2026-02-22T15:25:42.178+0700] {logging_mixin.py:190} WARNING - Loading weights:  50%|####9     | 100/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.intermediate.dense.bias]   
+[2026-02-22T15:25:42.179+0700] {logging_mixin.py:190} WARNING - Loading weights:  50%|####9     | 100/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.intermediate.dense.bias]
+[2026-02-22T15:25:42.180+0700] {logging_mixin.py:190} WARNING - Loading weights:  50%|#####     | 101/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.intermediate.dense.weight]
+[2026-02-22T15:25:42.181+0700] {logging_mixin.py:190} WARNING - Loading weights:  50%|#####     | 101/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.intermediate.dense.weight]
+[2026-02-22T15:25:42.182+0700] {logging_mixin.py:190} WARNING - Loading weights:  51%|#####     | 102/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.183+0700] {logging_mixin.py:190} WARNING - Loading weights:  51%|#####     | 102/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.LayerNorm.bias]
+[2026-02-22T15:25:42.185+0700] {logging_mixin.py:190} WARNING - Loading weights:  51%|#####1    | 103/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.LayerNorm.weight]
+[2026-02-22T15:25:42.186+0700] {logging_mixin.py:190} WARNING - Loading weights:  51%|#####1    | 103/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.LayerNorm.weight]
+[2026-02-22T15:25:42.187+0700] {logging_mixin.py:190} WARNING - Loading weights:  52%|#####1    | 104/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.dense.bias]      
+[2026-02-22T15:25:42.188+0700] {logging_mixin.py:190} WARNING - Loading weights:  52%|#####1    | 104/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.dense.bias]
+[2026-02-22T15:25:42.189+0700] {logging_mixin.py:190} WARNING - Loading weights:  52%|#####2    | 105/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.dense.weight]
+[2026-02-22T15:25:42.190+0700] {logging_mixin.py:190} WARNING - Loading weights:  52%|#####2    | 105/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.5.output.dense.weight]
+[2026-02-22T15:25:42.191+0700] {logging_mixin.py:190} WARNING - Loading weights:  53%|#####2    | 106/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.192+0700] {logging_mixin.py:190} WARNING - Loading weights:  53%|#####2    | 106/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.193+0700] {logging_mixin.py:190} WARNING - Loading weights:  53%|#####3    | 107/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.194+0700] {logging_mixin.py:190} WARNING - Loading weights:  53%|#####3    | 107/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.195+0700] {logging_mixin.py:190} WARNING - Loading weights:  54%|#####3    | 108/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.dense.bias]      
+[2026-02-22T15:25:42.196+0700] {logging_mixin.py:190} WARNING - Loading weights:  54%|#####3    | 108/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.dense.bias]
+[2026-02-22T15:25:42.204+0700] {logging_mixin.py:190} WARNING - Loading weights:  54%|#####4    | 109/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.dense.weight]
+[2026-02-22T15:25:42.205+0700] {logging_mixin.py:190} WARNING - Loading weights:  54%|#####4    | 109/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.output.dense.weight]
+[2026-02-22T15:25:42.207+0700] {logging_mixin.py:190} WARNING - Loading weights:  55%|#####4    | 110/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.key.bias]      
+[2026-02-22T15:25:42.208+0700] {logging_mixin.py:190} WARNING - Loading weights:  55%|#####4    | 110/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.key.bias]
+[2026-02-22T15:25:42.209+0700] {logging_mixin.py:190} WARNING - Loading weights:  55%|#####5    | 111/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.key.weight]
+[2026-02-22T15:25:42.210+0700] {logging_mixin.py:190} WARNING - Loading weights:  55%|#####5    | 111/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.key.weight]
+[2026-02-22T15:25:42.211+0700] {logging_mixin.py:190} WARNING - Loading weights:  56%|#####5    | 112/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.query.bias]
+[2026-02-22T15:25:42.212+0700] {logging_mixin.py:190} WARNING - Loading weights:  56%|#####5    | 112/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.query.bias]
+[2026-02-22T15:25:42.213+0700] {logging_mixin.py:190} WARNING - Loading weights:  56%|#####6    | 113/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.query.weight]
+[2026-02-22T15:25:42.214+0700] {logging_mixin.py:190} WARNING - Loading weights:  56%|#####6    | 113/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.query.weight]
+[2026-02-22T15:25:42.215+0700] {logging_mixin.py:190} WARNING - Loading weights:  57%|#####6    | 114/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.value.bias]  
+[2026-02-22T15:25:42.216+0700] {logging_mixin.py:190} WARNING - Loading weights:  57%|#####6    | 114/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.value.bias]
+[2026-02-22T15:25:42.217+0700] {logging_mixin.py:190} WARNING - Loading weights:  57%|#####7    | 115/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.value.weight]
+[2026-02-22T15:25:42.218+0700] {logging_mixin.py:190} WARNING - Loading weights:  57%|#####7    | 115/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.attention.self.value.weight]
+[2026-02-22T15:25:42.221+0700] {logging_mixin.py:190} WARNING - Loading weights:  58%|#####7    | 116/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.intermediate.dense.bias]    
+[2026-02-22T15:25:42.226+0700] {logging_mixin.py:190} WARNING - Loading weights:  58%|#####7    | 116/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.intermediate.dense.bias]
+[2026-02-22T15:25:42.228+0700] {logging_mixin.py:190} WARNING - Loading weights:  58%|#####8    | 117/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.intermediate.dense.weight]
+[2026-02-22T15:25:42.228+0700] {logging_mixin.py:190} WARNING - Loading weights:  58%|#####8    | 117/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.intermediate.dense.weight]
+[2026-02-22T15:25:42.230+0700] {logging_mixin.py:190} WARNING - Loading weights:  59%|#####8    | 118/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.230+0700] {logging_mixin.py:190} WARNING - Loading weights:  59%|#####8    | 118/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.LayerNorm.bias]
+[2026-02-22T15:25:42.231+0700] {logging_mixin.py:190} WARNING - Loading weights:  59%|#####9    | 119/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.LayerNorm.weight]
+[2026-02-22T15:25:42.232+0700] {logging_mixin.py:190} WARNING - Loading weights:  59%|#####9    | 119/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.LayerNorm.weight]
+[2026-02-22T15:25:42.233+0700] {logging_mixin.py:190} WARNING - Loading weights:  60%|#####9    | 120/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.dense.bias]      
+[2026-02-22T15:25:42.234+0700] {logging_mixin.py:190} WARNING - Loading weights:  60%|#####9    | 120/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.dense.bias]
+[2026-02-22T15:25:42.235+0700] {logging_mixin.py:190} WARNING - Loading weights:  60%|######    | 121/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.dense.weight]
+[2026-02-22T15:25:42.236+0700] {logging_mixin.py:190} WARNING - Loading weights:  60%|######    | 121/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.6.output.dense.weight]
+[2026-02-22T15:25:42.237+0700] {logging_mixin.py:190} WARNING - Loading weights:  61%|######    | 122/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.238+0700] {logging_mixin.py:190} WARNING - Loading weights:  61%|######    | 122/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.239+0700] {logging_mixin.py:190} WARNING - Loading weights:  61%|######1   | 123/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.240+0700] {logging_mixin.py:190} WARNING - Loading weights:  61%|######1   | 123/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.241+0700] {logging_mixin.py:190} WARNING - Loading weights:  62%|######1   | 124/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.dense.bias]      
+[2026-02-22T15:25:42.242+0700] {logging_mixin.py:190} WARNING - Loading weights:  62%|######1   | 124/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.dense.bias]
+[2026-02-22T15:25:42.243+0700] {logging_mixin.py:190} WARNING - Loading weights:  62%|######2   | 125/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.dense.weight]
+[2026-02-22T15:25:42.244+0700] {logging_mixin.py:190} WARNING - Loading weights:  62%|######2   | 125/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.output.dense.weight]
+[2026-02-22T15:25:42.246+0700] {logging_mixin.py:190} WARNING - Loading weights:  63%|######2   | 126/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.key.bias]      
+[2026-02-22T15:25:42.246+0700] {logging_mixin.py:190} WARNING - Loading weights:  63%|######2   | 126/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.key.bias]
+[2026-02-22T15:25:42.248+0700] {logging_mixin.py:190} WARNING - Loading weights:  63%|######3   | 127/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.key.weight]
+[2026-02-22T15:25:42.250+0700] {logging_mixin.py:190} WARNING - Loading weights:  63%|######3   | 127/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.key.weight]
+[2026-02-22T15:25:42.251+0700] {logging_mixin.py:190} WARNING - Loading weights:  64%|######3   | 128/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.query.bias]
+[2026-02-22T15:25:42.252+0700] {logging_mixin.py:190} WARNING - Loading weights:  64%|######3   | 128/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.query.bias]
+[2026-02-22T15:25:42.253+0700] {logging_mixin.py:190} WARNING - Loading weights:  64%|######4   | 129/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.query.weight]
+[2026-02-22T15:25:42.253+0700] {logging_mixin.py:190} WARNING - Loading weights:  64%|######4   | 129/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.query.weight]
+[2026-02-22T15:25:42.255+0700] {logging_mixin.py:190} WARNING - Loading weights:  65%|######4   | 130/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.value.bias]  
+[2026-02-22T15:25:42.255+0700] {logging_mixin.py:190} WARNING - Loading weights:  65%|######4   | 130/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.value.bias]
+[2026-02-22T15:25:42.256+0700] {logging_mixin.py:190} WARNING - Loading weights:  65%|######5   | 131/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.value.weight]
+[2026-02-22T15:25:42.257+0700] {logging_mixin.py:190} WARNING - Loading weights:  65%|######5   | 131/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.attention.self.value.weight]
+[2026-02-22T15:25:42.258+0700] {logging_mixin.py:190} WARNING - Loading weights:  66%|######5   | 132/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.intermediate.dense.bias]    
+[2026-02-22T15:25:42.260+0700] {logging_mixin.py:190} WARNING - Loading weights:  66%|######5   | 132/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.intermediate.dense.bias]
+[2026-02-22T15:25:42.263+0700] {logging_mixin.py:190} WARNING - Loading weights:  66%|######6   | 133/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.intermediate.dense.weight]
+[2026-02-22T15:25:42.265+0700] {logging_mixin.py:190} WARNING - Loading weights:  66%|######6   | 133/201 [00:00<00:00, 235.76it/s, Materializing param=roberta.encoder.layer.7.intermediate.dense.weight]
+[2026-02-22T15:25:42.273+0700] {logging_mixin.py:190} WARNING - Loading weights:  67%|######6   | 134/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.intermediate.dense.weight]
+[2026-02-22T15:25:42.274+0700] {logging_mixin.py:190} WARNING - Loading weights:  67%|######6   | 134/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.275+0700] {logging_mixin.py:190} WARNING - Loading weights:  67%|######6   | 134/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.LayerNorm.bias]
+[2026-02-22T15:25:42.277+0700] {logging_mixin.py:190} WARNING - Loading weights:  67%|######7   | 135/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.LayerNorm.weight]
+[2026-02-22T15:25:42.278+0700] {logging_mixin.py:190} WARNING - Loading weights:  67%|######7   | 135/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.LayerNorm.weight]
+[2026-02-22T15:25:42.279+0700] {logging_mixin.py:190} WARNING - Loading weights:  68%|######7   | 136/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.dense.bias]      
+[2026-02-22T15:25:42.280+0700] {logging_mixin.py:190} WARNING - Loading weights:  68%|######7   | 136/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.dense.bias]
+[2026-02-22T15:25:42.281+0700] {logging_mixin.py:190} WARNING - Loading weights:  68%|######8   | 137/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.dense.weight]
+[2026-02-22T15:25:42.282+0700] {logging_mixin.py:190} WARNING - Loading weights:  68%|######8   | 137/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.7.output.dense.weight]
+[2026-02-22T15:25:42.283+0700] {logging_mixin.py:190} WARNING - Loading weights:  69%|######8   | 138/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.294+0700] {logging_mixin.py:190} WARNING - Loading weights:  69%|######8   | 138/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.295+0700] {logging_mixin.py:190} WARNING - Loading weights:  69%|######9   | 139/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.296+0700] {logging_mixin.py:190} WARNING - Loading weights:  69%|######9   | 139/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.296+0700] {logging_mixin.py:190} WARNING - Loading weights:  70%|######9   | 140/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.dense.bias]      
+[2026-02-22T15:25:42.297+0700] {logging_mixin.py:190} WARNING - Loading weights:  70%|######9   | 140/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.dense.bias]
+[2026-02-22T15:25:42.298+0700] {logging_mixin.py:190} WARNING - Loading weights:  70%|#######   | 141/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.dense.weight]
+[2026-02-22T15:25:42.299+0700] {logging_mixin.py:190} WARNING - Loading weights:  70%|#######   | 141/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.output.dense.weight]
+[2026-02-22T15:25:42.300+0700] {logging_mixin.py:190} WARNING - Loading weights:  71%|#######   | 142/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.key.bias]      
+[2026-02-22T15:25:42.301+0700] {logging_mixin.py:190} WARNING - Loading weights:  71%|#######   | 142/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.key.bias]
+[2026-02-22T15:25:42.305+0700] {logging_mixin.py:190} WARNING - Loading weights:  71%|#######1  | 143/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.key.weight]
+[2026-02-22T15:25:42.307+0700] {logging_mixin.py:190} WARNING - Loading weights:  71%|#######1  | 143/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.key.weight]
+[2026-02-22T15:25:42.310+0700] {logging_mixin.py:190} WARNING - Loading weights:  72%|#######1  | 144/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.query.bias]
+[2026-02-22T15:25:42.311+0700] {logging_mixin.py:190} WARNING - Loading weights:  72%|#######1  | 144/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.query.bias]
+[2026-02-22T15:25:42.313+0700] {logging_mixin.py:190} WARNING - Loading weights:  72%|#######2  | 145/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.query.weight]
+[2026-02-22T15:25:42.314+0700] {logging_mixin.py:190} WARNING - Loading weights:  72%|#######2  | 145/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.query.weight]
+[2026-02-22T15:25:42.315+0700] {logging_mixin.py:190} WARNING - Loading weights:  73%|#######2  | 146/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.value.bias]  
+[2026-02-22T15:25:42.316+0700] {logging_mixin.py:190} WARNING - Loading weights:  73%|#######2  | 146/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.value.bias]
+[2026-02-22T15:25:42.317+0700] {logging_mixin.py:190} WARNING - Loading weights:  73%|#######3  | 147/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.value.weight]
+[2026-02-22T15:25:42.324+0700] {logging_mixin.py:190} WARNING - Loading weights:  73%|#######3  | 147/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.attention.self.value.weight]
+[2026-02-22T15:25:42.326+0700] {logging_mixin.py:190} WARNING - Loading weights:  74%|#######3  | 148/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.intermediate.dense.bias]    
+[2026-02-22T15:25:42.328+0700] {logging_mixin.py:190} WARNING - Loading weights:  74%|#######3  | 148/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.intermediate.dense.bias]
+[2026-02-22T15:25:42.329+0700] {logging_mixin.py:190} WARNING - Loading weights:  74%|#######4  | 149/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.intermediate.dense.weight]
+[2026-02-22T15:25:42.330+0700] {logging_mixin.py:190} WARNING - Loading weights:  74%|#######4  | 149/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.intermediate.dense.weight]
+[2026-02-22T15:25:42.331+0700] {logging_mixin.py:190} WARNING - Loading weights:  75%|#######4  | 150/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.332+0700] {logging_mixin.py:190} WARNING - Loading weights:  75%|#######4  | 150/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.LayerNorm.bias]
+[2026-02-22T15:25:42.334+0700] {logging_mixin.py:190} WARNING - Loading weights:  75%|#######5  | 151/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.LayerNorm.weight]
+[2026-02-22T15:25:42.334+0700] {logging_mixin.py:190} WARNING - Loading weights:  75%|#######5  | 151/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.LayerNorm.weight]
+[2026-02-22T15:25:42.335+0700] {logging_mixin.py:190} WARNING - Loading weights:  76%|#######5  | 152/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.dense.bias]      
+[2026-02-22T15:25:42.336+0700] {logging_mixin.py:190} WARNING - Loading weights:  76%|#######5  | 152/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.dense.bias]
+[2026-02-22T15:25:42.338+0700] {logging_mixin.py:190} WARNING - Loading weights:  76%|#######6  | 153/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.dense.weight]
+[2026-02-22T15:25:42.338+0700] {logging_mixin.py:190} WARNING - Loading weights:  76%|#######6  | 153/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.8.output.dense.weight]
+[2026-02-22T15:25:42.340+0700] {logging_mixin.py:190} WARNING - Loading weights:  77%|#######6  | 154/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.341+0700] {logging_mixin.py:190} WARNING - Loading weights:  77%|#######6  | 154/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.345+0700] {logging_mixin.py:190} WARNING - Loading weights:  77%|#######7  | 155/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.349+0700] {logging_mixin.py:190} WARNING - Loading weights:  77%|#######7  | 155/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.351+0700] {logging_mixin.py:190} WARNING - Loading weights:  78%|#######7  | 156/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.dense.bias]      
+[2026-02-22T15:25:42.352+0700] {logging_mixin.py:190} WARNING - Loading weights:  78%|#######7  | 156/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.dense.bias]
+[2026-02-22T15:25:42.353+0700] {logging_mixin.py:190} WARNING - Loading weights:  78%|#######8  | 157/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.dense.weight]
+[2026-02-22T15:25:42.354+0700] {logging_mixin.py:190} WARNING - Loading weights:  78%|#######8  | 157/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.output.dense.weight]
+[2026-02-22T15:25:42.355+0700] {logging_mixin.py:190} WARNING - Loading weights:  79%|#######8  | 158/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.key.bias]      
+[2026-02-22T15:25:42.356+0700] {logging_mixin.py:190} WARNING - Loading weights:  79%|#######8  | 158/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.key.bias]
+[2026-02-22T15:25:42.357+0700] {logging_mixin.py:190} WARNING - Loading weights:  79%|#######9  | 159/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.key.weight]
+[2026-02-22T15:25:42.358+0700] {logging_mixin.py:190} WARNING - Loading weights:  79%|#######9  | 159/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.key.weight]
+[2026-02-22T15:25:42.359+0700] {logging_mixin.py:190} WARNING - Loading weights:  80%|#######9  | 160/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.query.bias]
+[2026-02-22T15:25:42.360+0700] {logging_mixin.py:190} WARNING - Loading weights:  80%|#######9  | 160/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.query.bias]
+[2026-02-22T15:25:42.361+0700] {logging_mixin.py:190} WARNING - Loading weights:  80%|########  | 161/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.query.weight]
+[2026-02-22T15:25:42.362+0700] {logging_mixin.py:190} WARNING - Loading weights:  80%|########  | 161/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.query.weight]
+[2026-02-22T15:25:42.364+0700] {logging_mixin.py:190} WARNING - Loading weights:  81%|########  | 162/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.value.bias]  
+[2026-02-22T15:25:42.364+0700] {logging_mixin.py:190} WARNING - Loading weights:  81%|########  | 162/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.value.bias]
+[2026-02-22T15:25:42.366+0700] {logging_mixin.py:190} WARNING - Loading weights:  81%|########1 | 163/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.value.weight]
+[2026-02-22T15:25:42.367+0700] {logging_mixin.py:190} WARNING - Loading weights:  81%|########1 | 163/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.attention.self.value.weight]
+[2026-02-22T15:25:42.369+0700] {logging_mixin.py:190} WARNING - Loading weights:  82%|########1 | 164/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.intermediate.dense.bias]    
+[2026-02-22T15:25:42.370+0700] {logging_mixin.py:190} WARNING - Loading weights:  82%|########1 | 164/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.intermediate.dense.bias]
+[2026-02-22T15:25:42.371+0700] {logging_mixin.py:190} WARNING - Loading weights:  82%|########2 | 165/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.intermediate.dense.weight]
+[2026-02-22T15:25:42.372+0700] {logging_mixin.py:190} WARNING - Loading weights:  82%|########2 | 165/201 [00:00<00:00, 283.57it/s, Materializing param=roberta.encoder.layer.9.intermediate.dense.weight]
+[2026-02-22T15:25:42.381+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########2 | 166/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.intermediate.dense.weight]
+[2026-02-22T15:25:42.382+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########2 | 166/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.383+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########2 | 166/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.LayerNorm.bias]
+[2026-02-22T15:25:42.385+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########3 | 167/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.LayerNorm.weight]
+[2026-02-22T15:25:42.386+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########3 | 167/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.LayerNorm.weight]
+[2026-02-22T15:25:42.387+0700] {logging_mixin.py:190} WARNING - Loading weights:  84%|########3 | 168/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.dense.bias]      
+[2026-02-22T15:25:42.388+0700] {logging_mixin.py:190} WARNING - Loading weights:  84%|########3 | 168/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.dense.bias]
+[2026-02-22T15:25:42.390+0700] {logging_mixin.py:190} WARNING - Loading weights:  84%|########4 | 169/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.dense.weight]
+[2026-02-22T15:25:42.392+0700] {logging_mixin.py:190} WARNING - Loading weights:  84%|########4 | 169/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.9.output.dense.weight]
+[2026-02-22T15:25:42.393+0700] {logging_mixin.py:190} WARNING - Loading weights:  85%|########4 | 170/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.394+0700] {logging_mixin.py:190} WARNING - Loading weights:  85%|########4 | 170/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.396+0700] {logging_mixin.py:190} WARNING - Loading weights:  85%|########5 | 171/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.398+0700] {logging_mixin.py:190} WARNING - Loading weights:  85%|########5 | 171/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.399+0700] {logging_mixin.py:190} WARNING - Loading weights:  86%|########5 | 172/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.dense.bias]      
+[2026-02-22T15:25:42.406+0700] {logging_mixin.py:190} WARNING - Loading weights:  86%|########5 | 172/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.dense.bias]
+[2026-02-22T15:25:42.407+0700] {logging_mixin.py:190} WARNING - Loading weights:  86%|########6 | 173/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.dense.weight]
+[2026-02-22T15:25:42.409+0700] {logging_mixin.py:190} WARNING - Loading weights:  86%|########6 | 173/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.output.dense.weight]
+[2026-02-22T15:25:42.410+0700] {logging_mixin.py:190} WARNING - Loading weights:  87%|########6 | 174/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.key.bias]      
+[2026-02-22T15:25:42.411+0700] {logging_mixin.py:190} WARNING - Loading weights:  87%|########6 | 174/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.key.bias]
+[2026-02-22T15:25:42.413+0700] {logging_mixin.py:190} WARNING - Loading weights:  87%|########7 | 175/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.key.weight]
+[2026-02-22T15:25:42.413+0700] {logging_mixin.py:190} WARNING - Loading weights:  87%|########7 | 175/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.key.weight]
+[2026-02-22T15:25:42.415+0700] {logging_mixin.py:190} WARNING - Loading weights:  88%|########7 | 176/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.query.bias]
+[2026-02-22T15:25:42.416+0700] {logging_mixin.py:190} WARNING - Loading weights:  88%|########7 | 176/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.query.bias]
+[2026-02-22T15:25:42.418+0700] {logging_mixin.py:190} WARNING - Loading weights:  88%|########8 | 177/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.query.weight]
+[2026-02-22T15:25:42.419+0700] {logging_mixin.py:190} WARNING - Loading weights:  88%|########8 | 177/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.query.weight]
+[2026-02-22T15:25:42.420+0700] {logging_mixin.py:190} WARNING - Loading weights:  89%|########8 | 178/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.value.bias]  
+[2026-02-22T15:25:42.421+0700] {logging_mixin.py:190} WARNING - Loading weights:  89%|########8 | 178/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.value.bias]
+[2026-02-22T15:25:42.422+0700] {logging_mixin.py:190} WARNING - Loading weights:  89%|########9 | 179/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.value.weight]
+[2026-02-22T15:25:42.454+0700] {logging_mixin.py:190} WARNING - Loading weights:  89%|########9 | 179/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.attention.self.value.weight]
+[2026-02-22T15:25:42.459+0700] {logging_mixin.py:190} WARNING - Loading weights:  90%|########9 | 180/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.intermediate.dense.bias]    
+[2026-02-22T15:25:42.463+0700] {logging_mixin.py:190} WARNING - Loading weights:  90%|########9 | 180/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.intermediate.dense.bias]
+[2026-02-22T15:25:42.465+0700] {logging_mixin.py:190} WARNING - Loading weights:  90%|######### | 181/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.intermediate.dense.weight]
+[2026-02-22T15:25:42.466+0700] {logging_mixin.py:190} WARNING - Loading weights:  90%|######### | 181/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.intermediate.dense.weight]
+[2026-02-22T15:25:42.468+0700] {logging_mixin.py:190} WARNING - Loading weights:  91%|######### | 182/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.469+0700] {logging_mixin.py:190} WARNING - Loading weights:  91%|######### | 182/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.LayerNorm.bias]
+[2026-02-22T15:25:42.470+0700] {logging_mixin.py:190} WARNING - Loading weights:  91%|#########1| 183/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.LayerNorm.weight]
+[2026-02-22T15:25:42.471+0700] {logging_mixin.py:190} WARNING - Loading weights:  91%|#########1| 183/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.LayerNorm.weight]
+[2026-02-22T15:25:42.472+0700] {logging_mixin.py:190} WARNING - Loading weights:  92%|#########1| 184/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.dense.bias]      
+[2026-02-22T15:25:42.473+0700] {logging_mixin.py:190} WARNING - Loading weights:  92%|#########1| 184/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.dense.bias]
+[2026-02-22T15:25:42.475+0700] {logging_mixin.py:190} WARNING - Loading weights:  92%|#########2| 185/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.dense.weight]
+[2026-02-22T15:25:42.482+0700] {logging_mixin.py:190} WARNING - Loading weights:  92%|#########2| 185/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.10.output.dense.weight]
+[2026-02-22T15:25:42.484+0700] {logging_mixin.py:190} WARNING - Loading weights:  93%|#########2| 186/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.485+0700] {logging_mixin.py:190} WARNING - Loading weights:  93%|#########2| 186/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.LayerNorm.bias]
+[2026-02-22T15:25:42.487+0700] {logging_mixin.py:190} WARNING - Loading weights:  93%|#########3| 187/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.488+0700] {logging_mixin.py:190} WARNING - Loading weights:  93%|#########3| 187/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.LayerNorm.weight]
+[2026-02-22T15:25:42.489+0700] {logging_mixin.py:190} WARNING - Loading weights:  94%|#########3| 188/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.dense.bias]      
+[2026-02-22T15:25:42.490+0700] {logging_mixin.py:190} WARNING - Loading weights:  94%|#########3| 188/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.dense.bias]
+[2026-02-22T15:25:42.491+0700] {logging_mixin.py:190} WARNING - Loading weights:  94%|#########4| 189/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.dense.weight]
+[2026-02-22T15:25:42.492+0700] {logging_mixin.py:190} WARNING - Loading weights:  94%|#########4| 189/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.output.dense.weight]
+[2026-02-22T15:25:42.494+0700] {logging_mixin.py:190} WARNING - Loading weights:  95%|#########4| 190/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.key.bias]      
+[2026-02-22T15:25:42.496+0700] {logging_mixin.py:190} WARNING - Loading weights:  95%|#########4| 190/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.key.bias]
+[2026-02-22T15:25:42.498+0700] {logging_mixin.py:190} WARNING - Loading weights:  95%|#########5| 191/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.key.weight]
+[2026-02-22T15:25:42.499+0700] {logging_mixin.py:190} WARNING - Loading weights:  95%|#########5| 191/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.key.weight]
+[2026-02-22T15:25:42.500+0700] {logging_mixin.py:190} WARNING - Loading weights:  96%|#########5| 192/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.query.bias]
+[2026-02-22T15:25:42.509+0700] {logging_mixin.py:190} WARNING - Loading weights:  96%|#########5| 192/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.query.bias]
+[2026-02-22T15:25:42.510+0700] {logging_mixin.py:190} WARNING - Loading weights:  96%|#########6| 193/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.query.weight]
+[2026-02-22T15:25:42.511+0700] {logging_mixin.py:190} WARNING - Loading weights:  96%|#########6| 193/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.query.weight]
+[2026-02-22T15:25:42.512+0700] {logging_mixin.py:190} WARNING - Loading weights:  97%|#########6| 194/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.value.bias]  
+[2026-02-22T15:25:42.513+0700] {logging_mixin.py:190} WARNING - Loading weights:  97%|#########6| 194/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.value.bias]
+[2026-02-22T15:25:42.515+0700] {logging_mixin.py:190} WARNING - Loading weights:  97%|#########7| 195/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.value.weight]
+[2026-02-22T15:25:42.516+0700] {logging_mixin.py:190} WARNING - Loading weights:  97%|#########7| 195/201 [00:00<00:00, 288.25it/s, Materializing param=roberta.encoder.layer.11.attention.self.value.weight]
+[2026-02-22T15:25:42.525+0700] {logging_mixin.py:190} WARNING - Loading weights:  98%|#########7| 196/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.attention.self.value.weight]
+[2026-02-22T15:25:42.526+0700] {logging_mixin.py:190} WARNING - Loading weights:  98%|#########7| 196/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.intermediate.dense.bias]    
+[2026-02-22T15:25:42.527+0700] {logging_mixin.py:190} WARNING - Loading weights:  98%|#########7| 196/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.intermediate.dense.bias]
+[2026-02-22T15:25:42.529+0700] {logging_mixin.py:190} WARNING - Loading weights:  98%|#########8| 197/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.intermediate.dense.weight]
+[2026-02-22T15:25:42.530+0700] {logging_mixin.py:190} WARNING - Loading weights:  98%|#########8| 197/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.intermediate.dense.weight]
+[2026-02-22T15:25:42.531+0700] {logging_mixin.py:190} WARNING - Loading weights:  99%|#########8| 198/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.LayerNorm.bias]    
+[2026-02-22T15:25:42.532+0700] {logging_mixin.py:190} WARNING - Loading weights:  99%|#########8| 198/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.LayerNorm.bias]
+[2026-02-22T15:25:42.534+0700] {logging_mixin.py:190} WARNING - Loading weights:  99%|#########9| 199/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.LayerNorm.weight]
+[2026-02-22T15:25:42.544+0700] {logging_mixin.py:190} WARNING - Loading weights:  99%|#########9| 199/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.LayerNorm.weight]
+[2026-02-22T15:25:42.546+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|#########9| 200/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.dense.bias]      
+[2026-02-22T15:25:42.550+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|#########9| 200/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.dense.bias]
+[2026-02-22T15:25:42.553+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.dense.weight]
+[2026-02-22T15:25:42.557+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 256.52it/s, Materializing param=roberta.encoder.layer.11.output.dense.weight]
+[2026-02-22T15:25:42.561+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 236.72it/s, Materializing param=roberta.encoder.layer.11.output.dense.weight]
+[2026-02-22T15:25:42.598+0700] {logging_mixin.py:190} WARNING - RobertaForSequenceClassification LOAD REPORT from: w11wo/indonesian-roberta-base-sentiment-classifier
+Key                             | Status     |  | 
+--------------------------------+------------+--+-
+roberta.embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[2026-02-22T15:25:43.116+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:25:43.144+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-02-22T15:25:43.478+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-02-22T15:25:43.770+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-22T15:25:44.051+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:25:44.076+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/vocab.json "HTTP/1.1 200 OK"
+[2026-02-22T15:25:44.414+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:25:44.454+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/merges.txt "HTTP/1.1 200 OK"
+[2026-02-22T15:25:44.909+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:25:44.938+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer.json "HTTP/1.1 200 OK"
+[2026-02-22T15:25:45.298+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-02-22T15:25:45.622+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-22T15:25:45.664+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-02-22T15:25:45.998+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-02-22T15:25:47.634+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'SMK PGRI 2 Kotabaru Wajibkan P...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:48.315+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Puluhan Murid di SDN Karangjay...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:48.795+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Unsika Awali Rangkaian Dies Na...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:49.128+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Penyaluran Beasiswa Sebagai Wu...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:49.602+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Warga Dawuan Minta Kang Dedi B...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:50.129+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Puluhan Emak-emak Geruduk SMAN...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:50.548+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'SMKN 1 Tirtamulya Bantah Tahan...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:50.861+0700] {logging_mixin.py:190} INFO -    ✨ FIX: '32 Universitas Jadi Pilihan Ex...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:51.245+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'SMAN 1 Cikampek Gelar Hajat Bu...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:51.540+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Psikologi UBP Karawang Studi B...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:51.837+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'SMA Negeri 3 Cikampek Terpilih...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:52.128+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Padepokan Pencak Silat Bajing ...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:52.450+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Saan Mustopa: Mahasiswa Jangan...' | AI: neutral -> SMART: Neutral
+[2026-02-22T15:25:52.997+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Mencicipi Masakan di Waroeng M...' | AI: positive -> SMART: Positive
+[2026-02-22T15:25:53.018+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "news_processed_news_id_key"
+DETAIL:  Key (news_id)=(580) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_scraping_daily.py", line 21, in process_news_wrapper
+    run_news_processing()
+  File "/opt/airflow/src/processing/process_news.py", line 127, in run_news_processing
+    df_result.to_sql('news_processed', engine, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3008, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 788, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1958, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1507, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1498, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1059, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 951, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "news_processed_news_id_key"
+DETAIL:  Key (news_id)=(580) already exists.
+
+[SQL: INSERT INTO news_processed (news_id, clean_text, sentiment_label, sentiment_score, processed_at) VALUES (%(news_id)s, %(clean_text)s, %(sentiment_label)s, %(sentiment_score)s, %(processed_at)s)]
+[parameters: ({'news_id': 580, 'clean_text': 'SMK PGRI 2 Kotabaru Wajibkan Pengambilan Ijazah Melampirkan SKTM - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9973963499069214, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 47, 634705)}, {'news_id': 579, 'clean_text': 'Puluhan Murid di SDN Karangjaya 3 Tirtamulya Terpaksa Belajar Ngampar - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9342970252037048, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 314848)}, {'news_id': 572, 'clean_text': 'Unsika Awali Rangkaian Dies Natalis ke-11 dengan Ziarah ke Makam Singaperbangsa - iNews.ID', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9781664609909058, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 795704)}, {'news_id': 574, 'clean_text': 'Penyaluran Beasiswa Sebagai Wujud Kepedulian Saan Mustopa Center terhadap Pendidikan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.97357177734375, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 128311)}, {'news_id': 575, 'clean_text': 'Warga Dawuan Minta Kang Dedi Beri Solusi Siswa Masuk SMAN 2 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9918911457061768, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 602791)}, {'news_id': 576, 'clean_text': 'Puluhan Emak-emak Geruduk SMAN 2 Cikampek, Protes Anak Tak Lolos SPMB - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.65802401304245, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 129234)}, {'news_id': 577, 'clean_text': 'SMKN 1 Tirtamulya Bantah Tahan Ijazah Siswa dan Pungli - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9829638004302979, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 548362)}, {'news_id': 578, 'clean_text': '32 Universitas Jadi Pilihan Expo Perguruan Tinggi SMAN 1 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9964099526405334, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 861216)}  ... displaying 10 of 14 total bound parameter sets ...  {'news_id': 585, 'clean_text': 'Saan Mustopa: Mahasiswa Jangan Menyerah Oleh Keadaan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9443598389625549, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 449977)}, {'news_id': 586, 'clean_text': 'Mencicipi Masakan di Waroeng MJ Sambal Ijo Dadakan, Pecinta Kuliner Dibuat Goyang Lidah Merem Melek - KarawangNews.com', 'sentiment_label': 'Positive', 'sentiment_score': 0.9711529016494751, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 997677)})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-22T15:25:53.062+0700] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-02-21T17:00:00+00:00, execution_date=20260221T170000, start_date=20260222T082337, end_date=20260222T082553
+[2026-02-22T15:25:53.097+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-22T15:25:53.100+0700] {standard_task_runner.py:124} ERROR - Failed to execute job 182 for task task_process_sentiment ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "news_processed_news_id_key"
+DETAIL:  Key (news_id)=(580) already exists.
+
+[SQL: INSERT INTO news_processed (news_id, clean_text, sentiment_label, sentiment_score, processed_at) VALUES (%(news_id)s, %(clean_text)s, %(sentiment_label)s, %(sentiment_score)s, %(processed_at)s)]
+[parameters: ({'news_id': 580, 'clean_text': 'SMK PGRI 2 Kotabaru Wajibkan Pengambilan Ijazah Melampirkan SKTM - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9973963499069214, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 47, 634705)}, {'news_id': 579, 'clean_text': 'Puluhan Murid di SDN Karangjaya 3 Tirtamulya Terpaksa Belajar Ngampar - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9342970252037048, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 314848)}, {'news_id': 572, 'clean_text': 'Unsika Awali Rangkaian Dies Natalis ke-11 dengan Ziarah ke Makam Singaperbangsa - iNews.ID', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9781664609909058, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 795704)}, {'news_id': 574, 'clean_text': 'Penyaluran Beasiswa Sebagai Wujud Kepedulian Saan Mustopa Center terhadap Pendidikan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.97357177734375, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 128311)}, {'news_id': 575, 'clean_text': 'Warga Dawuan Minta Kang Dedi Beri Solusi Siswa Masuk SMAN 2 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9918911457061768, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 602791)}, {'news_id': 576, 'clean_text': 'Puluhan Emak-emak Geruduk SMAN 2 Cikampek, Protes Anak Tak Lolos SPMB - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.65802401304245, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 129234)}, {'news_id': 577, 'clean_text': 'SMKN 1 Tirtamulya Bantah Tahan Ijazah Siswa dan Pungli - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9829638004302979, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 548362)}, {'news_id': 578, 'clean_text': '32 Universitas Jadi Pilihan Expo Perguruan Tinggi SMAN 1 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9964099526405334, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 861216)}  ... displaying 10 of 14 total bound parameter sets ...  {'news_id': 585, 'clean_text': 'Saan Mustopa: Mahasiswa Jangan Menyerah Oleh Keadaan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9443598389625549, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 449977)}, {'news_id': 586, 'clean_text': 'Mencicipi Masakan di Waroeng MJ Sambal Ijo Dadakan, Pecinta Kuliner Dibuat Goyang Lidah Merem Melek - KarawangNews.com', 'sentiment_label': 'Positive', 'sentiment_score': 0.9711529016494751, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 997677)})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 236)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "news_processed_news_id_key"
+DETAIL:  Key (news_id)=(580) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2995, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3149, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3173, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_scraping_daily.py", line 21, in process_news_wrapper
+    run_news_processing()
+  File "/opt/airflow/src/processing/process_news.py", line 127, in run_news_processing
+    df_result.to_sql('news_processed', engine, if_exists='append', index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3008, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 788, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1958, in to_sql
+    total_inserted = sql_engine.insert_records(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1507, in insert_records
+    raise err
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1498, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 1059, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/sql.py", line 951, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1385, in execute
+    return meth(self, multiparams, params, _EMPTY_EXECUTION_OPTS)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "news_processed_news_id_key"
+DETAIL:  Key (news_id)=(580) already exists.
+
+[SQL: INSERT INTO news_processed (news_id, clean_text, sentiment_label, sentiment_score, processed_at) VALUES (%(news_id)s, %(clean_text)s, %(sentiment_label)s, %(sentiment_score)s, %(processed_at)s)]
+[parameters: ({'news_id': 580, 'clean_text': 'SMK PGRI 2 Kotabaru Wajibkan Pengambilan Ijazah Melampirkan SKTM - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9973963499069214, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 47, 634705)}, {'news_id': 579, 'clean_text': 'Puluhan Murid di SDN Karangjaya 3 Tirtamulya Terpaksa Belajar Ngampar - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9342970252037048, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 314848)}, {'news_id': 572, 'clean_text': 'Unsika Awali Rangkaian Dies Natalis ke-11 dengan Ziarah ke Makam Singaperbangsa - iNews.ID', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9781664609909058, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 48, 795704)}, {'news_id': 574, 'clean_text': 'Penyaluran Beasiswa Sebagai Wujud Kepedulian Saan Mustopa Center terhadap Pendidikan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.97357177734375, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 128311)}, {'news_id': 575, 'clean_text': 'Warga Dawuan Minta Kang Dedi Beri Solusi Siswa Masuk SMAN 2 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9918911457061768, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 49, 602791)}, {'news_id': 576, 'clean_text': 'Puluhan Emak-emak Geruduk SMAN 2 Cikampek, Protes Anak Tak Lolos SPMB - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.65802401304245, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 129234)}, {'news_id': 577, 'clean_text': 'SMKN 1 Tirtamulya Bantah Tahan Ijazah Siswa dan Pungli - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9829638004302979, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 548362)}, {'news_id': 578, 'clean_text': '32 Universitas Jadi Pilihan Expo Perguruan Tinggi SMAN 1 Cikampek - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9964099526405334, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 50, 861216)}  ... displaying 10 of 14 total bound parameter sets ...  {'news_id': 585, 'clean_text': 'Saan Mustopa: Mahasiswa Jangan Menyerah Oleh Keadaan - KarawangNews.com', 'sentiment_label': 'Neutral', 'sentiment_score': 0.9443598389625549, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 449977)}, {'news_id': 586, 'clean_text': 'Mencicipi Masakan di Waroeng MJ Sambal Ijo Dadakan, Pecinta Kuliner Dibuat Goyang Lidah Merem Melek - KarawangNews.com', 'sentiment_label': 'Positive', 'sentiment_score': 0.9711529016494751, 'processed_at': datetime.datetime(2026, 2, 22, 15, 25, 52, 997677)})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-22T15:25:53.234+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 1
+[2026-02-22T15:25:53.283+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-02-22T15:25:53.288+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

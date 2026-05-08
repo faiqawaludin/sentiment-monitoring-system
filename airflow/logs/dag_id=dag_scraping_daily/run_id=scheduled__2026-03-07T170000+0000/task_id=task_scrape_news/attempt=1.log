@@ -1,0 +1,32 @@
+[2026-03-08T13:22:23.243+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-08T13:22:23.288+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-03-07T17:00:00+00:00 [queued]>
+[2026-03-08T13:22:23.317+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-03-07T17:00:00+00:00 [queued]>
+[2026-03-08T13:22:23.318+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-03-08T13:22:23.364+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_news> on 2026-03-07 17:00:00+00:00
+[2026-03-08T13:22:23.378+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_scrape_news', 'scheduled__2026-03-07T17:00:00+00:00', '--job-id', '209', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmp8wfg1s9p']
+[2026-03-08T13:22:23.382+0700] {standard_task_runner.py:105} INFO - Job 209: Subtask task_scrape_news
+[2026-03-08T13:22:23.379+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=67594) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-03-08T13:22:23.386+0700] {standard_task_runner.py:72} INFO - Started process 67599 to run task
+[2026-03-08T13:22:23.411+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-08T13:22:23.493+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-03-07T17:00:00+00:00 [running]> on host c3e78cf34439
+[2026-03-08T13:22:23.496+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-08T13:22:23.691+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_scrape_news' AIRFLOW_CTX_EXECUTION_DATE='2026-03-07T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-07T17:00:00+00:00'
+[2026-03-08T13:22:23.693+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-03-08T13:22:25.801+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Google News (Mode Dinamis via Database)...
+[2026-03-08T13:22:25.850+0700] {logging_mixin.py:190} INFO - 📋 Menggunakan 3 Kata Kunci dari Database: ['UNSIKA', 'Universitas Singaperbangsa Karawang', 'Unsikuy']
+[2026-03-08T13:22:25.860+0700] {logging_mixin.py:190} INFO - 📚 Database memiliki 389 berita lama.
+[2026-03-08T13:22:25.861+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'UNSIKA'...
+[2026-03-08T13:22:26.767+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 1 berita BARU.
+[2026-03-08T13:22:26.768+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Universitas Singaperbangsa Karawang'...
+[2026-03-08T13:22:27.725+0700] {logging_mixin.py:190} INFO -    ℹ️  Dapat berita, tapi semuanya duplikat (Skip).
+[2026-03-08T13:22:27.725+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Unsikuy'...
+[2026-03-08T14:26:17.338+0700] {job.py:229} INFO - Heartbeat recovered after 3834.27 seconds
+[2026-03-08T14:26:18.158+0700] {logging_mixin.py:190} INFO -    ❌ Error scraping 'Unsikuy': ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-03-08T14:26:18.816+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita di Google.
+[2026-03-08T14:26:19.084+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai. Total 1 berita baru ditambahkan hari ini.
+[2026-03-08T14:26:19.343+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-03-08T14:26:20.081+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-03-08T14:26:20.222+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_scrape_news, run_id=scheduled__2026-03-07T17:00:00+00:00, execution_date=20260307T170000, start_date=20260308T062223, end_date=20260308T072620
+[2026-03-08T14:26:22.197+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-03-08T14:26:25.643+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-08T14:26:25.682+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

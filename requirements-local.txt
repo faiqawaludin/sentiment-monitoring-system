@@ -1,0 +1,14 @@
+pandas
+numpy
+google-auth
+db-dtypes
+beautifulsoup4
+requests
+plotly
+# Streamlit boleh diinstall lokal buat testing UI
+streamlit
+lxml
+scikit-learn
+sastrawi
+python-dotenv
+google-genai

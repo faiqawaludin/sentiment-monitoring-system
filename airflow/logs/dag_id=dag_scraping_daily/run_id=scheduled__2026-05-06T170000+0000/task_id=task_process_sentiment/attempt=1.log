@@ -1,0 +1,102 @@
+[2026-05-07T14:58:31.952+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-07T14:58:31.985+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-05-06T17:00:00+00:00 [queued]>
+[2026-05-07T14:58:32.006+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-05-06T17:00:00+00:00 [queued]>
+[2026-05-07T14:58:32.008+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-05-07T14:58:32.039+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-05-06 17:00:00+00:00
+[2026-05-07T14:58:32.052+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-05-06T17:00:00+00:00', '--job-id', '295', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmp75sh6yqz']
+[2026-05-07T14:58:32.053+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=245) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-05-07T14:58:32.056+0700] {standard_task_runner.py:105} INFO - Job 295: Subtask task_process_sentiment
+[2026-05-07T14:58:32.056+0700] {standard_task_runner.py:72} INFO - Started process 247 to run task
+[2026-05-07T14:58:32.078+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-05-07T14:58:32.154+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-05-06T17:00:00+00:00 [running]> on host 3b76dc97b072
+[2026-05-07T14:58:32.161+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-05-07T14:58:32.307+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-05-06T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-06T17:00:00+00:00'
+[2026-05-07T14:58:32.308+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-05-07T14:59:36.739+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-05-07T14:59:36.769+0700] {logging_mixin.py:190} INFO -    📦 Memproses 14 berita baru...
+[2026-05-07T14:59:36.771+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-05-07T14:59:39.183+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-05-07T14:59:39.201+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-05-07T14:59:39.201+0700] {_http.py:779} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-05-07T14:59:39.586+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-05-07T14:59:40.788+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-05-07T15:03:46.154+0700] {job.py:229} INFO - Heartbeat recovered after 124.29 seconds
+[2026-05-07T15:06:51.356+0700] {job.py:229} INFO - Heartbeat recovered after 97.30 seconds
+[2026-05-07T15:51:27.091+0700] {job.py:229} INFO - Heartbeat recovered after 1090.22 seconds
+[2026-05-07T16:46:52.871+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-05-07T16:46:52.920+0700] {process_utils.py:132} INFO - Sending 15 to group 247. PIDs of all processes in the group: [247]
+[2026-05-07T16:46:52.926+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 247
+[2026-05-07T16:46:52.968+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-05-07T16:46:53.503+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_scraping_daily.py", line 21, in process_news_wrapper
+    run_news_processing()
+  File "/opt/airflow/src/processing/process_news.py", line 107, in run_news_processing
+    sentiment_pipeline = pipeline(
+                         ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/pipelines/__init__.py", line 836, in pipeline
+    model = load_model(
+            ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/pipelines/base.py", line 232, in load_model
+    model = model_class.from_pretrained(model, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 374, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 3996, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/modeling_utils.py", line 619, in _get_resolved_checkpoint_files
+    resolved_archive_file = cached_file(pretrained_model_name_or_path, filename, **cached_file_kwargs)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/hub.py", line 276, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/hub.py", line 419, in cached_files
+    hf_hub_download(
+  File "/home/airflow/.local/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 89, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1032, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1247, in _hf_hub_download_to_cache_dir
+    with WeakFileLock(lock_path):
+  File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/huggingface_hub/utils/_fixes.py", line 101, in WeakFileLock
+    lock.acquire(timeout=min(log_interval, timeout - elapsed_time) if timeout else log_interval)
+  File "/home/airflow/.local/lib/python3.12/site-packages/filelock/_api.py", line 344, in acquire
+    time.sleep(poll_interval)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3085, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-05-07T16:46:53.626+0700] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-05-06T17:00:00+00:00, execution_date=20260506T170000, start_date=20260507T075831, end_date=20260507T094653
+[2026-05-07T16:46:53.720+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-05-07T16:46:53.846+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=247, status='terminated', exitcode=2, started='14:58:31') (247) terminated with exit code 2
+[2026-05-07T16:46:53.849+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 143
+[2026-05-07T16:46:53.931+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-07T16:46:55.663+0700] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2026-05-07T16:46:55.756+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses

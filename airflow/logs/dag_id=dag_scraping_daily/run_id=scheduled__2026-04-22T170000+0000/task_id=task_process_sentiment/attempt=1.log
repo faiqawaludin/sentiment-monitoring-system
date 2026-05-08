@@ -1,0 +1,25 @@
+[2026-04-23T14:26:26.760+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-04-23T14:26:26.792+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-04-22T17:00:00+00:00 [queued]>
+[2026-04-23T14:26:26.810+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-04-22T17:00:00+00:00 [queued]>
+[2026-04-23T14:26:26.812+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-04-23T14:26:26.843+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-04-22 17:00:00+00:00
+[2026-04-23T14:26:26.862+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=243) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-04-23T14:26:26.860+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-04-22T17:00:00+00:00', '--job-id', '267', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpbs096j1f']
+[2026-04-23T14:26:26.866+0700] {standard_task_runner.py:72} INFO - Started process 250 to run task
+[2026-04-23T14:26:26.867+0700] {standard_task_runner.py:105} INFO - Job 267: Subtask task_process_sentiment
+[2026-04-23T14:26:26.892+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-04-23T14:26:26.982+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-04-22T17:00:00+00:00 [running]> on host 97661983fdcf
+[2026-04-23T14:26:26.984+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-04-23T14:26:27.532+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-04-22T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-22T17:00:00+00:00'
+[2026-04-23T14:26:27.534+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-04-23T14:26:42.865+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-04-23T14:26:42.883+0700] {logging_mixin.py:190} INFO -    📦 Memproses 34 berita baru...
+[2026-04-23T14:26:42.885+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-04-23T14:26:44.396+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-23T14:26:44.517+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-04-23T14:26:45.208+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-04-23T14:26:45.750+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/xet-read-token/ac452dcb0f4966130bba44f4ee0013bb5d52c282 "HTTP/1.1 200 OK"
+[2026-04-23T14:39:09.550+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-04-23T14:39:09.703+0700] {process_utils.py:132} INFO - Sending 15 to group 250. PIDs of all processes in the group: [250]
+[2026-04-23T14:39:09.712+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 250
+[2026-04-23T14:39:15.915+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses

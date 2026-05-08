@@ -1,0 +1,10 @@
+# .gitignore
+.env
+venv/
+__pycache__/
+.DS_Store
+# Data Files & Exports
+*.csv
+*.xlsx
+# Google Cloud Credentials
+google_credentials.json

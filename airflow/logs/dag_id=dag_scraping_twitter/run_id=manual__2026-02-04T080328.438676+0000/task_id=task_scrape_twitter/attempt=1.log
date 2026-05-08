@@ -1,0 +1,96 @@
+[2026-02-04T15:03:29.435+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-04T15:03:29.455+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [queued]>
+[2026-02-04T15:03:29.471+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [queued]>
+[2026-02-04T15:03:29.472+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-02-04T15:03:29.495+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-02-04 08:03:28.438676+00:00
+[2026-02-04T15:03:29.510+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=572) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-04T15:03:29.512+0700] {standard_task_runner.py:72} INFO - Started process 574 to run task
+[2026-02-04T15:03:29.510+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'manual__2026-02-04T08:03:28.438676+00:00', '--job-id', '49', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp0l84e6kg']
+[2026-02-04T15:03:29.515+0700] {standard_task_runner.py:105} INFO - Job 49: Subtask task_scrape_twitter
+[2026-02-04T15:03:29.543+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-04T15:03:29.616+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [running]> on host 40eda60c7fdf
+[2026-02-04T15:03:29.734+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T08:03:28.438676+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-04T08:03:28.438676+00:00'
+[2026-02-04T15:03:29.737+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-04T15:03:30.445+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Twitter...
+[2026-02-04T15:03:30.446+0700] {logging_mixin.py:190} INFO - 🔍 Mencari Tweet: unsika...
+[2026-02-04T15:03:55.913+0700] {logging_mixin.py:190} INFO -    ✅ Dapat 60 tweet.
+[2026-02-04T15:03:55.936+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal simpan (mungkin duplikat): (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "tweets_raw_tweet_url_key"
+DETAIL:  Key (tweet_url)=(https://twitter.com/unknown/status/2018523733233995792) already exists.
+
+[SQL: INSERT INTO tweets_raw (scraped_at, keyword, username, full_text, tweet_url, likes, retweets) VALUES (%(scraped_at)s, %(keyword)s, %(username)s, %(full_text)s, %(tweet_url)s, %(likes)s, %(retweets)s)]
+[parameters: ({'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': 'Solar LED Insect Trap: Inovasi Hijau Mahasiswa KKN Unsika untuk Pertanian Desa https://t.co/curXDrxB9W', 'tweet_url': 'https://twitter.com/unknown/status/2018523733233995792', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': 'Mahasiswa KKN Unsika Ajak Warga Cibogogirang Olah Sampah Lewat Program Biopori https://t.co/nJJEoJyxKn', 'tweet_url': 'https://twitter.com/unknown/status/2018271331486453846', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': 'h-1 bgt diumumin masuknya emg unsika aneh', 'tweet_url': 'https://twitter.com/unknown/status/2018030662666813448', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': ' منحة جامعة UNSIKA 2026 | الدراسة في إندونيسيا مجاناً إعفاء كامل من الرسوم راتب شهري + سكن تذاكر طيران + تأمين صحي بكالوريوس وماجستير ⏰ آخر موعد: 29 مارس 2026 التفاصيل https://t.co/N7lFNCq6UP تابعنا على تلجرام https://t.co/rMJ4uB1InR https://t.co/DhMpkQbNYm', 'tweet_url': 'https://twitter.com/unknown/status/2017658724366876921', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': '@martinoohujames @snbtfess Skor terendah UTBK 2024 Agroteknologi/Agroekoteknologi: Unpad (602) UNP (597) Undip (595) Unej (593) USU (593) UNS (591) UPN Jatim (586) Unand (584) Unsri (581) Unhas (581) Unud (580) UIN Bandung (580) Unsika (577) Untirta (566) Unsoed (565) UPNVY (563)', 'tweet_url': 'https://twitter.com/unknown/status/2017081217687212541', 'likes': 1, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': 'KKN Unsika Gelar Program Growell Kids untuk Cegah Stunting Sejak Dini https://t.co/pHnjOgSwmY', 'tweet_url': 'https://twitter.com/unknown/status/2017047255153582160', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': 'Mahasiswa KKN Unsika Mengajar di Sekolah Dasar Desa Gandamekar https://t.co/tMV2HzfBTF', 'tweet_url': 'https://twitter.com/unknown/status/2017023513430020419', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': '@junhpuk Brew me cik yang dari unsika lewat jembatan lalu belok kiri mau ke taruno itu', 'tweet_url': 'https://twitter.com/unknown/status/2016674326033158497', 'likes': 0, 'retweets': 0}  ... displaying 10 of 60 total bound parameter sets ...  {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': '@dendi_karunia @P3gEl Berdasarkan analisis video dan laporan terkait demo terhadap Panji Gumilang mahasiswa terlibat dari Universitas Singaperbangsa Karawang (Unsika) dan beberapa kampus di Jawa Barat seperti di Indramayu. Namun tidak ada identifikasi universitas spesifik yang jelas di video', 'tweet_url': 'https://twitter.com/unknown/status/2009166953890427159', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 3, 55, 909034), 'keyword': 'unsika', 'username': 'unknown', 'full_text': '@schfess coba nder gizi unsika atau gizi untidar bisa tuh kaya nyaaa. semangat yaa ', 'tweet_url': 'https://twitter.com/unknown/status/2008922066758897715', 'likes': 0, 'retweets': 0})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-04T15:03:55.936+0700] {logging_mixin.py:190} INFO - 🔍 Mencari Tweet: universitas singaperbangsa karawang...
+[2026-02-04T15:06:22.645+0700] {logging_mixin.py:190} INFO -    ✅ Dapat 18 tweet.
+[2026-02-04T15:06:22.658+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal simpan (mungkin duplikat): (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "tweets_raw_tweet_url_key"
+DETAIL:  Key (tweet_url)=(https://twitter.com/unknown/status/2018523733233995792) already exists.
+
+[SQL: INSERT INTO tweets_raw (scraped_at, keyword, username, full_text, tweet_url, likes, retweets) VALUES (%(scraped_at)s, %(keyword)s, %(username)s, %(full_text)s, %(tweet_url)s, %(likes)s, %(retweets)s)]
+[parameters: ({'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Solar LED Insect Trap: Inovasi Hijau Mahasiswa KKN Unsika untuk Pertanian Desa https://t.co/curXDrxB9W', 'tweet_url': 'https://twitter.com/unknown/status/2018523733233995792', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Mahasiswa KKN Unsika Ajak Warga Cibogogirang Olah Sampah Lewat Program Biopori https://t.co/nJJEoJyxKn', 'tweet_url': 'https://twitter.com/unknown/status/2018271331486453846', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Mahasiswa KKN Unsika Mengajar di Sekolah Dasar Desa Gandamekar https://t.co/tMV2HzfBTF', 'tweet_url': 'https://twitter.com/unknown/status/2017023513430020419', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Unsika Tambah Prodi Baru Mahasiswa Sorot Kesiapan Fasilitas https://t.co/xzd8q3gDCV #Berita #ProdiBaru #Fasilitas #LPMUnsika #SuaraUnsika https://t.co/EZqfRpw3Qg', 'tweet_url': 'https://twitter.com/unknown/status/2016470241245884851', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Mahasiswa KKN Unsika Gelar Sosialisasi anti-Bullying di SDN 2 Gandamekar https://t.co/57SqaTi4nr', 'tweet_url': 'https://twitter.com/unknown/status/2016003283861815760', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Lewat Program Club Keren: Penanganan Pemain Cerdas Mahasiswa KKN Unsika Bekali Atlet Tim Sepak Bola Desa Babakan Pengetahuan Penanganan Cedera https://t.co/QiuwyErRcg https://t.co/EduGRdODSA', 'tweet_url': 'https://twitter.com/unknown/status/2015290808510079208', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Melalui kegiatan ini diharapkan terjalin sinergi yang berkelanjutan antara Bapas Bekasi dan FH UNSIKA dalam mendukung pengembangan kompetensi mahasiswa.', 'tweet_url': 'https://twitter.com/unknown/status/2014259984696246540', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Mahasiswa KKN UNSIKA Luncurkan Baca Ceria Jayakerta Inovasi Literasi Anak di Karawang https://t.co/NPIFHkisiC https://t.co/IA36q3vFXB', 'tweet_url': 'https://twitter.com/unknown/status/2012920321184354798', 'likes': 0, 'retweets': 0}  ... displaying 10 of 18 total bound parameter sets ...  {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': 'Semoga dengan semangat mahasiswa berprestasi dapat memacu kita agar lebih berinovasi kreatif berkembang dan berkarya memajukan bangsa dan negara! Raihlah ilmu! Dan untuk meraih ilmu belajarlah untuk tenang dan sabar. - Umar bin Khattab ------- HMTI FT UNSIKA ------- https://t.co/Y4io9fRHG0', 'tweet_url': 'https://twitter.com/unknown/status/2000423774601236903', 'likes': 0, 'retweets': 0}, {'scraped_at': datetime.datetime(2026, 2, 4, 15, 6, 22, 641269), 'keyword': 'universitas singaperbangsa karawang', 'username': 'unknown', 'full_text': '[Modul Panduan Peminatan Teknik Industri FT UNSIKA 2025] Modul ini dirancang sebagai bahan edukatif untuk membantu mahasiswa memahami gambaran besar  ... (4 characters truncated) ...  berbagai bidang peminatan yang tersedia di Teknik Industri. Melalui modul ini mahasiswa diperkenalkan pada konsep dasar dari https://t.co/RSZixuAoQp', 'tweet_url': 'https://twitter.com/unknown/status/2000420356956574176', 'likes': 0, 'retweets': 0})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-04T15:06:22.659+0700] {logging_mixin.py:190} INFO - 🔍 Mencari Tweet: mahasiswa unsika...
+[2026-02-04T15:08:42.144+0700] {local_task_job_runner.py:341} WARNING - State of this instance has been externally set to restarting. Terminating instance.
+[2026-02-04T15:08:42.152+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2026-02-04T15:08:42.158+0700] {process_utils.py:132} INFO - Sending 15 to group 574. PIDs of all processes in the group: [993, 994, 1006, 1007, 1021, 1023, 1024, 1041, 1100, 1074, 1038, 574]
+[2026-02-04T15:08:42.159+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 574
+[2026-02-04T15:08:42.161+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1006, status='terminated', started='15:06:25') (1006) terminated with exit code None
+[2026-02-04T15:08:42.162+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-02-04T15:08:42.179+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=994, status='terminated', started='15:06:22') (994) terminated with exit code None
+[2026-02-04T15:08:42.230+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_scraping_twitter.py", line 12, in scrape_twitter_wrapper
+    run_twitter_scraping_job()
+  File "/opt/airflow/src/scrapers/twitter_scraper.py", line 94, in run_twitter_scraping_job
+    df = scraper.scrape(keyword, max_items=50)  # Limit per keyword
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/src/scrapers/twitter_scraper.py", line 45, in scrape
+    process = subprocess.run(command, shell=True, capture_output=True, text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/subprocess.py", line 2115, in _communicate
+    ready = selector.select(timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/selectors.py", line 415, in select
+    fd_event_list = self._selector.poll(timeout)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3085, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-02-04T15:08:42.273+0700] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=manual__2026-02-04T08:03:28.438676+00:00, execution_date=20260204T080328, start_date=20260204T080329, end_date=20260204T080842
+[2026-02-04T15:08:42.273+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1074, status='terminated', started='15:06:27') (1074) terminated with exit code None
+[2026-02-04T15:08:42.274+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1007, status='terminated', started='15:06:25') (1007) terminated with exit code None
+[2026-02-04T15:08:42.274+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1021, status='terminated', started='15:06:26') (1021) terminated with exit code None
+[2026-02-04T15:08:42.275+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1038, status='terminated', started='15:06:26') (1038) terminated with exit code None
+[2026-02-04T15:08:42.276+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1041, status='terminated', started='15:06:26') (1041) terminated with exit code None
+[2026-02-04T15:08:42.276+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1100, status='terminated', started='15:06:29') (1100) terminated with exit code None
+[2026-02-04T15:08:42.310+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-04T15:08:42.369+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=574, status='terminated', exitcode=2, started='15:03:29') (574) terminated with exit code 2
+[2026-02-04T15:08:42.370+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=993, status='terminated', started='15:06:22') (993) terminated with exit code None
+[2026-02-04T15:08:42.371+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1024, status='terminated', started='15:06:26') (1024) terminated with exit code None
+[2026-02-04T15:08:42.372+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1023, status='terminated', started='15:06:26') (1023) terminated with exit code None

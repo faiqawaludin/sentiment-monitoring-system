@@ -1,0 +1,41 @@
+[2026-02-13T23:08:02.507+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-13T23:08:02.531+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-12T17:00:00+00:00 [queued]>
+[2026-02-13T23:08:02.543+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-12T17:00:00+00:00 [queued]>
+[2026-02-13T23:08:02.543+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-02-13T23:08:02.566+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_news> on 2026-02-12 17:00:00+00:00
+[2026-02-13T23:08:02.586+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=172) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-13T23:08:02.582+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_scrape_news', 'scheduled__2026-02-12T17:00:00+00:00', '--job-id', '120', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpxiz_cd33']
+[2026-02-13T23:08:02.587+0700] {standard_task_runner.py:72} INFO - Started process 182 to run task
+[2026-02-13T23:08:02.587+0700] {standard_task_runner.py:105} INFO - Job 120: Subtask task_scrape_news
+[2026-02-13T23:08:02.613+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-13T23:08:02.706+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-12T17:00:00+00:00 [running]> on host af387e7c2811
+[2026-02-13T23:08:02.708+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-13T23:08:02.844+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_scrape_news' AIRFLOW_CTX_EXECUTION_DATE='2026-02-12T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-12T17:00:00+00:00'
+[2026-02-13T23:08:02.846+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-13T23:08:05.367+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Google News (Mode Dinamis via Database)...
+[2026-02-13T23:08:05.476+0700] {logging_mixin.py:190} INFO - 📋 Menggunakan 4 Kata Kunci dari Database: ['UNSIKA', 'Mahasiswa Unsika', 'BEM Unsika', 'Unsikuy']
+[2026-02-13T23:08:05.489+0700] {logging_mixin.py:190} INFO - 📚 Database memiliki 253 berita lama.
+[2026-02-13T23:08:05.491+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'UNSIKA'...
+[2026-02-13T23:08:06.180+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 2 berita BARU.
+[2026-02-13T23:08:06.181+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Mahasiswa Unsika'...
+[2026-02-13T23:08:06.920+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal menyimpan ke DB: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "news_raw_url_key"
+DETAIL:  Key (url)=(https://news.google.com/rss/articles/CBMi_AFBVV95cUxPY1pDWnNMa0hyWHIxYUU4SktHc0xHTDB4bGF3NUJPek9vUm0xMTdEUVF2bGtEc2c1YmE2VUVrbmlrSEFZd3hhdDhMLXgycmFoRS03eWUwc0oxdVc5REQ2ZmlLSnQxU05Fb2F4Wk80VFZWeHd3NGdyd2RqWFF4SmJFS1B5ekZUM1Q1OE1iWEtRRTFqQ3VOa1BuUzByYjBCNWIxdWpiM3ZqZ09KUTZ3QWtTa2RoVG5xcGd5QTJyM3FiRVB2RGFaeVBrTmZKbVRTdXVGQUhxOUZjREpJZ25BU2lyQ0xYbmF6S1pqVlVwSFl3V2RvaVRFeUhJbFZGazA?oc=5) already exists.
+
+[SQL: INSERT INTO news_raw (scraped_at, keyword, title, source, url, published_date) VALUES (%(scraped_at)s, %(keyword)s, %(title)s, %(source)s, %(url)s, %(published_date)s)]
+[parameters: {'scraped_at': datetime.datetime(2026, 2, 13, 23, 8, 6, 909296), 'keyword': 'Mahasiswa Unsika', 'title': 'Lewat Program Club Keren: Penanganan Pemain Cerdas, Mahasiswa KKN Unsika Bekali Atlet Tim Sepak Bola Desa Babakan Pengetahuan Penanganan Cedera - Siaran Berita', 'source': 'Siaran Berita', 'url': 'https://news.google.com/rss/articles/CBMi_AFBVV95cUxPY1pDWnNMa0hyWHIxYUU4SktHc0xHTDB4bGF3NUJPek9vUm0xMTdEUVF2bGtEc2c1YmE2VUVrbmlrSEFZd3hhdDhMLXgycmFo ... (87 characters truncated) ... qQ3VOa1BuUzByYjBCNWIxdWpiM3ZqZ09KUTZ3QWtTa2RoVG5xcGd5QTJyM3FiRVB2RGFaeVBrTmZKbVRTdXVGQUhxOUZjREpJZ25BU2lyQ0xYbmF6S1pqVlVwSFl3V2RvaVRFeUhJbFZGazA?oc=5', 'published_date': 'Sun, 25 Jan 2026 08:00:00 GMT'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-13T23:08:06.921+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'BEM Unsika'...
+[2026-02-13T23:08:07.449+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal menyimpan ke DB: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "news_raw_url_key"
+DETAIL:  Key (url)=(https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOTl0MTFaRTdIc29xU3Rod2xocnZsRG4xQ2treUNBcmRuT09DeGcxU2RmdnhIREV2QVVQcFB2SWlJQ0NCRDZrWHR2ZVhmOVEyclJJcEE0MnQ5QmRJR0psU1J2dEs1ek9fNjV1TnRBWGF6X3U4T3hhXzlzcGI0S1FEaXRBVjVhckp5M1N0ZERfdE1tQXFXX1JWcUpGTlVaZko5LU1OR2dfWDdEc2JuVlkteF9XZ21icUo4TFFV0gG6AUFVX3lxTE5nYUpTNDRLNk1hYkJqVXpVbWJrcDFubzE1aElSa1kxV0l4YzVyc3BBUTlpNVpSMl9IcVdXWnY0bDVpQ2U3MzBHaWNQdUwtZk9KMG0wQk9XSHotTlBzVnJ4Sm5YNG11ZGJmVXlJN3RBaUpHQ0hpZmY3QS1ja1o2X2NqSk5Vam1YdEdLQWRLMUZaNzFOU05VSi0xMTRpcGdOQkUxZzNadE5aYWR4QXFWNWdDUk02VGU1NWdBdw?oc=5) already exists.
+
+[SQL: INSERT INTO news_raw (scraped_at, keyword, title, source, url, published_date) VALUES (%(scraped_at)s, %(keyword)s, %(title)s, %(source)s, %(url)s, %(published_date)s)]
+[parameters: {'scraped_at': datetime.datetime(2026, 2, 13, 23, 8, 7, 433070), 'keyword': 'BEM Unsika', 'title': 'UNSIKA Dibahas Karena UKT-nya Capai Puluhan Juta, Calon Maba Jalur Mandiri Undur Diri - Hai-Online.com', 'source': 'Hai-Online.com', 'url': 'https://news.google.com/rss/articles/CBMiuwFBVV95cUxPOTl0MTFaRTdIc29xU3Rod2xocnZsRG4xQ2treUNBcmRuT09DeGcxU2RmdnhIREV2QVVQcFB2SWlJQ0NCRDZrWHR2ZVhmOVEy ... (254 characters truncated) ... 9KMG0wQk9XSHotTlBzVnJ4Sm5YNG11ZGJmVXlJN3RBaUpHQ0hpZmY3QS1ja1o2X2NqSk5Vam1YdEdLQWRLMUZaNzFOU05VSi0xMTRpcGdOQkUxZzNadE5aYWR4QXFWNWdDUk02VGU1NWdBdw?oc=5', 'published_date': 'Thu, 10 Sep 2020 07:00:00 GMT'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-02-13T23:08:07.450+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Unsikuy'...
+[2026-02-13T23:08:07.795+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita di Google.
+[2026-02-13T23:08:07.798+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai. Total 2 berita baru ditambahkan hari ini.
+[2026-02-13T23:08:07.801+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-13T23:08:07.818+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-13T23:08:07.819+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_scrape_news, run_id=scheduled__2026-02-12T17:00:00+00:00, execution_date=20260212T170000, start_date=20260213T160802, end_date=20260213T160807
+[2026-02-13T23:08:07.868+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-13T23:08:07.877+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

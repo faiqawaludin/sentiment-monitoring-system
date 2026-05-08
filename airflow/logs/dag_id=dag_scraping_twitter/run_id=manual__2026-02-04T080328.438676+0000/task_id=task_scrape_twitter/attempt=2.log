@@ -1,0 +1,28 @@
+[2026-02-04T15:10:17.972+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-04T15:10:17.993+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [queued]>
+[2026-02-04T15:10:18.007+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [queued]>
+[2026-02-04T15:10:18.008+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2026-02-04T15:10:18.025+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-02-04 08:03:28.438676+00:00
+[2026-02-04T15:10:18.035+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1215) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-04T15:10:18.037+0700] {standard_task_runner.py:72} INFO - Started process 1216 to run task
+[2026-02-04T15:10:18.035+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'manual__2026-02-04T08:03:28.438676+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmpbtn6wxyq']
+[2026-02-04T15:10:18.038+0700] {standard_task_runner.py:105} INFO - Job 55: Subtask task_scrape_twitter
+[2026-02-04T15:10:18.159+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-04T15:10:19.743+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-02-04T08:03:28.438676+00:00 [running]> on host 40eda60c7fdf
+[2026-02-04T15:10:20.033+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T08:03:28.438676+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-02-04T08:03:28.438676+00:00'
+[2026-02-04T15:10:20.047+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-04T15:10:21.228+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-02-04T15:10:21.248+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 18 tweet.
+[2026-02-04T15:10:21.249+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-02-04T15:10:49.161+0700] {logging_mixin.py:190} INFO -    Menyimpan 49 tweet BARU.
+[2026-02-04T15:10:49.163+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-02-04T15:13:17.670+0700] {logging_mixin.py:190} INFO -    Menyimpan 5 tweet BARU.
+[2026-02-04T15:13:17.671+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-02-04T15:20:47.140+0700] {logging_mixin.py:190} INFO -    info: Tidak ada tweet baru (semua duplikat).
+[2026-02-04T15:20:47.141+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 54 tweet baru tersimpan.
+[2026-02-04T15:20:47.142+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-04T15:20:47.175+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-04T15:20:47.176+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=manual__2026-02-04T08:03:28.438676+00:00, execution_date=20260204T080328, start_date=20260204T081017, end_date=20260204T082047
+[2026-02-04T15:20:47.259+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-04T15:20:47.294+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-04T15:20:47.296+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

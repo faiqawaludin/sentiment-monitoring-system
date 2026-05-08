@@ -1,0 +1,128 @@
+x-airflow-common:
+  &airflow-common
+  build: .
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    PROJECT_ID: 'warehouse-sentimen'
+    GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/google_credentials.json
+    # --- [UPDATE BARU] SETTING ZONA WAKTU ---
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: 'Asia/Jakarta'
+    TZ: 'Asia/Jakarta'
+    # ----------------------------------------
+
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+    - ./airflow/config:/opt/airflow/config
+    - ./src:/opt/airflow/src
+    - ./google_credentials.json:/opt/airflow/google_credentials.json
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+      # Set timezone database
+      TZ: 'Asia/Jakarta'
+      PGTZ: 'Asia/Jakarta'
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  postgres-dw:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: remosy_user
+      POSTGRES_PASSWORD: remosy_password
+      POSTGRES_DB: remosy_dw
+      # Set timezone database warehouse
+      TZ: 'Asia/Jakarta'
+      PGTZ: 'Asia/Jakarta'
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres-dw-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "remosy_user", "-d", "remosy_dw"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8974/health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: 'admin'
+      _AIRFLOW_WWW_USER_PASSWORD: 'admin'
+    user: "0:0"
+
+  remosy-dashboard:
+    build: .
+    entrypoint: /bin/bash
+    command: -c "streamlit run dashboard/main.py --server.port 8501 --server.address 0.0.0.0"
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./dashboard:/opt/airflow/dashboard
+      - ./src:/opt/airflow/src
+      - ./google_credentials.json:/opt/airflow/google_credentials.json
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/google_credentials.json
+      PROJECT_ID: 'warehouse-sentimen'
+      TZ: 'Asia/Jakarta'
+      # --- KONEKSI DATABASE UNTUK STREAMLIT ---
+      POSTGRES_HOST_DOCKER: 'postgres-dw'
+    working_dir: /opt/airflow
+    depends_on:
+      - airflow-webserver
+      - postgres-dw
+    env_file:
+      - .env
+
+volumes:
+  postgres-db-volume:
+  postgres-dw-volume:

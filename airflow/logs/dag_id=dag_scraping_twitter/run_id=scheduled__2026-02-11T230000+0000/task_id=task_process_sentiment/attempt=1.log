@@ -1,0 +1,33 @@
+[2026-02-12T18:34:26.263+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-12T18:34:26.285+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_process_sentiment scheduled__2026-02-11T23:00:00+00:00 [queued]>
+[2026-02-12T18:34:26.300+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_process_sentiment scheduled__2026-02-11T23:00:00+00:00 [queued]>
+[2026-02-12T18:34:26.301+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-02-12T18:34:26.316+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-02-11 23:00:00+00:00
+[2026-02-12T18:34:26.325+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=603) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-12T18:34:26.325+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_process_sentiment', 'scheduled__2026-02-11T23:00:00+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp9fu6nbhu']
+[2026-02-12T18:34:26.327+0700] {standard_task_runner.py:72} INFO - Started process 604 to run task
+[2026-02-12T18:34:26.328+0700] {standard_task_runner.py:105} INFO - Job 105: Subtask task_process_sentiment
+[2026-02-12T18:34:26.342+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-12T18:34:26.408+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_process_sentiment scheduled__2026-02-11T23:00:00+00:00 [running]> on host 72dd812d095d
+[2026-02-12T18:34:26.410+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-12T18:34:26.509+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-02-11T23:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-11T23:00:00+00:00'
+[2026-02-12T18:34:26.511+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-12T18:34:32.300+0700] {logging_mixin.py:190} INFO -  Sedang memuat model AI (IndoBERT)...
+[2026-02-12T18:34:33.012+0700] {_client.py:1026} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-12T18:34:33.347+0700] {_client.py:1026} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-02-12T18:34:36.097+0700] {_client.py:1026} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-02-12T18:37:54.330+0700] {job.py:229} INFO - Heartbeat recovered after 75.65 seconds
+[2026-02-12T18:46:32.468+0700] {job.py:229} INFO - Heartbeat recovered after 260.92 seconds
+[2026-02-12T18:46:52.921+0700] {job.py:229} INFO - Heartbeat recovered after 15.39 seconds
+[2026-02-12T19:08:37.550+0700] {job.py:229} INFO - Heartbeat recovered after 29.50 seconds
+[2026-02-12T19:13:56.165+0700] {job.py:229} INFO - Heartbeat recovered after 106.60 seconds
+[2026-02-12T19:19:42.616+0700] {job.py:229} INFO - Heartbeat recovered after 64.41 seconds
+[2026-02-12T19:25:03.102+0700] {job.py:229} INFO - Heartbeat recovered after 51.96 seconds
+[2026-02-12T19:57:55.943+0700] {job.py:229} INFO - Heartbeat recovered after 304.46 seconds
+[2026-02-12T19:58:06.055+0700] {local_task_job_runner.py:341} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2026-02-12T19:58:06.058+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2026-02-12T19:58:06.085+0700] {process_utils.py:132} INFO - Sending 15 to group 604. PIDs of all processes in the group: [604]
+[2026-02-12T19:58:06.087+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 604
+[2026-02-12T19:58:06.103+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-02-12T19:58:06.712+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-12T19:58:06.864+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=604, status='terminated', exitcode=0, started='18:34:25') (604) terminated with exit code 0

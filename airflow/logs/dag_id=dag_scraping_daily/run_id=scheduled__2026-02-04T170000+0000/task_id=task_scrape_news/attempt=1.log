@@ -1,0 +1,34 @@
+[2026-02-06T22:42:53.715+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-02-06T22:42:53.738+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-04T17:00:00+00:00 [queued]>
+[2026-02-06T22:42:53.750+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-04T17:00:00+00:00 [queued]>
+[2026-02-06T22:42:53.750+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-02-06T22:42:53.771+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_news> on 2026-02-04 17:00:00+00:00
+[2026-02-06T22:42:53.784+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=172) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-02-06T22:42:53.787+0700] {standard_task_runner.py:72} INFO - Started process 181 to run task
+[2026-02-06T22:42:53.786+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_scrape_news', 'scheduled__2026-02-04T17:00:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpe54fuwa1']
+[2026-02-06T22:42:53.792+0700] {standard_task_runner.py:105} INFO - Job 77: Subtask task_scrape_news
+[2026-02-06T22:42:53.814+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:53.888+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_scrape_news scheduled__2026-02-04T17:00:00+00:00 [running]> on host 3bdd3e38038c
+[2026-02-06T22:42:53.891+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-02-06T22:42:54.081+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_scrape_news' AIRFLOW_CTX_EXECUTION_DATE='2026-02-04T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-04T17:00:00+00:00'
+[2026-02-06T22:42:54.082+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-02-06T22:42:57.872+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Google News (Mode Dinamis via Database)...
+[2026-02-06T22:43:01.882+0700] {logging_mixin.py:190} INFO - ⚠️ Gagal membaca keywords (Error: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: No address associated with hostname
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)). Menggunakan default.
+[2026-02-06T22:43:05.885+0700] {logging_mixin.py:190} INFO - 📚 Database kosong atau tabel belum ada.
+[2026-02-06T22:43:05.889+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'UNSIKA'...
+[2026-02-06T22:43:11.048+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal menyimpan ke DB: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: No address associated with hostname
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-02-06T22:43:11.052+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Universitas Singaperbangsa Karawang'...
+[2026-02-06T22:43:15.457+0700] {logging_mixin.py:190} INFO -    ⚠️ Gagal menyimpan ke DB: (psycopg2.OperationalError) could not translate host name "postgres-dw" to address: Name or service not known
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2026-02-06T22:43:15.458+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai. Total 0 berita baru ditambahkan hari ini.
+[2026-02-06T22:43:15.460+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-02-06T22:43:15.475+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-02-06T22:43:15.476+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_scrape_news, run_id=scheduled__2026-02-04T17:00:00+00:00, execution_date=20260204T170000, start_date=20260206T154253, end_date=20260206T154315
+[2026-02-06T22:43:15.561+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-02-06T22:43:15.593+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-02-06T22:43:15.600+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
