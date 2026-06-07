@@ -1,0 +1,68 @@
+[2026-06-06T09:11:43.680+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-06T09:11:43.705+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-05T05:00:00+00:00 [queued]>
+[2026-06-06T09:11:43.723+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-05T05:00:00+00:00 [queued]>
+[2026-06-06T09:11:43.724+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-06-06T09:11:43.743+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-06-05 05:00:00+00:00
+[2026-06-06T09:11:43.753+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=233) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-06T09:11:43.755+0700] {standard_task_runner.py:72} INFO - Started process 234 to run task
+[2026-06-06T09:11:43.756+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-06-05T05:00:00+00:00', '--job-id', '395', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpq_e3k2tn']
+[2026-06-06T09:11:43.761+0700] {standard_task_runner.py:105} INFO - Job 395: Subtask task_process_sentiment
+[2026-06-06T09:11:43.779+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-06T09:11:43.832+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-05T05:00:00+00:00 [running]> on host af68be27e225
+[2026-06-06T09:11:43.835+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-06T09:11:43.992+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-06-05T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-05T05:00:00+00:00'
+[2026-06-06T09:11:43.996+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-06T09:11:55.760+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-06-06T09:11:55.789+0700] {logging_mixin.py:190} INFO -    📦 Memproses 18 berita baru...
+[2026-06-06T09:11:55.790+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-06-06T09:11:56.189+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:11:56.212+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-06T09:11:56.234+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-06T09:11:56.553+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-06-06T09:11:56.866+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/xet-read-token/ac452dcb0f4966130bba44f4ee0013bb5d52c282 "HTTP/1.1 200 OK"
+[2026-06-06T09:12:59.683+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-06T09:12:59.785+0700] {logging_mixin.py:190} WARNING - Loading weights:  92%|█████████▏| 185/201 [00:00<00:00, 1841.62it/s]
+[2026-06-06T09:12:59.788+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|██████████| 201/201 [00:00<00:00, 1940.35it/s]
+[2026-06-06T09:13:00.165+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:13:00.166+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-06T09:13:00.166+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-06T09:13:00.201+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-06T09:13:00.538+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-06T09:13:00.837+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-06T09:13:01.113+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:13:01.148+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/vocab.json "HTTP/1.1 200 OK"
+[2026-06-06T09:13:01.169+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/vocab.json "HTTP/1.1 200 OK"
+[2026-06-06T09:13:01.489+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:13:01.523+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/merges.txt "HTTP/1.1 200 OK"
+[2026-06-06T09:13:01.897+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:13:01.924+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer.json "HTTP/1.1 200 OK"
+[2026-06-06T09:13:02.248+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-06-06T09:13:02.517+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-06T09:13:02.533+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-06-06T09:13:02.809+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-06-06T09:13:03.260+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Polantas Menyapa, Satlantas Po...' | AI: neutral -> SMART: Positive
+[2026-06-06T09:13:03.265+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Mengabdi Puluhan Tahun, Masih Belum Nikmati T...'
+[2026-06-06T09:13:03.269+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Working in Harmony Nurturing the Future - Uni...'
+[2026-06-06T09:13:03.401+0700] {logging_mixin.py:190} INFO -    Process: 'Sadar Akan Hal Kecil Dimulai d...' -> Neutral
+[2026-06-06T09:13:03.478+0700] {logging_mixin.py:190} INFO -    Process: 'Mahasiswa Unsika Suarakan Isu ...' -> Neutral
+[2026-06-06T09:13:03.483+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Pengembangan Usaha Kreatif, Mahasiswa UMB Rai...'
+[2026-06-06T09:13:03.609+0700] {logging_mixin.py:190} INFO -    Process: 'PT Jaya Abadi Kontruksindo Pel...' -> Neutral
+[2026-06-06T09:13:03.618+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Peluang Mahasiswa Indonesia Bekerja di Bidang...'
+[2026-06-06T09:13:03.849+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'KKN Universitas SIngaperbangsa...' | AI: neutral -> SMART: Positive
+[2026-06-06T09:13:04.051+0700] {logging_mixin.py:190} INFO -    Process: 'Akali Kekurangan Ruang Kelas, ...' -> Neutral
+[2026-06-06T09:13:04.174+0700] {logging_mixin.py:190} INFO -    Process: 'Bupati Karawang Cellica dapat ...' -> Neutral
+[2026-06-06T09:13:04.315+0700] {logging_mixin.py:190} INFO -    ✨ FIX: '172 Pegawai Unsika Gelar Unjuk...' | AI: neutral -> SMART: Positive
+[2026-06-06T09:13:04.487+0700] {logging_mixin.py:190} INFO -    Process: 'Mahasiswa Tagih Janji Penghapu...' -> Neutral
+[2026-06-06T09:13:04.613+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Keseruan Unsika Menggelar Fest...' | AI: neutral -> SMART: Positive
+[2026-06-06T09:13:04.803+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'UNSIKA Gelar Wisuda Gelombang ...' | AI: neutral -> SMART: Positive
+[2026-06-06T09:13:04.948+0700] {logging_mixin.py:190} INFO -    Process: 'Keren, Unsika Raih Dua Prestas...' -> Positive
+[2026-06-06T09:13:05.051+0700] {logging_mixin.py:190} INFO -    Process: 'Timbulkan Klaster Covid-19, In...' -> Neutral
+[2026-06-06T09:13:05.152+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Terkait Dugaan Monopoli Proyek...' | AI: neutral -> SMART: Negative
+[2026-06-06T09:13:05.191+0700] {logging_mixin.py:190} INFO -    ✅ Sukses menyimpan 14 hasil analisis.
+[2026-06-06T09:13:05.191+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai.
+[2026-06-06T09:13:05.221+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-06T09:13:05.232+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-06T09:13:05.233+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-06-05T05:00:00+00:00, execution_date=20260605T050000, start_date=20260606T021143, end_date=20260606T021305
+[2026-06-06T09:13:05.322+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-06T09:13:05.346+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-06T09:13:05.348+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

@@ -5,10 +5,20 @@ db-dtypes
 beautifulsoup4
 requests
 plotly
-# Streamlit boleh diinstall lokal buat testing UI
 streamlit
 lxml
 scikit-learn
 sastrawi
 python-dotenv
-google-genai
+google-generativeai   # <-- INI YANG BENAR (Bukan google-genai)
+sqlalchemy
+psycopg2-binary
+transformers
+torch
+wordcloud
+langchain
+langchain-community
+faiss-cpu
+langchain-huggingface
+sentence-transformers
+streamlit-option-menu

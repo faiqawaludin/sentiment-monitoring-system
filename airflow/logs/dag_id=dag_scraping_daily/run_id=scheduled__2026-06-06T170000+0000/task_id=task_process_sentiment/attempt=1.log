@@ -1,0 +1,37 @@
+[2026-06-07T12:00:08.120+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-07T12:00:08.139+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T17:00:00+00:00 [queued]>
+[2026-06-07T12:00:08.153+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T17:00:00+00:00 [queued]>
+[2026-06-07T12:00:08.154+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-06-07T12:00:08.171+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-06-06 17:00:00+00:00
+[2026-06-07T12:00:08.180+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=46511) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-07T12:00:08.182+0700] {standard_task_runner.py:72} INFO - Started process 46512 to run task
+[2026-06-07T12:00:08.181+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-06-06T17:00:00+00:00', '--job-id', '410', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmp0mpq4k0l']
+[2026-06-07T12:00:08.183+0700] {standard_task_runner.py:105} INFO - Job 410: Subtask task_process_sentiment
+[2026-06-07T12:00:08.199+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-07T12:00:08.236+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T17:00:00+00:00 [running]> on host b1aa4bc46701
+[2026-06-07T12:00:08.237+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-07T12:00:08.328+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-06-06T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-06T17:00:00+00:00'
+[2026-06-07T12:00:08.329+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-07T12:00:28.268+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-06-07T12:00:28.307+0700] {logging_mixin.py:190} INFO -    📦 Memproses 4 berita baru...
+[2026-06-07T12:00:28.308+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-06-07T12:00:28.740+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-07T12:00:28.742+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-07T12:00:28.742+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-07T12:00:28.761+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-07T12:00:28.975+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-07T12:00:29.078+0700] {logging_mixin.py:190} WARNING - Loading weights:  61%|██████    | 122/201 [00:00<00:00, 1217.72it/s]
+[2026-06-07T12:00:29.135+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|██████████| 201/201 [00:00<00:00, 1285.47it/s]
+[2026-06-07T12:00:29.437+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-07T12:00:29.711+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-07T12:00:30.552+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Pengembangan Usaha Kreatif, Mahasiswa UMB Rai...'
+[2026-06-07T12:00:30.555+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Mengabdi Puluhan Tahun, Masih Belum Nikmati T...'
+[2026-06-07T12:00:30.559+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Peluang Mahasiswa Indonesia Bekerja di Bidang...'
+[2026-06-07T12:00:30.562+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Working in Harmony Nurturing the Future - Uni...'
+[2026-06-07T12:00:30.562+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai.
+[2026-06-07T12:00:30.571+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-07T12:00:30.583+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-07T12:00:30.584+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-06-06T17:00:00+00:00, execution_date=20260606T170000, start_date=20260607T050008, end_date=20260607T050030
+[2026-06-07T12:00:30.663+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-07T12:00:30.677+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-07T12:00:30.680+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

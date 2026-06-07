@@ -1,0 +1,875 @@
+[2026-05-19T13:11:13.005+0700] {processor.py:186} INFO - Started process (PID=194) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:13.007+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T13:11:13.012+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:13.011+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:13.052+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:13.150+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:13.150+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T13:11:13.200+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:13.200+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T13:11:13.262+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.272 seconds
+[2026-05-19T13:11:43.482+0700] {processor.py:186} INFO - Started process (PID=287) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:43.484+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T13:11:43.489+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:43.488+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:43.530+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:11:43.595+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:43.594+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T13:11:43.643+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:11:43.643+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T13:11:43.712+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.245 seconds
+[2026-05-19T13:12:14.123+0700] {processor.py:186} INFO - Started process (PID=395) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:14.125+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T13:12:14.129+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:14.128+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:14.179+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:14.217+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:14.217+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T13:12:14.258+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:14.257+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T13:12:14.291+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.181 seconds
+[2026-05-19T13:12:44.810+0700] {processor.py:186} INFO - Started process (PID=423) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:44.811+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T13:12:44.816+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:44.815+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:44.847+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:12:44.883+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:44.882+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T13:12:44.926+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:12:44.925+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T13:12:44.957+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.156 seconds
+[2026-05-19T13:14:52.480+0700] {processor.py:186} INFO - Started process (PID=466) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T13:14:52.490+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T13:14:52.530+0700] {logging_mixin.py:190} INFO - [2026-05-19T13:14:52.529+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:32:14.882+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:32:14.992+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:32:14.991+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:32:15.112+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:32:15.111+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:32:15.250+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 1.052 seconds
+[2026-05-19T14:32:47.142+0700] {processor.py:186} INFO - Started process (PID=577) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:32:47.189+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:32:47.245+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:32:47.238+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:32:48.075+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:32:48.209+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:32:48.208+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:32:48.312+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:32:48.311+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:32:48.469+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 1.396 seconds
+[2026-05-19T14:33:18.784+0700] {processor.py:186} INFO - Started process (PID=622) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:18.788+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:33:18.794+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:18.793+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:18.853+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:18.907+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:18.906+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:33:18.965+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:18.964+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:33:19.021+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.254 seconds
+[2026-05-19T14:33:49.495+0700] {processor.py:186} INFO - Started process (PID=650) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:49.497+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:33:49.501+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:49.500+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:49.541+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:33:49.622+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:49.621+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:33:49.717+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:33:49.717+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:33:49.801+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.316 seconds
+[2026-05-19T14:34:20.494+0700] {processor.py:186} INFO - Started process (PID=678) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:20.499+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:34:20.513+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:20.512+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:20.596+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:20.642+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:20.641+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:34:21.037+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:21.037+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:34:21.068+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.587 seconds
+[2026-05-19T14:34:51.750+0700] {processor.py:186} INFO - Started process (PID=705) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:51.757+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:34:51.772+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:51.771+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:51.959+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:34:52.031+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:52.031+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:34:52.346+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:34:52.346+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:34:52.393+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.663 seconds
+[2026-05-19T14:35:23.165+0700] {processor.py:186} INFO - Started process (PID=740) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:23.171+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:35:23.184+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:23.183+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:23.362+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:23.770+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:23.770+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:35:23.811+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:23.810+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:35:23.856+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.710 seconds
+[2026-05-19T14:35:54.427+0700] {processor.py:186} INFO - Started process (PID=768) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:54.430+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:35:54.814+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:54.813+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:54.858+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:35:54.906+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:54.906+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:35:54.946+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:35:54.945+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:35:54.988+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.571 seconds
+[2026-05-19T14:36:25.722+0700] {processor.py:186} INFO - Started process (PID=796) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:25.724+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:36:25.729+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:25.728+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:25.772+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:25.820+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:25.820+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:36:25.865+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:25.865+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:36:25.905+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.201 seconds
+[2026-05-19T14:36:56.241+0700] {processor.py:186} INFO - Started process (PID=824) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:56.243+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:36:56.248+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:56.247+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:56.296+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:36:56.356+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:56.355+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:36:56.408+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:36:56.408+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:36:56.444+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.214 seconds
+[2026-05-19T14:37:27.140+0700] {processor.py:186} INFO - Started process (PID=852) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:27.157+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:37:27.193+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:27.192+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:27.299+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:27.383+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:27.382+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:37:27.494+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:27.494+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:37:27.660+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.552 seconds
+[2026-05-19T14:37:58.221+0700] {processor.py:186} INFO - Started process (PID=880) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:58.226+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:37:58.234+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:58.233+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:58.338+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:37:58.523+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:58.523+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:37:58.660+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:37:58.659+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:37:58.745+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.536 seconds
+[2026-05-19T14:38:29.245+0700] {processor.py:186} INFO - Started process (PID=910) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:29.247+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:38:29.253+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:29.252+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:29.303+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:29.359+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:29.359+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:38:29.410+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:29.410+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:38:29.453+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.224 seconds
+[2026-05-19T14:38:59.650+0700] {processor.py:186} INFO - Started process (PID=939) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:59.651+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:38:59.661+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:59.661+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:59.720+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:38:59.784+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:59.782+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:38:59.834+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:38:59.834+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:38:59.882+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.250 seconds
+[2026-05-19T14:39:30.161+0700] {processor.py:186} INFO - Started process (PID=968) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:39:30.166+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:39:30.172+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:39:30.171+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:39:30.218+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:39:30.269+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:39:30.269+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:39:30.318+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:39:30.317+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:39:30.373+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.226 seconds
+[2026-05-19T14:40:01.044+0700] {processor.py:186} INFO - Started process (PID=1034) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:01.048+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:40:01.092+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:01.067+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:01.153+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:01.255+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:01.255+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:40:01.460+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:01.459+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:40:01.548+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.530 seconds
+[2026-05-19T14:40:31.983+0700] {processor.py:186} INFO - Started process (PID=1062) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:31.986+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:40:31.991+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:31.991+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:32.050+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:40:32.113+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:32.113+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:40:32.158+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:40:32.157+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:40:32.193+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.223 seconds
+[2026-05-19T14:41:02.669+0700] {processor.py:186} INFO - Started process (PID=1090) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:02.671+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:41:02.677+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:02.676+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:02.725+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:02.782+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:02.782+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:41:02.844+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:02.844+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:41:02.884+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.235 seconds
+[2026-05-19T14:41:33.038+0700] {processor.py:186} INFO - Started process (PID=1119) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:33.041+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:41:33.050+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:33.049+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:33.093+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:41:33.142+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:33.141+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:41:33.190+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:41:33.189+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:41:33.221+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.198 seconds
+[2026-05-19T14:42:03.635+0700] {processor.py:186} INFO - Started process (PID=1147) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:03.637+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:42:03.643+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:03.643+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:03.683+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:03.616+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:03.615+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:42:03.667+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:03.667+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:42:03.708+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.211 seconds
+[2026-05-19T14:42:33.891+0700] {processor.py:186} INFO - Started process (PID=1176) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:33.893+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:42:33.898+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:33.897+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:33.945+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:42:33.995+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:33.994+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:42:34.046+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:42:34.046+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:42:34.085+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.212 seconds
+[2026-05-19T14:43:04.399+0700] {processor.py:186} INFO - Started process (PID=1216) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:04.401+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:43:04.405+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:04.405+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:04.446+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:04.500+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:04.499+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:43:04.572+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:04.571+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:43:04.619+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.229 seconds
+[2026-05-19T14:43:34.764+0700] {processor.py:186} INFO - Started process (PID=1256) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:34.766+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:43:34.778+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:34.775+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:34.834+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:43:34.936+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:34.935+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:43:35.063+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:43:35.063+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:43:35.144+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.397 seconds
+[2026-05-19T14:44:05.722+0700] {processor.py:186} INFO - Started process (PID=1284) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:05.727+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:44:05.735+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:05.734+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:05.797+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:05.880+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:05.879+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:44:05.935+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:05.935+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:44:05.976+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.269 seconds
+[2026-05-19T14:44:36.367+0700] {processor.py:186} INFO - Started process (PID=1389) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:36.375+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:44:36.381+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:36.380+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:36.451+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:44:36.589+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:36.586+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:44:36.685+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:44:36.685+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:44:36.747+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.391 seconds
+[2026-05-19T14:45:07.459+0700] {processor.py:186} INFO - Started process (PID=1672) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:07.469+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:45:07.512+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:07.512+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:07.611+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:07.724+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:07.723+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:45:07.852+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:07.852+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:45:07.971+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.567 seconds
+[2026-05-19T14:45:39.032+0700] {processor.py:186} INFO - Started process (PID=1732) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:39.041+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:45:39.065+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:39.064+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:39.811+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:45:39.895+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:39.894+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:45:40.024+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:45:40.024+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:45:40.148+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 1.145 seconds
+[2026-05-19T14:46:10.486+0700] {processor.py:186} INFO - Started process (PID=1761) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:10.489+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:46:10.498+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:10.498+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:10.552+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:10.619+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:10.618+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:46:10.692+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:10.692+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:46:10.733+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.261 seconds
+[2026-05-19T14:46:41.154+0700] {processor.py:186} INFO - Started process (PID=1790) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:41.156+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:46:41.162+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:41.161+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:41.241+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:46:41.330+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:41.329+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:46:41.426+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:46:41.426+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:46:41.527+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.389 seconds
+[2026-05-19T14:47:11.945+0700] {processor.py:186} INFO - Started process (PID=1818) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:11.950+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:47:11.956+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:11.955+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:12.013+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:12.079+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:12.078+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:47:12.127+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:12.126+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:47:12.168+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.237 seconds
+[2026-05-19T14:47:42.337+0700] {processor.py:186} INFO - Started process (PID=1846) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:42.340+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:47:42.345+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:42.344+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:42.381+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:47:42.431+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:42.431+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:47:42.478+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:47:42.478+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:47:42.525+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.197 seconds
+[2026-05-19T14:48:12.889+0700] {processor.py:186} INFO - Started process (PID=1874) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:12.895+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:48:12.902+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:12.901+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:12.955+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:13.005+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:13.005+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:48:13.048+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:13.048+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:48:13.080+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.205 seconds
+[2026-05-19T14:48:43.519+0700] {processor.py:186} INFO - Started process (PID=1902) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:43.521+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:48:43.526+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:43.526+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:43.572+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:48:43.629+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:43.629+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:48:43.686+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:48:43.685+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:48:43.716+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.213 seconds
+[2026-05-19T14:49:13.924+0700] {processor.py:186} INFO - Started process (PID=1930) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:13.926+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:49:13.931+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:13.930+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:13.971+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:14.021+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:14.020+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:49:14.064+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:14.063+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:49:14.097+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.185 seconds
+[2026-05-19T14:49:44.436+0700] {processor.py:186} INFO - Started process (PID=1958) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:44.438+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:49:44.444+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:44.443+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:44.485+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:49:44.526+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:44.526+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:49:44.565+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:49:44.565+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:49:44.596+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.175 seconds
+[2026-05-19T14:50:14.859+0700] {processor.py:186} INFO - Started process (PID=1986) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:14.860+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:50:14.864+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:14.864+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:14.911+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:14.971+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:14.971+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:50:15.015+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:15.014+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:50:15.050+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.202 seconds
+[2026-05-19T14:50:45.430+0700] {processor.py:186} INFO - Started process (PID=2014) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:45.432+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:50:45.439+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:45.438+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:45.488+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:50:45.548+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:45.547+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:50:45.604+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:50:45.604+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:50:45.649+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.234 seconds
+[2026-05-19T14:51:15.927+0700] {processor.py:186} INFO - Started process (PID=2042) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:15.929+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:51:15.933+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:15.932+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:15.973+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:16.021+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:16.021+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:51:16.063+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:16.063+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:51:16.099+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.184 seconds
+[2026-05-19T14:51:46.455+0700] {processor.py:186} INFO - Started process (PID=2070) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:46.457+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:51:46.463+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:46.462+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:46.508+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:51:46.559+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:46.559+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:51:46.608+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:51:46.608+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:51:46.654+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.217 seconds
+[2026-05-19T14:52:16.860+0700] {processor.py:186} INFO - Started process (PID=2098) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:16.865+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:52:16.870+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:16.869+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:16.916+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:16.972+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:16.971+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:52:17.036+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:17.036+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:52:17.087+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.252 seconds
+[2026-05-19T14:52:47.251+0700] {processor.py:186} INFO - Started process (PID=2126) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:47.253+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:52:47.266+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:47.264+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:47.318+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:52:47.382+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:47.381+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:52:47.436+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:52:47.436+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:52:47.476+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.246 seconds
+[2026-05-19T14:53:17.598+0700] {processor.py:186} INFO - Started process (PID=2154) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:17.600+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:53:17.603+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:17.603+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:17.643+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:17.694+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:17.694+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:53:17.736+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:17.736+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:53:17.766+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.181 seconds
+[2026-05-19T14:53:48.104+0700] {processor.py:186} INFO - Started process (PID=2183) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:48.109+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:53:48.115+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:48.114+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:48.185+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:53:48.264+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:48.264+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:53:48.332+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:53:48.331+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:53:48.384+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.298 seconds
+[2026-05-19T14:54:18.549+0700] {processor.py:186} INFO - Started process (PID=2212) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:18.550+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:54:18.555+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:18.554+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:18.592+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:18.636+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:18.636+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:54:18.679+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:18.678+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:54:18.707+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.171 seconds
+[2026-05-19T14:54:48.966+0700] {processor.py:186} INFO - Started process (PID=2240) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:48.968+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:54:48.973+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:48.972+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:49.023+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:54:49.068+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:49.068+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:54:49.114+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:54:49.114+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:54:49.148+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.194 seconds
+[2026-05-19T14:55:19.442+0700] {processor.py:186} INFO - Started process (PID=2268) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:19.444+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:55:19.447+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:19.447+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:19.482+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:19.527+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:19.526+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:55:19.566+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:19.565+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:55:19.594+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.163 seconds
+[2026-05-19T14:55:49.827+0700] {processor.py:186} INFO - Started process (PID=2296) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:49.828+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:55:49.835+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:49.834+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:49.873+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:55:49.916+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:49.916+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:55:49.954+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:55:49.954+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:55:49.984+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.168 seconds
+[2026-05-19T14:56:20.345+0700] {processor.py:186} INFO - Started process (PID=2324) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:20.347+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:56:20.353+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:20.352+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:20.400+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:20.449+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:20.449+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:56:20.492+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:20.492+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:56:20.537+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.208 seconds
+[2026-05-19T14:56:50.697+0700] {processor.py:186} INFO - Started process (PID=2352) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:50.699+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:56:50.704+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:50.703+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:50.738+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:56:50.780+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:50.780+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:56:50.823+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:56:50.823+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:56:50.861+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.175 seconds
+[2026-05-19T14:57:21.400+0700] {processor.py:186} INFO - Started process (PID=2380) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:21.402+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:57:21.406+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:21.405+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:21.441+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:21.485+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:21.485+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:57:21.521+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:21.520+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:57:21.549+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.160 seconds
+[2026-05-19T14:57:51.989+0700] {processor.py:186} INFO - Started process (PID=2408) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:51.991+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:57:51.996+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:51.996+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:52.037+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:57:52.091+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:52.091+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:57:52.139+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:57:52.138+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:57:52.172+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.194 seconds
+[2026-05-19T14:58:22.526+0700] {processor.py:186} INFO - Started process (PID=2437) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:22.528+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:58:22.534+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:22.533+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:22.572+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:22.620+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:22.620+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:58:22.666+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:22.665+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:58:22.699+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.186 seconds
+[2026-05-19T14:58:52.845+0700] {processor.py:186} INFO - Started process (PID=2465) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:52.847+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:58:52.853+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:52.852+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:52.893+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:58:52.938+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:52.938+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:58:52.987+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:58:52.987+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:58:53.018+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.185 seconds
+[2026-05-19T14:59:23.397+0700] {processor.py:186} INFO - Started process (PID=2493) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:23.399+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:59:23.403+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:23.403+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:23.447+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:23.492+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:23.492+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:59:23.537+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:23.536+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:59:23.567+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.182 seconds
+[2026-05-19T14:59:53.860+0700] {processor.py:186} INFO - Started process (PID=2521) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:53.862+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T14:59:53.866+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:53.866+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:53.916+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T14:59:53.963+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:53.963+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T14:59:54.011+0700] {logging_mixin.py:190} INFO - [2026-05-19T14:59:54.010+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T14:59:54.047+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.198 seconds
+[2026-05-19T15:00:24.255+0700] {processor.py:186} INFO - Started process (PID=2549) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:24.259+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:00:24.267+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:24.267+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:24.309+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:24.358+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:24.357+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:00:24.406+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:24.405+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:00:24.449+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.206 seconds
+[2026-05-19T15:00:54.846+0700] {processor.py:186} INFO - Started process (PID=2578) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:54.848+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:00:54.853+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:54.852+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:54.889+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:00:54.937+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:54.936+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:00:54.981+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:00:54.980+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:00:55.016+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.182 seconds
+[2026-05-19T15:03:53.718+0700] {processor.py:186} INFO - Started process (PID=2607) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:03:53.720+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:03:54.006+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:03:54.004+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:03:54.489+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:03:54.685+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:03:54.684+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:03:54.773+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:03:54.772+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:03:54.844+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 1.144 seconds
+[2026-05-19T15:07:40.888+0700] {processor.py:186} INFO - Started process (PID=2617) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:07:40.901+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:07:40.907+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:07:40.906+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:07:40.998+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:07:41.093+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:07:41.093+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:07:41.189+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:07:41.188+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:07:41.251+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.388 seconds
+[2026-05-19T15:08:11.804+0700] {processor.py:186} INFO - Started process (PID=2645) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:11.806+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:08:11.811+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:11.810+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:11.846+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:11.895+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:11.894+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:08:11.935+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:11.935+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:08:11.967+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.174 seconds
+[2026-05-19T15:08:42.296+0700] {processor.py:186} INFO - Started process (PID=2673) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:42.297+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:08:42.302+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:42.301+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:42.338+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:08:42.382+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:42.382+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:08:42.420+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:08:42.420+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:08:42.451+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.166 seconds
+[2026-05-19T15:09:13.032+0700] {processor.py:186} INFO - Started process (PID=2701) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:13.033+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:09:13.037+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:13.037+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:13.077+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:13.127+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:13.127+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:09:13.172+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:13.172+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:09:13.200+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.179 seconds
+[2026-05-19T15:09:43.793+0700] {processor.py:186} INFO - Started process (PID=2729) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:43.795+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:09:43.803+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:43.803+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:43.837+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:09:43.894+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:43.894+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:09:43.937+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:09:43.937+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:09:43.971+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.190 seconds
+[2026-05-19T15:10:14.194+0700] {processor.py:186} INFO - Started process (PID=2757) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:14.195+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:10:14.203+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:14.202+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:14.247+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:14.299+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:14.298+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:10:14.343+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:14.343+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:10:14.372+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.189 seconds
+[2026-05-19T15:10:44.763+0700] {processor.py:186} INFO - Started process (PID=2785) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:44.765+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:10:44.770+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:44.769+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:44.826+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:10:44.893+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:44.893+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:10:44.949+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:10:44.949+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:10:44.981+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.238 seconds
+[2026-05-19T15:11:15.078+0700] {processor.py:186} INFO - Started process (PID=2813) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:15.079+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:11:15.083+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:15.083+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:15.118+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:15.165+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:15.165+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:11:15.228+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:15.228+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:11:15.262+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.196 seconds
+[2026-05-19T15:11:45.673+0700] {processor.py:186} INFO - Started process (PID=2841) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:45.676+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:11:45.680+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:45.679+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:45.721+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:11:45.769+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:45.769+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:11:45.817+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:11:45.817+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:11:45.855+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.195 seconds
+[2026-05-19T15:12:16.292+0700] {processor.py:186} INFO - Started process (PID=2870) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:16.293+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:12:16.297+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:16.297+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:16.356+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:16.402+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:16.402+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:12:16.444+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:16.443+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:12:16.483+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.204 seconds
+[2026-05-19T15:12:46.658+0700] {processor.py:186} INFO - Started process (PID=2898) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:46.659+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:12:46.663+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:46.662+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:46.702+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:12:46.752+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:46.752+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:12:46.798+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:12:46.797+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:12:46.836+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.188 seconds
+[2026-05-19T15:13:17.265+0700] {processor.py:186} INFO - Started process (PID=2927) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:17.269+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:13:17.275+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:17.273+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:17.317+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:17.373+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:17.372+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:13:17.424+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:17.423+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:13:17.458+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.211 seconds
+[2026-05-19T15:13:47.606+0700] {processor.py:186} INFO - Started process (PID=2956) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:47.609+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:13:47.615+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:47.614+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:47.661+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:13:47.732+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:47.731+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:13:47.775+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:13:47.775+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:13:47.811+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.218 seconds
+[2026-05-19T15:14:18.325+0700] {processor.py:186} INFO - Started process (PID=2984) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:18.330+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:14:18.341+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:18.340+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:18.406+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:18.489+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:18.488+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:14:18.546+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:18.546+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:14:18.601+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.296 seconds
+[2026-05-19T15:14:48.976+0700] {processor.py:186} INFO - Started process (PID=3012) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:48.978+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T15:14:48.982+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:48.982+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:49.023+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T15:14:49.071+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:49.070+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T15:14:49.124+0700] {logging_mixin.py:190} INFO - [2026-05-19T15:14:49.123+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T15:14:49.158+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.202 seconds
+[2026-05-19T17:03:30.796+0700] {processor.py:186} INFO - Started process (PID=3040) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T17:03:30.804+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T17:03:30.811+0700] {logging_mixin.py:190} INFO - [2026-05-19T17:03:30.810+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T17:03:31.102+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T17:03:31.199+0700] {logging_mixin.py:190} INFO - [2026-05-19T17:03:31.199+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T17:03:31.312+0700] {logging_mixin.py:190} INFO - [2026-05-19T17:03:31.312+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-18 23:00:00+00:00, run_after=2026-05-19 11:00:00+00:00
+[2026-05-19T17:03:31.392+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.634 seconds
+[2026-05-19T20:09:07.140+0700] {processor.py:186} INFO - Started process (PID=3056) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:07.164+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:09:07.184+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:07.183+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:07.566+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:07.716+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:07.716+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:09:07.861+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:07.861+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:09:07.940+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.838 seconds
+[2026-05-19T20:09:38.647+0700] {processor.py:186} INFO - Started process (PID=3179) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:38.651+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:09:38.662+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:38.661+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:38.744+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:09:38.847+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:38.846+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:09:38.950+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:09:38.949+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:09:39.062+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.442 seconds
+[2026-05-19T20:10:09.479+0700] {processor.py:186} INFO - Started process (PID=3466) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:09.481+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:10:09.486+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:09.485+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:09.520+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:09.568+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:09.567+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:10:09.615+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:09.615+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:10:09.647+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.179 seconds
+[2026-05-19T20:10:40.153+0700] {processor.py:186} INFO - Started process (PID=3507) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:40.155+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:10:40.159+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:40.158+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:40.188+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:10:40.223+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:40.223+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:10:40.254+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:10:40.254+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:10:40.282+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.138 seconds
+[2026-05-19T20:11:10.477+0700] {processor.py:186} INFO - Started process (PID=3535) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:10.478+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:11:10.480+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:10.480+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:10.503+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:10.533+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:10.533+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:11:10.566+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:10.565+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:11:10.590+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.121 seconds
+[2026-05-19T20:11:40.853+0700] {processor.py:186} INFO - Started process (PID=3563) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:40.854+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:11:40.857+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:40.857+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:40.877+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:11:40.904+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:40.904+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:11:40.934+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:11:40.934+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:11:40.958+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.114 seconds
+[2026-05-19T20:12:11.033+0700] {processor.py:186} INFO - Started process (PID=3591) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:11.034+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:12:11.038+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:11.038+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:11.079+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:11.130+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:11.130+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:12:11.176+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:11.176+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:12:11.204+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.180 seconds
+[2026-05-19T20:12:41.451+0700] {processor.py:186} INFO - Started process (PID=3620) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:41.453+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:12:41.457+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:41.456+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:41.483+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:12:41.517+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:41.517+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:12:41.554+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:12:41.554+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:12:41.587+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.149 seconds
+[2026-05-19T20:13:11.665+0700] {processor.py:186} INFO - Started process (PID=3648) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:11.667+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:13:11.671+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:11.670+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:11.701+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:11.747+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:11.746+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:13:11.783+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:11.783+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:13:11.811+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.156 seconds
+[2026-05-19T20:13:42.044+0700] {processor.py:186} INFO - Started process (PID=3677) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:42.045+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:13:42.047+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:42.047+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:42.071+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:13:42.102+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:42.102+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:13:42.130+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:13:42.130+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:13:42.155+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.119 seconds
+[2026-05-19T20:14:12.445+0700] {processor.py:186} INFO - Started process (PID=3705) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:12.446+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:14:12.450+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:12.449+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:12.476+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:12.511+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:12.511+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:14:12.539+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:12.539+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:14:12.564+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.126 seconds
+[2026-05-19T20:14:42.916+0700] {processor.py:186} INFO - Started process (PID=3733) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:42.918+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:14:42.923+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:42.922+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:42.974+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:14:43.039+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:43.038+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:14:43.091+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:14:43.091+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:14:43.143+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.238 seconds
+[2026-05-19T20:15:13.387+0700] {processor.py:186} INFO - Started process (PID=3762) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:13.388+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:15:13.391+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:13.391+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:13.409+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:13.438+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:13.438+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:15:13.464+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:13.463+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:15:13.486+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.106 seconds
+[2026-05-19T20:15:43.641+0700] {processor.py:186} INFO - Started process (PID=3790) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:43.642+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:15:43.648+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:43.648+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:43.687+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:15:43.735+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:43.734+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:15:43.783+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:15:43.783+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:15:43.812+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.179 seconds
+[2026-05-19T20:16:13.890+0700] {processor.py:186} INFO - Started process (PID=3818) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:13.891+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:16:13.900+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:13.900+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:13.923+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:13.953+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:13.953+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:16:13.984+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:13.984+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:16:14.008+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.126 seconds
+[2026-05-19T20:16:44.283+0700] {processor.py:186} INFO - Started process (PID=3846) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:44.284+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:16:44.287+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:44.286+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:44.306+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:16:44.332+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:44.332+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:16:44.358+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:16:44.358+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:16:44.382+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.107 seconds
+[2026-05-19T20:17:14.612+0700] {processor.py:186} INFO - Started process (PID=3874) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:14.613+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:17:14.615+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:14.615+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:14.634+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:14.664+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:14.664+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:17:14.696+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:14.696+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:17:14.720+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.115 seconds
+[2026-05-19T20:17:44.988+0700] {processor.py:186} INFO - Started process (PID=3902) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:44.989+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:17:44.992+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:44.992+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:45.013+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:17:45.045+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:45.045+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:17:45.071+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:17:45.071+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:17:45.099+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.118 seconds
+[2026-05-19T20:18:15.407+0700] {processor.py:186} INFO - Started process (PID=3936) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:15.408+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:18:15.411+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:15.410+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:15.430+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:15.458+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:15.458+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:18:15.483+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:15.483+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:18:15.505+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.104 seconds
+[2026-05-19T20:18:45.773+0700] {processor.py:186} INFO - Started process (PID=3964) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:45.775+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:18:45.778+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:45.778+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:45.804+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:18:45.837+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:45.837+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:18:45.863+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:18:45.863+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:18:45.886+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.120 seconds
+[2026-05-19T20:19:16.197+0700] {processor.py:186} INFO - Started process (PID=3992) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:16.198+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:19:16.202+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:16.202+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:16.224+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:16.256+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:16.255+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:19:16.284+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:16.284+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:19:16.310+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.120 seconds
+[2026-05-19T20:19:46.378+0700] {processor.py:186} INFO - Started process (PID=4020) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:46.379+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:19:46.382+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:46.381+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:46.404+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:19:46.436+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:46.435+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:19:46.467+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:19:46.466+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:19:46.490+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.120 seconds
+[2026-05-19T20:20:16.755+0700] {processor.py:186} INFO - Started process (PID=4048) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:16.756+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:20:16.759+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:16.759+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:16.784+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:16.812+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:16.812+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:20:16.842+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:16.842+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:20:16.869+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.121 seconds
+[2026-05-19T20:20:47.100+0700] {processor.py:186} INFO - Started process (PID=4076) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:47.102+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:20:47.104+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:47.104+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:47.123+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:20:47.152+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:47.152+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:20:47.176+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:20:47.176+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:20:47.198+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.104 seconds
+[2026-05-19T20:21:17.415+0700] {processor.py:186} INFO - Started process (PID=4104) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:17.416+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:21:17.419+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:17.418+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:17.440+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:17.471+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:17.471+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:21:17.497+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:17.497+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:21:17.518+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.108 seconds
+[2026-05-19T20:21:47.800+0700] {processor.py:186} INFO - Started process (PID=4133) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:47.802+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:21:47.806+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:47.805+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:47.837+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:21:47.879+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:47.878+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:21:47.916+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:21:47.916+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:21:47.943+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.153 seconds
+[2026-05-19T20:22:18.115+0700] {processor.py:186} INFO - Started process (PID=4161) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:18.117+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:22:18.122+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:18.122+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:18.150+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:18.192+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:18.192+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:22:18.233+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:18.233+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:22:18.261+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.155 seconds
+[2026-05-19T20:22:48.443+0700] {processor.py:186} INFO - Started process (PID=4189) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:48.445+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:22:48.450+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:48.450+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:48.477+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:22:48.513+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:48.513+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:22:48.545+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:22:48.544+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:22:48.567+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.134 seconds
+[2026-05-19T20:23:18.611+0700] {processor.py:186} INFO - Started process (PID=4217) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:18.612+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:23:18.616+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:18.615+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:18.636+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:18.662+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:18.662+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:23:18.695+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:18.695+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:23:18.723+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.118 seconds
+[2026-05-19T20:23:48.914+0700] {processor.py:186} INFO - Started process (PID=4245) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:48.915+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:23:48.918+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:48.917+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:48.943+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:23:48.977+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:48.977+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:23:49.011+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:23:49.010+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:23:49.038+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.131 seconds
+[2026-05-19T20:24:19.147+0700] {processor.py:186} INFO - Started process (PID=4273) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:19.149+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:24:19.152+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:19.152+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:19.184+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:19.230+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:19.230+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:24:19.267+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:19.267+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:24:19.298+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.159 seconds
+[2026-05-19T20:24:49.430+0700] {processor.py:186} INFO - Started process (PID=4301) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:49.431+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:24:49.433+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:49.433+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:49.454+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:24:49.485+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:49.485+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:24:49.510+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:24:49.510+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:24:49.537+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.113 seconds
+[2026-05-19T20:25:19.756+0700] {processor.py:186} INFO - Started process (PID=4329) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:19.757+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:25:19.760+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:19.760+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:19.784+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:19.815+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:19.815+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:25:19.841+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:19.841+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:25:19.864+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.116 seconds
+[2026-05-19T20:25:49.980+0700] {processor.py:186} INFO - Started process (PID=4357) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:49.981+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:25:49.984+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:49.984+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:50.003+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:25:50.033+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:50.033+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:25:50.075+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:25:50.075+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:25:50.099+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.124 seconds
+[2026-05-19T20:26:20.263+0700] {processor.py:186} INFO - Started process (PID=4385) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:20.265+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:26:20.270+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:20.269+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:20.300+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:20.339+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:20.338+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:26:20.371+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:20.371+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:26:20.395+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.141 seconds
+[2026-05-19T20:26:50.562+0700] {processor.py:186} INFO - Started process (PID=4414) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:50.564+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:26:50.570+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:50.570+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:50.604+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:26:50.653+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:50.652+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:26:50.690+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:26:50.690+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:26:50.719+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.168 seconds
+[2026-05-19T20:27:20.817+0700] {processor.py:186} INFO - Started process (PID=4442) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:20.818+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:27:20.821+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:20.820+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:20.842+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:20.876+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:20.876+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:27:20.906+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:20.906+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:27:20.931+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.121 seconds
+[2026-05-19T20:27:51.110+0700] {processor.py:186} INFO - Started process (PID=4471) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:51.111+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:27:51.115+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:51.115+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:51.149+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:27:51.187+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:51.187+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:27:51.225+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:27:51.225+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:27:51.261+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.164 seconds
+[2026-05-19T20:28:21.468+0700] {processor.py:186} INFO - Started process (PID=4500) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:21.469+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:28:21.473+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:21.472+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:21.504+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:21.539+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:21.539+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:28:21.582+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:21.582+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:28:21.609+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.148 seconds
+[2026-05-19T20:28:51.846+0700] {processor.py:186} INFO - Started process (PID=4528) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:51.847+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:28:51.851+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:51.851+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:51.877+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:28:51.913+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:51.913+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:28:51.948+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:28:51.947+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:28:51.971+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.132 seconds
+[2026-05-19T20:29:22.151+0700] {processor.py:186} INFO - Started process (PID=4556) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:22.152+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:29:22.155+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:22.155+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:22.179+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:22.210+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:22.209+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:29:22.238+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:22.238+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:29:22.264+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.119 seconds
+[2026-05-19T20:29:52.533+0700] {processor.py:186} INFO - Started process (PID=4584) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:52.535+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:29:52.538+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:52.538+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:52.563+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:29:52.593+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:52.592+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:29:52.623+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:29:52.622+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:29:52.648+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.123 seconds
+[2026-05-19T20:30:22.815+0700] {processor.py:186} INFO - Started process (PID=4612) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:22.816+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:30:22.820+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:22.819+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:22.842+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:22.877+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:22.876+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:30:22.903+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:22.903+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:30:22.927+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.119 seconds
+[2026-05-19T20:30:53.250+0700] {processor.py:186} INFO - Started process (PID=4640) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:53.251+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:30:53.254+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:53.253+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:53.278+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:30:53.313+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:53.313+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:30:53.342+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:30:53.342+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:30:53.362+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.123 seconds
+[2026-05-19T20:31:23.437+0700] {processor.py:186} INFO - Started process (PID=4669) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:23.439+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:31:23.441+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:23.441+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:23.466+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:23.507+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:23.506+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:31:23.537+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:23.537+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:31:23.563+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.136 seconds
+[2026-05-19T20:31:53.782+0700] {processor.py:186} INFO - Started process (PID=4697) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:53.793+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:31:53.816+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:53.815+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:53.884+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:31:53.953+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:53.952+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:31:54.019+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:31:54.018+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:31:54.058+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.300 seconds
+[2026-05-19T20:32:24.376+0700] {processor.py:186} INFO - Started process (PID=4726) to work on /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:32:24.380+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_scraping_twitter.py for tasks to queue
+[2026-05-19T20:32:24.386+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:32:24.385+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:32:24.425+0700] {processor.py:925} INFO - DAG(s) 'dag_scraping_twitter' retrieved from /opt/airflow/dags/dag_scraping_twitter.py
+[2026-05-19T20:32:24.470+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:32:24.469+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-05-19T20:32:24.512+0700] {logging_mixin.py:190} INFO - [2026-05-19T20:32:24.511+0700] {dag.py:4138} INFO - Setting next_dagrun for dag_scraping_twitter to 2026-05-19 11:00:00+00:00, run_after=2026-05-19 23:00:00+00:00
+[2026-05-19T20:32:24.542+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_scraping_twitter.py took 0.178 seconds

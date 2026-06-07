@@ -1,0 +1,34 @@
+[2026-06-07T00:00:06.533+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-07T00:00:06.546+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T05:00:00+00:00 [queued]>
+[2026-06-07T00:00:06.554+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T05:00:00+00:00 [queued]>
+[2026-06-07T00:00:06.555+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-06-07T00:00:06.574+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-06-06 05:00:00+00:00
+[2026-06-07T00:00:06.581+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=5570) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-07T00:00:06.582+0700] {standard_task_runner.py:72} INFO - Started process 5571 to run task
+[2026-06-07T00:00:06.582+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-06-06T05:00:00+00:00', '--job-id', '406', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpdi7xctdq']
+[2026-06-07T00:00:06.584+0700] {standard_task_runner.py:105} INFO - Job 406: Subtask task_process_sentiment
+[2026-06-07T00:00:06.602+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-07T00:00:06.647+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-06T05:00:00+00:00 [running]> on host b1aa4bc46701
+[2026-06-07T00:00:06.649+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-07T00:00:06.734+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-06-06T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-06T05:00:00+00:00'
+[2026-06-07T00:00:06.735+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-07T00:00:12.094+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-06-07T00:00:12.112+0700] {logging_mixin.py:190} INFO -    📦 Memproses 4 berita baru...
+[2026-06-07T00:00:12.113+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-06-07T00:00:12.447+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-07T00:00:12.463+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-07T00:00:12.559+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-07T00:00:12.647+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|██████████| 201/201 [00:00<00:00, 2309.47it/s]
+[2026-06-07T00:00:12.938+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-07T00:00:13.193+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-07T00:00:13.337+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Pengembangan Usaha Kreatif, Mahasiswa UMB Rai...'
+[2026-06-07T00:00:13.340+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Mengabdi Puluhan Tahun, Masih Belum Nikmati T...'
+[2026-06-07T00:00:13.343+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Peluang Mahasiswa Indonesia Bekerja di Bidang...'
+[2026-06-07T00:00:13.347+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Working in Harmony Nurturing the Future - Uni...'
+[2026-06-07T00:00:13.347+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai.
+[2026-06-07T00:00:13.355+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-07T00:00:13.363+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-07T00:00:13.364+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-06-06T05:00:00+00:00, execution_date=20260606T050000, start_date=20260606T170006, end_date=20260606T170013
+[2026-06-07T00:00:13.428+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-07T00:00:13.439+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-07T00:00:13.443+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

@@ -123,6 +123,7 @@ services:
     env_file:
       - .env
 
+# --- VOLUMES HARUS BERADA DI PALING BAWAH / LUAR ---
 volumes:
   postgres-db-volume:
   postgres-dw-volume:

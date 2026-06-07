@@ -1,0 +1,22 @@
+[2026-06-02T09:24:06.007+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-02T09:24:06.031+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-01T05:00:00+00:00 [queued]>
+[2026-06-02T09:24:06.045+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-01T05:00:00+00:00 [queued]>
+[2026-06-02T09:24:06.046+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2026-06-02T09:24:06.063+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-06-01 05:00:00+00:00
+[2026-06-02T09:24:06.072+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1563) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-02T09:24:06.074+0700] {standard_task_runner.py:72} INFO - Started process 1574 to run task
+[2026-06-02T09:24:06.072+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-06-01T05:00:00+00:00', '--job-id', '371', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpuur86y0u']
+[2026-06-02T09:24:06.077+0700] {standard_task_runner.py:105} INFO - Job 371: Subtask task_process_sentiment
+[2026-06-02T09:24:06.098+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-02T09:24:06.146+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-01T05:00:00+00:00 [running]> on host aebac9d8a9bd
+[2026-06-02T09:24:06.148+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-02T09:24:06.357+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-06-01T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-01T05:00:00+00:00'
+[2026-06-02T09:24:06.358+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-02T09:24:19.983+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-06-02T09:24:20.014+0700] {logging_mixin.py:190} INFO -    ✅ Tidak ada berita baru untuk diproses.
+[2026-06-02T09:24:20.015+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-02T09:24:20.025+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-02T09:24:20.026+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_daily, task_id=task_process_sentiment, run_id=scheduled__2026-06-01T05:00:00+00:00, execution_date=20260601T050000, start_date=20260602T022406, end_date=20260602T022420
+[2026-06-02T09:24:20.093+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-02T09:24:20.112+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-02T09:24:20.114+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

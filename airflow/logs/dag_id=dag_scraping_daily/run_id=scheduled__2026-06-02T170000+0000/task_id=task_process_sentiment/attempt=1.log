@@ -1,0 +1,34 @@
+[2026-06-03T12:00:08.916+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-03T12:00:08.931+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-02T17:00:00+00:00 [queued]>
+[2026-06-03T12:00:08.939+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-02T17:00:00+00:00 [queued]>
+[2026-06-03T12:00:08.940+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 2
+[2026-06-03T12:00:08.952+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_process_sentiment> on 2026-06-02 17:00:00+00:00
+[2026-06-03T12:00:08.960+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=899) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-03T12:00:08.961+0700] {standard_task_runner.py:72} INFO - Started process 900 to run task
+[2026-06-03T12:00:08.960+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_daily', 'task_process_sentiment', 'scheduled__2026-06-02T17:00:00+00:00', '--job-id', '388', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_daily.py', '--cfg-path', '/tmp/tmpub0pnm35']
+[2026-06-03T12:00:08.962+0700] {standard_task_runner.py:105} INFO - Job 388: Subtask task_process_sentiment
+[2026-06-03T12:00:08.975+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-03T12:00:09.008+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_daily.task_process_sentiment scheduled__2026-06-02T17:00:00+00:00 [running]> on host ded7624097cc
+[2026-06-03T12:00:09.010+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-03T12:00:09.087+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_daily' AIRFLOW_CTX_TASK_ID='task_process_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2026-06-02T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-02T17:00:00+00:00'
+[2026-06-03T12:00:09.089+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-03T12:00:20.558+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...
+[2026-06-03T12:00:20.587+0700] {logging_mixin.py:190} INFO -    📦 Memproses 3 berita baru...
+[2026-06-03T12:00:20.589+0700] {logging_mixin.py:190} INFO -    🤖 Sedang memuat model AI (IndoBERT)...
+[2026-06-03T12:00:21.200+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-03T12:00:21.248+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-03T12:00:21.300+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-03T12:00:21.672+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-06-03T12:00:21.675+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-03T12:00:21.675+0700] {_http.py:779} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-03T12:00:22.047+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/xet-read-token/ac452dcb0f4966130bba44f4ee0013bb5d52c282 "HTTP/1.1 200 OK"
+[2026-06-03T12:08:37.195+0700] {job.py:229} INFO - Heartbeat recovered after 16.10 seconds
+[2026-06-03T12:23:43.820+0700] {job.py:229} INFO - Heartbeat recovered after 501.48 seconds
+[2026-06-03T13:17:29.115+0700] {local_task_job_runner.py:223} ERROR - Heartbeat time limit exceeded!
+[2026-06-03T13:17:29.160+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2026-06-03T13:17:30.259+0700] {process_utils.py:132} INFO - Sending 15 to group 900. PIDs of all processes in the group: [900]
+[2026-06-03T13:17:30.264+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 900
+[2026-06-03T13:18:30.341+0700] {process_utils.py:150} WARNING - process psutil.Process(pid=900, name='airflow task ru', status='sleeping', started='12:00:08') did not respond to SIGTERM. Trying SIGKILL
+[2026-06-03T13:18:30.345+0700] {process_utils.py:87} INFO - Sending the signal 9 to group 900
+[2026-06-03T13:18:30.399+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=900, name='airflow task ru', status='terminated', exitcode=<Negsignal.SIGKILL: -9>, started='12:00:08') (900) terminated with exit code -9
+[2026-06-03T13:18:30.400+0700] {standard_task_runner.py:190} ERROR - ('Job 388 was killed before it finished (likely due to running out of memory)', 'For more information, see https://***.apache.org/docs/apache-***/stable/troubleshooting.html#LocalTaskJob-killed')

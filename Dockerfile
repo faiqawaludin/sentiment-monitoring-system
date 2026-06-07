@@ -36,24 +36,12 @@ USER airflow
 # 1. Install PyTorch versi CPU (Ringan)
 RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
-# 2. Install library sisanya (Perhatikan baris 'RUN' di bawah ini jangan sampai hilang)
-RUN pip install --no-cache-dir \
-    pandas \
-    numpy \
-    beautifulsoup4 \
-    lxml \
-    requests \
-    sqlalchemy \
-    psycopg2-binary \
-    plotly \
-    streamlit \
-    xlsxwriter \
-    transformers \
-    huggingface_hub \
-    wordcloud \
-    matplotlib \
-    streamlit-option-menu \
-    scikit-learn \
-    sastrawi \
-    python-dotenv \
-    google-genai
+# ==========================================
+# 2. CARA CERDAS: BACA DARI REQUIREMENTS.TXT
+# ==========================================
+# Salin requirements dari laptop ke dalam kontainer
+COPY requirements-local.txt /requirements.txt
+
+
+# Install SEMUA library sekaligus dari file teks tersebut
+RUN pip install --no-cache-dir -r /requirements.txt

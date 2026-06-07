@@ -18,51 +18,50 @@ def refine_sentiment(text, original_label, original_score):
     Memperbaiki kesalahan AI karena IndoBERT melihat kalimat sebagai fakta objektif.
     """
     text_lower = text.lower()
-
-    # 🌟 PERBAIKAN FATAL: Standarisasi label jadi kapital awal (Neutral, Positive, Negative)
     safe_label = str(original_label).capitalize()
 
-    # 1. KASUS SAMPAH & LINGKUNGAN
+    # 🚨 1. KASUS FATAL (Reputasi Kampus Rusak) - DICEK PERTAMA KALI
+    fatal_negatives = ['demo', 'protes', 'korupsi', 'pelecehan', 'pungli', 'pidana', 'tersangka', 'mangkrak', 'janggal', 'kejanggalan']
+    if any(w in text_lower for w in fatal_negatives):
+        return 'Negative', 0.95
+
+    # ♻️ 2. KASUS SAMPAH & LINGKUNGAN
     if 'sampah' in text_lower or 'limbah' in text_lower:
-        positive_context = ['pengelolaan', 'mengelola', 'kelola', 'bank sampah', 'daur ulang', 'inovasi', 'bersih',
-                            'solusi']
+        positive_context = ['pengelolaan', 'mengelola', 'kelola', 'bank sampah', 'daur ulang', 'inovasi', 'bersih', 'solusi']
         if any(word in text_lower for word in positive_context):
             return 'Positive', 0.95
 
-    # 2. KASUS JALAN
+    # 🛣️ 3. KASUS JALAN & BENCANA
     if 'jalan' in text_lower and any(w in text_lower for w in ['diperbaiki', 'mulus', 'rampung']):
         return 'Positive', 0.90
-
-    # 3. KASUS BENCANA & PENYELESAIAN
     if any(w in text_lower for w in ['banjir', 'bencana', 'kecelakaan']):
-        solution_context = ['mitigasi', 'bantuan', 'membantu', 'donasi', 'evakuasi', 'selamat', 'inovasi', 'teknologi',
-                            'cegah']
+        solution_context = ['mitigasi', 'bantuan', 'membantu', 'donasi', 'evakuasi', 'selamat', 'inovasi', 'teknologi', 'cegah']
         if any(word in text_lower for word in solution_context):
             return 'Positive', 0.95
 
-    # 4. PENDETEKSI REPUTASI KAMPUS
-    if safe_label == 'Neutral':
-        # Kata Kunci Reputasi Negatif (Dicek duluan agar lebih prioritas)
+        # 🎓 4. KEGIATAN AKADEMIK, PENGABDIAN & PRESTASI (BARU!)
+        academic_positive = [
+            'seminar', 'workshop', 'kkn', 'pelatihan', 'gandeng', 'kerja sama', 'kerjasama',
+            'kuliah umum', 'lokakarya', 'penelitian', 'inovasi', 'prestasi', 'juara', 'lulus',
+            'wisuda', 'hibah', 'pendanaan', 'pemeriksaan', 'sosialisasi', 'pengabdian', 'bantuan',
+            'beasiswa', 'penghargaan', 'unggulan', 'solusi', 'terjunkan', 'bantu', 'bina', 'membangun',
+            'percepat', 'maju', 'sukses', 'kontribusi', 'mendukung', 'kolaborasi', 'inovatif', 'kreatif',
+            'peduli', 'berbagi', 'santunan', 'kampanye', 'dorong', 'gelar',
+            'akreditasi', 'unggul', 'terakreditasi'  # <-- INI TAMBAHANNYA
+        ]
+    if any(word in text_lower for word in academic_positive):
+        return 'Positive', 0.90
+
+    # 📉 5. PENDETEKSI REPUTASI NEGATIF LAINNYA
+    if safe_label == 'Neutral' or safe_label == 'Positive':
         neg_keywords = [
-            'janggal', 'kejanggalan', 'dugaan', 'korupsi', 'demo', 'protes', 'mangkrak',
-            'polemik', 'ultimatum', 'pelecehan', 'gagal', 'kecewa', 'batal', 'rugi',
-            'sanksi', 'pelanggaran', 'tersangka', 'pidana', 'pungli', 'tuntut', 'kecam', 'soroti', 'kontroversi'
+            'dugaan', 'polemik', 'ultimatum', 'gagal', 'kecewa', 'batal', 'rugi',
+            'sanksi', 'pelanggaran', 'tuntut', 'kecam', 'soroti', 'kontroversi', 'darurat'
         ]
         if any(word in text_lower for word in neg_keywords):
             return 'Negative', 0.85
 
-        # Kata Kunci Reputasi Positif
-        pos_keywords = [
-            'zakat', 'kerjasama', 'kerja sama', 'digitalisasi', 'transformasi',
-            'prestasi', 'juara', 'inovasi', 'sosialisasi', 'pengabdian', 'bantuan', 'beasiswa',
-            'penghargaan', 'unggulan', 'lulus', 'wisuda', 'damai', 'solusi', 'terjunkan',
-            'bantu', 'bina', 'membangun', 'percepat', 'hibah', 'pendanaan', 'maju', 'sukses',
-            'kontribusi', 'mendukung', 'kolaborasi', 'inovatif', 'kreatif', 'peduli', 'berbagi', 'santunan'
-        ]
-        if any(word in text_lower for word in pos_keywords):
-            return 'Positive', 0.85
-
-    # Kalau tidak ada pengecualian, kembalikan label yang sudah distandarisasi
+    # Kalau tidak masuk pengecualian apapun, kembalikan label aslinya
     return safe_label, original_score
 
 

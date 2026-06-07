@@ -1,0 +1,37 @@
+[2026-06-02T09:12:50.272+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-02T09:12:50.295+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-05-30T23:00:00+00:00 [queued]>
+[2026-06-02T09:12:50.308+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-05-30T23:00:00+00:00 [queued]>
+[2026-06-02T09:12:50.309+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-02T09:12:50.330+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-05-30 23:00:00+00:00
+[2026-06-02T09:12:50.346+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=183) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-02T09:12:50.348+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'scheduled__2026-05-30T23:00:00+00:00', '--job-id', '366', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmp2k2sa8pp']
+[2026-06-02T09:12:50.352+0700] {standard_task_runner.py:72} INFO - Started process 191 to run task
+[2026-06-02T09:12:50.353+0700] {standard_task_runner.py:105} INFO - Job 366: Subtask task_scrape_twitter
+[2026-06-02T09:12:50.378+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-02T09:12:50.433+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-05-30T23:00:00+00:00 [running]> on host aebac9d8a9bd
+[2026-06-02T09:12:50.435+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-02T09:12:50.631+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-05-30T23:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-30T23:00:00+00:00'
+[2026-06-02T09:12:50.635+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-02T09:12:54.994+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-06-02T09:12:55.038+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 258 tweet.
+[2026-06-02T09:12:55.039+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-06-02T09:21:08.513+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 60 tweet mentah dari X.
+[2026-06-02T09:21:08.587+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 20 tweet BARU ke database.
+[2026-06-02T09:21:08.588+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-06-02T09:23:47.876+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 17 tweet mentah dari X.
+[2026-06-02T09:23:47.892+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 4 tweet BARU ke database.
+[2026-06-02T09:23:47.893+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-06-02T09:26:24.685+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 34 tweet mentah dari X.
+[2026-06-02T09:26:24.704+0700] {logging_mixin.py:190} INFO -    ❌ Gagal simpan: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "tweets_raw_tweet_url_key"
+DETAIL:  Key (tweet_url)=(https://x.com/undefined/status/2056057789936759199) already exists.
+
+[SQL: INSERT INTO tweets_raw (scraped_at, keyword, username, full_text, tweet_url, likes, retweets) VALUES (%(scraped_at)s, %(keyword)s, %(username)s, %(full_text)s, %(tweet_url)s, %(likes)s, %(retweets)s)]
+[parameters: {'scraped_at': datetime.datetime(2026, 6, 2, 9, 26, 24, 682939), 'keyword': 'mahasiswa unsika', 'username': None, 'full_text': 'Mahasiswa UNSIKA Viral linknya: https://t.co/7hLccV4dbc Indo lokal viral sabtu malam minggu malming maljum ga ribet nadiem revan pagi sarapan ekonomi https://t.co/fgkOInAMwk', 'tweet_url': 'https://x.com/undefined/status/2056057789936759199', 'likes': 0, 'retweets': 0}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-06-02T09:26:24.704+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 24 tweet baru tersimpan.
+[2026-06-02T09:26:24.714+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-02T09:26:24.857+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-02T09:26:24.860+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=scheduled__2026-05-30T23:00:00+00:00, execution_date=20260530T230000, start_date=20260602T021250, end_date=20260602T022624
+[2026-06-02T09:26:24.992+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-02T09:26:25.097+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-02T09:26:25.101+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
