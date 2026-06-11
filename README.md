@@ -37,7 +37,7 @@ Sistem ini diisolasi penuh di dalam lingkungan **Docker (Containerization)** dan
 
 ---
 
-## 📐 Metodologi Pengembangan
+##  Metodologi Pengembangan
 
 Pengembangan sistem REMOSY mengadopsi integrasi harmonis antara:
 * **CRISP-DM (Cross-Industry Standard Process for Data Mining):** Mengawal siklus analitik data mulai dari *Business Understanding*, *Data Understanding*, *Data Preparation*, *Modeling*, *Evaluation*, hingga *Deployment*.
