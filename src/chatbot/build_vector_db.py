@@ -27,11 +27,11 @@ def build_faiss_index():
     # ==========================================
     try:
         query_news = """
-                     SELECT nr.title          as teks, \
-                            nr.source, \
-                            nr.published_date as tanggal, \
-                            np.sentiment_label, \
-                            np.sentiment_score, \
+                     SELECT nr.title          as teks,
+                            nr.source,
+                            nr.published_date as tanggal,
+                            np.sentiment_label,
+                            np.sentiment_score,
                             'Berita'          as platform
                      FROM news_raw nr
                               JOIN news_processed np ON nr.id = np.news_id
@@ -56,7 +56,9 @@ def build_faiss_index():
                                'Twitter'     as platform
                         FROM tweets_raw tr
                                  JOIN tweets_processed tp ON tr.id = tp.tweet_id
-                        WHERE tp.sentiment_label IS NOT NULL \
+                        WHERE tp.sentiment_label IS NOT NULL
+                          AND tr.scraped_at >= NOW() - INTERVAL '365 days'
+                        ORDER BY tr.scraped_at DESC
                         """
         df_twitter = pd.read_sql(query_twitter, engine)
         print(f"✅ Berhasil menarik {len(df_twitter)} data Twitter.")

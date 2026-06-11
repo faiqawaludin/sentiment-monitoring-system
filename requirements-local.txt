@@ -10,7 +10,7 @@ lxml
 scikit-learn
 sastrawi
 python-dotenv
-google-generativeai   # <-- INI YANG BENAR (Bukan google-genai)
+google-genai   # <-- INI YANG BENAR (Bukan google-genai)
 sqlalchemy
 psycopg2-binary
 transformers
