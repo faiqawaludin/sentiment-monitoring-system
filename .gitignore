@@ -9,3 +9,4 @@ __pycache__/
 # Google Cloud Credentials
 google_credentials.json
 test/rag-ragas.py
+.gitignore
