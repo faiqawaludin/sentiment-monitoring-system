@@ -18,6 +18,7 @@ Proyek ini berhasil mengimplementasikan *end-to-end automated data pipeline* par
 ---
 
 ##  Arsitektur Data & Medallion Design
+<img width="3144" height="1964" alt="Diagram Sistem drawio" src="https://github.com/user-attachments/assets/a90fd68f-114b-42a0-9ce2-85b774407c7d" />
 
 Sistem ini diisolasi penuh di dalam lingkungan **Docker (Containerization)** dan mengadopsi prinsip **Medallion Architecture** di atas database internal untuk menjamin tata kelola kualitas data:
 
