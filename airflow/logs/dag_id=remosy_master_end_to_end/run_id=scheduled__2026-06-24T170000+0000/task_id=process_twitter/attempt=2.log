@@ -1,0 +1,36 @@
+[2026-06-25T13:34:26.541+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T13:34:26.567+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:34:26.583+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:34:26.584+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2026-06-25T13:34:26.602+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_twitter> on 2026-06-24 17:00:00+00:00
+[2026-06-25T13:34:26.614+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=31352) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-25T13:34:26.614+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_twitter', 'scheduled__2026-06-24T17:00:00+00:00', '--job-id', '667', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpvge202ph']
+[2026-06-25T13:34:26.616+0700] {standard_task_runner.py:72} INFO - Started process 31353 to run task
+[2026-06-25T13:34:26.617+0700] {standard_task_runner.py:105} INFO - Job 667: Subtask process_twitter
+[2026-06-25T13:34:26.634+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:34:26.682+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-24T17:00:00+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-25T13:34:26.685+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:34:26.816+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T17:00:00+00:00'
+[2026-06-25T13:34:26.817+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-25T13:34:42.950+0700] {logging_mixin.py:190} INFO -  Sedang memuat model AI (IndoBERT)...
+[2026-06-25T13:34:43.510+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-25T13:34:43.511+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-25T13:34:43.511+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-25T13:34:43.550+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-25T13:34:43.733+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-25T13:34:43.836+0700] {logging_mixin.py:190} WARNING - Loading weights:  70%|#######   | 141/201 [00:00<00:00, 1399.36it/s]
+[2026-06-25T13:34:43.848+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 1777.57it/s]
+[2026-06-25T13:34:44.163+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-25T13:34:44.413+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-25T13:34:44.901+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:34:45.188+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:34:45.444+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:34:45.449+0700] {logging_mixin.py:190} INFO -  Model AI siap digunakan!
+[2026-06-25T13:34:45.450+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Twitter (Cleaning + Sentiment + Relevance Filter)...
+[2026-06-25T13:34:45.471+0700] {logging_mixin.py:190} INFO - ✅ Tidak ada tweet baru untuk diproses.
+[2026-06-25T13:34:45.472+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-25T13:34:45.481+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-25T13:34:45.482+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=process_twitter, run_id=scheduled__2026-06-24T17:00:00+00:00, execution_date=20260624T170000, start_date=20260625T063426, end_date=20260625T063445
+[2026-06-25T13:34:45.565+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-25T13:34:45.593+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T13:34:45.596+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

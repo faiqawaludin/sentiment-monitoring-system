@@ -1,0 +1,53 @@
+[2026-06-18T09:10:23.858+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-18T09:10:23.878+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-17T05:00:00+00:00 [queued]>
+[2026-06-18T09:10:23.893+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-17T05:00:00+00:00 [queued]>
+[2026-06-18T09:10:23.893+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-18T09:10:23.911+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_twitter> on 2026-06-17 05:00:00+00:00
+[2026-06-18T09:10:23.923+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1240) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-18T09:10:23.924+0700] {standard_task_runner.py:72} INFO - Started process 1243 to run task
+[2026-06-18T09:10:23.923+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_twitter', 'scheduled__2026-06-17T05:00:00+00:00', '--job-id', '519', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpopm1bfr1']
+[2026-06-18T09:10:23.926+0700] {standard_task_runner.py:105} INFO - Job 519: Subtask process_twitter
+[2026-06-18T09:10:23.941+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-18T09:10:23.986+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_twitter scheduled__2026-06-17T05:00:00+00:00 [running]> on host 40e491ee7d1d
+[2026-06-18T09:10:23.988+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-18T09:10:24.099+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-17T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-17T05:00:00+00:00'
+[2026-06-18T09:10:24.101+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-18T09:10:40.697+0700] {logging_mixin.py:190} INFO -  Sedang memuat model AI (IndoBERT)...
+[2026-06-18T09:10:41.033+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+[2026-06-18T09:10:41.281+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:10:41.282+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-18T09:10:41.282+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-18T09:10:41.298+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-18T09:10:41.623+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-06-18T09:11:34.820+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-18T09:11:34.925+0700] {logging_mixin.py:190} WARNING - Loading weights:  87%|########6 | 174/201 [00:00<00:00, 1724.35it/s]
+[2026-06-18T09:11:34.938+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 1760.55it/s]
+[2026-06-18T09:11:35.260+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:11:35.293+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:35.606+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:35.870+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-18T09:11:36.127+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/vocab.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:11:36.163+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/vocab.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:36.524+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/merges.txt "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:11:36.542+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/merges.txt "HTTP/1.1 200 OK"
+[2026-06-18T09:11:36.775+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:11:36.793+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:36.812+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/tokenizer.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:37.127+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:37.381+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-18T09:11:37.403+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:37.419+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-06-18T09:11:37.673+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:38.057+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:38.300+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:38.552+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-18T09:11:38.598+0700] {logging_mixin.py:190} INFO -  Model AI siap digunakan!
+[2026-06-18T09:11:38.601+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Twitter (Cleaning + Sentiment + Relevance Filter)...
+[2026-06-18T09:11:38.658+0700] {logging_mixin.py:190} INFO - 📦 Ditemukan 3 tweet baru. Sedang memproses...
+[2026-06-18T09:11:38.685+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Tweet Nyasar): 'Kalau saya tidak salah ingat. Menolak jadi PT...'
+[2026-06-18T09:11:39.146+0700] {logging_mixin.py:190} INFO - ✅ SUKSES! 2 tweet berhasil dianalisis dengan otak hibrida baru.
+[2026-06-18T09:11:39.147+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-18T09:11:39.162+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-18T09:11:39.164+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=process_twitter, run_id=scheduled__2026-06-17T05:00:00+00:00, execution_date=20260617T050000, start_date=20260618T021023, end_date=20260618T021139
+[2026-06-18T09:11:39.267+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-18T09:11:39.278+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

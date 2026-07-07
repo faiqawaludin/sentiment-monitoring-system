@@ -1,0 +1,32 @@
+[2026-06-08T07:52:54.796+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-08T07:52:54.838+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-06-07T11:00:00+00:00 [queued]>
+[2026-06-08T07:52:54.862+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-06-07T11:00:00+00:00 [queued]>
+[2026-06-08T07:52:54.863+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-08T07:52:54.890+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-06-07 11:00:00+00:00
+[2026-06-08T07:52:54.903+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'scheduled__2026-06-07T11:00:00+00:00', '--job-id', '419', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmpw72dar84']
+[2026-06-08T07:52:54.903+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=187) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-08T07:52:54.913+0700] {standard_task_runner.py:105} INFO - Job 419: Subtask task_scrape_twitter
+[2026-06-08T07:52:54.913+0700] {standard_task_runner.py:72} INFO - Started process 195 to run task
+[2026-06-08T07:52:54.945+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-08T07:52:55.021+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter scheduled__2026-06-07T11:00:00+00:00 [running]> on host c90a2982027f
+[2026-06-08T07:52:55.025+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-08T07:52:55.422+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-07T11:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-07T11:00:00+00:00'
+[2026-06-08T07:52:55.425+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-08T07:53:03.740+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-06-08T07:53:03.978+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 343 tweet.
+[2026-06-08T07:53:03.979+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-06-08T08:02:51.640+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 60 tweet mentah dari X.
+[2026-06-08T08:02:51.882+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 2 tweet BARU ke database.
+[2026-06-08T08:02:51.884+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-06-08T08:03:04.636+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 4 tweet mentah dari X.
+[2026-06-08T08:03:04.638+0700] {logging_mixin.py:190} INFO -    ℹ️ Info: Tidak ada tweet baru (semua tweet sudah ada di database).
+[2026-06-08T08:03:04.640+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-06-08T08:05:35.864+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 12 tweet mentah dari X.
+[2026-06-08T08:05:35.869+0700] {logging_mixin.py:190} INFO -    ℹ️ Info: Tidak ada tweet baru (semua tweet sudah ada di database).
+[2026-06-08T08:05:35.870+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 2 tweet baru tersimpan.
+[2026-06-08T08:05:35.889+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-08T08:05:36.101+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-08T08:05:36.106+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=scheduled__2026-06-07T11:00:00+00:00, execution_date=20260607T110000, start_date=20260608T005254, end_date=20260608T010536
+[2026-06-08T08:05:36.248+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-08T08:05:36.441+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-08T08:05:36.446+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

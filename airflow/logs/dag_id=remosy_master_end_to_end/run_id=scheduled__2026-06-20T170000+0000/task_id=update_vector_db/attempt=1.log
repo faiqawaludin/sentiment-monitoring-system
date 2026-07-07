@@ -1,0 +1,300 @@
+[2026-06-22T08:40:12.739+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-22T08:40:12.761+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-20T17:00:00+00:00 [queued]>
+[2026-06-22T08:40:12.776+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-20T17:00:00+00:00 [queued]>
+[2026-06-22T08:40:12.777+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-22T08:40:12.793+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): update_vector_db> on 2026-06-20 17:00:00+00:00
+[2026-06-22T08:40:12.803+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1500) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-22T08:40:12.805+0700] {standard_task_runner.py:72} INFO - Started process 1502 to run task
+[2026-06-22T08:40:12.803+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'update_vector_db', 'scheduled__2026-06-20T17:00:00+00:00', '--job-id', '565', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmppk5g_wdr']
+[2026-06-22T08:40:12.807+0700] {standard_task_runner.py:105} INFO - Job 565: Subtask update_vector_db
+[2026-06-22T08:40:12.823+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-22T08:40:12.864+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-20T17:00:00+00:00 [running]> on host df0dddc984af
+[2026-06-22T08:40:12.865+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-22T08:40:12.958+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='update_vector_db' AIRFLOW_CTX_EXECUTION_DATE='2026-06-20T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-20T17:00:00+00:00'
+[2026-06-22T08:40:12.959+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-22T08:40:17.827+0700] {logging_mixin.py:190} INFO - ⏳ Menyiapkan koneksi ke PostgreSQL Vector Database...
+[2026-06-22T08:40:20.997+0700] {model.py:183} INFO - No device provided, using cpu
+[2026-06-22T08:40:21.327+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:21.344+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:21.365+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:21.620+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:21.623+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-22T08:40:21.622+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-22T08:40:21.655+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:21.674+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:21.676+0700] {model.py:992} INFO - Loading SentenceTransformer model from sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2.
+[2026-06-22T08:40:21.941+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:21.963+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config_sentence_transformers.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:22.233+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:22.252+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/README.md "HTTP/1.1 200 OK"
+[2026-06-22T08:40:22.563+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:22.584+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/modules.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:22.850+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:22.871+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/sentence_bert_config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:23.141+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:40:23.406+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:40:23.427+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:40:23.809+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+[2026-06-22T08:41:08.693+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+[2026-06-22T08:41:08.797+0700] {logging_mixin.py:190} WARNING - Loading weights:  83%|########2 | 165/199 [00:00<00:00, 1645.24it/s]
+[2026-06-22T08:41:08.814+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 199/199 [00:00<00:00, 1694.25it/s]
+[2026-06-22T08:41:09.162+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:09.445+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:09.720+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:09.991+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:10.263+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:10.282+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:10.304+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:10.631+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:10.651+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:10.923+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:10.940+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:11.218+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:11.241+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:11.520+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:11.538+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:11.817+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:12.103+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-22T08:41:12.454+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer.json "HTTP/1.1 302 Found"
+[2026-06-22T08:41:15.678+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/tokenizer.model "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:15.960+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:16.301+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:16.323+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:16.342+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/special_tokens_map.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:16.613+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-06-22T08:41:23.552+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+[2026-06-22T08:41:24.322+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-22T08:41:24.341+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2/e8f8c211226b894fcb81acc59f3b34ba3efd5f42/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+[2026-06-22T08:41:24.668+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+[2026-06-22T08:41:24.674+0700] {logging_mixin.py:190} INFO - 🧬 Menanamkan Vektor ke PostgreSQL pgvector...
+[2026-06-22T08:41:41.666+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py:490 LangChainPendingDeprecationWarning: Please use JSONB instead of JSON for metadata. This change will allow for more efficient querying that involves filtering based on metadata. Please note that filtering operators have been changed when using JSONB metadata to be prefixed with a $ sign to avoid name collisions with columns. If you're using an existing database, you will need to create a db migration for your metadata column to be JSONB and update your queries to use the new operators.
+[2026-06-22T08:41:42.844+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "langchain_pg_embedding" violates foreign key constraint "langchain_pg_embedding_collection_id_fkey"
+DETAIL:  Key (collection_id)=(837ac35f-b0f7-4b93-a68a-572978ed155a) is not present in table "langchain_pg_collection".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_remosy_master.py", line 30, in build_vector
+    build_faiss_index()
+  File "/opt/airflow/src/chatbot/build_vector_db.py", line 52, in build_faiss_index
+    PGVector.from_documents(
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 1149, in from_documents
+    return cls.from_texts(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 1021, in from_texts
+    return cls._from(
+           ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 500, in _from
+    store.add_embeddings(
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 542, in add_embeddings
+    session.bulk_save_objects(documents)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+    self._bulk_save_mappings(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3912, in _bulk_save_mappings
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+    persistence._bulk_insert(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+    _emit_insert_statements(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+    c = connection._execute_20(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "langchain_pg_embedding" violates foreign key constraint "langchain_pg_embedding_collection_id_fkey"
+DETAIL:  Key (collection_id)=(837ac35f-b0f7-4b93-a68a-572978ed155a) is not present in table "langchain_pg_collection".
+
+[SQL: INSERT INTO langchain_pg_embedding (uuid, collection_id, embedding, document, cmetadata, custom_id) VALUES (%(uuid)s, %(collection_id)s, %(embedding)s, %(document)s, %(cmetadata)s, %(custom_id)s)]
+[parameters: ({'uuid': UUID('2c31356b-ba7e-4d47-9ffc-32add40baf58'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.19990883767604828,-0.020816192030906677,-0.21910767257213593,-0.05400991439819336,0.09549293667078018,-0.07440504431724548,-0.24335502088069916,- ... (7597 characters truncated) ... 854,0.0017941436963155866,-0.036810629069805145,0.20662537217140198,0.20504939556121826,0.12104377150535583,-0.04890185222029686,0.19646905362606049]', 'document': "Pada tanggal 03 March 2026, terdapat pantauan Berita dari Nusantara Abadi News berisi: 'Sambangi Kampus UNSIKA, DPP IWO Indonesia Kecewa Pihak UNSIKA Belum Berikan Klarifikasi Terkait Audit BPK - Nusantara Abadi News'. Sentimen: Negative (Skor: 0.5731520652770996).", 'cmetadata': '{"source": "Nusantara Abadi News", "sentiment": "Negative", "platform": "Berita", "date": "03 March 2026"}', 'custom_id': '82960ade-12d7-499a-9e00-d26b17eb6792'}, {'uuid': UUID('5b21e833-1f23-45d1-9e1f-34992354bff0'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.019260326400399208,0.24089093506336212,-0.33710503578186035,0.01696760579943657,0.06339581310749054,0.0788145586848259,-0.4001774787902832,-0.225 ... (7565 characters truncated) ... 5,-0.031692977994680405,-0.14118744432926178,0.28387337923049927,-0.04986568167805672,-0.05853164941072464,-0.17350640892982483,0.031266964972019196]', 'document': "Pada tanggal 09 September 2025, terdapat pantauan Berita dari iNews.ID berisi: 'Pembangunan Masjid Kampus 2 Unsika Ditargetkan Selesai Pertengahan 2026 - iNews.ID'. Sentimen: Neutral (Skor: 0.994053304195404).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "09 September 2025"}', 'custom_id': '64fab07d-ae4f-465d-83db-b5f2a0e27d58'}, {'uuid': UUID('2c72ad50-0846-4091-9375-b980b7f47217'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06984465569257736,0.03894177824258804,-0.35944023728370667,-0.09304723888635635,0.1241486519575119,0.02307940274477005,-0.17092931270599365,-0.01 ... (7573 characters truncated) ... 7412,-0.08895118534564972,-0.25900474190711975,0.09572890400886536,-0.0124961007386446,0.009418191388249397,-0.19827064871788025,0.12147047370672226]', 'document': "Pada tanggal 07 January 2026, terdapat pantauan Berita dari iNews.ID berisi: 'UNSIKA Raih Akreditasi Internasional ACQUIN, Perluas Peluang Global Mahasiswa - iNews.ID'. Sentimen: Neutral (Skor: 0.953090488910675).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "07 January 2026"}', 'custom_id': '27b90ff3-e465-4d03-827e-7d4a03f79210'}, {'uuid': UUID('f8dd4d0b-1581-474b-8175-4ab13df41344'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06620950996875763,0.11759348958730698,-0.2583654224872589,-0.07764099538326263,0.25127705931663513,-0.004329433664679527,-0.15889735519886017,-0. ... (7582 characters truncated) ... 5889,-0.05952213332056999,-0.1456681191921234,0.053069207817316055,-0.10022994130849838,0.10201193392276764,-0.15788079798221588,0.08919442445039749]', 'document': "Pada tanggal 29 January 2026, terdapat pantauan Berita dari tvberita.co.id berisi: 'Kolaborasi Hijau: Mahasiswa KKN Unsika dan Warga Desa Gununghejo Gelar Aksi Agroforestry - tvberita.co.id'. Sentimen: Neutral (Skor: 0.9071052074432373).", 'cmetadata': '{"source": "tvberita.co.id", "sentiment": "Neutral", "platform": "Berita", "date": "29 January 2026"}', 'custom_id': 'e9dc2a0e-91af-49c4-8622-1c662753a95a'}, {'uuid': UUID('7c8af11d-5455-4e1f-9d87-81678e8cc8be'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.20387984812259674,-0.017925364896655083,-0.31646886467933655,0.055782683193683624,0.09315638989210129,0.23988644778728485,-0.20013117790222168,-0 ... (7597 characters truncated) ... 2439,-0.0703490823507309,-0.16374152898788452,0.17940972745418549,0.036427948623895645,0.020273147150874138,0.012611055746674538,0.04387151822447777]', 'document': "Pada tanggal 05 May 2026, terdapat pantauan Berita dari infoka.id berisi: 'UNSIKA Perkuat Link and Match, Gandeng 27 Mitra Industri Serap Aspirasi Dunia Kerja - infoka.id'. Sentimen: Neutral (Skor: 0.8624736666679382).", 'cmetadata': '{"source": "infoka.id", "sentiment": "Neutral", "platform": "Berita", "date": "05 May 2026"}', 'custom_id': '8b5f6e07-d0b2-42af-91f5-dc6d1e4d4362'}, {'uuid': UUID('e6f44aac-ec34-4e0c-8cf0-58134f00cbb4'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.026936832815408707,-0.015791350975632668,-0.3879285454750061,-0.026225440204143524,0.10498299449682236,0.07318122684955597,-0.2521835267543793,0.1 ... (7553 characters truncated) ... 335,-0.03697562217712402,-0.23237727582454681,-0.015693267807364464,0.057239145040512085,0.10789307951927185,-0.3141055405139923,0.11096638441085815]', 'document': "Pada tanggal 22 April 2026, terdapat pantauan Berita dari ANTARA News berisi: '12.508 peserta ikuti UTBK SNBT 2026 di Unsika Karawang - ANTARA News'. Sentimen: Neutral (Skor: 0.9985187649726868).", 'cmetadata': '{"source": "ANTARA News", "sentiment": "Neutral", "platform": "Berita", "date": "22 April 2026"}', 'custom_id': 'd3fdc560-7256-45ed-ac5e-f02c5c10bc85'}, {'uuid': UUID('f5d3de09-05d9-49e8-b069-89e73f4cae8d'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.05914335697889328,0.14996539056301117,-0.2369326502084732,-0.09854195266962051,-0.033869996666908264,0.03867125138640404,-0.2871318757534027,0.063 ... (7553 characters truncated) ... 124,-0.08952157199382782,-0.23879538476467133,0.12004038691520691,0.013839410617947578,-0.01121801882982254,-0.27498456835746765,0.18610520660877228]', 'document': "Pada tanggal 28 July 2025, terdapat pantauan Berita dari Universitas Negeri Malang berisi: 'Ospek/PKKMB di Untirta, Unsika, hingga UM, digelar sebelu ... (24 characters truncated) ... iswa baru dimulai. Simak jadwal PKKMB 2025 di Untirta, Unsika, hingga UM. - Universitas Negeri Malang'. Sentimen: Neutral (Skor: 0.9668649435043335).", 'cmetadata': '{"source": "Universitas Negeri Malang", "sentiment": "Neutral", "platform": "Berita", "date": "28 July 2025"}', 'custom_id': '32a0c0b3-1054-4502-ba40-a4f43cbc079c'}, {'uuid': UUID('f7bebdaf-61b2-4d6f-aa57-2ebe2e5e1119'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09078333526849747,0.0027696271426975727,-0.15450388193130493,-0.01982472836971283,0.03929451107978821,-0.02746790088713169,-0.1570601910352707,0. ... (7584 characters truncated) ... 724,-0.009227186441421509,-0.18316328525543213,0.09025063365697861,0.13367103040218353,0.023591823875904083,-0.15451662242412567,0.10298322886228561]', 'document': "Pada tanggal 19 April 2026, terdapat pantauan Berita dari rakyatjelata.com berisi: 'Temuan BPK Soroti Dugaan Penyimpangan di UNSIKA, Dua Bendahara Direkomendasikan Dikeluarkan tapi Dipertahankan Rektor - rakyatjelata.com'. Sentimen: Negative (Skor: 0.85).", 'cmetadata': '{"source": "rakyatjelata.com", "sentiment": "Negative", "platform": "Berita", "date": "19 April 2026"}', 'custom_id': 'dd44b5bb-872b-4d76-8b78-2750ce16f1c6'}  ... displaying 10 of 220 total bound parameter sets ...  {'uuid': UUID('1bdf58f6-8e25-43f5-bb32-b1738e84041a'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09700169414281845,0.11248882859945297,-0.24200960993766785,-0.20184758305549622,0.16045252978801727,0.19935543835163116,0.010329658165574074,-0.0 ... (7552 characters truncated) ... 016777,0.1560341715812683,-0.40985697507858276,0.029679415747523308,0.11543329060077667,0.060319166630506516,-0.19085069000720978,0.1128774881362915]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: 'Unsika part 2 beda prodi https://t.co/OborgCYVYW https://t.co/2CahgbtihO https://t.co/kqLQKttkoa https://t.co/58qcVFFtFf https://t.co/bML5tNtKLt'. Sentimen: Neutral (Skor: 0.9677799344062805).", 'cmetadata': '{"source": null, "sentiment": "Neutral", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '652308db-d711-49e7-a7d9-aa04514f1083'}, {'uuid': UUID('8398a41f-c29a-4d69-932e-e046ac33eb48'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.04799364507198334,0.021182263270020485,0.042816244065761566,-0.1574649065732956,0.17183519899845123,0.017782792448997498,-0.009004943072795868,0. ... (7598 characters truncated) ... 012619,0.026078272610902786,-0.31246432662010193,0.02360420674085617,0.1680426299571991,0.13290639221668243,-0.23046499490737915,0.17047087848186493]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: ' [SELAMAT DATANG MAHASISWA BARU TEKNIK INDUSTRI FT UNSIKA JALUR MANDIRI PREST ... (42 characters truncated) ... stasi 2026! Selamat atas keberhasilan kalian menjadi bagian dari Teknik Industri FT Unsika. https://t.co/crHLzXtuM6'. Sentimen: Positive (Skor: 0.9).", 'cmetadata': '{"source": null, "sentiment": "Positive", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '013e07bd-552f-4e25-9166-0e6d12fc8a1e'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-06-22T08:41:43.181+0700] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=remosy_master_end_to_end, task_id=update_vector_db, run_id=scheduled__2026-06-20T17:00:00+00:00, execution_date=20260620T170000, start_date=20260622T014012, end_date=20260622T014143
+[2026-06-22T08:41:43.212+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-22T08:41:43.213+0700] {standard_task_runner.py:124} ERROR - Failed to execute job 565 for task update_vector_db ((psycopg2.errors.ForeignKeyViolation) insert or update on table "langchain_pg_embedding" violates foreign key constraint "langchain_pg_embedding_collection_id_fkey"
+DETAIL:  Key (collection_id)=(837ac35f-b0f7-4b93-a68a-572978ed155a) is not present in table "langchain_pg_collection".
+
+[SQL: INSERT INTO langchain_pg_embedding (uuid, collection_id, embedding, document, cmetadata, custom_id) VALUES (%(uuid)s, %(collection_id)s, %(embedding)s, %(document)s, %(cmetadata)s, %(custom_id)s)]
+[parameters: ({'uuid': UUID('2c31356b-ba7e-4d47-9ffc-32add40baf58'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.19990883767604828,-0.020816192030906677,-0.21910767257213593,-0.05400991439819336,0.09549293667078018,-0.07440504431724548,-0.24335502088069916,- ... (7597 characters truncated) ... 854,0.0017941436963155866,-0.036810629069805145,0.20662537217140198,0.20504939556121826,0.12104377150535583,-0.04890185222029686,0.19646905362606049]', 'document': "Pada tanggal 03 March 2026, terdapat pantauan Berita dari Nusantara Abadi News berisi: 'Sambangi Kampus UNSIKA, DPP IWO Indonesia Kecewa Pihak UNSIKA Belum Berikan Klarifikasi Terkait Audit BPK - Nusantara Abadi News'. Sentimen: Negative (Skor: 0.5731520652770996).", 'cmetadata': '{"source": "Nusantara Abadi News", "sentiment": "Negative", "platform": "Berita", "date": "03 March 2026"}', 'custom_id': '82960ade-12d7-499a-9e00-d26b17eb6792'}, {'uuid': UUID('5b21e833-1f23-45d1-9e1f-34992354bff0'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.019260326400399208,0.24089093506336212,-0.33710503578186035,0.01696760579943657,0.06339581310749054,0.0788145586848259,-0.4001774787902832,-0.225 ... (7565 characters truncated) ... 5,-0.031692977994680405,-0.14118744432926178,0.28387337923049927,-0.04986568167805672,-0.05853164941072464,-0.17350640892982483,0.031266964972019196]', 'document': "Pada tanggal 09 September 2025, terdapat pantauan Berita dari iNews.ID berisi: 'Pembangunan Masjid Kampus 2 Unsika Ditargetkan Selesai Pertengahan 2026 - iNews.ID'. Sentimen: Neutral (Skor: 0.994053304195404).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "09 September 2025"}', 'custom_id': '64fab07d-ae4f-465d-83db-b5f2a0e27d58'}, {'uuid': UUID('2c72ad50-0846-4091-9375-b980b7f47217'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06984465569257736,0.03894177824258804,-0.35944023728370667,-0.09304723888635635,0.1241486519575119,0.02307940274477005,-0.17092931270599365,-0.01 ... (7573 characters truncated) ... 7412,-0.08895118534564972,-0.25900474190711975,0.09572890400886536,-0.0124961007386446,0.009418191388249397,-0.19827064871788025,0.12147047370672226]', 'document': "Pada tanggal 07 January 2026, terdapat pantauan Berita dari iNews.ID berisi: 'UNSIKA Raih Akreditasi Internasional ACQUIN, Perluas Peluang Global Mahasiswa - iNews.ID'. Sentimen: Neutral (Skor: 0.953090488910675).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "07 January 2026"}', 'custom_id': '27b90ff3-e465-4d03-827e-7d4a03f79210'}, {'uuid': UUID('f8dd4d0b-1581-474b-8175-4ab13df41344'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06620950996875763,0.11759348958730698,-0.2583654224872589,-0.07764099538326263,0.25127705931663513,-0.004329433664679527,-0.15889735519886017,-0. ... (7582 characters truncated) ... 5889,-0.05952213332056999,-0.1456681191921234,0.053069207817316055,-0.10022994130849838,0.10201193392276764,-0.15788079798221588,0.08919442445039749]', 'document': "Pada tanggal 29 January 2026, terdapat pantauan Berita dari tvberita.co.id berisi: 'Kolaborasi Hijau: Mahasiswa KKN Unsika dan Warga Desa Gununghejo Gelar Aksi Agroforestry - tvberita.co.id'. Sentimen: Neutral (Skor: 0.9071052074432373).", 'cmetadata': '{"source": "tvberita.co.id", "sentiment": "Neutral", "platform": "Berita", "date": "29 January 2026"}', 'custom_id': 'e9dc2a0e-91af-49c4-8622-1c662753a95a'}, {'uuid': UUID('7c8af11d-5455-4e1f-9d87-81678e8cc8be'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.20387984812259674,-0.017925364896655083,-0.31646886467933655,0.055782683193683624,0.09315638989210129,0.23988644778728485,-0.20013117790222168,-0 ... (7597 characters truncated) ... 2439,-0.0703490823507309,-0.16374152898788452,0.17940972745418549,0.036427948623895645,0.020273147150874138,0.012611055746674538,0.04387151822447777]', 'document': "Pada tanggal 05 May 2026, terdapat pantauan Berita dari infoka.id berisi: 'UNSIKA Perkuat Link and Match, Gandeng 27 Mitra Industri Serap Aspirasi Dunia Kerja - infoka.id'. Sentimen: Neutral (Skor: 0.8624736666679382).", 'cmetadata': '{"source": "infoka.id", "sentiment": "Neutral", "platform": "Berita", "date": "05 May 2026"}', 'custom_id': '8b5f6e07-d0b2-42af-91f5-dc6d1e4d4362'}, {'uuid': UUID('e6f44aac-ec34-4e0c-8cf0-58134f00cbb4'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.026936832815408707,-0.015791350975632668,-0.3879285454750061,-0.026225440204143524,0.10498299449682236,0.07318122684955597,-0.2521835267543793,0.1 ... (7553 characters truncated) ... 335,-0.03697562217712402,-0.23237727582454681,-0.015693267807364464,0.057239145040512085,0.10789307951927185,-0.3141055405139923,0.11096638441085815]', 'document': "Pada tanggal 22 April 2026, terdapat pantauan Berita dari ANTARA News berisi: '12.508 peserta ikuti UTBK SNBT 2026 di Unsika Karawang - ANTARA News'. Sentimen: Neutral (Skor: 0.9985187649726868).", 'cmetadata': '{"source": "ANTARA News", "sentiment": "Neutral", "platform": "Berita", "date": "22 April 2026"}', 'custom_id': 'd3fdc560-7256-45ed-ac5e-f02c5c10bc85'}, {'uuid': UUID('f5d3de09-05d9-49e8-b069-89e73f4cae8d'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.05914335697889328,0.14996539056301117,-0.2369326502084732,-0.09854195266962051,-0.033869996666908264,0.03867125138640404,-0.2871318757534027,0.063 ... (7553 characters truncated) ... 124,-0.08952157199382782,-0.23879538476467133,0.12004038691520691,0.013839410617947578,-0.01121801882982254,-0.27498456835746765,0.18610520660877228]', 'document': "Pada tanggal 28 July 2025, terdapat pantauan Berita dari Universitas Negeri Malang berisi: 'Ospek/PKKMB di Untirta, Unsika, hingga UM, digelar sebelu ... (24 characters truncated) ... iswa baru dimulai. Simak jadwal PKKMB 2025 di Untirta, Unsika, hingga UM. - Universitas Negeri Malang'. Sentimen: Neutral (Skor: 0.9668649435043335).", 'cmetadata': '{"source": "Universitas Negeri Malang", "sentiment": "Neutral", "platform": "Berita", "date": "28 July 2025"}', 'custom_id': '32a0c0b3-1054-4502-ba40-a4f43cbc079c'}, {'uuid': UUID('f7bebdaf-61b2-4d6f-aa57-2ebe2e5e1119'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09078333526849747,0.0027696271426975727,-0.15450388193130493,-0.01982472836971283,0.03929451107978821,-0.02746790088713169,-0.1570601910352707,0. ... (7584 characters truncated) ... 724,-0.009227186441421509,-0.18316328525543213,0.09025063365697861,0.13367103040218353,0.023591823875904083,-0.15451662242412567,0.10298322886228561]', 'document': "Pada tanggal 19 April 2026, terdapat pantauan Berita dari rakyatjelata.com berisi: 'Temuan BPK Soroti Dugaan Penyimpangan di UNSIKA, Dua Bendahara Direkomendasikan Dikeluarkan tapi Dipertahankan Rektor - rakyatjelata.com'. Sentimen: Negative (Skor: 0.85).", 'cmetadata': '{"source": "rakyatjelata.com", "sentiment": "Negative", "platform": "Berita", "date": "19 April 2026"}', 'custom_id': 'dd44b5bb-872b-4d76-8b78-2750ce16f1c6'}  ... displaying 10 of 220 total bound parameter sets ...  {'uuid': UUID('1bdf58f6-8e25-43f5-bb32-b1738e84041a'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09700169414281845,0.11248882859945297,-0.24200960993766785,-0.20184758305549622,0.16045252978801727,0.19935543835163116,0.010329658165574074,-0.0 ... (7552 characters truncated) ... 016777,0.1560341715812683,-0.40985697507858276,0.029679415747523308,0.11543329060077667,0.060319166630506516,-0.19085069000720978,0.1128774881362915]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: 'Unsika part 2 beda prodi https://t.co/OborgCYVYW https://t.co/2CahgbtihO https://t.co/kqLQKttkoa https://t.co/58qcVFFtFf https://t.co/bML5tNtKLt'. Sentimen: Neutral (Skor: 0.9677799344062805).", 'cmetadata': '{"source": null, "sentiment": "Neutral", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '652308db-d711-49e7-a7d9-aa04514f1083'}, {'uuid': UUID('8398a41f-c29a-4d69-932e-e046ac33eb48'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.04799364507198334,0.021182263270020485,0.042816244065761566,-0.1574649065732956,0.17183519899845123,0.017782792448997498,-0.009004943072795868,0. ... (7598 characters truncated) ... 012619,0.026078272610902786,-0.31246432662010193,0.02360420674085617,0.1680426299571991,0.13290639221668243,-0.23046499490737915,0.17047087848186493]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: ' [SELAMAT DATANG MAHASISWA BARU TEKNIK INDUSTRI FT UNSIKA JALUR MANDIRI PREST ... (42 characters truncated) ... stasi 2026! Selamat atas keberhasilan kalian menjadi bagian dari Teknik Industri FT Unsika. https://t.co/crHLzXtuM6'. Sentimen: Positive (Skor: 0.9).", 'cmetadata': '{"source": null, "sentiment": "Positive", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '013e07bd-552f-4e25-9166-0e6d12fc8a1e'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 1502)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.ForeignKeyViolation: insert or update on table "langchain_pg_embedding" violates foreign key constraint "langchain_pg_embedding_collection_id_fkey"
+DETAIL:  Key (collection_id)=(837ac35f-b0f7-4b93-a68a-572978ed155a) is not present in table "langchain_pg_collection".
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 2995, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3149, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3173, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_remosy_master.py", line 30, in build_vector
+    build_faiss_index()
+  File "/opt/airflow/src/chatbot/build_vector_db.py", line 52, in build_faiss_index
+    PGVector.from_documents(
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 1149, in from_documents
+    return cls.from_texts(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 1021, in from_texts
+    return cls._from(
+           ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 500, in _from
+    store.add_embeddings(
+  File "/home/airflow/.local/lib/python3.12/site-packages/langchain_community/vectorstores/pgvector.py", line 542, in add_embeddings
+    session.bulk_save_objects(documents)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3705, in bulk_save_objects
+    self._bulk_save_mappings(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3912, in _bulk_save_mappings
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3901, in _bulk_save_mappings
+    persistence._bulk_insert(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 107, in _bulk_insert
+    _emit_insert_statements(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 1097, in _emit_insert_statements
+    c = connection._execute_20(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1710, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 334, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1577, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1890, in _execute_context
+    self.dialect.do_executemany(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/psycopg2.py", line 982, in do_executemany
+    context._psycopg2_fetched_rows = xtras.execute_values(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.ForeignKeyViolation) insert or update on table "langchain_pg_embedding" violates foreign key constraint "langchain_pg_embedding_collection_id_fkey"
+DETAIL:  Key (collection_id)=(837ac35f-b0f7-4b93-a68a-572978ed155a) is not present in table "langchain_pg_collection".
+
+[SQL: INSERT INTO langchain_pg_embedding (uuid, collection_id, embedding, document, cmetadata, custom_id) VALUES (%(uuid)s, %(collection_id)s, %(embedding)s, %(document)s, %(cmetadata)s, %(custom_id)s)]
+[parameters: ({'uuid': UUID('2c31356b-ba7e-4d47-9ffc-32add40baf58'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.19990883767604828,-0.020816192030906677,-0.21910767257213593,-0.05400991439819336,0.09549293667078018,-0.07440504431724548,-0.24335502088069916,- ... (7597 characters truncated) ... 854,0.0017941436963155866,-0.036810629069805145,0.20662537217140198,0.20504939556121826,0.12104377150535583,-0.04890185222029686,0.19646905362606049]', 'document': "Pada tanggal 03 March 2026, terdapat pantauan Berita dari Nusantara Abadi News berisi: 'Sambangi Kampus UNSIKA, DPP IWO Indonesia Kecewa Pihak UNSIKA Belum Berikan Klarifikasi Terkait Audit BPK - Nusantara Abadi News'. Sentimen: Negative (Skor: 0.5731520652770996).", 'cmetadata': '{"source": "Nusantara Abadi News", "sentiment": "Negative", "platform": "Berita", "date": "03 March 2026"}', 'custom_id': '82960ade-12d7-499a-9e00-d26b17eb6792'}, {'uuid': UUID('5b21e833-1f23-45d1-9e1f-34992354bff0'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.019260326400399208,0.24089093506336212,-0.33710503578186035,0.01696760579943657,0.06339581310749054,0.0788145586848259,-0.4001774787902832,-0.225 ... (7565 characters truncated) ... 5,-0.031692977994680405,-0.14118744432926178,0.28387337923049927,-0.04986568167805672,-0.05853164941072464,-0.17350640892982483,0.031266964972019196]', 'document': "Pada tanggal 09 September 2025, terdapat pantauan Berita dari iNews.ID berisi: 'Pembangunan Masjid Kampus 2 Unsika Ditargetkan Selesai Pertengahan 2026 - iNews.ID'. Sentimen: Neutral (Skor: 0.994053304195404).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "09 September 2025"}', 'custom_id': '64fab07d-ae4f-465d-83db-b5f2a0e27d58'}, {'uuid': UUID('2c72ad50-0846-4091-9375-b980b7f47217'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06984465569257736,0.03894177824258804,-0.35944023728370667,-0.09304723888635635,0.1241486519575119,0.02307940274477005,-0.17092931270599365,-0.01 ... (7573 characters truncated) ... 7412,-0.08895118534564972,-0.25900474190711975,0.09572890400886536,-0.0124961007386446,0.009418191388249397,-0.19827064871788025,0.12147047370672226]', 'document': "Pada tanggal 07 January 2026, terdapat pantauan Berita dari iNews.ID berisi: 'UNSIKA Raih Akreditasi Internasional ACQUIN, Perluas Peluang Global Mahasiswa - iNews.ID'. Sentimen: Neutral (Skor: 0.953090488910675).", 'cmetadata': '{"source": "iNews.ID", "sentiment": "Neutral", "platform": "Berita", "date": "07 January 2026"}', 'custom_id': '27b90ff3-e465-4d03-827e-7d4a03f79210'}, {'uuid': UUID('f8dd4d0b-1581-474b-8175-4ab13df41344'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.06620950996875763,0.11759348958730698,-0.2583654224872589,-0.07764099538326263,0.25127705931663513,-0.004329433664679527,-0.15889735519886017,-0. ... (7582 characters truncated) ... 5889,-0.05952213332056999,-0.1456681191921234,0.053069207817316055,-0.10022994130849838,0.10201193392276764,-0.15788079798221588,0.08919442445039749]', 'document': "Pada tanggal 29 January 2026, terdapat pantauan Berita dari tvberita.co.id berisi: 'Kolaborasi Hijau: Mahasiswa KKN Unsika dan Warga Desa Gununghejo Gelar Aksi Agroforestry - tvberita.co.id'. Sentimen: Neutral (Skor: 0.9071052074432373).", 'cmetadata': '{"source": "tvberita.co.id", "sentiment": "Neutral", "platform": "Berita", "date": "29 January 2026"}', 'custom_id': 'e9dc2a0e-91af-49c4-8622-1c662753a95a'}, {'uuid': UUID('7c8af11d-5455-4e1f-9d87-81678e8cc8be'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.20387984812259674,-0.017925364896655083,-0.31646886467933655,0.055782683193683624,0.09315638989210129,0.23988644778728485,-0.20013117790222168,-0 ... (7597 characters truncated) ... 2439,-0.0703490823507309,-0.16374152898788452,0.17940972745418549,0.036427948623895645,0.020273147150874138,0.012611055746674538,0.04387151822447777]', 'document': "Pada tanggal 05 May 2026, terdapat pantauan Berita dari infoka.id berisi: 'UNSIKA Perkuat Link and Match, Gandeng 27 Mitra Industri Serap Aspirasi Dunia Kerja - infoka.id'. Sentimen: Neutral (Skor: 0.8624736666679382).", 'cmetadata': '{"source": "infoka.id", "sentiment": "Neutral", "platform": "Berita", "date": "05 May 2026"}', 'custom_id': '8b5f6e07-d0b2-42af-91f5-dc6d1e4d4362'}, {'uuid': UUID('e6f44aac-ec34-4e0c-8cf0-58134f00cbb4'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.026936832815408707,-0.015791350975632668,-0.3879285454750061,-0.026225440204143524,0.10498299449682236,0.07318122684955597,-0.2521835267543793,0.1 ... (7553 characters truncated) ... 335,-0.03697562217712402,-0.23237727582454681,-0.015693267807364464,0.057239145040512085,0.10789307951927185,-0.3141055405139923,0.11096638441085815]', 'document': "Pada tanggal 22 April 2026, terdapat pantauan Berita dari ANTARA News berisi: '12.508 peserta ikuti UTBK SNBT 2026 di Unsika Karawang - ANTARA News'. Sentimen: Neutral (Skor: 0.9985187649726868).", 'cmetadata': '{"source": "ANTARA News", "sentiment": "Neutral", "platform": "Berita", "date": "22 April 2026"}', 'custom_id': 'd3fdc560-7256-45ed-ac5e-f02c5c10bc85'}, {'uuid': UUID('f5d3de09-05d9-49e8-b069-89e73f4cae8d'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[0.05914335697889328,0.14996539056301117,-0.2369326502084732,-0.09854195266962051,-0.033869996666908264,0.03867125138640404,-0.2871318757534027,0.063 ... (7553 characters truncated) ... 124,-0.08952157199382782,-0.23879538476467133,0.12004038691520691,0.013839410617947578,-0.01121801882982254,-0.27498456835746765,0.18610520660877228]', 'document': "Pada tanggal 28 July 2025, terdapat pantauan Berita dari Universitas Negeri Malang berisi: 'Ospek/PKKMB di Untirta, Unsika, hingga UM, digelar sebelu ... (24 characters truncated) ... iswa baru dimulai. Simak jadwal PKKMB 2025 di Untirta, Unsika, hingga UM. - Universitas Negeri Malang'. Sentimen: Neutral (Skor: 0.9668649435043335).", 'cmetadata': '{"source": "Universitas Negeri Malang", "sentiment": "Neutral", "platform": "Berita", "date": "28 July 2025"}', 'custom_id': '32a0c0b3-1054-4502-ba40-a4f43cbc079c'}, {'uuid': UUID('f7bebdaf-61b2-4d6f-aa57-2ebe2e5e1119'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09078333526849747,0.0027696271426975727,-0.15450388193130493,-0.01982472836971283,0.03929451107978821,-0.02746790088713169,-0.1570601910352707,0. ... (7584 characters truncated) ... 724,-0.009227186441421509,-0.18316328525543213,0.09025063365697861,0.13367103040218353,0.023591823875904083,-0.15451662242412567,0.10298322886228561]', 'document': "Pada tanggal 19 April 2026, terdapat pantauan Berita dari rakyatjelata.com berisi: 'Temuan BPK Soroti Dugaan Penyimpangan di UNSIKA, Dua Bendahara Direkomendasikan Dikeluarkan tapi Dipertahankan Rektor - rakyatjelata.com'. Sentimen: Negative (Skor: 0.85).", 'cmetadata': '{"source": "rakyatjelata.com", "sentiment": "Negative", "platform": "Berita", "date": "19 April 2026"}', 'custom_id': 'dd44b5bb-872b-4d76-8b78-2750ce16f1c6'}  ... displaying 10 of 220 total bound parameter sets ...  {'uuid': UUID('1bdf58f6-8e25-43f5-bb32-b1738e84041a'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.09700169414281845,0.11248882859945297,-0.24200960993766785,-0.20184758305549622,0.16045252978801727,0.19935543835163116,0.010329658165574074,-0.0 ... (7552 characters truncated) ... 016777,0.1560341715812683,-0.40985697507858276,0.029679415747523308,0.11543329060077667,0.060319166630506516,-0.19085069000720978,0.1128774881362915]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: 'Unsika part 2 beda prodi https://t.co/OborgCYVYW https://t.co/2CahgbtihO https://t.co/kqLQKttkoa https://t.co/58qcVFFtFf https://t.co/bML5tNtKLt'. Sentimen: Neutral (Skor: 0.9677799344062805).", 'cmetadata': '{"source": null, "sentiment": "Neutral", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '652308db-d711-49e7-a7d9-aa04514f1083'}, {'uuid': UUID('8398a41f-c29a-4d69-932e-e046ac33eb48'), 'collection_id': UUID('837ac35f-b0f7-4b93-a68a-572978ed155a'), 'embedding': '[-0.04799364507198334,0.021182263270020485,0.042816244065761566,-0.1574649065732956,0.17183519899845123,0.017782792448997498,-0.009004943072795868,0. ... (7598 characters truncated) ... 012619,0.026078272610902786,-0.31246432662010193,0.02360420674085617,0.1680426299571991,0.13290639221668243,-0.23046499490737915,0.17047087848186493]', 'document': "Pada tanggal 20 June 2026, terdapat pantauan Twitter dari None berisi: ' [SELAMAT DATANG MAHASISWA BARU TEKNIK INDUSTRI FT UNSIKA JALUR MANDIRI PREST ... (42 characters truncated) ... stasi 2026! Selamat atas keberhasilan kalian menjadi bagian dari Teknik Industri FT Unsika. https://t.co/crHLzXtuM6'. Sentimen: Positive (Skor: 0.9).", 'cmetadata': '{"source": null, "sentiment": "Positive", "platform": "Twitter", "date": "20 June 2026"}', 'custom_id': '013e07bd-552f-4e25-9166-0e6d12fc8a1e'})]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+[2026-06-22T08:41:43.404+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 1
+[2026-06-22T08:41:43.441+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-22T08:41:43.445+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

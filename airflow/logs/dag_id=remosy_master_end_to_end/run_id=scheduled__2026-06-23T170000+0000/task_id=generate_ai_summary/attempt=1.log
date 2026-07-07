@@ -1,0 +1,107 @@
+[2026-06-24T14:16:34.883+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-24T14:16:34.905+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-23T17:00:00+00:00 [queued]>
+[2026-06-24T14:16:34.919+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-23T17:00:00+00:00 [queued]>
+[2026-06-24T14:16:34.920+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-24T14:16:34.933+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): generate_ai_summary> on 2026-06-23 17:00:00+00:00
+[2026-06-24T14:16:34.940+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2729) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-24T14:16:34.940+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'generate_ai_summary', 'scheduled__2026-06-23T17:00:00+00:00', '--job-id', '624', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpmw1fej_x']
+[2026-06-24T14:16:34.943+0700] {standard_task_runner.py:72} INFO - Started process 2730 to run task
+[2026-06-24T14:16:34.943+0700] {standard_task_runner.py:105} INFO - Job 624: Subtask generate_ai_summary
+[2026-06-24T14:16:34.961+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-24T14:16:35.006+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-23T17:00:00+00:00 [running]> on host f651688c9edb
+[2026-06-24T14:16:35.009+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-24T14:16:35.132+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='generate_ai_summary' AIRFLOW_CTX_EXECUTION_DATE='2026-06-23T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-23T17:00:00+00:00'
+[2026-06-24T14:16:35.134+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-24T14:16:41.386+0700] {logging_mixin.py:190} INFO - 🤖 Memulai eksekusi AI Summarizer Job...
+[2026-06-24T14:16:41.422+0700] {logging_mixin.py:190} INFO -    [Peringatan] Gagal menarik data news_raw: (psycopg2.errors.UndefinedColumn) column "content" does not exist
+LINE 1: SELECT title, content FROM news_raw ORDER BY scraped_at DESC...
+                      ^
+
+[SQL: SELECT title, content FROM news_raw ORDER BY scraped_at DESC LIMIT 30]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2026-06-24T14:16:41.432+0700] {logging_mixin.py:190} INFO - 📊 Mengolah 0 berita dan 30 cuitan...
+[2026-06-24T14:16:41.434+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-24T14:16:41.434+0700] {logging_mixin.py:190} INFO - 📑 HASIL ANALISIS BERITA
+[2026-06-24T14:16:41.436+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-24T14:16:41.436+0700] {logging_mixin.py:190} INFO - Belum ada data Berita yang cukup untuk dianalisis hari ini.
+[2026-06-24T14:16:41.437+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-24T14:16:41.438+0700] {logging_mixin.py:190} INFO - 💬 HASIL ANALISIS TWITTER / X
+[2026-06-24T14:16:41.439+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-24T14:16:41.465+0700] {models.py:6472} INFO - AFC is enabled with max remote calls: 10.
+[2026-06-24T14:17:06.303+0700] {_client.py:1025} INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[2026-06-24T14:17:06.328+0700] {logging_mixin.py:190} INFO - **📊 Ringkasan Eksekutif**
+Data Twitter/X terbaru menunjukkan UNSIKA (Universitas Singaperbangsa Karawang) memiliki narasi positif dari kegiatan mahasiswa dan minat pendaftar. Namun, terdapat satu mention negatif yang signifikan terkait reputasi "unsikuy" yang perlu perhatian serius, serta beberapa mention yang menunjukkan persepsi "pilihan kedua". Tidak ada mention spesifik untuk Fasilkom UNSIKA dalam kumpulan data ini.
+
+**🎯 Sentimen Dominan**
+*   **Sentimen Dominan:** Campuran
+*   **Alasan dan Proporsi:** Sekitar 50% mention relevan bersifat positif, menyoroti kegiatan akademik (penerimaan mahasiswa baru, minat prodi) dan non-akademik (klub mahasiswa ULCC). Sekitar 40% bersifat netral, seperti penggunaan hashtag #unsika untuk promosi bisnis lokal dan pencantuman nama universitas dalam daftar PTN. Namun, 1 mention negatif yang sangat kuat (sekitar 10% dari total mention relevan) menuduh "unsikuy" terkait "pergaulan bebas", memberikan dampak signifikan pada sentimen keseluruhan dan menjadikannya campuran.
+
+**🔍 Temuan Kunci**
+*   UNSIKA (Universitas Singaperbangsa Karawang) mendapatkan sentimen positif dari kegiatan klub mahasiswa (ULCC) yang aktif mempromosikan isu sosial dan memiliki kehadiran digital yang kuat.
+*   Ada minat pendaftar yang konkret pada program studi tertentu seperti Agroteknologi dan Farmasi, serta adanya penerimaan mahasiswa baru jalur Mandiri Prestasi untuk Teknik Industri.
+*   Istilah "unsikuy" menerima mention negatif serius terkait tuduhan "pergaulan bebas".
+*   "unsikuy" juga muncul dalam konteks penerimaan yang campuran, di mana awalnya mungkin bukan pilihan utama ("meskipun kita dapat nya unsikuy taaapii tapapa kokkkk!!!") namun kemudian diterima sebagai "pendamping" dalam mencapai tujuan.
+*   Penggunaan hashtag #unsika sering ditemukan dalam konteks promosi bisnis kuliner lokal di Karawang, menunjukkan relevansi geografis merek di komunitas lokal.
+*   Tidak ada mention spesifik terkait Fasilkom UNSIKA dalam kumpulan data ini.
+
+**⚠️ Potensi Risiko Reputasi**
+*   **Tuduhan "Pergaulan Bebas":** Tweet yang secara eksplisit menuduh "unsikuy" terlibat dalam "pergaulan bebas" merupakan ancaman reputasi serius yang dapat merusak citra moral dan etika kampus secara keseluruhan, terutama jika "unsikuy" dianggap sebagai representasi informal dari universitas atau mahasiswanya.
+*   **Persepsi "Pilihan Kedua":** Meskipun diakhiri dengan penerimaan positif, mention yang mengindikasikan bahwa UNSIKA (atau "unsikuy") kadang dianggap sebagai pilihan kedua atau bukan pilihan utama dapat memengaruhi daya tarik calon mahasiswa di masa depan dan persepsi kualitas pendidikan.
+
+**💡 Rekomendasi Strategis**
+*   **Respons Cepat Terhadap Tuduhan Negatif:** Segera lakukan investigasi internal terkait tuduhan "pergaulan bebas" yang mengarah pada "unsikuy". Siapkan klarifikasi atau respons yang menenangkan publik melalui kanal komunikasi resmi jika diperlukan, atau jika ada masalah yang terbukti, pastikan ada tindakan korektif yang jelas dan dikomunikasikan secara bijak.
+*   **Perkuat Narasi Positif dan Citra Resmi:** Tingkatkan promosi kegiatan positif mahasiswa (misalnya kegiatan ULCC, prestasi akademik, atau program studi unggulan) menggunakan nama resmi "UNSIKA" atau "Universitas Singaperbangsa Karawang". Dorong penggunaan nama resmi ini dalam komunikasi publik untuk membedakan dari istilah informal yang berpotensi memiliki konotasi negatif.
+*   **Pantau Istilah "unsikuy" Secara Berkelanjutan:** Lakukan pemantauan aktif terhadap penggunaan istilah "unsikuy" di media sosial untuk memahami konteks dan sentimen yang terkait. Pertimbangkan strategi komunikasi untuk mengelola atau mengarahkan asosiasi istilah ini agar tidak merugikan citra universitas.
+[2026-06-24T14:17:06.330+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-24T14:17:06.331+0700] {logging_mixin.py:190} INFO - 🔥 HASIL PEMETAAN HOT TOPICS
+[2026-06-24T14:17:06.332+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-24T14:17:06.354+0700] {models.py:6472} INFO - AFC is enabled with max remote calls: 10.
+[2026-06-24T14:17:26.936+0700] {_client.py:1025} INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[2026-06-24T14:17:26.961+0700] {logging_mixin.py:190} INFO - **🔥 5 Topik Terpanas Hari Ini**
+
+**1. Isu Negatif Terkait "unsikuy"**
+- 📌 **Isu:** Terdapat cuitan di Twitter yang mengaitkan "unsikuy" dengan perilaku "pergaulan bebas".
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Negatif
+- 🎯 **Urgensi:** Tinggi
+
+**2. Penerimaan Mahasiswa Baru Teknik Industri FT UNSIKA**
+- 📌 **Isu:** Pengumuman ucapan selamat datang kepada mahasiswa baru Teknik Industri Fakultas Teknik UNSIKA jalur Mandiri Prestasi angkatan 2026.
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Sedang
+
+**3. Aktivitas & Promosi UNSIKA Languages and Cultures Club (ULCC)**
+- 📌 **Isu:** ULCC UNSIKA aktif dalam kampanye "Hari Penghapusan Kekerasan Seksual dalam Konflik" dan gencar mempromosikan berbagai platform media sosial serta website klub mereka.
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Netral
+- 🎯 **Urgensi:** Sedang
+
+**4. Promosi Kuliner Lokal di Sekitar UNSIKA**
+- 📌 **Isu:** Beberapa akun mempromosikan tempat makan baru (mie ayam, dimsum, burger) di Karawang yang berlokasi di depan Pondok Nabagag, dengan menyebutkan #unsika sebagai area lokasi.
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Rendah
+
+**5. Aspirasi & Pilihan Studi di UNSIKA atau PTN Lain**
+- 📌 **Isu:** Diskusi pribadi di Twitter mengenai pilihan atau keinginan untuk melanjutkan studi di UNSIKA atau Perguruan Tinggi Negeri lainnya seperti ITB dan UI, termasuk dilema pilihan jalur masuk.
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Netral
+- 🎯 **Urgensi:** Rendah
+
+---
+
+**📝 Kesimpulan Harian**
+Hari ini, UNSIKA mendapatkan perhatian beragam di platform Twitter. Sorotan positif datang dari pengumuman penerimaan mahasiswa baru Teknik Industri dan aktivitas aktif klub ULCC yang mengampanyekan isu sosial. Namun, muncul isu negatif yang mengaitkan "unsikuy" dengan "pergaulan bebas", yang memerlukan perhatian. Selain itu, UNSIKA juga disebut dalam konteks promosi kuliner lokal dan sebagai salah satu pilihan universitas dalam aspirasi studi para siswa.
+[2026-06-24T14:17:26.977+0700] {logging_mixin.py:190} INFO - 
+✅ Rekap laporan AI berhasil disimpan ke database (tabel ai_summaries).
+[2026-06-24T14:17:26.978+0700] {logging_mixin.py:190} INFO - ✨ Seluruh proses AI Summarizer berhasil diselesaikan!
+[2026-06-24T14:17:26.979+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-24T14:17:26.991+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-24T14:17:26.992+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=generate_ai_summary, run_id=scheduled__2026-06-23T17:00:00+00:00, execution_date=20260623T170000, start_date=20260624T071634, end_date=20260624T071726
+[2026-06-24T14:17:27.029+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-24T14:17:27.046+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-24T14:17:27.048+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

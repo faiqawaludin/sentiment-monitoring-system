@@ -1,0 +1,28 @@
+[2026-06-14T11:02:55.226+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-14T11:02:55.242+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-13T05:00:00+00:00 [queued]>
+[2026-06-14T11:02:55.252+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-13T05:00:00+00:00 [queued]>
+[2026-06-14T11:02:55.253+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-14T11:02:55.268+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): generate_ai_summary> on 2026-06-13 05:00:00+00:00
+[2026-06-14T11:02:55.279+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1435) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-14T11:02:55.279+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'generate_ai_summary', 'scheduled__2026-06-13T05:00:00+00:00', '--job-id', '452', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpe2pzd7jt']
+[2026-06-14T11:02:55.281+0700] {standard_task_runner.py:72} INFO - Started process 1437 to run task
+[2026-06-14T11:02:55.281+0700] {standard_task_runner.py:105} INFO - Job 452: Subtask generate_ai_summary
+[2026-06-14T11:02:55.296+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-14T11:02:55.330+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-13T05:00:00+00:00 [running]> on host 6b105ef65571
+[2026-06-14T11:02:55.331+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-14T11:02:55.402+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='generate_ai_summary' AIRFLOW_CTX_EXECUTION_DATE='2026-06-13T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-13T05:00:00+00:00'
+[2026-06-14T11:02:55.403+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-14T11:02:56.967+0700] {logging_mixin.py:190} INFO - 🤖 Memulai Pre-komputasi Generative AI (Anti-Limit API)...
+[2026-06-14T11:02:56.987+0700] {logging_mixin.py:190} INFO - 📥 Menarik data teks dari database...
+[2026-06-14T11:02:56.992+0700] {logging_mixin.py:190} INFO - ❌ Gagal menarik data: (psycopg2.errors.UndefinedTable) relation "news_processed" does not exist
+LINE 1: SELECT clean_text FROM news_processed WHERE processed_at >= ...
+                               ^
+
+[SQL: SELECT clean_text FROM news_processed WHERE processed_at >= NOW() - INTERVAL '90 days' ORDER BY processed_at DESC LIMIT 50]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2026-06-14T11:02:56.992+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-14T11:02:57.001+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-14T11:02:57.002+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=generate_ai_summary, run_id=scheduled__2026-06-13T05:00:00+00:00, execution_date=20260613T050000, start_date=20260614T040255, end_date=20260614T040257
+[2026-06-14T11:02:57.061+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-14T11:02:57.075+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-14T11:02:57.078+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

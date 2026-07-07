@@ -1,0 +1,28 @@
+[2026-06-25T12:03:23.105+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T12:03:23.201+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T12:03:23.252+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T12:03:23.254+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-25T12:03:23.362+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): scrape_twitter> on 2026-06-24 17:00:00+00:00
+[2026-06-25T12:03:23.448+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'scrape_twitter', 'scheduled__2026-06-24T17:00:00+00:00', '--job-id', '658', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmp2682_b27']
+[2026-06-25T12:03:23.452+0700] {standard_task_runner.py:105} INFO - Job 658: Subtask scrape_twitter
+[2026-06-25T12:03:23.449+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=29614) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-25T12:03:23.458+0700] {standard_task_runner.py:72} INFO - Started process 29622 to run task
+[2026-06-25T12:03:23.504+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T12:03:23.598+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-24T17:00:00+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-25T12:03:23.600+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T12:03:24.289+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T17:00:00+00:00'
+[2026-06-25T12:03:24.294+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-25T12:03:31.651+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Relational Schema)...
+[2026-06-25T12:03:31.804+0700] {logging_mixin.py:190} INFO - Mencari Tweet: UNSIKA...
+[2026-06-25T12:04:52.992+0700] {logging_mixin.py:190} INFO - Mencari Tweet: Universitas Singaperbangsa Karawang...
+[2026-06-25T12:06:05.691+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsikuy...
+[2026-06-25T12:08:41.980+0700] {logging_mixin.py:190} INFO - Mencari Tweet: Fasilkom UNSIKA...
+[2026-06-25T13:24:43.438+0700] {job.py:229} INFO - Heartbeat recovered after 4457.94 seconds
+[2026-06-25T13:25:18.795+0700] {logging_mixin.py:190} INFO -    Error Tweet-Harvest: No columns to parse from file
+[2026-06-25T13:25:18.811+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 0 tweet baru tersimpan.
+[2026-06-25T13:25:18.830+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-25T13:25:19.205+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-25T13:25:19.215+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=scrape_twitter, run_id=scheduled__2026-06-24T17:00:00+00:00, execution_date=20260624T170000, start_date=20260625T050323, end_date=20260625T062519
+[2026-06-25T13:25:19.405+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-25T13:25:19.535+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T13:25:19.537+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

@@ -1,0 +1,40 @@
+[2026-06-25T13:26:28.152+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T13:26:28.175+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:26:28.188+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:26:28.190+0700] {taskinstance.py:2856} INFO - Starting attempt 3 of 3
+[2026-06-25T13:26:28.207+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_news> on 2026-06-24 17:00:00+00:00
+[2026-06-25T13:26:28.221+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=30585) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-25T13:26:28.222+0700] {standard_task_runner.py:72} INFO - Started process 30591 to run task
+[2026-06-25T13:26:28.221+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_news', 'scheduled__2026-06-24T17:00:00+00:00', '--job-id', '666', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmph59t294j']
+[2026-06-25T13:26:28.224+0700] {standard_task_runner.py:105} INFO - Job 666: Subtask process_news
+[2026-06-25T13:26:28.240+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:26:28.288+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-24T17:00:00+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-25T13:26:28.290+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:26:28.403+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T17:00:00+00:00'
+[2026-06-25T13:26:28.409+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-25T13:26:43.233+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Cleaning + Sentiment)...
+[2026-06-25T13:26:43.261+0700] {logging_mixin.py:190} INFO - 📦 Ditemukan 5 berita baru. Memuat model NLP...
+[2026-06-25T13:26:43.654+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-25T13:26:43.682+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-25T13:26:43.827+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-25T13:26:43.931+0700] {logging_mixin.py:190} WARNING - Loading weights:  64%|######3   | 128/201 [00:00<00:00, 1272.01it/s]
+[2026-06-25T13:26:43.968+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 1460.18it/s]
+[2026-06-25T13:26:44.205+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-25T13:26:45.478+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-25T13:26:46.519+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:26:46.762+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:26:46.765+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-25T13:26:46.764+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-25T13:26:47.030+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-25T13:26:47.048+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Mengabdi Puluhan Tahun, Masih Belum Nikmati T...'
+[2026-06-25T13:26:54.271+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Wisuda UNSIKA: 1571 Lulusan Si...' | AI: Neutral -> SMART: Positive
+[2026-06-25T13:26:54.364+0700] {logging_mixin.py:190} INFO -    Process: 'Pramuka Universitas Singaperba...' -> Neutral
+[2026-06-25T13:26:54.604+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Mahasiswa KKN Universitas Sing...' | AI: Neutral -> SMART: Positive
+[2026-06-25T13:26:54.616+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Universitas Terbaik di Pusat Karawang Versi 4...'
+[2026-06-25T13:26:54.645+0700] {logging_mixin.py:190} INFO - ✅ SUKSES! 3 berita berhasil diproses dan disimpan.
+[2026-06-25T13:26:54.700+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-25T13:26:54.724+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-25T13:26:54.729+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=process_news, run_id=scheduled__2026-06-24T17:00:00+00:00, execution_date=20260624T170000, start_date=20260625T062628, end_date=20260625T062654
+[2026-06-25T13:26:54.834+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-25T13:26:54.861+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T13:26:54.863+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

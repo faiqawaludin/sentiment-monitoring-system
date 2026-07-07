@@ -1,0 +1,101 @@
+[2026-06-24T22:07:36.630+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-24T22:07:36.650+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news manual__2026-06-24T15:07:31.778213+00:00 [queued]>
+[2026-06-24T22:07:36.663+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news manual__2026-06-24T15:07:31.778213+00:00 [queued]>
+[2026-06-24T22:07:36.664+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-24T22:07:36.681+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_news> on 2026-06-24 15:07:31.778213+00:00
+[2026-06-24T22:07:36.693+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1727) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-24T22:07:36.694+0700] {standard_task_runner.py:72} INFO - Started process 1729 to run task
+[2026-06-24T22:07:36.693+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_news', 'manual__2026-06-24T15:07:31.778213+00:00', '--job-id', '638', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpb0vk_qna']
+[2026-06-24T22:07:36.695+0700] {standard_task_runner.py:105} INFO - Job 638: Subtask process_news
+[2026-06-24T22:07:36.712+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-24T22:07:36.751+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_news manual__2026-06-24T15:07:31.778213+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-24T22:07:36.846+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T15:07:31.778213+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-24T15:07:31.778213+00:00'
+[2026-06-24T22:07:36.847+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-24T22:07:53.144+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Cleaning + Sentiment)...
+[2026-06-24T22:07:53.193+0700] {logging_mixin.py:190} INFO - 📦 Ditemukan 65 berita baru. Memuat model NLP...
+[2026-06-24T22:07:53.575+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-06-24T22:07:53.593+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/w11wo/indonesian-roberta-base-sentiment-classifier/ac452dcb0f4966130bba44f4ee0013bb5d52c282/config.json "HTTP/1.1 200 OK"
+[2026-06-24T22:07:53.772+0700] {logging_mixin.py:190} WARNING - Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]
+[2026-06-24T22:07:53.879+0700] {logging_mixin.py:190} WARNING - Loading weights:  28%|##8       | 57/201 [00:00<00:00, 552.46it/s]
+[2026-06-24T22:07:54.028+0700] {logging_mixin.py:190} WARNING - Loading weights:  56%|#####6    | 113/201 [00:00<00:00, 433.70it/s]
+[2026-06-24T22:07:54.129+0700] {logging_mixin.py:190} WARNING - Loading weights:  91%|#########1| 183/201 [00:00<00:00, 535.39it/s]
+[2026-06-24T22:07:54.152+0700] {logging_mixin.py:190} WARNING - Loading weights: 100%|##########| 201/201 [00:00<00:00, 534.66it/s]
+[2026-06-24T22:07:54.449+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-06-24T22:07:54.713+0700] {_client.py:1025} INFO - HTTP Request: GET https://huggingface.co/api/models/w11wo/indonesian-roberta-base-sentiment-classifier/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-06-24T22:07:55.486+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-24T22:07:55.487+0700] {logging_mixin.py:190} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-24T22:07:55.487+0700] {_http.py:904} WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-06-24T22:07:55.757+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-24T22:07:56.012+0700] {_client.py:1025} INFO - HTTP Request: HEAD https://huggingface.co/w11wo/indonesian-roberta-base-sentiment-classifier/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[2026-06-24T22:08:02.003+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'UNSIKA Jadi Tuan Rumah BKS-PTN...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:02.517+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Kolaborasi FIPHAL UNIDA dan FI...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:03.172+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'FH UNSIKA Raih Akreditasi Ungg...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:03.473+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Staf Humas Unsika Minta Maaf, ...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:03.588+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Dari Grup WhatsApp ke Ekosiste...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:03.819+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Pengembangan Usaha Kreatif, Ma...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:03.826+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Mengabdi Puluhan Tahun, Masih Belum Nikmati T...'
+[2026-06-24T22:08:03.995+0700] {logging_mixin.py:190} INFO -    Process: 'LP3S Universitas Negeri Padang...' -> Neutral
+[2026-06-24T22:08:04.185+0700] {logging_mixin.py:190} INFO -    Process: 'PT Jaya Abadi Kontruksindo Pel...' -> Neutral
+[2026-06-24T22:08:04.377+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'UNSIKA Jadi Tuan Rumah Pertemu...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:04.385+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Cerita Bupati Karawang Kembali ke Bangku Kuli...'
+[2026-06-24T22:08:04.565+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'BKS PTN Barat Lanjutkan Rangka...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:04.727+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Unsika Jadi Tuan Rumah SELA BK...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:04.884+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Peringati Hari Lingkungan Hidu...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:05.031+0700] {logging_mixin.py:190} INFO -    Process: 'Kapolsek Telukjambe Timur Pimp...' -> Neutral
+[2026-06-24T22:08:05.132+0700] {logging_mixin.py:190} INFO -    Process: 'Wujudkan Kampus Hijau, UNSIKA ...' -> Neutral
+[2026-06-24T22:08:05.240+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Gelar Terakhir untuk Almarhum ...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:05.366+0700] {logging_mixin.py:190} INFO -    Process: 'Seleksi S2 Unsika Gelombang II...' -> Neutral
+[2026-06-24T22:08:05.546+0700] {logging_mixin.py:190} INFO -    ✨ FIX: '1.598 Mahasiswa KKN Unsika Sia...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:05.672+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Rektor UNSIKA Tekankan Kesiapa...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:05.816+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Unsika Gelar Seminar Internasi...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:05.981+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Gelar LKTM BKS PTN Wilayah Bar...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:06.101+0700] {logging_mixin.py:190} INFO -    Process: 'Sinergitas TNI-POLRI bersama P...' -> Neutral
+[2026-06-24T22:08:06.191+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Unsika Jadi Tuan Rumah SELA BK...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:06.282+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'UNSIKA Jadi Tuan Rumah BKS-PTN...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:06.398+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Perjuangan Anak Pedagang Bakso...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:06.613+0700] {logging_mixin.py:190} INFO -    Process: 'Sadar Akan Hal Kecil Dimulai d...' -> Neutral
+[2026-06-24T22:08:06.789+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Mahasiswa KKN Universitas Sing...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:06.931+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Petani dan Warga Beserta Mahas...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:07.143+0700] {logging_mixin.py:190} INFO -    Process: 'Dunia Kampus Kembali Tercoreng...' -> Neutral
+[2026-06-24T22:08:07.149+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Universitas Terbaik di Pusat Karawang Versi 4...'
+[2026-06-24T22:08:07.155+0700] {logging_mixin.py:190} INFO -    🗑️ HAPUS (Berita Nyasar): 'Peran Aktif Mahasiwa: Kontribusi dalam Tri Dh...'
+[2026-06-24T22:08:07.300+0700] {logging_mixin.py:190} INFO -    Process: 'Sinergitas TNI-POLRI bersama P...' -> Neutral
+[2026-06-24T22:08:07.408+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Gandeng 27 Mitra, Unsika Sinkr...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:07.507+0700] {logging_mixin.py:190} INFO -    Process: 'The implementation of the firs...' -> Neutral
+[2026-06-24T22:08:07.636+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Apakah Rektor UNSIKA Bisa Dibe...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:07.727+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'UNSIKA Gelar Upacara Hardiknas...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:07.811+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Tangis Haru Warnai Wisuda UNSI...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:07.938+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Edukasi Pengelolaan Sampah, Ma...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:08.056+0700] {logging_mixin.py:190} INFO -    Process: 'Sinergitas TNI-POLRI bersama P...' -> Neutral
+[2026-06-24T22:08:08.170+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Dukung Program Kampus Sehat, F...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:08.270+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Unsika Gelar Seminar Internasi...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:08.551+0700] {logging_mixin.py:190} INFO -    Process: 'Kunjungi Kampus-kampus di Kors...' -> Neutral
+[2026-06-24T22:08:08.728+0700] {logging_mixin.py:190} INFO -    Process: 'Grand Mutiara Village di Teluk...' -> Neutral
+[2026-06-24T22:08:08.822+0700] {logging_mixin.py:190} INFO -    Process: 'Pelaksanaan UTBK SNBT hari per...' -> Neutral
+[2026-06-24T22:08:08.958+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Fasilkom Unsika Gelar Seminar ...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:09.095+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Terdakwa Korupsi Pembangunan G...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.195+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Kasus Korupsi Gedung Fasilkom ...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.295+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Kejari Karawang tingkatkan sta...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.446+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Terima Laporan, Kejari Karawan...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.560+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Terdakwa Kasus Korupsi Pembang...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.672+0700] {logging_mixin.py:190} INFO -    Process: 'Sri Mulyani, Rektor Perempuan ...' -> Neutral
+[2026-06-24T22:08:09.785+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Foto : Terdakwa Korupsi Pemban...' | AI: Neutral -> SMART: Negative
+[2026-06-24T22:08:09.920+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Lulus Tepat Waktu Berkat KIP, ...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:10.012+0700] {logging_mixin.py:190} INFO -    Process: 'UNSIKA “Digoyang” Mahasiswanya...' -> Neutral
+[2026-06-24T22:08:10.165+0700] {logging_mixin.py:190} INFO -    Process: 'Dijual Kost 21 Kamar Strategis...' -> Positive
+[2026-06-24T22:08:10.324+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Wisuda UNSIKA: 1571 Lulusan Si...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:10.422+0700] {logging_mixin.py:190} INFO -    Process: 'Universitas Singaperbangsa Kar...' -> Neutral
+[2026-06-24T22:08:10.528+0700] {logging_mixin.py:190} INFO -    Process: 'Kampus Negeri di Karawang Umum...' -> Neutral
+[2026-06-24T22:08:10.623+0700] {logging_mixin.py:190} INFO -    Process: 'Dari Lumbung Padi ke Kawasan I...' -> Neutral
+[2026-06-24T22:08:10.737+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Tingkatkan Literasi Kritis, Ma...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:10.861+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Mahasiswa KKN Unsika Gelar Keg...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:10.958+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Wisuda UNSIKA: 1571 Lulusan Si...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:11.304+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Mahasiswa Universitas Singaper...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:11.463+0700] {logging_mixin.py:190} INFO -    ✨ FIX: 'Dari Anak Pedagang Sayur hingg...' | AI: Neutral -> SMART: Positive
+[2026-06-24T22:08:11.498+0700] {logging_mixin.py:190} INFO - ✅ SUKSES! 61 berita berhasil diproses dan disimpan.
+[2026-06-24T22:08:11.548+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-24T22:08:11.565+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-24T22:08:11.567+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=process_news, run_id=manual__2026-06-24T15:07:31.778213+00:00, execution_date=20260624T150731, start_date=20260624T150736, end_date=20260624T150811
+[2026-06-24T22:08:11.677+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-24T22:08:11.746+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-24T22:08:11.749+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

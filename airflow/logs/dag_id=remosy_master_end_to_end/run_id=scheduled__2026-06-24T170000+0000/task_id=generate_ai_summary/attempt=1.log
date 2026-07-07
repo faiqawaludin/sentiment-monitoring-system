@@ -1,0 +1,134 @@
+[2026-06-25T13:35:22.720+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T13:35:22.739+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:35:22.755+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:35:22.756+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-25T13:35:22.787+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): generate_ai_summary> on 2026-06-24 17:00:00+00:00
+[2026-06-25T13:35:22.811+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=31438) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-25T13:35:22.806+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'generate_ai_summary', 'scheduled__2026-06-24T17:00:00+00:00', '--job-id', '669', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpo7d7y5g1']
+[2026-06-25T13:35:22.812+0700] {standard_task_runner.py:72} INFO - Started process 31439 to run task
+[2026-06-25T13:35:22.816+0700] {standard_task_runner.py:105} INFO - Job 669: Subtask generate_ai_summary
+[2026-06-25T13:35:22.843+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:35:22.917+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.generate_ai_summary scheduled__2026-06-24T17:00:00+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-25T13:35:22.920+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:35:23.046+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='generate_ai_summary' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T17:00:00+00:00'
+[2026-06-25T13:35:23.049+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-25T13:35:25.671+0700] {logging_mixin.py:190} INFO - 🤖 Memulai eksekusi AI Summarizer Job...
+[2026-06-25T13:35:25.693+0700] {logging_mixin.py:190} INFO - 📊 Mengolah 15 berita dan 10 cuitan...
+[2026-06-25T13:35:25.694+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-25T13:35:25.694+0700] {logging_mixin.py:190} INFO - 📑 HASIL ANALISIS BERITA
+[2026-06-25T13:35:25.695+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-25T13:35:25.706+0700] {models.py:6472} INFO - AFC is enabled with max remote calls: 10.
+[2026-06-25T13:35:40.669+0700] {_client.py:1025} INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[2026-06-25T13:35:40.679+0700] {logging_mixin.py:190} INFO - Sebagai PR Analyst senior, berikut adalah analisis reputasi untuk UNSIKA, Universitas Singaperbangsa Karawang, unsikuy, dan Fasilkom UNSIKA berdasarkan data berita terbaru:
+
+---
+
+**📊 Ringkasan Eksekutif**
+Reputasi UNSIKA saat ini menunjukkan gambaran yang campuran, dengan banyak berita positif yang menyoroti pengabdian masyarakat dan capaian akademik mahasiswa, terutama melalui kegiatan KKN dan prosesi wisuda. Namun, sorotan negatif muncul dari protes mahasiswa Fasilkom terkait pembangunan gedung dan pertanyaan mengenai pengadaan ruang kelas dari kontainer.
+
+**🎯 Sentimen Dominan**
+-   **Campuran**
+-   Sentimen keseluruhan didominasi oleh berita positif (sekitar 70-75%) yang mencakup aktivitas KKN, program sosial mahasiswa, kisah inspiratif lulusan, dan upacara wisuda massal. Namun, sentimen negatif yang signifikan (sekitar 10-15%) muncul dari berita protes mahasiswa Fasilkom, sementara berita tentang penggunaan kontainer untuk ruang kelas memiliki sentimen netral namun berpotensi memicu pertanyaan negatif di kemudian hari (sekitar 10-15%).
+
+**🔍 Temuan Kunci**
+*   **Tingginya Keterlibatan Sosial Mahasiswa**: Banyak berita yang menyoroti inisiatif mahasiswa UNSIKA dalam kegiatan KKN dan pengabdian masyarakat (UMKM, Toga, Calistung, Ecoprint), menunjukkan kontribusi positif terhadap komunitas lokal.
+*   **Produktivitas Akademik dan Kelulusan Massal**: UNSIKA menunjukkan produktivitas akademik yang tinggi dengan beberapa kali pemberitaan mengenai wisuda 1571 lulusan dan pengukuhan 1503 mahasiswa PPG, serta kisah inspiratif lulusan terbaik.
+*   **Isu Fasilitas Pendidikan Fasilkom**: Terdapat masalah signifikan terkait pembangunan gedung Fakultas Ilmu Komputer (Fasilkom) yang memicu protes mahasiswa, mengindikasikan ketidakpuasan internal.
+*   **Upaya Penambahan Kapasitas dengan Solusi Tidak Konvensional**: Pengadaan 80 kontainer untuk dijadikan 40 ruang kelas menjadi sorotan yang menunjukkan upaya UNSIKA dalam mengatasi kebutuhan kapasitas, meskipun metodenya tidak konvensional.
+*   **Inisiatif Pengembangan Kurikulum**: Fakultas Hukum (FH) UNSIKA menunjukkan adaptasi dan inovasi dengan menyusun arah baru pendidikan hukum yang relevan dengan perubahan di daerah.
+
+**⚠️ Potensi Risiko Reputasi**
+1.  **Konflik Internal Mahasiswa Fasilkom**: Protes mahasiswa mengenai pembangunan gedung Fasilkom adalah risiko reputasi yang paling mendesak. Jika tidak ditangani dengan baik dan transparan, hal ini dapat merusak citra UNSIKA sebagai institusi yang mendengarkan dan memenuhi kebutuhan mahasiswanya.
+2.  **Persepsi Kualitas Fasilitas**: Penggunaan kontainer sebagai ruang kelas berpotensi menimbulkan persepsi negatif tentang standar dan kualitas fasilitas pendidikan yang disediakan UNSIKA, terutama jika tidak disertai dengan komunikasi yang jelas mengenai solusi jangka panjang dan komitmen terhadap kualitas.
+
+**💡 Rekomendasi Strategis**
+1.  **Tangani Krisis Fasilkom dengan Transparansi**: Segera bentuk tim komunikasi krisis untuk berdialog langsung dengan mahasiswa Fasilkom, sampaikan progres, kendala, dan rencana mitigasi secara transparan. Berikan informasi terbaru secara rutin melalui saluran komunikasi internal dan eksternal UNSIKA.
+2.  **Proaktif Komunikasikan Isu Fasilitas Umum**: Jelaskan secara proaktif kepada publik dan pemangku kepentingan mengenai keputusan penggunaan kontainer sebagai ruang kelas, menekankan bahwa ini adalah solusi sementara untuk memenuhi kebutuhan kapasitas mendesak sambil menunggu pembangunan fasilitas permanen yang lebih baik. Fokus pada komitmen UNSIKA terhadap pengalaman belajar mahasiswa.
+3.  **Amplifikasi Kisah Positif secara Berkelanjutan**: Manfaatkan banyaknya berita positif dari kegiatan mahasiswa, wisuda, dan prestasi lulusan sebagai narasi tandingan. Sosialisasikan kisah-kisah sukses ini secara lebih luas melalui berbagai platform media sosial dan website resmi untuk memperkuat citra UNSIKA yang positif dan menyeimbangkan sentimen negatif yang ada.
+[2026-06-25T13:35:40.681+0700] {logging_mixin.py:190} INFO - ⏳ Menunggu 7 detik sebelum analisis Twitter...
+[2026-06-25T13:35:47.681+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-25T13:35:47.682+0700] {logging_mixin.py:190} INFO - 💬 HASIL ANALISIS TWITTER / X
+[2026-06-25T13:35:47.683+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-25T13:35:47.711+0700] {models.py:6472} INFO - AFC is enabled with max remote calls: 10.
+[2026-06-25T13:36:03.176+0700] {_client.py:1025} INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[2026-06-25T13:36:03.178+0700] {logging_mixin.py:190} INFO - Berikut adalah laporan analisis reputasi berdasarkan data Twitter/X terbaru yang Anda berikan:
+
+---
+
+**📊 Ringkasan Eksekutif**
+Data Twitter/X terbaru menunjukkan sentimen yang dominan positif terhadap UNSIKA, terutama terkait aktivitas kemahasiswaan, penerimaan mahasiswa baru, dan aspirasi akademik. Universitas ini juga terlihat membangun asosiasi positif dengan komunitas lokal melalui inisiatif kuliner dan keterlibatan klub mahasiswa dalam isu-isu sosial.
+
+**🎯 Sentimen Dominan**
+-   **Sentimen keseluruhan**: Positif
+-   **Alasan dan proporsi**: Mayoritas (sekitar 90%) dari mention yang relevan menampilkan sentimen positif. Ini terlihat dari sambutan hangat untuk mahasiswa baru, promosi aktif klub mahasiswa yang berpartisipasi dalam kampanye sosial, serta mention UNSIKA sebagai institusi pendidikan yang diinginkan. Beberapa mention terkait kuliner lokal juga menciptakan asosiasi positif secara tidak langsung.
+
+**🔍 Temuan Kunci**
+*   **Aktivitas Kemahasiswaan yang Proaktif**: Klub UNSIKA Languages and Cultures Club (ULCC) aktif mempromosikan kehadirannya di berbagai platform media sosial dan terlibat dalam kampanye kesadaran sosial penting seperti #HariPenghapusanKekerasanSeksualdalamKonflik.
+*   **Proses Penerimaan Mahasiswa Baru yang Disambut Baik**: Terdapat pesan sambutan positif untuk mahasiswa baru Teknik Industri FT UNSIKA jalur Mandiri Prestasi, menunjukkan interaksi awal yang positif dengan komunitas akademik.
+*   **Daya Tarik Program Studi**: UNSIKA disebutkan sebagai pilihan studi yang diinginkan oleh calon mahasiswa untuk program Agroteknologi, menunjukkan adanya minat spesifik terhadap jurusan di UNSIKA.
+*   **Asosiasi dengan Komunitas dan Kuliner Lokal**: UNSIKA secara tidak langsung terhubung dengan promosi kuliner lokal di Karawang melalui penggunaan hashtag dalam beberapa tweet, mengindikasikan kedekatan dengan masyarakat sekitar.
+*   **Fokus pada Fakultas dan Program Studi**: Data menampilkan mention spesifik terhadap Fakultas Teknik (FT) dan program studi seperti Teknik Industri dan Agroteknologi, mengindikasikan adanya fokus atau minat pada area-area akademik tersebut.
+
+**⚠️ Potensi Risiko Reputasi**
+Tidak ada risiko reputasi signifikan yang teridentifikasi secara langsung dari data Twitter/X yang diberikan. Mayoritas interaksi bersifat positif atau netral.
+
+**💡 Rekomendasi Strategis**
+1.  **Perkuat Narasi Keberhasilan Mahasiswa dan Dampak Sosial**: Terus dukung dan promosikan inisiatif dan prestasi mahasiswa, terutama yang berkaitan dengan kegiatan sosial dan budaya seperti yang dilakukan ULCC, untuk menonjolkan peran positif UNSIKA dalam membentuk pemimpin yang bertanggung jawab.
+2.  **Optimalkan Konten Promosi Akademik**: Manfaatkan minat yang teridentifikasi pada program studi tertentu (misalnya Agroteknologi, Teknik Industri) untuk mengembangkan konten promosi yang lebih terarah dan informatif bagi calon mahasiswa.
+3.  **Perkuat Keterlibatan Komunitas Lokal**: Lanjutkan dan tingkatkan asosiasi positif dengan komunitas dan inisiatif lokal di Karawang untuk memperkuat citra UNSIKA sebagai bagian integral dan kontributor bagi perkembangan daerah.
+
+---
+[2026-06-25T13:36:03.179+0700] {logging_mixin.py:190} INFO - ⏳ Menunggu 7 detik sebelum analisis Hot Topics...
+[2026-06-25T13:36:11.569+0700] {logging_mixin.py:190} INFO - 
+========================================
+[2026-06-25T13:36:11.570+0700] {logging_mixin.py:190} INFO - 🔥 HASIL PEMETAAN HOT TOPICS
+[2026-06-25T13:36:11.570+0700] {logging_mixin.py:190} INFO - ========================================
+[2026-06-25T13:36:11.585+0700] {models.py:6472} INFO - AFC is enabled with max remote calls: 10.
+[2026-06-25T13:36:29.685+0700] {_client.py:1025} INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+[2026-06-25T13:36:29.690+0700] {logging_mixin.py:190} INFO - **🔥 5 Topik Terpanas Hari Ini**
+
+**1. Wisuda UNSIKA dan Kisah Inspiratif Lulusan**
+- 📌 **Isu:** UNSIKA telah melaksanakan wisuda untuk 1571 lulusan yang siap mengabdi, dengan salah satu lulusan terbaik, Sandi, menonjol dengan IPK 3,91 setelah melalui perjuangan inspiratif.
+- 📣 **Sumber Dominan:** Berita
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Tinggi
+
+**2. Program Pengabdian Masyarakat Mahasiswa UNSIKA**
+- 📌 **Isu:** Mahasiswa KKN UNSIKA aktif terlibat dalam pemberdayaan UMKM opak dan snack, penyuluhan kesehatan, penanaman Toga, pembuatan minuman herbal di pesantren, serta kegiatan Calistung dan Ecoprint di masyarakat.
+- 📣 **Sumber Dominan:** Berita
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Tinggi
+
+**3. Pengembangan Infrastruktur Kampus dengan Ruang Kelas Kontainer**
+- 📌 **Isu:** UNSIKA (disebut sebagai Kampus Negeri di Karawang) mengumumkan pembelian 80 kontainer yang akan diubah menjadi 40 ruang kelas baru untuk menunjang kegiatan belajar mengajar.
+- 📣 **Sumber Dominan:** Berita
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Tinggi
+
+**4. Dinamika Penerimaan Mahasiswa Baru dan Aspirasi Pendidikan**
+- 📌 **Isu:** Adanya sambutan untuk mahasiswa baru Teknik Industri FT UNSIKA jalur mandiri prestasi, serta diskusi di Twitter mengenai pilihan prodi dan perguruan tinggi, termasuk UNSIKA dibandingkan dengan PTN lain.
+- 📣 **Sumber Dominan:** Twitter
+- 💬 **Sentimen Publik:** Netral
+- 🎯 **Urgensi:** Sedang
+
+**5. Beragam Kegiatan Kemahasiswaan dan Pengembangan Akademik Fakultas**
+- 📌 **Isu:** Universitas Singaperbangsa Karawang mengukuhkan 1.503 mahasiswa PPG, mahasiswa Pramuka dan PBSI UNSIKA melaksanakan program kerja (Racana Menabung, Gebyar Literasi), serta FH UNSIKA menyusun arah baru pendidikan hukum. Klub ULCC juga aktif mempromosikan kegiatannya.
+- 📣 **Sumber Dominan:** Berita
+- 💬 **Sentimen Publik:** Positif
+- 🎯 **Urgensi:** Sedang
+
+---
+
+**📝 Kesimpulan Harian**
+Hari ini menyoroti sejumlah aktivitas positif dan progresif dari UNSIKA, mulai dari keberhasilan acara wisuda yang melahirkan 1571 lulusan termasuk cerita inspiratif, hingga berbagai program pengabdian masyarakat yang menunjukkan kontribusi aktif mahasiswa. Pengembangan infrastruktur kampus melalui penambahan ruang kelas kontainer juga menjadi berita utama, menandakan investasi dalam fasilitas. Selain itu, dinamika seputar penerimaan mahasiswa baru dan kegiatan akademik serta kemahasiswaan yang beragam turut mewarnai pemberitaan dan percakapan daring, menunjukkan UNSIKA sebagai institusi yang aktif dan berkembang.
+[2026-06-25T13:36:29.709+0700] {logging_mixin.py:190} INFO - 
+✅ Rekap laporan AI berhasil disimpan ke database (tabel ai_summaries).
+[2026-06-25T13:36:29.710+0700] {logging_mixin.py:190} INFO - ✨ Seluruh proses AI Summarizer berhasil diselesaikan!
+[2026-06-25T13:36:29.711+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-25T13:36:29.726+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-25T13:36:29.727+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=generate_ai_summary, run_id=scheduled__2026-06-24T17:00:00+00:00, execution_date=20260624T170000, start_date=20260625T063522, end_date=20260625T063629
+[2026-06-25T13:36:29.808+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-25T13:36:29.829+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T13:36:29.833+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

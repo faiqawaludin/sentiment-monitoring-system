@@ -1,0 +1,14 @@
+[2026-06-21T08:26:27.812+0700] {processor.py:186} INFO - Started process (PID=34312) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:26:27.832+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-21T08:26:27.848+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:26:27.847+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:26:28.473+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:26:28.993+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:26:28.992+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-21T08:26:29.377+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:26:29.376+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-20 17:00:00+00:00, run_after=2026-06-21 05:00:00+00:00
+[2026-06-21T08:26:29.496+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 1.698 seconds
+[2026-06-21T08:27:00.820+0700] {processor.py:186} INFO - Started process (PID=34407) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:27:00.832+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-21T08:27:00.912+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:27:00.874+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:27:01.151+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-21T08:27:01.542+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:27:01.541+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-21T08:27:02.441+0700] {logging_mixin.py:190} INFO - [2026-06-21T08:27:02.440+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-20 17:00:00+00:00, run_after=2026-06-21 05:00:00+00:00
+[2026-06-21T08:27:02.509+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 1.929 seconds

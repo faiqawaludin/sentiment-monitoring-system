@@ -8,3 +8,4 @@ __pycache__/
 *.xlsx
 # Google Cloud Credentials
 google_credentials.json
+test/rag-ragas.py

@@ -1,0 +1,91 @@
+[2026-06-17T02:04:05.624+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-17T02:04:05.711+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T05:00:00+00:00 [queued]>
+[2026-06-17T02:04:05.785+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T05:00:00+00:00 [queued]>
+[2026-06-17T02:04:05.792+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-17T02:04:05.970+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_news> on 2026-06-16 05:00:00+00:00
+[2026-06-17T02:04:06.021+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=6029) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-17T02:04:06.018+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_news', 'scheduled__2026-06-16T05:00:00+00:00', '--job-id', '511', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpof_9ionm']
+[2026-06-17T02:04:06.058+0700] {standard_task_runner.py:72} INFO - Started process 6044 to run task
+[2026-06-17T02:04:06.069+0700] {standard_task_runner.py:105} INFO - Job 511: Subtask process_news
+[2026-06-17T02:04:06.208+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-17T02:04:06.428+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T05:00:00+00:00 [running]> on host e06f665b3021
+[2026-06-17T02:04:06.442+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-17T02:04:06.757+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T05:00:00+00:00'
+[2026-06-17T02:04:06.763+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-17T05:55:39.992+0700] {job.py:229} INFO - Heartbeat recovered after 13888.87 seconds
+[2026-06-17T05:56:16.723+0700] {local_task_job_runner.py:127} ERROR - Received SIGTERM. Terminating subprocesses
+[2026-06-17T05:56:16.755+0700] {process_utils.py:132} INFO - Sending 15 to group 6044. PIDs of all processes in the group: [6044]
+[2026-06-17T05:56:16.800+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 6044
+[2026-06-17T05:56:16.845+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-06-17T05:56:16.956+0700] {taskinstance.py:3301} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_remosy_master.py", line 19, in process_news
+    from processing.process_news import run_news_processing
+  File "/opt/airflow/src/processing/process_news.py", line 5, in <module>
+    from transformers import pipeline
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/__init__.py", line 30, in <module>
+    from . import dependency_versions_check
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/__init__.py", line 22, in <module>
+    from .auto_docstring import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/auto_docstring.py", line 32, in <module>
+    from .generic import ModelOutput
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/generic.py", line 38, in <module>
+    from .import_utils import is_mlx_available, is_torch_available, is_torch_fx_proxy
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/import_utils.py", line 47, in <module>
+    PACKAGE_DISTRIBUTION_MAPPING = importlib.metadata.packages_distributions()
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/__init__.py", line 947, in packages_distributions
+    for pkg in _top_level_declared(dist) or _top_level_inferred(dist):
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/__init__.py", line 959, in _top_level_inferred
+    for f in always_iterable(dist.files)
+                             ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/__init__.py", line 500, in files
+    return skip_missing_files(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/_functools.py", line 102, in wrapper
+    return func(param, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/__init__.py", line 498, in skip_missing_files
+    return list(filter(lambda path: path.locate().exists(), package_paths))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/importlib/metadata/__init__.py", line 498, in <lambda>
+    return list(filter(lambda path: path.locate().exists(), package_paths))
+                                    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/pathlib.py", line 860, in exists
+    self.stat(follow_symlinks=follow_symlinks)
+  File "/usr/local/lib/python3.12/pathlib.py", line 840, in stat
+    return os.stat(self, follow_symlinks=follow_symlinks)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3085, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2026-06-17T05:56:17.229+0700] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=remosy_master_end_to_end, task_id=process_news, run_id=scheduled__2026-06-16T05:00:00+00:00, execution_date=20260616T050000, start_date=20260616T190405, end_date=20260616T225617
+[2026-06-17T05:56:17.356+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-17T05:56:17.497+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=6044, status='terminated', exitcode=2, started='02:04:05') (6044) terminated with exit code 2
+[2026-06-17T05:56:17.499+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 143
+[2026-06-17T05:56:17.825+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-17T05:56:17.873+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

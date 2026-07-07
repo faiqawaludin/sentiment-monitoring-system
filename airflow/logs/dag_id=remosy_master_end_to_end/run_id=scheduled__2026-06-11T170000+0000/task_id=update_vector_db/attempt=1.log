@@ -1,0 +1,56 @@
+[2026-06-14T11:02:49.783+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-14T11:02:49.801+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-11T17:00:00+00:00 [queued]>
+[2026-06-14T11:02:49.809+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-11T17:00:00+00:00 [queued]>
+[2026-06-14T11:02:49.810+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-14T11:02:49.826+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): update_vector_db> on 2026-06-11 17:00:00+00:00
+[2026-06-14T11:02:49.835+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1421) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-14T11:02:49.835+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'update_vector_db', 'scheduled__2026-06-11T17:00:00+00:00', '--job-id', '451', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmppxhf62jt']
+[2026-06-14T11:02:49.837+0700] {standard_task_runner.py:72} INFO - Started process 1424 to run task
+[2026-06-14T11:02:49.838+0700] {standard_task_runner.py:105} INFO - Job 451: Subtask update_vector_db
+[2026-06-14T11:02:49.852+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-14T11:02:49.887+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.update_vector_db scheduled__2026-06-11T17:00:00+00:00 [running]> on host 6b105ef65571
+[2026-06-14T11:02:49.889+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-14T11:02:49.961+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='update_vector_db' AIRFLOW_CTX_EXECUTION_DATE='2026-06-11T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-11T17:00:00+00:00'
+[2026-06-14T11:02:49.961+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-14T11:02:54.389+0700] {logging_mixin.py:190} INFO - ⏳ Menyiapkan koneksi ke Database...
+[2026-06-14T11:02:54.393+0700] {logging_mixin.py:190} INFO - 📥 Menyedot data sentimen dari PostgreSQL...
+[2026-06-14T11:02:54.408+0700] {logging_mixin.py:190} INFO - ⚠️ Tabel Berita error: (psycopg2.errors.UndefinedTable) relation "news_processed" does not exist
+LINE 9:                               JOIN news_processed np ON nr.i...
+                                           ^
+
+[SQL: 
+                     SELECT nr.title          as teks,
+                            nr.source,
+                            nr.published_date as tanggal,
+                            np.sentiment_label,
+                            np.sentiment_score,
+                            'Berita'          as platform
+                     FROM news_raw nr
+                              JOIN news_processed np ON nr.id = np.news_id
+                     WHERE np.sentiment_label IS NOT NULL                      ]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2026-06-14T11:02:54.413+0700] {logging_mixin.py:190} INFO - ⚠️ Gagal menarik data Twitter. Error: (psycopg2.errors.UndefinedTable) relation "tweets_processed" does not exist
+LINE 9:                                  JOIN tweets_processed tp ON...
+                                              ^
+
+[SQL: 
+                        SELECT tr.full_text  as teks,
+                               tr.username   as source,
+                               tr.scraped_at as tanggal,
+                               tp.sentiment_label,
+                               tp.sentiment_score,
+                               'Twitter'     as platform
+                        FROM tweets_raw tr
+                                 JOIN tweets_processed tp ON tr.id = tp.tweet_id
+                        WHERE tp.sentiment_label IS NOT NULL
+                          AND tr.scraped_at >= NOW() - INTERVAL '365 days'
+                        ORDER BY tr.scraped_at DESC
+                        ]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2026-06-14T11:02:54.414+0700] {logging_mixin.py:190} INFO - ❌ Semua data kosong! Vector DB batal dibuat.
+[2026-06-14T11:02:54.415+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-14T11:02:54.424+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-14T11:02:54.425+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=update_vector_db, run_id=scheduled__2026-06-11T17:00:00+00:00, execution_date=20260611T170000, start_date=20260614T040249, end_date=20260614T040254
+[2026-06-14T11:02:54.471+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-14T11:02:54.490+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-14T11:02:54.493+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

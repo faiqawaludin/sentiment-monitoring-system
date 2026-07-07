@@ -1,0 +1,28 @@
+[2026-06-15T00:00:01.090+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-15T00:00:01.109+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-14T05:00:00+00:00 [queued]>
+[2026-06-15T00:00:01.121+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-14T05:00:00+00:00 [queued]>
+[2026-06-15T00:00:01.121+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-15T00:00:01.135+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): scrape_news> on 2026-06-14 05:00:00+00:00
+[2026-06-15T00:00:01.143+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=4452) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-15T00:00:01.144+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'scrape_news', 'scheduled__2026-06-14T05:00:00+00:00', '--job-id', '478', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmphhreh1p7']
+[2026-06-15T00:00:01.147+0700] {standard_task_runner.py:72} INFO - Started process 4453 to run task
+[2026-06-15T00:00:01.147+0700] {standard_task_runner.py:105} INFO - Job 478: Subtask scrape_news
+[2026-06-15T00:00:01.163+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-15T00:00:01.203+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-14T05:00:00+00:00 [running]> on host ed381b175d5e
+[2026-06-15T00:00:01.205+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-15T00:00:01.319+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='scrape_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-14T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-14T05:00:00+00:00'
+[2026-06-15T00:00:01.323+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-15T00:00:03.217+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Google News (Relational Schema)...
+[2026-06-15T00:00:03.261+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'UNSIKA' (ID: 1)...
+[2026-06-15T00:00:04.177+0700] {logging_mixin.py:190} INFO -    ℹ️  Dapat berita, tapi semuanya duplikat.
+[2026-06-15T00:00:04.177+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Universitas Singaperbangsa Karawang' (ID: 2)...
+[2026-06-15T00:00:04.918+0700] {logging_mixin.py:190} INFO -    ✅ Menyimpan 4 berita BARU (Relasi ID: 2).
+[2026-06-15T00:00:04.920+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'unsikuy' (ID: 3)...
+[2026-06-15T00:00:05.719+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita.
+[2026-06-15T00:00:05.725+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai. Total 4 berita baru.
+[2026-06-15T00:00:05.730+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-15T00:00:05.771+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-15T00:00:05.779+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=scrape_news, run_id=scheduled__2026-06-14T05:00:00+00:00, execution_date=20260614T050000, start_date=20260614T170001, end_date=20260614T170005
+[2026-06-15T00:00:05.955+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-15T00:00:06.033+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-15T00:00:06.044+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

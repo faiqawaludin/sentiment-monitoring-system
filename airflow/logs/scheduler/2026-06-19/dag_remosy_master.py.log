@@ -1,0 +1,126 @@
+[2026-06-19T07:13:04.247+0700] {processor.py:186} INFO - Started process (PID=22270) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:04.256+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:13:04.263+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:04.262+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:04.515+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:04.669+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:04.668+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:13:04.805+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:04.804+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:13:04.948+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.727 seconds
+[2026-06-19T07:13:35.941+0700] {processor.py:186} INFO - Started process (PID=22293) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:35.943+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:13:35.947+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:35.946+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:35.994+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:13:36.049+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:36.048+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:13:36.101+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:13:36.101+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:13:36.126+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.198 seconds
+[2026-06-19T07:14:06.632+0700] {processor.py:186} INFO - Started process (PID=22316) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:06.633+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:14:06.636+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:06.636+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:06.657+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:06.689+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:06.688+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:14:06.713+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:06.713+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:14:06.735+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.109 seconds
+[2026-06-19T07:14:36.920+0700] {processor.py:186} INFO - Started process (PID=22339) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:36.922+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:14:36.925+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:36.924+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:36.955+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:14:37.002+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:37.001+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:14:37.040+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:14:37.040+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:14:37.066+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.154 seconds
+[2026-06-19T07:15:08.067+0700] {processor.py:186} INFO - Started process (PID=22368) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:08.069+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:15:08.072+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:08.072+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:08.100+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:08.132+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:08.132+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:15:08.159+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:08.159+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:15:08.180+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.128 seconds
+[2026-06-19T07:15:38.861+0700] {processor.py:186} INFO - Started process (PID=22391) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:38.864+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:15:38.868+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:38.867+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:38.894+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:15:38.928+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:38.928+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:15:38.956+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:15:38.956+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:15:38.976+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.122 seconds
+[2026-06-19T07:16:09.880+0700] {processor.py:186} INFO - Started process (PID=22415) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:09.881+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:16:09.884+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:09.883+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:09.906+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:09.938+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:09.937+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:16:09.966+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:09.966+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:16:09.988+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.117 seconds
+[2026-06-19T07:16:41.187+0700] {processor.py:186} INFO - Started process (PID=22438) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:41.189+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:16:41.192+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:41.192+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:41.220+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:16:41.256+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:41.256+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:16:41.285+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:16:41.285+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:16:41.311+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.131 seconds
+[2026-06-19T07:17:11.831+0700] {processor.py:186} INFO - Started process (PID=22467) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:11.833+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:17:11.836+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:11.836+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:11.864+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:11.903+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:11.903+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:17:11.937+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:11.936+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:17:11.966+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.142 seconds
+[2026-06-19T07:17:42.507+0700] {processor.py:186} INFO - Started process (PID=22490) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:42.509+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:17:42.512+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:42.512+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:42.553+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:17:42.615+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:42.615+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:17:42.671+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:17:42.670+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:17:42.710+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.215 seconds
+[2026-06-19T07:18:12.798+0700] {processor.py:186} INFO - Started process (PID=22513) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:12.800+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:18:12.806+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:12.805+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:12.849+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:12.917+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:12.916+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:18:12.976+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:12.975+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:18:13.013+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.231 seconds
+[2026-06-19T07:18:43.394+0700] {processor.py:186} INFO - Started process (PID=22537) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:43.396+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:18:43.402+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:43.402+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:43.434+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:18:43.471+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:43.471+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:18:43.523+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:18:43.522+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:18:43.565+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.181 seconds
+[2026-06-19T07:19:13.685+0700] {processor.py:186} INFO - Started process (PID=22560) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:13.687+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:19:13.693+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:13.692+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:13.731+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:13.797+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:13.797+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:19:13.836+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:13.836+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:19:13.868+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.193 seconds
+[2026-06-19T07:19:44.070+0700] {processor.py:186} INFO - Started process (PID=22589) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:44.072+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:19:44.078+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:44.077+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:44.119+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:19:44.174+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:44.174+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:19:44.234+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:19:44.233+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:19:44.272+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.218 seconds
+[2026-06-19T07:20:15.141+0700] {processor.py:186} INFO - Started process (PID=22612) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:15.143+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:20:15.146+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:15.146+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:15.179+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:15.222+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:15.221+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:20:15.261+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:15.261+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:20:15.293+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.161 seconds
+[2026-06-19T07:20:46.644+0700] {processor.py:186} INFO - Started process (PID=22635) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:46.648+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:20:46.655+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:46.654+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:46.801+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:20:46.892+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:46.891+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:20:46.964+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:20:46.962+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:20:47.021+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.396 seconds
+[2026-06-19T07:21:17.195+0700] {processor.py:186} INFO - Started process (PID=22658) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:17.207+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:21:17.215+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:17.213+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:17.257+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:17.338+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:17.337+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:21:17.438+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:17.438+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:21:17.499+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.314 seconds
+[2026-06-19T07:21:47.829+0700] {processor.py:186} INFO - Started process (PID=22681) to work on /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:47.835+0700] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_remosy_master.py for tasks to queue
+[2026-06-19T07:21:47.845+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:47.844+0700] {dagbag.py:587} INFO - Filling up the DagBag from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:47.984+0700] {processor.py:925} INFO - DAG(s) 'remosy_master_end_to_end' retrieved from /opt/airflow/dags/dag_remosy_master.py
+[2026-06-19T07:21:48.174+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:48.174+0700] {dag.py:3211} INFO - Sync 1 DAGs
+[2026-06-19T07:21:48.336+0700] {logging_mixin.py:190} INFO - [2026-06-19T07:21:48.335+0700] {dag.py:4138} INFO - Setting next_dagrun for remosy_master_end_to_end to 2026-06-18 17:00:00+00:00, run_after=2026-06-19 05:00:00+00:00
+[2026-06-19T07:21:48.441+0700] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_remosy_master.py took 0.637 seconds

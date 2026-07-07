@@ -1,0 +1,32 @@
+[2026-06-18T09:05:14.927+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-18T09:05:14.968+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T17:00:00+00:00 [queued]>
+[2026-06-18T09:05:15.008+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T17:00:00+00:00 [queued]>
+[2026-06-18T09:05:15.009+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-18T09:05:15.060+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): process_news> on 2026-06-16 17:00:00+00:00
+[2026-06-18T09:05:15.077+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=227) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-18T09:05:15.074+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'process_news', 'scheduled__2026-06-16T17:00:00+00:00', '--job-id', '518', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmp4_k5c1wi']
+[2026-06-18T09:05:15.079+0700] {standard_task_runner.py:72} INFO - Started process 230 to run task
+[2026-06-18T09:05:15.080+0700] {standard_task_runner.py:105} INFO - Job 518: Subtask process_news
+[2026-06-18T09:05:15.121+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-18T09:05:15.212+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.process_news scheduled__2026-06-16T17:00:00+00:00 [running]> on host 40e491ee7d1d
+[2026-06-18T09:05:15.214+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-18T09:05:15.523+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='process_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-16T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-16T17:00:00+00:00'
+[2026-06-18T09:05:15.525+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-18T09:05:47.140+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Pemrosesan Berita (Cleaning + Sentiment)...
+[2026-06-18T09:05:47.159+0700] {logging_mixin.py:190} INFO - ❌ Error membaca database: (psycopg2.errors.UndefinedColumn) column r.content does not exist
+LINE 2:             SELECT r.id, r.title, r.content
+                                          ^
+
+[SQL: 
+            SELECT r.id, r.title, r.content
+            FROM news_raw r
+                     LEFT JOIN news_processed p ON r.id = p.news_id
+            WHERE p.news_id IS NULL LIMIT 500             ]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2026-06-18T09:05:47.159+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-18T09:05:47.174+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-18T09:05:47.175+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=process_news, run_id=scheduled__2026-06-16T17:00:00+00:00, execution_date=20260616T170000, start_date=20260618T020514, end_date=20260618T020547
+[2026-06-18T09:05:47.265+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-18T09:05:47.278+0700] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2026-06-18T09:05:47.313+0700] {taskinstance.py:3891} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-18T09:05:47.315+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

@@ -1,0 +1,28 @@
+[2026-06-08T07:56:01.091+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-08T07:56:01.155+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-06-08T00:55:55.688919+00:00 [queued]>
+[2026-06-08T07:56:01.211+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-06-08T00:55:55.688919+00:00 [queued]>
+[2026-06-08T07:56:01.213+0700] {taskinstance.py:2856} INFO - Starting attempt 1 of 1
+[2026-06-08T07:56:01.315+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): task_scrape_twitter> on 2026-06-08 00:55:55.688919+00:00
+[2026-06-08T07:56:01.399+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=438) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-08T07:56:01.406+0700] {standard_task_runner.py:72} INFO - Started process 448 to run task
+[2026-06-08T07:56:01.381+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dag_scraping_twitter', 'task_scrape_twitter', 'manual__2026-06-08T00:55:55.688919+00:00', '--job-id', '422', '--raw', '--subdir', 'DAGS_FOLDER/dag_scraping_twitter.py', '--cfg-path', '/tmp/tmpe_l2bywe']
+[2026-06-08T07:56:01.475+0700] {standard_task_runner.py:105} INFO - Job 422: Subtask task_scrape_twitter
+[2026-06-08T07:56:01.804+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-08T07:56:02.126+0700] {task_command.py:467} INFO - Running <TaskInstance: dag_scraping_twitter.task_scrape_twitter manual__2026-06-08T00:55:55.688919+00:00 [running]> on host c90a2982027f
+[2026-06-08T07:56:02.758+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy_admin' AIRFLOW_CTX_DAG_ID='dag_scraping_twitter' AIRFLOW_CTX_TASK_ID='task_scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-08T00:55:55.688919+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-08T00:55:55.688919+00:00'
+[2026-06-08T07:56:02.787+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-08T07:56:10.951+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Mode Cerdas)...
+[2026-06-08T07:56:11.085+0700] {logging_mixin.py:190} INFO - Database saat ini memiliki 343 tweet.
+[2026-06-08T07:56:11.087+0700] {logging_mixin.py:190} INFO - Mencari Tweet: unsika...
+[2026-06-08T07:56:18.174+0700] {job.py:229} INFO - Heartbeat recovered after 11.00 seconds
+[2026-06-08T07:56:37.777+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 0 tweet mentah dari X.
+[2026-06-08T07:56:37.810+0700] {logging_mixin.py:190} INFO - Mencari Tweet: universitas singaperbangsa karawang...
+[2026-06-08T07:56:44.071+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 0 tweet mentah dari X.
+[2026-06-08T07:56:44.072+0700] {logging_mixin.py:190} INFO - Mencari Tweet: mahasiswa unsika...
+[2026-06-08T07:56:48.240+0700] {logging_mixin.py:190} INFO -    -> Berhasil menarik 0 tweet mentah dari X.
+[2026-06-08T07:56:48.241+0700] {logging_mixin.py:190} INFO - Job Twitter Selesai. Total 0 tweet baru tersimpan.
+[2026-06-08T07:56:48.242+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-08T07:56:48.264+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-08T07:56:48.266+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dag_scraping_twitter, task_id=task_scrape_twitter, run_id=manual__2026-06-08T00:55:55.688919+00:00, execution_date=20260608T005555, start_date=20260608T005601, end_date=20260608T005648
+[2026-06-08T07:56:48.323+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-08T07:56:48.337+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

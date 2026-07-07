@@ -1,0 +1,34 @@
+[2026-06-25T13:25:18.460+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-25T13:25:18.499+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:25:18.518+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-24T17:00:00+00:00 [queued]>
+[2026-06-25T13:25:18.520+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2026-06-25T13:25:18.556+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): scrape_news> on 2026-06-24 17:00:00+00:00
+[2026-06-25T13:25:18.580+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=30396) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-25T13:25:18.578+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'scrape_news', 'scheduled__2026-06-24T17:00:00+00:00', '--job-id', '660', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmpokm7ghof']
+[2026-06-25T13:25:18.583+0700] {standard_task_runner.py:105} INFO - Job 660: Subtask scrape_news
+[2026-06-25T13:25:18.583+0700] {standard_task_runner.py:72} INFO - Started process 30397 to run task
+[2026-06-25T13:25:18.615+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:25:18.706+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.scrape_news scheduled__2026-06-24T17:00:00+00:00 [running]> on host 6737c8fa3ad3
+[2026-06-25T13:25:18.708+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-25T13:25:18.952+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='scrape_news' AIRFLOW_CTX_EXECUTION_DATE='2026-06-24T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-24T17:00:00+00:00'
+[2026-06-25T13:25:18.954+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-25T13:25:23.897+0700] {logging_mixin.py:190} INFO - 🚀 Memulai Job Scraping Google News (Relational Schema)...
+[2026-06-25T13:25:23.999+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'UNSIKA' (ID: 1)...
+[2026-06-25T13:25:24.026+0700] {logging_mixin.py:190} INFO -    ❌ Error scraping 'UNSIKA': HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=UNSIKA&hl=id-ID&gl=ID&ceid=ID%3Aid (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x72dc8cbd2630>: Failed to resolve 'news.google.com' ([Errno -2] Name or service not known)"))
+[2026-06-25T13:25:24.028+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita.
+[2026-06-25T13:25:24.029+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Universitas Singaperbangsa Karawang' (ID: 2)...
+[2026-06-25T13:25:24.037+0700] {logging_mixin.py:190} INFO -    ❌ Error scraping 'Universitas Singaperbangsa Karawang': HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=Universitas%20Singaperbangsa%20Karawang&hl=id-ID&gl=ID&ceid=ID%3Aid (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x72dcac460b90>: Failed to resolve 'news.google.com' ([Errno -2] Name or service not known)"))
+[2026-06-25T13:25:24.039+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita.
+[2026-06-25T13:25:24.041+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'unsikuy' (ID: 3)...
+[2026-06-25T13:25:24.051+0700] {logging_mixin.py:190} INFO -    ❌ Error scraping 'unsikuy': HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=unsikuy&hl=id-ID&gl=ID&ceid=ID%3Aid (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x72dc86b9db20>: Failed to resolve 'news.google.com' ([Errno -2] Name or service not known)"))
+[2026-06-25T13:25:24.052+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita.
+[2026-06-25T13:25:24.052+0700] {logging_mixin.py:190} INFO - 🔎 Sedang mencari: 'Fasilkom UNSIKA' (ID: 4)...
+[2026-06-25T13:25:24.059+0700] {logging_mixin.py:190} INFO -    ❌ Error scraping 'Fasilkom UNSIKA': HTTPSConnectionPool(host='news.google.com', port=443): Max retries exceeded with url: /rss/search?q=Fasilkom%20UNSIKA&hl=id-ID&gl=ID&ceid=ID%3Aid (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x72dc86b9cc80>: Failed to resolve 'news.google.com' ([Errno -2] Name or service not known)"))
+[2026-06-25T13:25:24.060+0700] {logging_mixin.py:190} INFO -    ⚠️ Tidak ditemukan berita.
+[2026-06-25T13:25:24.060+0700] {logging_mixin.py:190} INFO - 🏁 Job Selesai. Total 0 berita baru.
+[2026-06-25T13:25:24.061+0700] {python.py:240} INFO - Done. Returned value was: None
+[2026-06-25T13:25:24.076+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-25T13:25:24.077+0700] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=remosy_master_end_to_end, task_id=scrape_news, run_id=scheduled__2026-06-24T17:00:00+00:00, execution_date=20260624T170000, start_date=20260625T062518, end_date=20260625T062524
+[2026-06-25T13:25:24.146+0700] {local_task_job_runner.py:261} INFO - Task exited with return code 0
+[2026-06-25T13:25:24.180+0700] {taskinstance.py:3891} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-06-25T13:25:24.184+0700] {local_task_job_runner.py:240} INFO - ::endgroup::

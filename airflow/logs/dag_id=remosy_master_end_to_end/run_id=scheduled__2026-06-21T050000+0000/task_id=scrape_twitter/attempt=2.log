@@ -1,0 +1,35 @@
+[2026-06-22T08:42:10.451+0700] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-06-22T08:42:10.485+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-21T05:00:00+00:00 [queued]>
+[2026-06-22T08:42:10.526+0700] {taskinstance.py:2603} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-21T05:00:00+00:00 [queued]>
+[2026-06-22T08:42:10.527+0700] {taskinstance.py:2856} INFO - Starting attempt 2 of 2
+[2026-06-22T08:42:10.565+0700] {taskinstance.py:2879} INFO - Executing <Task(PythonOperator): scrape_twitter> on 2026-06-21 05:00:00+00:00
+[2026-06-22T08:42:10.603+0700] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'remosy_master_end_to_end', 'scrape_twitter', 'scheduled__2026-06-21T05:00:00+00:00', '--job-id', '570', '--raw', '--subdir', 'DAGS_FOLDER/dag_remosy_master.py', '--cfg-path', '/tmp/tmp6uj396y8']
+[2026-06-22T08:42:10.609+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1704) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-22T08:42:10.611+0700] {standard_task_runner.py:105} INFO - Job 570: Subtask scrape_twitter
+[2026-06-22T08:42:10.611+0700] {standard_task_runner.py:72} INFO - Started process 1706 to run task
+[2026-06-22T08:42:10.647+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:209 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-22T08:42:10.761+0700] {task_command.py:467} INFO - Running <TaskInstance: remosy_master_end_to_end.scrape_twitter scheduled__2026-06-21T05:00:00+00:00 [running]> on host df0dddc984af
+[2026-06-22T08:42:10.766+0700] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:449 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-06-22T08:42:12.003+0700] {taskinstance.py:3122} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='remosy' AIRFLOW_CTX_DAG_ID='remosy_master_end_to_end' AIRFLOW_CTX_TASK_ID='scrape_twitter' AIRFLOW_CTX_EXECUTION_DATE='2026-06-21T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-06-21T05:00:00+00:00'
+[2026-06-22T08:42:12.048+0700] {taskinstance.py:731} INFO - ::endgroup::
+[2026-06-22T08:42:13.875+0700] {logging_mixin.py:190} INFO - Memulai Job Scraping Twitter (Relational Schema)...
+[2026-06-22T08:42:13.903+0700] {logging_mixin.py:190} INFO - Mencari Tweet: UNSIKA...
+[2026-06-22T08:42:50.801+0700] {logging_mixin.py:190} INFO - Mencari Tweet: Universitas Singaperbangsa Karawang...
+[2026-06-22T08:45:33.403+0700] {local_task_job_runner.py:341} WARNING - State of this instance has been externally set to success. Terminating instance.
+[2026-06-22T08:45:33.408+0700] {local_task_job_runner.py:240} INFO - ::endgroup::
+[2026-06-22T08:45:33.414+0700] {process_utils.py:132} INFO - Sending 15 to group 1706. PIDs of all processes in the group: [2025, 2026, 2049, 2050, 2066, 2070, 2071, 2123, 2213, 2169, 2101, 1706]
+[2026-06-22T08:45:33.415+0700] {process_utils.py:87} INFO - Sending the signal 15 to group 1706
+[2026-06-22T08:45:33.416+0700] {taskinstance.py:3083} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-06-22T08:45:33.417+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2049, status='terminated', started='08:42:52') (2049) terminated with exit code None
+[2026-06-22T08:45:33.506+0700] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2026-06-22T08:45:33.521+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2050, status='terminated', started='08:42:52') (2050) terminated with exit code None
+[2026-06-22T08:45:33.523+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2101, status='terminated', started='08:42:54') (2101) terminated with exit code None
+[2026-06-22T08:45:33.523+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2070, status='terminated', started='08:42:54') (2070) terminated with exit code None
+[2026-06-22T08:45:33.524+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2213, status='terminated', started='08:42:57') (2213) terminated with exit code None
+[2026-06-22T08:45:33.524+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2071, status='terminated', started='08:42:54') (2071) terminated with exit code None
+[2026-06-22T08:45:33.525+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2066, status='terminated', started='08:42:54') (2066) terminated with exit code None
+[2026-06-22T08:45:33.525+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2169, status='terminated', started='08:42:54') (2169) terminated with exit code None
+[2026-06-22T08:45:33.526+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2025, status='terminated', started='08:42:50') (2025) terminated with exit code None
+[2026-06-22T08:45:33.533+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=1706, status='terminated', exitcode=0, started='08:42:09') (1706) terminated with exit code 0
+[2026-06-22T08:45:33.534+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2026, status='terminated', started='08:42:50') (2026) terminated with exit code None
+[2026-06-22T08:45:33.535+0700] {process_utils.py:80} INFO - Process psutil.Process(pid=2123, status='terminated', started='08:42:54') (2123) terminated with exit code None
