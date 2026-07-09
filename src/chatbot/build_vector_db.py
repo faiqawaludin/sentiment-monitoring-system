@@ -3,28 +3,37 @@ import os
 import pandas as pd
 from dotenv import load_dotenv
 
-# Konfigurasi Path agar bisa import utils dari root project
 current_dir = os.path.dirname(os.path.abspath(__file__))
 root_project = os.path.abspath(os.path.join(current_dir, '../..'))
 if root_project not in sys.path:
     sys.path.append(root_project)
 
+load_dotenv()
+
 from src.utils.db import get_db_engine
 from langchain_core.documents import Document
-from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import PGVector
 from langchain_huggingface import HuggingFaceEmbeddings
 
 
 def build_faiss_index():
     print("⏳ Menyiapkan koneksi ke Database...")
     engine = get_db_engine()
-    load_dotenv()
+
+    # Rakit connection string dari .env
+    pg_host = os.getenv("POSTGRES_HOST_DOCKER", "postgres-dw")
+    pg_port = os.getenv("POSTGRES_PORT_DOCKER", "5432")
+    pg_db   = os.getenv("DB_NAME", "remosy_dw")
+    pg_user = os.getenv("DB_USER", "remosy_user")
+    pg_pass = os.getenv("DB_PASSWORD", "remosy_password")
+    db_url  = f"postgresql+psycopg2://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
 
     print("📥 Menyedot data sentimen dari PostgreSQL...")
 
     # ==========================================
     # A. Tarik Data Berita
     # ==========================================
+    df_news = pd.DataFrame()  # Inisialisasi awal di luar try
     try:
         query_news = """
                      SELECT nr.title          as teks,
@@ -41,11 +50,11 @@ def build_faiss_index():
         print(f"✅ Berhasil menarik {len(df_news)} data Berita.")
     except Exception as e:
         print(f"⚠️ Tabel Berita error: {e}")
-        df_news = pd.DataFrame()  # Jaring pengaman
 
     # ==========================================
-    # B. Tarik Data Twitter
+    # B. Tarik Data Twitter (SEJAJAR SAMA BAGIAN A)
     # ==========================================
+    df_twitter = pd.DataFrame()  # Inisialisasi awal di luar try
     try:
         query_twitter = """
                         SELECT tr.full_text  as teks,
@@ -58,16 +67,15 @@ def build_faiss_index():
                                  JOIN tweets_processed tp ON tr.id = tp.tweet_id
                         WHERE tp.sentiment_label IS NOT NULL
                           AND tr.scraped_at >= NOW() - INTERVAL '365 days'
-                        ORDER BY tr.scraped_at DESC
+                        ORDER BY tr.scraped_at DESC \
                         """
         df_twitter = pd.read_sql(query_twitter, engine)
         print(f"✅ Berhasil menarik {len(df_twitter)} data Twitter.")
     except Exception as e:
         print(f"⚠️ Gagal menarik data Twitter. Error: {e}")
-        df_twitter = pd.DataFrame()  # Jaring pengaman mutlak agar tidak UnboundLocalError
 
     # ==========================================
-    # C. Gabungkan Semua Data
+    # C. Gabungkan Semua Data (SEJAJAR SAMA BAGIAN A & B)
     # ==========================================
     df_data = pd.concat([df_news, df_twitter], ignore_index=True)
 
@@ -75,7 +83,9 @@ def build_faiss_index():
         print("❌ Semua data kosong! Vector DB batal dibuat.")
         return
 
-    # 2. UBAH DATA TABEL MENJADI DOKUMEN TEKS UNTUK AI
+    # ==========================================
+    # D. Konversi ke Dokumen LangChain
+    # ==========================================
     print(f"🧠 Memproses {len(df_data)} data gabungan menjadi narasi AI...")
     documents = []
     for _, row in df_data.iterrows():
@@ -86,31 +96,41 @@ def build_faiss_index():
                   f"berisi: '{row['teks']}'. Sentimen: {row['sentiment_label']} (Skor: {row['sentiment_score']}).")
 
         metadata = {
-            "source": row['source'],
-            "sentiment": row['sentiment_label'],
-            "platform": row['platform'],
-            "date": date_str
+            "source":    str(row['source']),
+            "sentiment": str(row['sentiment_label']),
+            "platform":  str(row['platform']),
+            "date":      date_str
         }
 
-        doc = Document(page_content=narasi, metadata=metadata)
-        documents.append(doc)
+        documents.append(Document(page_content=narasi, metadata=metadata))
 
-    # 3. UBAH TEKS MENJADI VEKTOR (EMBEDDINGS) MENGGUNAKAN HUGGINGFACE
+    # ==========================================
+    # E. Load Embedding Model (MiniLM Multilingual)
+    # ==========================================
     print("🚀 Memuat Model AI Multilingual (Lokal & Gratis)...")
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     )
 
-    print("🧬 Sedang melakukan konversi narasi ke Vektor (Mungkin butuh waktu beberapa detik)...")
-    vectorstore = FAISS.from_documents(documents, embeddings)
+    # ==========================================
+    # F. Simpan ke pgvector via LangChain
+    # Membuat tabel langchain_pg_collection dan
+    # langchain_pg_embedding secara otomatis
+    # ==========================================
+    # 3. UBAH TEKS MENJADI VEKTOR DAN SIMPAN KE PGVECTOR
+    print("🧬 Menyimpan vektor ke PostgreSQL (pgvector)...")
 
-    # Simpan ke folder lokal
-    save_path = os.path.join(root_project, "data", "faiss_index")
-    os.makedirs(save_path, exist_ok=True)
-    vectorstore.save_local(save_path)
+    # --- INI KUNCI UTAMANYA: HOST HARUS postgres-dw ---
+    CONNECTION_STRING = "postgresql+psycopg2://remosy_user:remosy_password@postgres-dw:5432/remosy_dw"
 
-    print(f"✅ SUKSES BESAR! Vector Database berhasil disimpan di: {save_path}")
+    from langchain_community.vectorstores.pgvector import PGVector
 
+    PGVector.from_documents(
+        embedding=embeddings,
+        documents=documents,
+        connection_string=CONNECTION_STRING,
+        collection_name="remosy_vectors",
+        pre_delete_collection=True  # Biar data lama dihapus pas update baru
+    )
 
-if __name__ == "__main__":
-    build_faiss_index()
+    print("✅ SUKSES BESAR! Vector Database (PGVector) berhasil dibuat!")

@@ -1,12 +1,12 @@
-import streamlit as st
-import pandas as pd
-import plotly.express as px
 import sys
 import os
 import io
 import base64
 import re
 import time
+import streamlit as st
+import pandas as pd
+import plotly.express as px
 from sqlalchemy import text
 from wordcloud import WordCloud, STOPWORDS
 from streamlit_option_menu import option_menu
@@ -30,20 +30,73 @@ except ImportError as e:
 
 st.set_page_config(page_title="REMOSY Dashboard", layout="wide", initial_sidebar_state="expanded")
 
+# --- INJEKSI CSS KELAS ENTERPRISE (POWER BI / TABLEAU 3D STYLE) ---
+st.markdown("""
+<style>
+    /* 1. Latar Belakang Kanvas (Abu-abu di Light Mode, Hitam di Dark Mode) */
+    [data-testid="stAppViewContainer"] {
+        background-color: var(--secondary-background-color); 
+    }
+    [data-testid="stHeader"] {
+        background-color: transparent;
+    }
+
+    /* 2. Panel Kartu 3D Melayang (st.container border=True) */
+    div[data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: var(--primary-background-color) !important;
+        border-radius: 12px;
+        border: none !important; /* Hilangkan garis kaku */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important; /* Efek 3D Bayangan */
+        padding: 15px !important;
+        margin-bottom: 5px;
+    }
+
+    /* 3. KOTAK KPI METRIC (TINGGI DIKUNCI MUTLAK BIAR RATA!) */
+    div[data-testid="stMetric"] {
+        background-color: var(--secondary-background-color) !important;
+        border: 1px solid rgba(128, 128, 128, 0.1);
+        border-radius: 10px;
+        padding: 15px 20px;
+        height: 130px !important; /* KUNCI MUTLAK TINGGI KARTU */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* Mengunci ruang kosong di dalam kartu KPI agar kontennya tidak lari */
+    div[data-testid="stMetricLabel"] { height: 25px; }
+    div[data-testid="stMetricValue"] { height: 40px; }
+    div[data-testid="stMetricDelta"] { min-height: 20px; }
+
+    div[data-testid="stMetric"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        border-color: #00CC96;
+    }
+
+    /* 4. Pembatas */
+    hr {
+        margin: 1.5em 0 !important;
+        opacity: 0.15;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 if 'chat_history' not in st.session_state: st.session_state['chat_history'] = []
 if 'last_action_time' not in st.session_state: st.session_state['last_action_time'] = 0
 
 
 def validate_security(input_text):
     if not input_text or not input_text.strip(): return False, "Input tidak boleh kosong."
-    if len(input_text) > 300: return False, "Input terlalu panjang! Maksimal 300 karakter."
+    if len(input_text) > 300: return False, "Input terlalu panjang. Maksimal 300 karakter."
     forbidden = ["ignore all", "abaikan", "system prompt", "uncensored", "jailbreak", "bypass", "act as"]
     for phrase in forbidden:
-        if phrase in input_text.lower(): return False, "🚨 TERDETEKSI PELANGGARAN KEAMANAN."
+        if phrase in input_text.lower(): return False, "TERDETEKSI PELANGGARAN KEAMANAN."
     return True, "Aman"
 
 
-# --- FUNGSI TARIK CACHE AI ---
 @st.cache_data(ttl=60)
 def load_ai_cache():
     engine = get_db_engine()
@@ -56,7 +109,7 @@ def load_ai_cache():
     except Exception:
         return None
 
-# --- FUNGSI TARIK DATA UTAMA ---
+
 @st.cache_data(ttl=300)
 def load_all_data():
     engine = get_db_engine()
@@ -121,7 +174,8 @@ def plot_wordcloud(text_data, colormap='viridis', dynamic_stopwords=None):
          'suaraunsika', 'unsika_ulcc', 'ulcc', 'maketheuniverseours', 'storeofulcc'])
     if dynamic_stopwords: custom_stopwords.update(dynamic_stopwords)
     try:
-        wc = WordCloud(width=800, height=400, background_color='white', colormap=colormap, stopwords=custom_stopwords,
+        wc = WordCloud(width=800, height=400, background_color='rgba(255, 255, 255, 0)', colormap=colormap,
+                       stopwords=custom_stopwords,
                        max_words=70, collocations=False).generate(full_text)
         img_buffer = io.BytesIO()
         wc.to_image().save(img_buffer, format='PNG')
@@ -132,7 +186,7 @@ def plot_wordcloud(text_data, colormap='viridis', dynamic_stopwords=None):
 
 def render_image_html(image_buffer):
     b64_img = base64.b64encode(image_buffer.getvalue()).decode()
-    return f'<img src="data:image/png;base64,{b64_img}" style="width:100%; border-radius:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">'
+    return f'<img src="data:image/png;base64,{b64_img}" style="width:100%; border-radius:8px;">'
 
 
 def get_color_map(): return {'Positive': '#00CC96', 'Negative': '#EF553B', 'Neutral': '#636EFA',
@@ -140,10 +194,10 @@ def get_color_map(): return {'Positive': '#00CC96', 'Negative': '#EF553B', 'Neut
 
 
 def render_tldr_ui(ringkasan_text, title="Insight Eksekutif AI"):
-    with st.expander(f"🤖 **{title}**", expanded=True):
+    with st.expander(f"**{title}**", expanded=True):
         st.markdown(f"""
-        <div style="background-color: #1E1E24; padding: 20px; border-radius: 8px; border-left: 4px solid #00CC96; margin-bottom: 5px;">
-            <div style="color: #E0E0E0; font-size: 15px; line-height: 1.6;">
+        <div style="background-color: rgba(128, 128, 128, 0.05); padding: 20px; border-radius: 8px; border-left: 4px solid #00CC96; border: 1px solid rgba(128, 128, 128, 0.1); margin-bottom: 5px;">
+            <div style="font-size: 15px; line-height: 1.6;">
                 {ringkasan_text}
             </div>
         </div>
@@ -157,82 +211,95 @@ def filter_by_time(df, date_col, time_filter):
     if dates.empty or dates.isna().all():
         return df
     max_date = dates.max()
-    if time_filter == "1 Bulan": cutoff = max_date - pd.DateOffset(months=1)
-    elif time_filter == "3 Bulan": cutoff = max_date - pd.DateOffset(months=3)
-    elif time_filter == "6 Bulan": cutoff = max_date - pd.DateOffset(months=6)
-    elif time_filter == "1 Tahun": cutoff = max_date - pd.DateOffset(years=1)
-    else: return df
+    if time_filter == "1 Bulan":
+        cutoff = max_date - pd.DateOffset(months=1)
+    elif time_filter == "3 Bulan":
+        cutoff = max_date - pd.DateOffset(months=3)
+    elif time_filter == "6 Bulan":
+        cutoff = max_date - pd.DateOffset(months=6)
+    elif time_filter == "1 Tahun":
+        cutoff = max_date - pd.DateOffset(years=1)
+    else:
+        return df
     return df[dates >= cutoff]
 
 
 # ==========================================
-# 🏠 HALAMAN 1: DASHBOARD UTAMA
+# HALAMAN 1: DASHBOARD UTAMA
 # ==========================================
 def show_overview(df_news, df_tweets, ai_cache):
     st.title("Dashboard Utama")
-    st.markdown("Ringkasan eksekutif reputasi kampus dari seluruh kanal.")
+    st.markdown("Ringkasan eksekutif reputasi institusi dari seluruh kanal.")
     st.divider()
 
     all_sentiments = pd.concat([df_news['sentiment_label'] if not df_news.empty else pd.Series(),
                                 df_tweets['sentiment_label'] if not df_tweets.empty else pd.Series()])
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Total Isu Masuk", len(df_news) + len(df_tweets))
-    c2.metric("Sentimen Positif", len(all_sentiments[all_sentiments == 'Positive']), delta="Good")
-    c3.metric("Sentimen Negatif", len(all_sentiments[all_sentiments == 'Negative']), delta="-Alert",
-              delta_color="inverse")
-    c4.metric("Dalam Antrian", len(all_sentiments[all_sentiments == 'Belum Dinilai']))
+
+    with st.container(border=True):
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Total Isu Masuk", len(df_news) + len(df_tweets), delta=" ", delta_color="off")
+        c2.metric("Sentimen Positif", len(all_sentiments[all_sentiments == 'Positive']), delta="Good")
+        c3.metric("Sentimen Negatif", len(all_sentiments[all_sentiments == 'Negative']), delta="-Alert",
+                  delta_color="inverse")
+        c4.metric("Dalam Antrian", len(all_sentiments[all_sentiments == 'Belum Dinilai']), delta=" ", delta_color="off")
 
     st.divider()
 
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.subheader("Tren Isu Harian")
-        time_opt = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
-                            index=4, horizontal=True, label_visibility="collapsed", key="time_overview")
+        with st.container(border=True):
+            st.subheader("Tren Isu Harian")
+            time_opt = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
+                                index=0, horizontal=True, label_visibility="collapsed", key="time_overview")
 
-        trend_frames = []
-        if not df_news.empty:
-            df_n_trend = filter_by_time(df_news, 'final_date', time_opt)
-            trend_frames.append(df_n_trend[['date', 'sentiment_label']])
-        if not df_tweets.empty:
-            df_t_trend = filter_by_time(df_tweets, 'scraped_at', time_opt)
-            trend_frames.append(df_t_trend[['date', 'sentiment_label']])
+            trend_frames = []
+            if not df_news.empty:
+                df_n_trend = filter_by_time(df_news, 'final_date', time_opt)
+                trend_frames.append(df_n_trend[['date', 'sentiment_label']])
+            if not df_tweets.empty:
+                df_t_trend = filter_by_time(df_tweets, 'scraped_at', time_opt)
+                trend_frames.append(df_t_trend[['date', 'sentiment_label']])
 
-        if trend_frames:
-            full_trend = pd.concat(trend_frames).groupby(['date', 'sentiment_label']).size().reset_index(name='jumlah')
-            fig_trend = px.bar(full_trend, x='date', y='jumlah', color='sentiment_label', barmode='stack',
-                               color_discrete_map=get_color_map())
-            st.plotly_chart(fig_trend, use_container_width=True)
+            if trend_frames:
+                full_trend = pd.concat(trend_frames).groupby(['date', 'sentiment_label']).size().reset_index(
+                    name='jumlah')
+                fig_trend = px.bar(full_trend, x='date', y='jumlah', color='sentiment_label', barmode='stack',
+                                   color_discrete_map=get_color_map())
+                # Bikin chart background transparan biar nyatu sama panel
+                fig_trend.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+                st.plotly_chart(fig_trend, use_container_width=True)
 
     with col2:
-        st.subheader("Proporsi Global")
-        if not all_sentiments.empty:
-            pie_data = all_sentiments.value_counts().reset_index()
-            pie_data.columns = ['Sentimen', 'Jumlah']
-            fig_pie = px.pie(pie_data, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
-                             color_discrete_map=get_color_map())
-            st.plotly_chart(fig_pie, use_container_width=True)
+        with st.container(border=True):
+            st.subheader("Proporsi Global")
+            if not all_sentiments.empty:
+                pie_data = all_sentiments.value_counts().reset_index()
+                pie_data.columns = ['Sentimen', 'Jumlah']
+                fig_pie = px.pie(pie_data, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
+                                 color_discrete_map=get_color_map())
+                fig_pie.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+                st.plotly_chart(fig_pie, use_container_width=True)
 
     st.divider()
 
     c_title, c_btn = st.columns([4, 1])
     with c_title:
-        st.subheader("🔥 5 Isu Terhangat (AI Analysis)")
+        st.subheader("5 Isu Terhangat (AI Analysis)")
     with c_btn:
-        if st.button("🔄 Refresh Data"):
+        if st.button("Refresh Data", use_container_width=True):
             st.cache_data.clear()
             st.rerun()
 
-    # --- PERBAIKAN: GUNAKAN AI CACHE ---
-    with st.spinner("🤖 Mengambil hasil AI..."):
+    with st.spinner("Mengambil hasil AI..."):
         if ai_cache is not None and ai_cache.get('hot_topics'):
             update_time = pd.to_datetime(ai_cache['updated_at']).strftime('%d %b %Y, %H:%M')
             render_tldr_ui(ai_cache['hot_topics'], title=f"Analisis 5 Isu Terhangat (Update: {update_time})")
         else:
-            st.info("⏳ AI sedang menyusun analisis. Silakan tunggu jadwal Airflow berjalan atau pastikan Airflow sudah selesai.")
+            st.info(
+                "AI sedang menyusun analisis. Silakan tunggu jadwal Airflow berjalan atau pastikan Airflow sudah selesai.")
 
     st.divider()
-    st.subheader("🚨 Sorotan Negatif (Prioritas Tinggi)")
+    st.subheader("Sorotan Negatif (Prioritas Tinggi)")
     neg_news = df_news[df_news['sentiment_label'] == 'Negative'].sort_values(by=['final_date', 'sentiment_score'],
                                                                              ascending=[False, False])
     neg_tweets = df_tweets[df_tweets['sentiment_label'] == 'Negative'].sort_values(by=['scraped_at', 'sentiment_score'],
@@ -240,316 +307,344 @@ def show_overview(df_news, df_tweets, ai_cache):
 
     col_n1, col_n2 = st.columns(2)
     with col_n1:
-        st.markdown("### 📰 Berita Negatif")
-        if not neg_news.empty:
-            with st.container(height=400):
-                for _, row in neg_news.iterrows():
-                    st.markdown(f"""
-                    <div style="padding: 15px; border-radius: 10px; border-left: 5px solid #EF553B; background-color: #262730; margin-bottom: 10px;">
-                        <h4 style="margin:0; font-size: 16px;"><a href="{row['url']}" target="_blank" style="text-decoration:none; color: #4DA6FF;">{row['title']} 🔗</a></h4>
-                        <div style="margin-top: 5px; font-size: 12px; color: #AAAAAA;">📅 <b>{row['date_str']}</b> | 📰 {row['source']}</div>
-                    </div>""", unsafe_allow_html=True)
-        else:
-            st.success("Aman. Tidak ada berita negatif.")
+        with st.container(border=True):
+            st.markdown("### Berita Negatif")
+            if not neg_news.empty:
+                with st.container(height=380):
+                    for _, row in neg_news.iterrows():
+                        st.markdown(f"""
+                        <div style="padding: 15px; border-radius: 8px; border-left: 5px solid #EF553B; background-color: rgba(128, 128, 128, 0.05); border: 1px solid rgba(128, 128, 128, 0.1); margin-bottom: 10px;">
+                            <h4 style="margin:0; font-size: 15px;"><a href="{row['url']}" target="_blank" style="text-decoration:none; color: #4DA6FF;">{row['title']}</a></h4>
+                            <div style="margin-top: 5px; font-size: 12px; opacity: 0.7;"><b>{row['date_str']}</b> | {row['source']}</div>
+                        </div>""", unsafe_allow_html=True)
+            else:
+                st.success("Aman. Tidak ada berita negatif.")
 
     with col_n2:
-        st.markdown("### 🐦 Tweet Negatif")
-        if not neg_tweets.empty:
-            with st.container(height=400):
-                for _, row in neg_tweets.iterrows():
-                    st.markdown(f"""
-                    <div style="padding: 15px; border-radius: 10px; border-left: 5px solid #EF553B; background-color: #262730; margin-bottom: 10px;">
-                        <div style="font-size: 14px; color: #FAFAFA; margin-bottom: 5px;">"{row['clean_text']}"</div>
-                        <div style="font-size: 12px; color: #AAAAAA;">👤 <b>@{row['username']}</b> | 📅 {row['date_str']}</div>
-                    </div>""", unsafe_allow_html=True)
-        else:
-            st.success("Aman. Tidak ada tweet negatif.")
+        with st.container(border=True):
+            st.markdown("### Tweet Negatif")
+            if not neg_tweets.empty:
+                with st.container(height=380):
+                    for _, row in neg_tweets.iterrows():
+                        st.markdown(f"""
+                        <div style="padding: 15px; border-radius: 8px; border-left: 5px solid #EF553B; background-color: rgba(128, 128, 128, 0.05); border: 1px solid rgba(128, 128, 128, 0.1); margin-bottom: 10px;">
+                            <div style="font-size: 14px; margin-bottom: 5px;">"{row['clean_text']}"</div>
+                            <div style="font-size: 12px; opacity: 0.7;"><b>@{row['username']}</b> | {row['date_str']}</div>
+                        </div>""", unsafe_allow_html=True)
+            else:
+                st.success("Aman. Tidak ada tweet negatif.")
 
 
 # ==========================================
-# 📰 HALAMAN 2: ANALISIS BERITA
+# HALAMAN 2: ANALISIS BERITA
 # ==========================================
 def show_news_analytics(df_news, ai_cache):
-    st.title("📰 Analisis Media & Berita")
+    st.title("Analisis Media & Berita")
 
     if df_news.empty:
         st.warning("Belum ada data berita yang diproses.")
         return
 
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Total Berita", len(df_news))
-    c2.metric("Sentimen Positif", len(df_news[df_news['sentiment_label'] == 'Positive']))
-    c3.metric("Sentimen Negatif", len(df_news[df_news['sentiment_label'] == 'Negative']))
-    c4.metric("Sentimen Netral", len(df_news[df_news['sentiment_label'] == 'Neutral']))
+    with st.container(border=True):
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Total Berita", len(df_news), delta=" ", delta_color="off")
+        c2.metric("Sentimen Positif", len(df_news[df_news['sentiment_label'] == 'Positive']), delta="Good")
+        c3.metric("Sentimen Negatif", len(df_news[df_news['sentiment_label'] == 'Negative']), delta="-Alert",
+                  delta_color="inverse")
+        c4.metric("Sentimen Netral", len(df_news[df_news['sentiment_label'] == 'Neutral']), delta=" ",
+                  delta_color="off")
+
     st.divider()
 
     sel_sources, sel_sentiments = [], []
 
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.subheader("📈 Tren Publikasi Berita Harian")
-        time_opt_news = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
-                                 index=4, horizontal=True, label_visibility="collapsed", key="time_news")
+        with st.container(border=True):
+            st.subheader("Tren Publikasi Berita Harian")
+            time_opt_news = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
+                                     index=0, horizontal=True, label_visibility="collapsed", key="time_news")
 
-        df_news_trend = filter_by_time(df_news, 'final_date', time_opt_news)
-        trend_news = df_news_trend.groupby(['date', 'sentiment_label']).size().reset_index(name='jumlah')
-        fig_trend = px.line(trend_news, x='date', y='jumlah', color='sentiment_label',
-                            color_discrete_map=get_color_map(), markers=True)
-        st.plotly_chart(fig_trend, use_container_width=True)
+            df_news_trend = filter_by_time(df_news, 'final_date', time_opt_news)
+            trend_news = df_news_trend.groupby(['date', 'sentiment_label']).size().reset_index(name='jumlah')
+            fig_trend = px.line(trend_news, x='date', y='jumlah', color='sentiment_label',
+                                color_discrete_map=get_color_map(), markers=True)
+            fig_trend.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+            st.plotly_chart(fig_trend, use_container_width=True)
 
     with col2:
-        st.subheader("🏆 Top 10 Media")
-        top_sources_list = df_news['source'].value_counts().head(10).index.tolist()
-        df_top_source = df_news[df_news['source'].isin(top_sources_list)]
-        source_sentiment = df_top_source.groupby(['source', 'sentiment_label']).size().reset_index(name='jumlah')
-        fig_source = px.bar(source_sentiment, x='jumlah', y='source', color='sentiment_label', orientation='h',
-                            color_discrete_map=get_color_map(), barmode='stack')
-        fig_source.update_yaxes(categoryorder='array', categoryarray=top_sources_list[::-1])
+        with st.container(border=True):
+            st.subheader("Top 10 Media")
+            top_sources_list = df_news['source'].value_counts().head(10).index.tolist()
+            df_top_source = df_news[df_news['source'].isin(top_sources_list)]
+            source_sentiment = df_top_source.groupby(['source', 'sentiment_label']).size().reset_index(name='jumlah')
+            fig_source = px.bar(source_sentiment, x='jumlah', y='source', color='sentiment_label', orientation='h',
+                                color_discrete_map=get_color_map(), barmode='stack')
+            fig_source.update_yaxes(categoryorder='array', categoryarray=top_sources_list[::-1])
+            fig_source.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
 
-        try:
-            bar_event = st.plotly_chart(fig_source, use_container_width=True, on_select="rerun", key="bar_news")
-            if bar_event and bar_event.get("selection") and bar_event["selection"]["points"]:
-                sel_sources = [p["y"] for p in bar_event["selection"]["points"]]
-        except TypeError:
-            st.plotly_chart(fig_source, use_container_width=True)
+            try:
+                bar_event = st.plotly_chart(fig_source, use_container_width=True, on_select="rerun", key="bar_news")
+                if bar_event and bar_event.get("selection") and bar_event["selection"]["points"]:
+                    sel_sources = [p["y"] for p in bar_event["selection"]["points"]]
+            except TypeError:
+                st.plotly_chart(fig_source, use_container_width=True)
 
-    st.divider()
     col3, col4 = st.columns([2, 1])
     with col3:
-        st.subheader("☁️ Word Cloud Judul Berita")
-        media_words = set(re.findall(r'\b\w+\b', " ".join(df_news['source'].dropna().astype(str).unique()).lower()))
-        wc_buffer = plot_wordcloud(df_news['title'].dropna().tolist(), colormap='magma', dynamic_stopwords=media_words)
-        if wc_buffer: st.markdown(render_image_html(wc_buffer), unsafe_allow_html=True)
+        with st.container(border=True):
+            st.subheader("Word Cloud Judul Berita")
+            media_words = set(re.findall(r'\b\w+\b', " ".join(df_news['source'].dropna().astype(str).unique()).lower()))
+            wc_buffer = plot_wordcloud(df_news['title'].dropna().tolist(), colormap='magma',
+                                       dynamic_stopwords=media_words)
+            if wc_buffer: st.markdown(render_image_html(wc_buffer), unsafe_allow_html=True)
     with col4:
-        st.subheader("📊 Proporsi Sentimen")
-        sentiment_counts = df_news['sentiment_label'].value_counts().reset_index()
-        sentiment_counts.columns = ['Sentimen', 'Jumlah']
-        fig_pie = px.pie(sentiment_counts, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
-                         color_discrete_map=get_color_map())
+        with st.container(border=True):
+            st.subheader("Proporsi Sentimen")
+            sentiment_counts = df_news['sentiment_label'].value_counts().reset_index()
+            sentiment_counts.columns = ['Sentimen', 'Jumlah']
+            fig_pie = px.pie(sentiment_counts, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
+                             color_discrete_map=get_color_map())
+            fig_pie.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
 
-        try:
-            pie_event = st.plotly_chart(fig_pie, use_container_width=True, on_select="rerun", key="pie_news")
-            if pie_event and pie_event.get("selection") and pie_event["selection"]["points"]:
-                sel_sentiments = [p["label"] for p in pie_event["selection"]["points"]]
-        except TypeError:
-            st.plotly_chart(fig_pie, use_container_width=True)
+            try:
+                pie_event = st.plotly_chart(fig_pie, use_container_width=True, on_select="rerun", key="pie_news")
+                if pie_event and pie_event.get("selection") and pie_event["selection"]["points"]:
+                    sel_sentiments = [p["label"] for p in pie_event["selection"]["points"]]
+            except TypeError:
+                st.plotly_chart(fig_pie, use_container_width=True)
 
     st.divider()
 
-    # --- PERBAIKAN: GUNAKAN AI CACHE ---
     with st.spinner("Mengambil analisis berita..."):
         if ai_cache is not None and ai_cache.get('summary_news'):
             render_tldr_ui(ai_cache['summary_news'], title="Ringkasan Analisis Eksekutif (Berita)")
         else:
-            st.info("⏳ AI belum selesai merangkum berita.")
+            st.info("AI belum selesai merangkum berita.")
 
-    st.subheader("📋 Tabel Data Mentah")
+    with st.container(border=True):
+        st.subheader("Tabel Data Mentah")
 
-    cf1, cf2, cf3 = st.columns(3)
-    cari_berita = cf1.text_input("🔍 Cari Judul...", key="cari_berita")
+        cf1, cf2, cf3 = st.columns(3)
+        cari_berita = cf1.text_input("Cari Judul...", key="cari_berita")
 
-    filter_sentimen = cf2.multiselect("📊 Filter Sentimen", options=df_news['sentiment_label'].unique(),
-                                      default=sel_sentiments)
-    filter_sumber = cf3.multiselect("📰 Filter Media", options=df_news['source'].unique(), default=sel_sources)
+        filter_sentimen = cf2.multiselect("Filter Sentimen", options=df_news['sentiment_label'].unique(),
+                                          default=sel_sentiments)
+        filter_sumber = cf3.multiselect("Filter Media", options=df_news['source'].unique(), default=sel_sources)
 
-    df_tampil = df_news.copy()
-    if cari_berita:
-        df_tampil = df_tampil[df_tampil['title'].str.contains(cari_berita, case=False, na=False)]
-    if filter_sentimen:
-        df_tampil = df_tampil[df_tampil['sentiment_label'].isin(filter_sentimen)]
-    if filter_sumber:
-        df_tampil = df_tampil[df_tampil['source'].isin(filter_sumber)]
+        df_tampil = df_news.copy()
+        if cari_berita:
+            df_tampil = df_tampil[df_tampil['title'].str.contains(cari_berita, case=False, na=False)]
+        if filter_sentimen:
+            df_tampil = df_tampil[df_tampil['sentiment_label'].isin(filter_sentimen)]
+        if filter_sumber:
+            df_tampil = df_tampil[df_tampil['source'].isin(filter_sumber)]
 
-    df_show = df_tampil.sort_values(by='date', ascending=False)[
-        ['date_str', 'source', 'title', 'sentiment_label', 'sentiment_score', 'url']]
+        df_show = df_tampil.sort_values(by='date', ascending=False)[
+            ['date_str', 'source', 'title', 'sentiment_label', 'sentiment_score', 'url']]
 
-    st.dataframe(
-        df_show,
-        use_container_width=True,
-        hide_index=True,
-        height=400,
-        column_config={
-            "url": st.column_config.LinkColumn("Link Berita", display_text="Buka Artikel 🔗")
-        }
-    )
+        st.dataframe(
+            df_show,
+            use_container_width=True,
+            hide_index=True,
+            height=400,
+            column_config={
+                "url": st.column_config.LinkColumn("Link Berita", display_text="Buka Artikel")
+            }
+        )
 
 
 # ==========================================
-# 🐦 HALAMAN 3: ANALISIS TWITTER (X)
+# HALAMAN 3: ANALISIS TWITTER (X)
 # ==========================================
 def show_twitter_analytics(df_tweets, ai_cache):
-    st.title("🐦 Analisis Cuitan X (Twitter)")
+    st.title("Analisis Cuitan X (Twitter)")
     if df_tweets.empty:
         st.warning("Belum ada data cuitan yang diproses.")
         return
 
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Total Cuitan", len(df_tweets))
-    c2.metric("Sentimen Positif", len(df_tweets[df_tweets['sentiment_label'] == 'Positive']))
-    c3.metric("Sentimen Negatif", len(df_tweets[df_tweets['sentiment_label'] == 'Negative']))
-    c4.metric("Sentimen Netral", len(df_tweets[df_tweets['sentiment_label'] == 'Neutral']))
+    with st.container(border=True):
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Total Cuitan", len(df_tweets), delta=" ", delta_color="off")
+        c2.metric("Sentimen Positif", len(df_tweets[df_tweets['sentiment_label'] == 'Positive']), delta="Good")
+        c3.metric("Sentimen Negatif", len(df_tweets[df_tweets['sentiment_label'] == 'Negative']), delta="-Alert",
+                  delta_color="inverse")
+        c4.metric("Sentimen Netral", len(df_tweets[df_tweets['sentiment_label'] == 'Neutral']), delta=" ",
+                  delta_color="off")
+
     st.divider()
 
     sel_users, sel_sentiments = [], []
 
     col1, col2 = st.columns([2, 1])
     with col1:
-        st.subheader("📈 Tren Obrolan Harian")
-        time_opt_tw = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
-                               index=4, horizontal=True, label_visibility="collapsed", key="time_tw")
+        with st.container(border=True):
+            st.subheader("Tren Obrolan Harian")
+            time_opt_tw = st.radio("Rentang Waktu", ["1 Bulan", "3 Bulan", "6 Bulan", "1 Tahun", "Semua Waktu"],
+                                   index=0, horizontal=True, label_visibility="collapsed", key="time_tw")
 
-        df_tw_trend = filter_by_time(df_tweets, 'scraped_at', time_opt_tw)
-        trend_tw = df_tw_trend.groupby(['date', 'sentiment_label']).size().reset_index(name='jumlah')
-        fig_trend = px.line(trend_tw, x='date', y='jumlah', color='sentiment_label', color_discrete_map=get_color_map(),
-                            markers=True)
-        st.plotly_chart(fig_trend, use_container_width=True)
+            df_tw_trend = filter_by_time(df_tweets, 'scraped_at', time_opt_tw)
+            trend_tw = df_tw_trend.groupby(['date', 'sentiment_label']).size().reset_index(name='jumlah')
+            fig_trend = px.line(trend_tw, x='date', y='jumlah', color='sentiment_label',
+                                color_discrete_map=get_color_map(),
+                                markers=True)
+            fig_trend.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
+            st.plotly_chart(fig_trend, use_container_width=True)
 
     with col2:
-        st.subheader("🏆 Top 10 Akun Paling Aktif")
-        top_users_list = df_tweets['username'].value_counts().head(10).index.tolist()
-        df_top_users = df_tweets[df_tweets['username'].isin(top_users_list)]
-        user_sentiment = df_top_users.groupby(['username', 'sentiment_label']).size().reset_index(name='jumlah')
-        fig_user = px.bar(user_sentiment, x='jumlah', y='username', color='sentiment_label', orientation='h',
-                          color_discrete_map=get_color_map(), barmode='stack')
-        fig_user.update_yaxes(categoryorder='array', categoryarray=top_users_list[::-1])
+        with st.container(border=True):
+            st.subheader("Top 10 Akun Paling Aktif")
+            top_users_list = df_tweets['username'].value_counts().head(10).index.tolist()
+            df_top_users = df_tweets[df_tweets['username'].isin(top_users_list)]
+            user_sentiment = df_top_users.groupby(['username', 'sentiment_label']).size().reset_index(name='jumlah')
+            fig_user = px.bar(user_sentiment, x='jumlah', y='username', color='sentiment_label', orientation='h',
+                              color_discrete_map=get_color_map(), barmode='stack')
+            fig_user.update_yaxes(categoryorder='array', categoryarray=top_users_list[::-1])
+            fig_user.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
 
-        try:
-            bar_event = st.plotly_chart(fig_user, use_container_width=True, on_select="rerun", key="bar_tw")
-            if bar_event and bar_event.get("selection") and bar_event["selection"]["points"]:
-                sel_users = [p["y"] for p in bar_event["selection"]["points"]]
-        except TypeError:
-            st.plotly_chart(fig_user, use_container_width=True)
+            try:
+                bar_event = st.plotly_chart(fig_user, use_container_width=True, on_select="rerun", key="bar_tw")
+                if bar_event and bar_event.get("selection") and bar_event["selection"]["points"]:
+                    sel_users = [p["y"] for p in bar_event["selection"]["points"]]
+            except TypeError:
+                st.plotly_chart(fig_user, use_container_width=True)
 
-    st.divider()
     col3, col4 = st.columns([2, 1])
     with col3:
-        st.subheader("☁️ Word Cloud Cuitan")
-        user_words = set(re.findall(r'\b\w+\b', " ".join(df_tweets['username'].dropna().astype(str).unique()).lower()))
-        wc_buffer = plot_wordcloud(df_tweets['clean_text'].dropna().tolist(), colormap='Blues',
-                                   dynamic_stopwords=user_words)
-        if wc_buffer: st.markdown(render_image_html(wc_buffer), unsafe_allow_html=True)
+        with st.container(border=True):
+            st.subheader("Word Cloud Cuitan")
+            user_words = set(
+                re.findall(r'\b\w+\b', " ".join(df_tweets['username'].dropna().astype(str).unique()).lower()))
+            wc_buffer = plot_wordcloud(df_tweets['clean_text'].dropna().tolist(), colormap='Blues',
+                                       dynamic_stopwords=user_words)
+            if wc_buffer: st.markdown(render_image_html(wc_buffer), unsafe_allow_html=True)
     with col4:
-        st.subheader("📊 Proporsi Sentimen")
-        sentiment_counts = df_tweets['sentiment_label'].value_counts().reset_index()
-        sentiment_counts.columns = ['Sentimen', 'Jumlah']
-        fig_pie = px.pie(sentiment_counts, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
-                         color_discrete_map=get_color_map())
+        with st.container(border=True):
+            st.subheader("Proporsi Sentimen")
+            sentiment_counts = df_tweets['sentiment_label'].value_counts().reset_index()
+            sentiment_counts.columns = ['Sentimen', 'Jumlah']
+            fig_pie = px.pie(sentiment_counts, names='Sentimen', values='Jumlah', hole=0.4, color='Sentimen',
+                             color_discrete_map=get_color_map())
+            fig_pie.update_layout(paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)")
 
-        try:
-            pie_event = st.plotly_chart(fig_pie, use_container_width=True, on_select="rerun", key="pie_tw")
-            if pie_event and pie_event.get("selection") and pie_event["selection"]["points"]:
-                sel_sentiments = [p["label"] for p in pie_event["selection"]["points"]]
-        except TypeError:
-            st.plotly_chart(fig_pie, use_container_width=True)
+            try:
+                pie_event = st.plotly_chart(fig_pie, use_container_width=True, on_select="rerun", key="pie_tw")
+                if pie_event and pie_event.get("selection") and pie_event["selection"]["points"]:
+                    sel_sentiments = [p["label"] for p in pie_event["selection"]["points"]]
+            except TypeError:
+                st.plotly_chart(fig_pie, use_container_width=True)
 
     st.divider()
 
-    # --- PERBAIKAN: GUNAKAN AI CACHE ---
     with st.spinner("Mengambil analisis Twitter..."):
         if ai_cache is not None and ai_cache.get('summary_tweets'):
             render_tldr_ui(ai_cache['summary_tweets'], title="Ringkasan Analisis Eksekutif (Twitter)")
         else:
-            st.info("⏳ AI belum selesai merangkum Twitter.")
+            st.info("AI belum selesai merangkum Twitter.")
 
-    st.subheader("📋 Tabel Data Mentah")
+    with st.container(border=True):
+        st.subheader("Tabel Data Mentah")
 
-    cf1, cf2, cf3 = st.columns([2, 1, 1])
-    cari_cuitan = cf1.text_input("🔍 Cari Cuitan / Username...", key="cari_cuitan")
-    filter_sentimen = cf2.multiselect("📊 Filter Sentimen", options=df_tweets['sentiment_label'].unique(),
-                                      default=sel_sentiments, key="sentimen_tw")
-    filter_sumber = cf3.multiselect("👤 Filter Akun", options=df_tweets['username'].unique(), default=sel_users,
-                                    key="akun_tw")
+        cf1, cf2, cf3 = st.columns([2, 1, 1])
+        cari_cuitan = cf1.text_input("Cari Cuitan / Username...", key="cari_cuitan")
+        filter_sentimen = cf2.multiselect("Filter Sentimen", options=df_tweets['sentiment_label'].unique(),
+                                          default=sel_sentiments, key="sentimen_tw")
+        filter_sumber = cf3.multiselect("Filter Akun", options=df_tweets['username'].unique(), default=sel_users,
+                                        key="akun_tw")
 
-    df_tampil = df_tweets.copy()
-    if cari_cuitan:
-        df_tampil = df_tampil[
-            df_tampil['clean_text'].str.contains(cari_cuitan, case=False, na=False) |
-            df_tampil['username'].str.contains(cari_cuitan, case=False, na=False)
-            ]
-    if filter_sentimen:
-        df_tampil = df_tampil[df_tampil['sentiment_label'].isin(filter_sentimen)]
-    if filter_sumber:
-        df_tampil = df_tampil[df_tampil['username'].isin(filter_sumber)]
+        df_tampil = df_tweets.copy()
+        if cari_cuitan:
+            df_tampil = df_tampil[
+                df_tampil['clean_text'].str.contains(cari_cuitan, case=False, na=False) |
+                df_tampil['username'].str.contains(cari_cuitan, case=False, na=False)
+                ]
+        if filter_sentimen:
+            df_tampil = df_tampil[df_tampil['sentiment_label'].isin(filter_sentimen)]
+        if filter_sumber:
+            df_tampil = df_tampil[df_tampil['username'].isin(filter_sumber)]
 
-    df_show_tw = df_tampil.sort_values(by='date', ascending=False)[
-        ['date_str', 'username', 'clean_text', 'sentiment_label', 'sentiment_score', 'tweet_url']]
+        df_show_tw = df_tampil.sort_values(by='date', ascending=False)[
+            ['date_str', 'username', 'clean_text', 'sentiment_label', 'sentiment_score', 'tweet_url']]
 
-    st.dataframe(
-        df_show_tw,
-        use_container_width=True,
-        hide_index=True,
-        height=400,
-        column_config={
-            "tweet_url": st.column_config.LinkColumn("Link Cuitan", display_text="Buka Cuitan 🔗")
-        }
-    )
+        st.dataframe(
+            df_show_tw,
+            use_container_width=True,
+            hide_index=True,
+            height=400,
+            column_config={
+                "tweet_url": st.column_config.LinkColumn("Link Cuitan", display_text="Buka Cuitan")
+            }
+        )
 
 
 # ==========================================
-# ⚙ HALAMAN 4: PENGATURAN
+# HALAMAN 4: PENGATURAN
 # ==========================================
 def show_settings():
-    st.title("⚙ Pengaturan")
+    st.title("Pengaturan")
     engine = get_db_engine()
 
-    c1, c2 = st.columns([3, 1])
-    new_kw = c1.text_input("Tambah Kata Kunci Baru")
+    with st.container(border=True):
+        st.subheader("Tambah Kata Kunci Baru")
+        c1, c2 = st.columns([3, 1])
+        new_kw = c1.text_input("Kata Kunci", label_visibility="collapsed", placeholder="Ketik keyword baru...")
 
-    if c2.button("Simpan", type="primary"):
-        current_time = time.time()
-        if current_time - st.session_state['last_action_time'] < 2.0:
-            st.toast("⏳ Terlalu banyak permintaan! Tunggu 2 detik.", icon="⚠️")
-        else:
-            st.session_state['last_action_time'] = current_time
-            is_safe, msg = validate_security(new_kw)
-
-            if not is_safe:
-                st.toast(f"⛔ {msg}", icon="🚨")
+        if c2.button("Simpan", type="primary", use_container_width=True):
+            current_time = time.time()
+            if current_time - st.session_state['last_action_time'] < 2.0:
+                st.toast("Terlalu banyak permintaan! Tunggu 2 detik.")
             else:
-                is_success, is_duplicate = False, False
-                try:
-                    with engine.begin() as conn:
-                        check_df = pd.read_sql(text("SELECT * FROM keywords WHERE keyword = :k"), conn,
-                                               params={"k": new_kw})
-                        if check_df.empty:
-                            conn.execute(text("INSERT INTO keywords (keyword, source) VALUES (:k, 'all')"),
-                                         {"k": new_kw})
-                            is_success = True
-                        else:
-                            is_duplicate = True
-                except Exception as e:
-                    st.toast(f"Gagal menyimpan data!", icon="❌")
+                st.session_state['last_action_time'] = current_time
+                is_safe, msg = validate_security(new_kw)
 
-                if is_success:
-                    st.toast(f"Berhasil menambahkan keyword: {new_kw}", icon="✅")
-                    time.sleep(1.2)
-                    st.cache_data.clear()
-                    st.rerun()
-                elif is_duplicate:
-                    st.toast(f"Keyword '{new_kw}' sudah ada!", icon="⚠️")
+                if not is_safe:
+                    st.toast(f"{msg}")
+                else:
+                    is_success, is_duplicate = False, False
+                    try:
+                        with engine.begin() as conn:
+                            check_df = pd.read_sql(text("SELECT * FROM keywords WHERE keyword = :k"), conn,
+                                                   params={"k": new_kw})
+                            if check_df.empty:
+                                conn.execute(text("INSERT INTO keywords (keyword, source) VALUES (:k, 'all')"),
+                                             {"k": new_kw})
+                                is_success = True
+                            else:
+                                is_duplicate = True
+                    except Exception as e:
+                        st.toast("Gagal menyimpan data!")
 
-    st.subheader("Daftar Keyword Aktif")
-    try:
-        df_kw = pd.read_sql("SELECT * FROM keywords ORDER BY id DESC", engine)
-        for _, row in df_kw.iterrows():
-            col_a, col_b = st.columns([4, 1])
-            col_a.text(f"• {row['keyword']}")
-            if col_b.button("Hapus", key=f"del_{row['id']}"):
-                try:
-                    with engine.begin() as conn:
-                        conn.execute(text("DELETE FROM keywords WHERE id=:id"), {"id": row['id']})
-                    st.toast(f"Keyword '{row['keyword']}' berhasil dihapus!", icon="🗑️")
-                    time.sleep(1.2)
-                    st.cache_data.clear()
-                    st.rerun()
-                except Exception as e:
-                    st.toast(f"Gagal menghapus data!", icon="❌")
-    except Exception as e:
-        st.error(f"Gagal memuat daftar keyword: {e}")
+                    if is_success:
+                        st.toast(f"Berhasil menambahkan keyword: {new_kw}")
+                        time.sleep(1.2)
+                        st.cache_data.clear()
+                        st.rerun()
+                    elif is_duplicate:
+                        st.toast(f"Keyword '{new_kw}' sudah ada!")
+
+    with st.container(border=True):
+        st.subheader("Daftar Keyword Aktif")
+        try:
+            df_kw = pd.read_sql("SELECT * FROM keywords ORDER BY id DESC", engine)
+            for _, row in df_kw.iterrows():
+                col_a, col_b = st.columns([4, 1])
+                col_a.text(f"• {row['keyword']}")
+                if col_b.button("Hapus", key=f"del_{row['id']}", use_container_width=True):
+                    try:
+                        with engine.begin() as conn:
+                            conn.execute(text("DELETE FROM keywords WHERE id=:id"), {"id": row['id']})
+                        st.toast(f"Keyword '{row['keyword']}' berhasil dihapus!")
+                        time.sleep(1.2)
+                        st.cache_data.clear()
+                        st.rerun()
+                    except Exception as e:
+                        st.toast("Gagal menghapus data!")
+        except Exception as e:
+            st.error(f"Gagal memuat daftar keyword: {e}")
 
 
 # ==========================================
-# 💬 UI FLOATING CHATBOT
+# UI FLOATING CHATBOT
 # ==========================================
 def show_floating_chat():
     if 'chat_expanded' not in st.session_state: st.session_state['chat_expanded'] = False
@@ -564,9 +659,9 @@ def show_floating_chat():
         div[data-testid="stPopoverBody"] {{ width: {chat_w} !important; height: {chat_h} !important; max-width: 95vw !important; max-height: 95vh !important; padding: 20px !important; border-radius: 15px !important; border: 1px solid #555 !important; resize: both !important; overflow: auto !important; transition: width 0.3s ease, height 0.3s ease; }}
         </style>""", unsafe_allow_html=True)
 
-    with st.popover("💬"):
+    with st.popover("💬 Chatbot"):
         c1, c2 = st.columns([4, 1])
-        c1.markdown("### 🤖 Asisten AI\nData analitik FAISS Vector DB")
+        c1.markdown("### 🤖 Asisten AI")
         if c2.button("⛶" if not st.session_state['chat_expanded'] else "🗕"):
             st.session_state['chat_expanded'] = not st.session_state['chat_expanded']
             st.rerun()
@@ -581,7 +676,7 @@ def show_floating_chat():
 
             if st.session_state['chat_history'] and st.session_state['chat_history'][-1]['role'] == 'user':
                 with st.chat_message("assistant"):
-                    with st.spinner("🧠 Menganalisis..."):
+                    with st.spinner("Menganalisis..."):
                         try:
                             history_untuk_konteks = st.session_state['chat_history'][:-1]
                             answer = ask_bot(
@@ -596,38 +691,41 @@ def show_floating_chat():
         if prompt := st.chat_input("Tanyakan isu reputasi kampus..."):
             cur_time = time.time()
             if cur_time - st.session_state['last_action_time'] < 3.0:
-                st.toast("⏳ Tunggu 3 detik.", icon="⚠️")
+                st.toast("Tunggu 3 detik.")
             else:
                 st.session_state['last_action_time'] = cur_time
                 safe, msg = validate_security(prompt)
                 if not safe:
-                    st.toast(msg, icon="🚨")
+                    st.toast(msg)
                     st.session_state['chat_history'].extend([{"role": "user", "content": prompt}, {"role": "assistant",
-                                                                                                   "content": f"🛡️ Akses ditolak. {msg}"}])
+                                                                                                   "content": f"Akses ditolak. {msg}"}])
                 else:
                     st.session_state['chat_history'].append({"role": "user", "content": prompt})
                 st.rerun()
 
 
 # ==========================================
-# 🚀 FUNGSI MAIN (HANYA ADA SATU DI SINI)
+# FUNGSI MAIN
 # ==========================================
 def main():
     df_news, df_tweets = load_all_data()
     ai_cache = load_ai_cache()
 
     with st.sidebar:
-        st.markdown("<h1 style='text-align: center; margin-bottom: 20px;'> Reputation Monitoring System</h1>",
+        st.markdown("<h1 style='text-align: center; margin-bottom: 20px;'>Reputation Monitoring System</h1>",
                     unsafe_allow_html=True)
 
         selected = option_menu(None, ["Utama", "Berita (Media)", "X (Cuitan)", "Pengaturan"],
                                icons=["house", "newspaper", "twitter", "gear"], default_index=0,
-                               styles={"container": {"padding": "0!important", "background-color": "#262730"},
-                                       "nav-link-selected": {"background-color": "#00CC96"}})
+                               styles={
+                                   "container": {"padding": "0!important", "background-color": "transparent"},
+                                   "icon": {"font-size": "16px"},
+                                   "nav-link": {"font-size": "15px", "text-align": "left", "margin": "0px"},
+                                   "nav-link-selected": {"background-color": "#00CC96", "color": "white"}
+                               })
         st.markdown("---")
-        st.caption("🤖 Diperbarui otomatis via Airflow.")
+        st.caption("Diperbarui otomatis via Airflow.")
 
-    # --- PERBAIKAN: OPER AI CACHE KE FUNGSI HALAMAN ---
     if selected == "Utama":
         show_overview(df_news, df_tweets, ai_cache)
     elif selected == "Berita (Media)":

@@ -10,7 +10,7 @@ lxml
 scikit-learn
 sastrawi
 python-dotenv
-google-genai   # <-- INI YANG BENAR (Bukan google-genai)
+google-generativeai
 sqlalchemy
 psycopg2-binary
 transformers
@@ -18,7 +18,9 @@ torch
 wordcloud
 langchain
 langchain-community
-faiss-cpu
 langchain-huggingface
-sentence-transformers
+langchain-core
+pgvector==0.2.5
+psycopg2-binary>=2.9.9
 streamlit-option-menu
+sentence-transformers

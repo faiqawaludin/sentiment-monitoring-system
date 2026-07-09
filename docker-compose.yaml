@@ -9,10 +9,8 @@ x-airflow-common:
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     PROJECT_ID: 'warehouse-sentimen'
     GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/google_credentials.json
-    # --- [UPDATE BARU] SETTING ZONA WAKTU ---
     AIRFLOW__CORE__DEFAULT_TIMEZONE: 'Asia/Jakarta'
     TZ: 'Asia/Jakarta'
-    # ----------------------------------------
 
   volumes:
     - ./airflow/dags:/opt/airflow/dags
@@ -28,12 +26,11 @@ x-airflow-common:
 
 services:
   postgres:
-    image: postgres:13
+    image: postgres:13          # Untuk metadata Airflow — tidak perlu pgvector
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
-      # Set timezone database
       TZ: 'Asia/Jakarta'
       PGTZ: 'Asia/Jakarta'
     volumes:
@@ -45,12 +42,11 @@ services:
     restart: always
 
   postgres-dw:
-    image: postgres:13
+    image: pgvector/pgvector:pg13  # DIUBAH: mendukung ekstensi vector untuk langchain_pg_embedding
     environment:
       POSTGRES_USER: remosy_user
       POSTGRES_PASSWORD: remosy_password
       POSTGRES_DB: remosy_dw
-      # Set timezone database warehouse
       TZ: 'Asia/Jakarta'
       PGTZ: 'Asia/Jakarta'
     ports:
@@ -114,7 +110,6 @@ services:
       GOOGLE_APPLICATION_CREDENTIALS: /opt/airflow/google_credentials.json
       PROJECT_ID: 'warehouse-sentimen'
       TZ: 'Asia/Jakarta'
-      # --- KONEKSI DATABASE UNTUK STREAMLIT ---
       POSTGRES_HOST_DOCKER: 'postgres-dw'
     working_dir: /opt/airflow
     depends_on:
@@ -123,7 +118,6 @@ services:
     env_file:
       - .env
 
-# --- VOLUMES HARUS BERADA DI PALING BAWAH / LUAR ---
 volumes:
   postgres-db-volume:
   postgres-dw-volume:

@@ -20,44 +20,53 @@ def refine_sentiment(text, original_label, original_score):
     text_lower = text.lower()
     safe_label = str(original_label).capitalize()
 
+    # --- 0. DEFINISIKAN SEMUA KAMUS KATA KUNCI DI ATAS BIAR AMAN ---
+    fatal_negatives = ['demo', 'protes', 'korupsi', 'pelecehan', 'pungli', 'pidana', 'tersangka', 'mangkrak', 'janggal',
+                       'kejanggalan']
+
+    positive_waste = ['pengelolaan', 'mengelola', 'kelola', 'bank sampah', 'daur ulang', 'inovasi', 'bersih', 'solusi']
+
+    solution_disaster = ['mitigasi', 'bantuan', 'membantu', 'donasi', 'evakuasi', 'selamat', 'inovasi', 'teknologi',
+                         'cegah']
+
+    academic_positive = [
+        'seminar', 'workshop', 'kkn', 'pelatihan', 'gandeng', 'kerja sama', 'kerjasama',
+        'kuliah umum', 'lokakarya', 'penelitian', 'inovasi', 'prestasi', 'juara', 'lulus',
+        'wisuda', 'hibah', 'pendanaan', 'pemeriksaan', 'sosialisasi', 'pengabdian', 'bantuan',
+        'beasiswa', 'penghargaan', 'unggulan', 'solusi', 'terjunkan', 'bantu', 'bina', 'membangun',
+        'percepat', 'maju', 'sukses', 'kontribusi', 'mendukung', 'kolaborasi', 'inovatif', 'kreatif',
+        'peduli', 'berbagi', 'santunan', 'kampanye', 'dorong', 'gelar',
+        'akreditasi', 'unggul', 'terakreditasi'
+    ]
+
+    neg_keywords = [
+        'dugaan', 'polemik', 'ultimatum', 'gagal', 'kecewa', 'batal', 'rugi',
+        'sanksi', 'pelanggaran', 'tuntut', 'kecam', 'soroti', 'kontroversi', 'darurat'
+    ]
+    # -----------------------------------------------------------------
+
     # 🚨 1. KASUS FATAL (Reputasi Kampus Rusak) - DICEK PERTAMA KALI
-    fatal_negatives = ['demo', 'protes', 'korupsi', 'pelecehan', 'pungli', 'pidana', 'tersangka', 'mangkrak', 'janggal', 'kejanggalan']
     if any(w in text_lower for w in fatal_negatives):
         return 'Negative', 0.95
 
     # ♻️ 2. KASUS SAMPAH & LINGKUNGAN
     if 'sampah' in text_lower or 'limbah' in text_lower:
-        positive_context = ['pengelolaan', 'mengelola', 'kelola', 'bank sampah', 'daur ulang', 'inovasi', 'bersih', 'solusi']
-        if any(word in text_lower for word in positive_context):
+        if any(word in text_lower for word in positive_waste):
             return 'Positive', 0.95
 
     # 🛣️ 3. KASUS JALAN & BENCANA
     if 'jalan' in text_lower and any(w in text_lower for w in ['diperbaiki', 'mulus', 'rampung']):
         return 'Positive', 0.90
     if any(w in text_lower for w in ['banjir', 'bencana', 'kecelakaan']):
-        solution_context = ['mitigasi', 'bantuan', 'membantu', 'donasi', 'evakuasi', 'selamat', 'inovasi', 'teknologi', 'cegah']
-        if any(word in text_lower for word in solution_context):
+        if any(word in text_lower for word in solution_disaster):
             return 'Positive', 0.95
 
-        # 🎓 4. KEGIATAN AKADEMIK, PENGABDIAN & PRESTASI (BARU!)
-        academic_positive = [
-            'seminar', 'workshop', 'kkn', 'pelatihan', 'gandeng', 'kerja sama', 'kerjasama',
-            'kuliah umum', 'lokakarya', 'penelitian', 'inovasi', 'prestasi', 'juara', 'lulus',
-            'wisuda', 'hibah', 'pendanaan', 'pemeriksaan', 'sosialisasi', 'pengabdian', 'bantuan',
-            'beasiswa', 'penghargaan', 'unggulan', 'solusi', 'terjunkan', 'bantu', 'bina', 'membangun',
-            'percepat', 'maju', 'sukses', 'kontribusi', 'mendukung', 'kolaborasi', 'inovatif', 'kreatif',
-            'peduli', 'berbagi', 'santunan', 'kampanye', 'dorong', 'gelar',
-            'akreditasi', 'unggul', 'terakreditasi'  # <-- INI TAMBAHANNYA
-        ]
+    # 🎓 4. KEGIATAN AKADEMIK, PENGABDIAN & PRESTASI (SEKARANG SUDAH DI LUAR & AMAN!)
     if any(word in text_lower for word in academic_positive):
         return 'Positive', 0.90
 
     # 📉 5. PENDETEKSI REPUTASI NEGATIF LAINNYA
     if safe_label == 'Neutral' or safe_label == 'Positive':
-        neg_keywords = [
-            'dugaan', 'polemik', 'ultimatum', 'gagal', 'kecewa', 'batal', 'rugi',
-            'sanksi', 'pelanggaran', 'tuntut', 'kecam', 'soroti', 'kontroversi', 'darurat'
-        ]
         if any(word in text_lower for word in neg_keywords):
             return 'Negative', 0.85
 
@@ -75,7 +84,7 @@ def run_twitter_processing():
             SELECT t.id, t.full_text
             FROM tweets_raw t
                      LEFT JOIN tweets_processed p ON t.id = p.tweet_id
-            WHERE p.tweet_id IS NULL LIMIT 500
+            WHERE p.tweet_id IS NULL LIMIT 500 \
             """
 
     try:

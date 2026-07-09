@@ -44,7 +44,7 @@ default_args = {
 with DAG(
     'remosy_master_end_to_end',
     default_args=default_args,
-    description='Scrape Paralel -> Proses Sentimen -> FAISS Vector DB -> AI Summary',
+    description='Scrape Paralel -> Proses Sentimen -> Vector DB -> AI Summary',
     schedule_interval='0 0,12 * * *',  # Berjalan setiap jam 00:00 dan 12:00
     start_date=datetime(2024, 1, 1),
     catchup=False,
