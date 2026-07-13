@@ -3,15 +3,30 @@ import os
 import pandas as pd
 from datetime import datetime, date
 from sqlalchemy import text
+from dotenv import load_dotenv
 
 # --- SETUP PATH ---
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_project = os.path.abspath(os.path.join(current_dir, '../..'))
+if root_project not in sys.path:
+    sys.path.append(root_project)
+
+# Load variabel dari .env
+load_dotenv()
+
 from src.utils.db import get_db_engine
 from src.chatbot.llm_engine import generate_summary, generate_hot_topics
 
 def run_ai_summarizer():
     print("🤖 Memulai Pre-komputasi Generative AI (Anti-Limit API)...")
     engine = get_db_engine()
+
+    # ==========================================
+    # 0. AMBIL KEYWORD DINAMIS
+    # ==========================================
+    # Dia akan nyari TARGET_INSTITUSI di .env, kalau nggak ada, otomatis pakai "UNSIKA"
+    keyword_dinamis = os.getenv("TARGET_INSTITUSI", "UNSIKA")
+    print(f"🔍 Menggunakan keyword institusi: {keyword_dinamis}")
 
     # 1. Buat Tabel Cache (Jika belum ada)
     try:
@@ -46,15 +61,19 @@ def run_ai_summarizer():
         print("⚠️ Tidak ada data untuk dirangkum hari ini.")
         return
 
-    # 3. Panggil Gemini (Biarkan Airflow yang menunggu proses ini, bukan User!)
-    print("🧠 Memanggil Gemini untuk Ringkasan Berita...")
-    summary_news = generate_summary(news_list, context_type="Berita Portal")
+    # 3. Panggil AI dengan KEYWORD DINAMIS
+    print(f"🧠 Memanggil AI untuk Ringkasan Berita ({keyword_dinamis})...")
+    summary_news = generate_summary(news_list, context_type="Berita Portal", keyword=keyword_dinamis)
 
-    print("🧠 Memanggil Gemini untuk Ringkasan Cuitan...")
-    summary_tweets = generate_summary(tweets_list, context_type="Cuitan Twitter")
+    print(f"🧠 Memanggil AI untuk Ringkasan Cuitan ({keyword_dinamis})...")
+    summary_tweets = generate_summary(tweets_list, context_type="Cuitan Twitter", keyword=keyword_dinamis)
 
-    print("🔥 Memanggil Gemini untuk Topik Terhangat...")
-    hot_topics = generate_hot_topics(news_list, tweets_list)
+    print(f"🔥 Memanggil AI untuk Topik Terhangat ({keyword_dinamis})...")
+    # Penanganan aman: jika fungsi ini belum disetting untuk menerima keyword, dia tetap jalan.
+    try:
+        hot_topics = generate_hot_topics(news_list, tweets_list, keyword=keyword_dinamis)
+    except TypeError:
+        hot_topics = generate_hot_topics(news_list, tweets_list)
 
     # 4. Simpan ke Database (Upsert: Timpa jika tanggal hari ini sudah ada)
     print("💾 Menyimpan hasil AI ke PostgreSQL...")

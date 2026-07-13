@@ -26,8 +26,8 @@ def process_twitter():
 
 def build_vector():
     sys.path.append('/opt/airflow/src')
-    from chatbot.build_vector_db import build_faiss_index
-    build_faiss_index()
+    from chatbot.build_vector_db import build_pgvector_index
+    build_pgvector_index()
 
 def run_ai_summary():
     sys.path.append('/opt/airflow/src')

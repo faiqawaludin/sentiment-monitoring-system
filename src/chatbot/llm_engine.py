@@ -2,25 +2,42 @@ import os
 from dotenv import load_dotenv
 
 from google import genai
+from groq import Groq
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
-if not API_KEY:
+# ==========================================
+# 1. INISIALISASI GEMINI (Untuk Airflow Summary & Hot Topics)
+# ==========================================
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
     raise ValueError("GEMINI_API_KEY tidak ditemukan di file .env!")
 
-client = genai.Client(api_key=API_KEY)
+gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+GEMINI_MODEL = "gemini-2.5-flash"
 
-MODEL = "gemini-2.5-flash"
+# ==========================================
+# 2. INISIALISASI GROQ (Untuk Chatbot Streamlit)
+# ==========================================
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+if not GROQ_API_KEY:
+    print("⚠️ Peringatan: GROQ_API_KEY tidak ditemukan di .env! Fitur chatbot mungkin tidak berfungsi.")
+    groq_client = None
+else:
+    groq_client = Groq(api_key=GROQ_API_KEY)
 
-def generate_summary(text_data, context_type="Berita"):
+
+# ==========================================
+# FUNGSI ANALITIK SENTIMEN (GEMINI)
+# ==========================================
+def generate_summary(text_data, keyword, context_type="Berita"):
     if not text_data or len(text_data) == 0:
         return f"Belum ada data {context_type} yang cukup untuk dianalisis hari ini."
 
     data_terbatas = text_data[:15]  # Naikkan sedikit agar konteks lebih kaya
     gabungan_teks = " | ".join([str(t)[:200] for t in data_terbatas if str(t).strip() != ""])
 
-    prompt = f"""Kamu adalah seorang PR Analyst senior di Universitas Singaperbangsa Karawang (UNSIKA) dengan pengalaman lebih dari 10 tahun dalam manajemen reputasi institusi pendidikan tinggi.
+    prompt = f"""Kamu adalah seorang PR Analyst senior di {keyword} dengan pengalaman lebih dari 10 tahun dalam manajemen reputasi institusi.
 
 Tugasmu adalah menganalisis kumpulan data {context_type} terbaru berikut dan menyusun laporan analisis yang komprehensif.
 
@@ -41,10 +58,10 @@ Tuliskan gambaran umum situasi dalam 2-3 kalimat. Apa yang sedang terjadi secara
 Sebutkan 3-5 poin temuan paling penting dari data ini dalam format bullet point. Setiap poin harus actionable dan spesifik.
 
 **⚠️ Potensi Risiko Reputasi**
-Identifikasi 2-3 hal yang berpotensi menjadi ancaman reputasi UNSIKA jika tidak ditangani. Jika tidak ada risiko signifikan, nyatakan demikian.
+Identifikasi 2-3 hal yang berpotensi menjadi ancaman reputasi {keyword} jika tidak ditangani. Jika tidak ada risiko signifikan, nyatakan demikian.
 
 **💡 Rekomendasi Strategis**
-Berikan 2-3 langkah konkret yang sebaiknya diambil tim PR UNSIKA berdasarkan temuan di atas.
+Berikan 2-3 langkah konkret yang sebaiknya diambil tim PR {keyword} berdasarkan temuan di atas.
 
 ATURAN KETAT:
 - Gunakan bahasa Indonesia yang profesional namun mudah dipahami
@@ -53,24 +70,25 @@ ATURAN KETAT:
 - Gunakan format markdown agar mudah dibaca"""
 
     try:
-        response = client.models.generate_content(
-            model=MODEL,
+        response = gemini_client.models.generate_content(
+            model=GEMINI_MODEL,
             contents=prompt
         )
         return response.text
     except Exception as e:
         return f"⚠️ Gagal menghubungi AI Gemini: {str(e)}"
 
-def generate_hot_topics(news_titles, tweet_texts):
+
+def generate_hot_topics(news_titles, tweet_texts, keyword):
     news_terbatas = news_titles[:12]
     tweet_terbatas = tweet_texts[:12]
 
     teks_gabungan = (
-        "BERITA:\n" + "\n".join([f"- {t}" for t in news_terbatas]) +
-        "\n\nCUITAN TWITTER/X:\n" + "\n".join([f"- {t}" for t in tweet_terbatas])
+            "BERITA:\n" + "\n".join([f"- {t}" for t in news_terbatas]) +
+            "\n\nCUITAN TWITTER/X:\n" + "\n".join([f"- {t}" for t in tweet_terbatas])
     )
 
-    prompt = f"""Kamu adalah PR Analyst senior UNSIKA (Universitas Singaperbangsa Karawang) yang bertugas memantau isu publik secara real-time.
+    prompt = f"""Kamu adalah PR Analyst senior {keyword} yang bertugas memantau isu publik secara real-time.
 
 Berikut adalah data terbaru dari media berita dan Twitter/X hari ini:
 
@@ -86,14 +104,14 @@ Untuk setiap topik, gunakan format:
 - 📌 **Isu:** [Deskripsi singkat isu dalam 1-2 kalimat]
 - 📣 **Sumber Dominan:** [Berita / Twitter / Keduanya]
 - 💬 **Sentimen Publik:** [Positif / Negatif / Netral] — [alasan singkat]
-- 🎯 **Urgensi untuk UNSIKA:** [Tinggi / Sedang / Rendah] — [alasan singkat]
+- 🎯 **Urgensi untuk {keyword}:** [Tinggi / Sedang / Rendah] — [alasan singkat]
 
 ---
 
 Setelah daftar 5 topik, tambahkan:
 
 **📝 Kesimpulan Harian**
-Tuliskan 1 paragraf singkat tentang gambaran keseluruhan hari ini: apakah ada tren, pola, atau hal yang perlu diwaspadai oleh tim PR UNSIKA.
+Tuliskan 1 paragraf singkat tentang gambaran keseluruhan hari ini: apakah ada tren, pola, atau hal yang perlu diwaspadai oleh tim PR {keyword}.
 
 ATURAN KETAT:
 - Hanya gunakan informasi dari data yang diberikan
@@ -102,10 +120,36 @@ ATURAN KETAT:
 - Format harus rapi dengan markdown"""
 
     try:
-        response = client.models.generate_content(
-            model=MODEL,
+        response = gemini_client.models.generate_content(
+            model=GEMINI_MODEL,
             contents=prompt
         )
         return response.text
     except Exception as e:
         return f"⚠️ Gagal memuat topik AI: {str(e)}"
+
+
+# ==========================================
+# FUNGSI CHATBOT INTERAKTIF (GROQ)
+# ==========================================
+def chat_with_bot(user_message, keyword):
+    if not groq_client:
+        return "⚠️ Sistem chatbot belum dikonfigurasi. Mohon tambahkan GROQ_API_KEY di file .env."
+
+    # Model Llama 3 70B atau 8B di Groq untuk respons instan
+    GROQ_MODEL = "llama-3.3-70b-versatile"
+
+    try:
+        response = groq_client.chat.completions.create(
+            model=GROQ_MODEL,
+            messages=[
+                {"role": "system",
+                 "content": f"Kamu adalah asisten Public Relations interaktif untuk {keyword}. Jawab pertanyaan pengguna dengan profesional, ringkas, dan jelas."},
+                {"role": "user", "content": user_message}
+            ],
+            temperature=0.6,
+            max_tokens=2048
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        return f"⚠️ Gagal menghubungi AI Groq: {str(e)}"

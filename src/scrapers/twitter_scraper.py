@@ -15,7 +15,6 @@ except ImportError:
 
 class TwitterScraper:
     def __init__(self):
-        # ⚠️ GANTI DENGAN AUTH_TOKEN TERBARU DARI BROWSER ANDA!
         self.auth_token = "af2e1aedad90142b0929218e42fe61f75da1c0cb"
 
     def get_since_date(self, days=30):
@@ -46,10 +45,10 @@ class TwitterScraper:
 
             # Ciri-ciri token mati di tweet-harvest biasanya memunculkan kata ini di terminal
             if "unauthorized" in output_log or "invalid token" in output_log or "rate limit" in output_log:
-                print(f"⚠️ LOG ERROR TERDETEKSI:\n{output_log}")
+                print(f"LOG ERROR TERDETEKSI:\n{output_log}")
                 # KITA PAKSA CRASH AGAR AIRFLOW BERWARNA MERAH!
                 raise ValueError(
-                    "🚨 ALERT KRITIS: Auth Token Twitter kedaluwarsa atau diblokir! Segera perbarui di script.")
+                    "ALERT KRITIS: Auth Token Twitter kedaluwarsa atau diblokir! Segera perbarui di script.")
             # ==========================================
 
             expected_file = os.path.join("tweets-data", filename)

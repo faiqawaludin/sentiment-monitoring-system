@@ -14,16 +14,12 @@ except ImportError:
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
     from utils.db import get_db_engine
 
-
-# --- FUNGSI PEMBERSIH TEKS SEDERHANA ---
 def clean_text(text):
     if not isinstance(text, str):
         return ""
     # Hapus karakter aneh/simbol jika perlu
     return text.replace("\n", " ").strip()
 
-
-# --- 🧠 LOGIKA CERDAS: FIX SENTIMEN (REPUTATION-AWARE) ---
 def refine_sentiment(text, original_label, original_score):
     """
     Memperbaiki kesalahan AI karena IndoBERT melihat kalimat sebagai fakta objektif.
@@ -55,39 +51,27 @@ def refine_sentiment(text, original_label, original_score):
         'sanksi', 'pelanggaran', 'tuntut', 'kecam', 'soroti', 'kontroversi', 'darurat'
     ]
     # -----------------------------------------------------------------
-
-    # 🚨 1. KASUS FATAL (Reputasi Kampus Rusak) - DICEK PERTAMA KALI
     if any(w in text_lower for w in fatal_negatives):
         return 'Negative', 0.95
-
-    # ♻️ 2. KASUS SAMPAH & LINGKUNGAN
     if 'sampah' in text_lower or 'limbah' in text_lower:
         if any(word in text_lower for word in positive_waste):
             return 'Positive', 0.95
-
-    # 🛣️ 3. KASUS JALAN & BENCANA
     if 'jalan' in text_lower and any(w in text_lower for w in ['diperbaiki', 'mulus', 'rampung']):
         return 'Positive', 0.90
     if any(w in text_lower for w in ['banjir', 'bencana', 'kecelakaan']):
         if any(word in text_lower for word in solution_disaster):
             return 'Positive', 0.95
-
-    # 🎓 4. KEGIATAN AKADEMIK, PENGABDIAN & PRESTASI (SEKARANG SUDAH DI LUAR & AMAN!)
     if any(word in text_lower for word in academic_positive):
         return 'Positive', 0.90
-
-    # 📉 5. PENDETEKSI REPUTASI NEGATIF LAINNYA
     if safe_label == 'Neutral' or safe_label == 'Positive':
         if any(word in text_lower for word in neg_keywords):
             return 'Negative', 0.85
-
-    # Kalau tidak masuk pengecualian apapun, kembalikan label aslinya
     return safe_label, original_score
 
 
 # --- FUNGSI UTAMA ---
 def run_news_processing():
-    print("🚀 Memulai Job Pemrosesan Berita (Smart Sentiment & Relevance Filter)...")
+    print("Memulai Job Pemrosesan Berita")
     engine = get_db_engine()
 
     # 1. Ambil berita yang BELUM diproses
@@ -103,17 +87,17 @@ def run_news_processing():
     try:
         df = pd.read_sql(query, engine)
     except Exception as e:
-        print(f"   ❌ Gagal baca DB: {e}")
+        print(f"   Gagal baca DB: {e}")
         return
 
     if df.empty:
-        print("   ✅ Tidak ada berita baru untuk diproses.")
+        print("   Tidak ada berita baru untuk diproses.")
         return
 
-    print(f"   📦 Memproses {len(df)} berita baru...")
+    print(f"   Memproses {len(df)} berita baru...")
 
     # 2. Load Model AI (IndoBERT)
-    print("   🤖 Sedang memuat model AI (IndoBERT)...")
+    print("   Memuat model AI (IndoBERT)...")
     sentiment_pipeline = pipeline(
         "sentiment-analysis",
         model="w11wo/indonesian-roberta-base-sentiment-classifier",
@@ -127,15 +111,14 @@ def run_news_processing():
         text_to_analyze = row['title']  # Kita analisis Judulnya
         text_lower = text_to_analyze.lower()
 
-        # --- 🚨 FILTER RELEVANSI (SATPAM KAMPUS) ---
         # Jika judul TIDAK mengandung kata unsika ATAU singaperbangsa, langsung hapus!
         if not ('unsika' in text_lower or 'singaperbangsa' in text_lower):
             try:
                 with engine.begin() as conn:
                     conn.execute(text("DELETE FROM news_raw WHERE id = :id"), {"id": row['id']})
-                print(f"   🗑️ HAPUS (Berita Nyasar): '{text_to_analyze[:45]}...'")
+                print(f"   HAPUS (Berita Nyasar): '{text_to_analyze[:45]}...'")
             except Exception as e:
-                print(f"   ⚠️ Gagal menghapus berita nyasar: {e}")
+                print(f"   Gagal menghapus berita nyasar: {e}")
 
             # Lewati prediksi sentimen, langsung lanjut ke baris berita berikutnya
             continue
@@ -162,7 +145,7 @@ def run_news_processing():
 
         # Print preview biar kelihatan bedanya
         if label.capitalize() != final_label:
-            print(f"   ✨ FIX: '{text_to_analyze[:30]}...' | AI: {label} -> SMART: {final_label}")
+            print(f"   FIX: '{text_to_analyze[:30]}...' | AI: {label} -> SMART: {final_label}")
         else:
             print(f"   Process: '{text_to_analyze[:30]}...' -> {final_label}")
 
@@ -170,9 +153,9 @@ def run_news_processing():
     if processed_data:
         df_result = pd.DataFrame(processed_data)
         df_result.to_sql('news_processed', engine, if_exists='append', index=False)
-        print(f"   ✅ Sukses menyimpan {len(df_result)} hasil analisis.")
+        print(f"   Sukses menyimpan {len(df_result)} hasil analisis.")
 
-    print("🏁 Job Selesai.")
+    print(" Job Selesai.")
 
 
 if __name__ == "__main__":

@@ -15,67 +15,77 @@ from langchain_core.documents import Document
 from langchain_community.vectorstores import PGVector
 from langchain_huggingface import HuggingFaceEmbeddings
 
+COLLECTION_NAME = "remosy_vectors"
 
-def build_faiss_index():
+
+def build_pgvector_index():
     print("⏳ Menyiapkan koneksi ke Database...")
     engine = get_db_engine()
 
-    # Rakit connection string dari .env
-    pg_host = os.getenv("POSTGRES_HOST_DOCKER", "postgres-dw")
-    pg_port = os.getenv("POSTGRES_PORT_DOCKER", "5432")
-    pg_db   = os.getenv("DB_NAME", "remosy_dw")
+    # Rakit connection string yang ANTI-NYASAR
+    pg_db = os.getenv("DB_NAME", "remosy_dw")
     pg_user = os.getenv("DB_USER", "remosy_user")
     pg_pass = os.getenv("DB_PASSWORD", "remosy_password")
-    db_url  = f"postgresql+psycopg2://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
+
+    # Samakan dengan logika cerdas di db.py
+    if os.path.exists('/.dockerenv'):
+        pg_host = "postgres-dw"
+        pg_port = "5432"
+    else:
+        pg_host = "localhost"
+        pg_port = "5434"
+
+    db_url = f"postgresql+psycopg2://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
 
     print("📥 Menyedot data sentimen dari PostgreSQL...")
 
     # ==========================================
     # A. Tarik Data Berita
     # ==========================================
-    df_news = pd.DataFrame()  # Inisialisasi awal di luar try
+    df_news = pd.DataFrame()
     try:
         query_news = """
-                     SELECT nr.title          as teks,
-                            nr.source,
-                            nr.published_date as tanggal,
-                            np.sentiment_label,
-                            np.sentiment_score,
-                            'Berita'          as platform
-                     FROM news_raw nr
-                              JOIN news_processed np ON nr.id = np.news_id
-                     WHERE np.sentiment_label IS NOT NULL \
-                     """
+            SELECT nr.title          AS teks,
+                   nr.source,
+                   nr.published_date AS tanggal,
+                   np.sentiment_label,
+                   np.sentiment_score,
+                   'Berita'          AS platform
+            FROM news_raw nr
+                     JOIN news_processed np ON nr.id = np.news_id
+            WHERE np.sentiment_label IS NOT NULL
+            ORDER BY nr.scraped_at DESC
+        """
         df_news = pd.read_sql(query_news, engine)
         print(f"✅ Berhasil menarik {len(df_news)} data Berita.")
     except Exception as e:
         print(f"⚠️ Tabel Berita error: {e}")
 
     # ==========================================
-    # B. Tarik Data Twitter (SEJAJAR SAMA BAGIAN A)
+    # B. Tarik Data Twitter
     # ==========================================
-    df_twitter = pd.DataFrame()  # Inisialisasi awal di luar try
+    df_twitter = pd.DataFrame()
     try:
         query_twitter = """
-                        SELECT tr.full_text  as teks,
-                               tr.username   as source,
-                               tr.scraped_at as tanggal,
-                               tp.sentiment_label,
-                               tp.sentiment_score,
-                               'Twitter'     as platform
-                        FROM tweets_raw tr
-                                 JOIN tweets_processed tp ON tr.id = tp.tweet_id
-                        WHERE tp.sentiment_label IS NOT NULL
-                          AND tr.scraped_at >= NOW() - INTERVAL '365 days'
-                        ORDER BY tr.scraped_at DESC \
-                        """
+            SELECT tr.full_text  AS teks,
+                   tr.username   AS source,
+                   tr.scraped_at AS tanggal,
+                   tp.sentiment_label,
+                   tp.sentiment_score,
+                   'Twitter'     AS platform
+            FROM tweets_raw tr
+                     JOIN tweets_processed tp ON tr.id = tp.tweet_id
+            WHERE tp.sentiment_label IS NOT NULL
+              AND tr.scraped_at >= NOW() - INTERVAL '365 days'
+            ORDER BY tr.scraped_at DESC
+        """
         df_twitter = pd.read_sql(query_twitter, engine)
         print(f"✅ Berhasil menarik {len(df_twitter)} data Twitter.")
     except Exception as e:
         print(f"⚠️ Gagal menarik data Twitter. Error: {e}")
 
     # ==========================================
-    # C. Gabungkan Semua Data (SEJAJAR SAMA BAGIAN A & B)
+    # C. Gabungkan Semua Data
     # ==========================================
     df_data = pd.concat([df_news, df_twitter], ignore_index=True)
 
@@ -105,7 +115,7 @@ def build_faiss_index():
         documents.append(Document(page_content=narasi, metadata=metadata))
 
     # ==========================================
-    # E. Load Embedding Model (MiniLM Multilingual)
+    # E. Load Embedding Model
     # ==========================================
     print("🚀 Memuat Model AI Multilingual (Lokal & Gratis)...")
     embeddings = HuggingFaceEmbeddings(
@@ -114,23 +124,20 @@ def build_faiss_index():
 
     # ==========================================
     # F. Simpan ke pgvector via LangChain
-    # Membuat tabel langchain_pg_collection dan
-    # langchain_pg_embedding secara otomatis
     # ==========================================
-    # 3. UBAH TEKS MENJADI VEKTOR DAN SIMPAN KE PGVECTOR
-    print("🧬 Menyimpan vektor ke PostgreSQL (pgvector)...")
-
-    # --- INI KUNCI UTAMANYA: HOST HARUS postgres-dw ---
-    CONNECTION_STRING = "postgresql+psycopg2://remosy_user:remosy_password@postgres-dw:5432/remosy_dw"
-
-    from langchain_community.vectorstores.pgvector import PGVector
+    print("🧬 Menyimpan vektor ke PostgreSQL (pgvector) via langchain_pg_embedding...")
 
     PGVector.from_documents(
-        embedding=embeddings,
         documents=documents,
-        connection_string=CONNECTION_STRING,
-        collection_name="remosy_vectors",
-        pre_delete_collection=True  # Biar data lama dihapus pas update baru
+        embedding=embeddings,
+        collection_name=COLLECTION_NAME,
+        connection_string=db_url,
+        pre_delete_collection=True,
     )
 
-    print("✅ SUKSES BESAR! Vector Database (PGVector) berhasil dibuat!")
+    print(f"✅ SUKSES! Vector Database berhasil disimpan ke tabel "
+          f"langchain_pg_embedding dengan collection '{COLLECTION_NAME}'.")
+
+
+if __name__ == "__main__":
+    build_pgvector_index()

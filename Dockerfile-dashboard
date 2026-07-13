@@ -1,0 +1,38 @@
+FROM apache/airflow:2.10.0
+
+USER root
+RUN apt-get update && \
+    apt-get install -y \
+    libpq-dev \
+    gcc \
+    && apt-get clean
+
+USER airflow
+
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+RUN pip install --no-cache-dir \
+    "sqlalchemy>=2.0.0" \
+    pandas \
+    plotly \
+    streamlit \
+    streamlit-option-menu \
+    python-dotenv \
+    google-genai \
+    google-auth \
+    db-dtypes \
+    psycopg2-binary \
+    wordcloud \
+    langchain \
+    "langchain-community>=0.2.0" \
+    "langchain-core>=0.2.0" \
+    langchain-huggingface \
+    "pgvector==0.2.5" \
+    sentence-transformers \
+    transformers \
+    requests \
+    beautifulsoup4 \
+    groq \
+    lxml \
+    scikit-learn \
+    sastrawi

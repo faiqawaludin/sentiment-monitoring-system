@@ -90,7 +90,7 @@ if 'last_action_time' not in st.session_state: st.session_state['last_action_tim
 
 def validate_security(input_text):
     if not input_text or not input_text.strip(): return False, "Input tidak boleh kosong."
-    if len(input_text) > 300: return False, "Input terlalu panjang. Maksimal 300 karakter."
+    if len(input_text) > 700: return False, "Input terlalu panjang. Maksimal 700 karakter."
     forbidden = ["ignore all", "abaikan", "system prompt", "uncensored", "jailbreak", "bypass", "act as"]
     for phrase in forbidden:
         if phrase in input_text.lower(): return False, "TERDETEKSI PELANGGARAN KEAMANAN."
@@ -678,11 +678,20 @@ def show_floating_chat():
                 with st.chat_message("assistant"):
                     with st.spinner("Menganalisis..."):
                         try:
+                            # --- 1. TARIK KEYWORD AKTIF DARI DATABASE ---
+                            engine = get_db_engine()
+                            df_kw = pd.read_sql("SELECT keyword FROM keywords", engine)
+                            # Gabungkan semua keyword aktif (misal: "UNSIKA, Rektor UNSIKA")
+                            keyword_aktif = ", ".join(df_kw['keyword'].tolist()) if not df_kw.empty else "Institusi"
+
+                            # --- 2. LEMPAR KEYWORD KE FUNGSI AI ---
                             history_untuk_konteks = st.session_state['chat_history'][:-1]
                             answer = ask_bot(
                                 query=st.session_state['chat_history'][-1]['content'],
-                                chat_history=history_untuk_konteks
+                                chat_history=history_untuk_konteks,
+                                keyword=keyword_aktif  # <--- INI PARAMETER BARUNYA
                             )
+
                             st.session_state['chat_history'].append({"role": "assistant", "content": answer})
                             st.rerun()
                         except Exception as e:

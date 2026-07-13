@@ -26,7 +26,7 @@ x-airflow-common:
 
 services:
   postgres:
-    image: postgres:13          # Untuk metadata Airflow — tidak perlu pgvector
+    image: postgres:13
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -42,7 +42,7 @@ services:
     restart: always
 
   postgres-dw:
-    image: pgvector/pgvector:pg13  # DIUBAH: mendukung ekstensi vector untuk langchain_pg_embedding
+    image: pgvector/pgvector:pg13
     environment:
       POSTGRES_USER: remosy_user
       POSTGRES_PASSWORD: remosy_password
@@ -97,7 +97,9 @@ services:
     user: "0:0"
 
   remosy-dashboard:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile-dashboard   # <-- Pakai Dockerfile terpisah
     entrypoint: /bin/bash
     command: -c "streamlit run dashboard/main.py --server.port 8501 --server.address 0.0.0.0"
     ports:
