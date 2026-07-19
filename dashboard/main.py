@@ -661,7 +661,8 @@ def show_floating_chat():
 
     with st.popover("💬 Chatbot"):
         c1, c2 = st.columns([4, 1])
-        c1.markdown("### 🤖 Asisten AI")
+        c1.markdown("###"
+                    "Asisten AI")
         if c2.button("⛶" if not st.session_state['chat_expanded'] else "🗕"):
             st.session_state['chat_expanded'] = not st.session_state['chat_expanded']
             st.rerun()

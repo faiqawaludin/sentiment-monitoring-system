@@ -19,7 +19,7 @@ COLLECTION_NAME = "remosy_vectors"
 
 
 def build_pgvector_index():
-    print("⏳ Menyiapkan koneksi ke Database...")
+    print("Connecting to Database")
     engine = get_db_engine()
 
     # Rakit connection string yang ANTI-NYASAR
@@ -37,7 +37,7 @@ def build_pgvector_index():
 
     db_url = f"postgresql+psycopg2://{pg_user}:{pg_pass}@{pg_host}:{pg_port}/{pg_db}"
 
-    print("📥 Menyedot data sentimen dari PostgreSQL...")
+    print("Ambil Data")
 
     # ==========================================
     # A. Tarik Data Berita
@@ -57,9 +57,9 @@ def build_pgvector_index():
             ORDER BY nr.scraped_at DESC
         """
         df_news = pd.read_sql(query_news, engine)
-        print(f"✅ Berhasil menarik {len(df_news)} data Berita.")
+        print(f"Berhasil menarik {len(df_news)} data Berita.")
     except Exception as e:
-        print(f"⚠️ Tabel Berita error: {e}")
+        print(f"Tabel Berita error: {e}")
 
     # ==========================================
     # B. Tarik Data Twitter
@@ -80,9 +80,9 @@ def build_pgvector_index():
             ORDER BY tr.scraped_at DESC
         """
         df_twitter = pd.read_sql(query_twitter, engine)
-        print(f"✅ Berhasil menarik {len(df_twitter)} data Twitter.")
+        print(f"Berhasil menarik {len(df_twitter)} data Twitter.")
     except Exception as e:
-        print(f"⚠️ Gagal menarik data Twitter. Error: {e}")
+        print(f"Gagal menarik data Twitter. Error: {e}")
 
     # ==========================================
     # C. Gabungkan Semua Data
@@ -90,13 +90,13 @@ def build_pgvector_index():
     df_data = pd.concat([df_news, df_twitter], ignore_index=True)
 
     if df_data.empty:
-        print("❌ Semua data kosong! Vector DB batal dibuat.")
+        print("Semua data kosong! Vector DB batal dibuat.")
         return
 
     # ==========================================
     # D. Konversi ke Dokumen LangChain
     # ==========================================
-    print(f"🧠 Memproses {len(df_data)} data gabungan menjadi narasi AI...")
+    print(f"Memproses {len(df_data)} data gabungan menjadi narasi AI...")
     documents = []
     for _, row in df_data.iterrows():
         date_str = pd.to_datetime(row['tanggal']).strftime('%d %B %Y') if pd.notnull(
@@ -117,7 +117,7 @@ def build_pgvector_index():
     # ==========================================
     # E. Load Embedding Model
     # ==========================================
-    print("🚀 Memuat Model AI Multilingual (Lokal & Gratis)...")
+    print("Memuat Model AI Multilingual (Lokal & Gratis)...")
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     )
@@ -135,7 +135,7 @@ def build_pgvector_index():
         pre_delete_collection=True,
     )
 
-    print(f"✅ SUKSES! Vector Database berhasil disimpan ke tabel "
+    print(f"SUKSES! Vector Database berhasil disimpan ke tabel "
           f"langchain_pg_embedding dengan collection '{COLLECTION_NAME}'.")
 
 
