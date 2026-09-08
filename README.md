@@ -1,8 +1,8 @@
 # REMOSY (Reputation Monitoring System)
 
-**REMOSY** adalah sistem cerdas pemantauan reputasi institusi berbasis kecerdasan buatan (AI) yang dirancang dengan filosofi **Zero Human Intervention**. Sistem ini mengintegrasikan arsitektur *Modern Data Stack* (MDS) untuk mengotomatisasi seluruh siklus pemantauan media massa dan media sosial secara proaktif, terstruktur, dan *real-time*. 
+**REMOSY** adalah sistem cerdas pemantauan reputasi institusi berbasis kecerdasan buatan (AI). Sistem ini mengintegrasikan arsitektur *Medallion* untuk mengotomatisasi seluruh siklus pemantauan media massa dan media sosial secara proaktif, terstruktur, dan *near-real-time*. 
 
-Proyek ini berhasil mengimplementasikan *end-to-end automated data pipeline* paralel tingkat tinggi, mulai dari tahap rekayasa data (*data engineering*), pemodelan *Deep Learning*, hingga penyajian wawasan eksekutif (*executive insights*) berbasis *Generative AI* untuk mendukung pengambilan keputusan strategis (*data-driven decision making*) oleh unit *Public Relations* atau Humas institusi.
+Proyek ini berhasil mengimplementasikan *end-to-end automated data pipeline* paralel, mulai dari tahap rekayasa data (*data engineering*), pemodelan *Deep Learning*, hingga penyajian *executive insights* berbasis *Generative AI* untuk mendukung pengambilan keputusan strategis (*data-driven decision making*) oleh unit *Public Relations* atau Humas institusi.
 
 ---
 
